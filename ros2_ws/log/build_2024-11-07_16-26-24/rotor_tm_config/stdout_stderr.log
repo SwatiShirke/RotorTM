@@ -1,0 +1,81 @@
+/home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+creating ../../build/rotor_tm_config/rotor_tm_config.egg-info
+writing ../../build/rotor_tm_config/rotor_tm_config.egg-info/PKG-INFO
+writing dependency_links to ../../build/rotor_tm_config/rotor_tm_config.egg-info/dependency_links.txt
+writing requirements to ../../build/rotor_tm_config/rotor_tm_config.egg-info/requires.txt
+writing top-level names to ../../build/rotor_tm_config/rotor_tm_config.egg-info/top_level.txt
+writing manifest file '../../build/rotor_tm_config/rotor_tm_config.egg-info/SOURCES.txt'
+reading manifest file '../../build/rotor_tm_config/rotor_tm_config.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/rotor_tm_config/rotor_tm_config.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/swati/Quad_DR/ros2_ws/build/rotor_tm_config/build/lib/rotor_tm_config
+copying rotor_tm_config/__init__.py -> /home/swati/Quad_DR/ros2_ws/build/rotor_tm_config/build/lib/rotor_tm_config
+running install
+running install_lib
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/lib/python3.10/site-packages/rotor_tm_config
+copying /home/swati/Quad_DR/ros2_ws/build/rotor_tm_config/build/lib/rotor_tm_config/__init__.py -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/lib/python3.10/site-packages/rotor_tm_config
+byte-compiling /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/lib/python3.10/site-packages/rotor_tm_config/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/ament_index/resource_index/packages
+copying resource/rotor_tm_config -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/ament_index/resource_index/packages
+copying package.xml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config
+copying config/1_robot_point_mass_0-5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+copying config/attach_mechanism/rigid_link/3_hetereogeneous_robots_triangular_payload.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+copying config/attach_mechanism/rigid_link/3_robots_triangular_payload.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+copying config/attach_mechanism/rigid_link/5_robots_triangular_payload.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+copying config/attach_mechanism/rigid_link/2_robots_long_bar.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/3_robots_triangular_payload_1m_bullnose_dragonfly.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/2_robots_long_bar_payload_0-5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/3_robots_triangular_payload_1m_0-5m_different_cable_length.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/1_robot_point_mass_0-5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/3_robots_triangular_payload_1m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/3_robots_triangular_payload_1-2m_1m_0-8m_different_cable_length.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/6_robots_fedex_box_0_5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/3_robots_triangular_payload_1m_different_robots_dynamics.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+copying config/attach_mechanism/cable/4_robots_fedex_box_0_5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+copying config/load_params/pointmass_payload.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+copying config/load_params/triangular_payload.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+copying config/load_params/long_bar_wood_payload.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+copying config/load_params/fedex_box_payload.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+copying config/initial_condition/3_robots_triangular_payload_initial_condition.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+copying config/initial_condition/6_robots_fedexbox_initial_condition.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+copying config/initial_condition/singlequad_ptmass_initial_condition.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/snapdragonfly_bullnose_prop_control_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/race_control_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/long_bar_payload_cooperative_cable_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/snapdragonfly_control_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/triangular_payload_cooperative_cable_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/hummingbird_control_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/triangular_payload_cooperative_rigidlink_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+copying config/control_params/pointmass_cable_gains.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/3_robots_triangular_payload_1m_bullnose_dragonfly.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/2_robots_long_bar_payload_0-5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/3_robots_triangular_payload_1m_0-5m_different_cable_length.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/1_robot_point_mass_0-5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/3_robots_triangular_payload_1m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/3_robots_triangular_payload_1-2m_1m_0-8m_different_cable_length.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/6_robots_fedex_box_0_5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/3_robots_triangular_payload_1m_different_robots_dynamics.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/3_robots_triangular_payload_0-5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+copying config/cable/4_robots_fedex_box_0_5m.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/cable
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+copying config/uav_params/hummingbird.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+copying config/uav_params/race.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+copying config/uav_params/snapdragonfly.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+copying config/uav_params/snapdragonfly_bullnose_prop.yaml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+running install_egg_info
+Copying ../../build/rotor_tm_config/rotor_tm_config.egg-info to /home/swati/Quad_DR/ros2_ws/install/rotor_tm_config/lib/python3.10/site-packages/rotor_tm_config-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/swati/Quad_DR/ros2_ws/build/rotor_tm_config/install.log'

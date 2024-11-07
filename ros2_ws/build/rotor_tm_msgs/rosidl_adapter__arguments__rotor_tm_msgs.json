@@ -1,0 +1,18 @@
+{
+  "package_name": "rotor_tm_msgs",
+  "non_idl_tuples": [
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:msg/PositionCommand.msg",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:msg/FMCommand.msg",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:msg/RPMCommand.msg",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:msg/SO3Command.msg",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:msg/CenPLCommand.msg",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:msg/StatusData.msg",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:msg/TRPYCommand.msg",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:srv/Vec4.srv",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:srv/Circle.srv",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:srv/CircleWithRotation.srv",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:srv/Line.srv",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:srv/CoprStatusCmd.srv",
+    "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_msgs:srv/StepPose.srv"
+  ]
+}

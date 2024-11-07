@@ -1,0 +1,31 @@
+/home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+writing ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/PKG-INFO
+writing dependency_links to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/dependency_links.txt
+writing entry points to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/entry_points.txt
+writing requirements to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/requires.txt
+writing top-level names to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/top_level.txt
+reading manifest file '../../build/rotor_tm_traj/rotor_tm_traj.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/rotor_tm_traj/rotor_tm_traj.egg-info/SOURCES.txt'
+running build
+running build_py
+copying rotor_tm_traj/traj.py -> /home/swati/Quad_DR/ros2_ws/build/rotor_tm_traj/build/lib/rotor_tm_traj
+copying rotor_tm_traj/traj_node.py -> /home/swati/Quad_DR/ros2_ws/build/rotor_tm_traj/build/lib/rotor_tm_traj
+copying rotor_tm_traj/Optimization/entire_path/__init__.py -> /home/swati/Quad_DR/ros2_ws/build/rotor_tm_traj/build/lib/rotor_tm_traj/Optimization/entire_path
+running install
+running install_lib
+copying /home/swati/Quad_DR/ros2_ws/build/rotor_tm_traj/build/lib/rotor_tm_traj/traj.py -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj
+copying /home/swati/Quad_DR/ros2_ws/build/rotor_tm_traj/build/lib/rotor_tm_traj/traj_node.py -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj
+byte-compiling /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj/traj.py to traj.cpython-310.pyc
+byte-compiling /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj/traj_node.py to traj_node.cpython-310.pyc
+running install_data
+copying resource/rotor_tm_traj -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/share/ament_index/resource_index/packages
+copying package.xml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/share/rotor_tm_traj
+running install_egg_info
+removing '/home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/rotor_tm_traj/rotor_tm_traj.egg-info to /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj-0.0.0-py3.10.egg-info
+running install_scripts
+Installing traj_node script to /home/swati/Quad_DR/ros2_ws/install/rotor_tm_traj/lib/rotor_tm_traj
+writing list of installed files to '/home/swati/Quad_DR/ros2_ws/build/rotor_tm_traj/install.log'

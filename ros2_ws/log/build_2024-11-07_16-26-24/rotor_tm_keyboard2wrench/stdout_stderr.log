@@ -1,0 +1,35 @@
+/home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+creating ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info
+writing ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/PKG-INFO
+writing dependency_links to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/dependency_links.txt
+writing requirements to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/requires.txt
+writing top-level names to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/top_level.txt
+writing manifest file '../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+reading manifest file '../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+copying rotor_tm_keyboard2wrench/ext_wrench_sub.py -> /home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+copying rotor_tm_keyboard2wrench/__init__.py -> /home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+copying rotor_tm_keyboard2wrench/keyboard2wrench.py -> /home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+running install
+running install_lib
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench
+copying /home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench/ext_wrench_sub.py -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench
+copying /home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench/__init__.py -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench
+copying /home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench/keyboard2wrench.py -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench
+byte-compiling /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench/ext_wrench_sub.py to ext_wrench_sub.cpython-310.pyc
+byte-compiling /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench/keyboard2wrench.py to keyboard2wrench.cpython-310.pyc
+running install_data
+creating /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/share/ament_index/resource_index/packages
+copying resource/rotor_tm_keyboard2wrench -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/share/ament_index/resource_index/packages
+copying package.xml -> /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench
+running install_egg_info
+Copying ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info to /home/swati/Quad_DR/ros2_ws/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/swati/Quad_DR/ros2_ws/build/rotor_tm_keyboard2wrench/install.log'
