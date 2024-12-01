@@ -1,4 +1,0 @@
-float32 radius
-float32[3] angle_amp
-float32 tp
-float32 duration

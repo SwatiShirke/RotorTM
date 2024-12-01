@@ -1,2 +1,0 @@
-[console_scripts]
-sim_node = rotor_tm_sim.runsim:main
