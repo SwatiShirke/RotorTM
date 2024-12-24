@@ -6,6 +6,7 @@ from scipy.spatial.transform import Rotation as rot
 
 from rotor_tm_traj import Optimization 
 from rotor_tm_traj.Optimization.entire_path.generate_poly import generate_poly
+from rotor_tm_msgs.msg import PositionCommand
 
 # from Optimization.entire_path.generate_poly import generate_poly
 # from Optimization.entire_path.generate_poly_coeff import generate_poly_coeff
@@ -13,9 +14,10 @@ from rotor_tm_traj.Optimization.entire_path.generate_poly import generate_poly
 # from Optimization.entire_path.generate_polynomial_matrix import generate_polynomial_matrix
 # from Optimization.allocate_time import allocate_time
 
-
+Tf = 1
+N  = 10 
 class traj:
-	def __init__(self):
+	def __init__(self,is_pl_nmpc = False):
 		# for circles
 		self.state_struct = {}
 		self.Radius = None
@@ -50,6 +52,7 @@ class traj:
 		# check if the current traj has finished
 		self.finished = False
 		self.traj_type = 0
+		self.is_pl_nmpc = is_pl_nmpc
 		# 0 is flag for traj is not initialized
 		# 1 is circle
 		# 2 is line
@@ -269,6 +272,8 @@ class traj:
 			self.finalpath = pathqn
 
 			pathlength = self.finalpath.shape[0]
+			print(self.finalpath)
+			print(pathlength)
 			m = pathlength - 1
 
 			distance = np.zeros((self.finalpath.shape[0],1))
@@ -314,31 +319,78 @@ class traj:
 			self.traj_type = 3
 		else:
 				t = (t.nanoseconds / 1e9)
-				#print(type(t))
-				#print(type(self.timepoint[i-1][0]))
-				lengthtime = self.timepoint.shape[0]
+				lengthtime = self.timepoint.shape[0]				
 				length = lengthtime -1 
-				state = np.zeros((3, 3), dtype=float)
-				for i in range(1, length+1):
-					if (t >= self.timepoint[i-1][0]) and (t < self.timepoint[i][0]) and (self.timesegment[i-1, 1] == 0):
-						currenttstart = self.timepoint[i-1][0]
-						state = np.array([[1, (t-currenttstart), (t-currenttstart)**2, (t-currenttstart)**3, (t-currenttstart)**4, (t-currenttstart)**5], [0, 1, 2*(t-currenttstart), 3*(t-currenttstart)**2, 4*(t-currenttstart)**3, 5*(t-currenttstart)**4], [0, 0, 2, 6*(t-currenttstart), 12*(t-currenttstart)**2, 20*(t-currenttstart)**3]]) 
-						state = np.matmul(state, self.coefficient[6*i-6:6*i,0:3])
-					elif (t >= self.timepoint[i-1]) and (t < self.timepoint[i]) and (self.timesegment[i-1, 1] == 1):
-						state[0, :] = self.finalpath[i,:]
-						state[1, :] = np.array([0.,0,0])
-						state[2, :] = np.array([0.,0,0])
-					elif (t >= self.timepoint[lengthtime-1]):
-						state[0, :] = self.finalpath[lengthtime - 1, :]
-						state[1, :] = np.array([0.,0,0])
-						state[2, :] = np.array([0.,0,0])
-						self.finished = True
-				self.state_struct["pos_des"] = np.transpose(state[0,:]).flatten()
-				self.state_struct["vel_des"] = np.transpose(state[1,:]).flatten()
-				self.state_struct["acc_des"] = np.transpose(state[2,:]).flatten()
-				self.state_struct["jrk_des"] = np.array([[0.],[0],[0]]).flatten()
-				self.state_struct["quat_des"] = np.array([1.,0,0,0]).flatten()
-				self.state_struct["omega_des"] = np.array([0.,0,0]).flatten()
+				#length = 10 # prediction horizon 
+				state = np.zeros((3, 3), dtype=float)		
+				self.pose_list = []				
+
+				if  self.is_pl_nmpc:
+					
+					for i in range(1, length+1):
+						if (t >= self.timepoint[i-1][0]) and (t < self.timepoint[i][0]) and (self.timesegment[i-1, 1] == 0):
+							t0 = t
+							for j in range(N):
+								message = PositionCommand()
+								#print("here")							
+								t_pred = t0 + (j+1) * (Tf/N)
+								currenttstart = self.timepoint[i-1][0] #t0 + j * (Tf/N)
+								
+								state = np.array([[1, (t_pred-currenttstart), (t_pred-currenttstart)**2, (t_pred-currenttstart)**3, (t_pred-currenttstart)**4, (t_pred-currenttstart)**5], [0, 1, 2*(t_pred-currenttstart), 3*(t_pred-currenttstart)**2, 4*(t_pred-currenttstart)**3, 5*(t_pred-currenttstart)**4], [0, 0, 2, 6*(t_pred-currenttstart), 12*(t_pred-currenttstart)**2, 20*(t_pred-currenttstart)**3]]) 
+								state = np.matmul(state, self.coefficient[6*i-6:6*i,0:3])
+								self.state_struct["pos_des"] = np.transpose(state[0,:]).flatten()
+								self.state_struct["vel_des"] = np.transpose(state[1,:]).flatten()
+								self.state_struct["acc_des"] = np.transpose(state[2,:]).flatten()
+								self.state_struct["jrk_des"] = np.array([[0.],[0],[0]]).flatten()
+								self.state_struct["quat_des"] = np.array([1.,0,0,0]).flatten()
+								self.state_struct["omega_des"] = np.array([0.,0,0]).flatten()
+
+								#message.header.stamp = now
+								message.position.x = self.state_struct["pos_des"][0]
+								message.position.y = self.state_struct["pos_des"][1]
+								message.position.z = self.state_struct["pos_des"][2]
+								message.velocity.x = self.state_struct["vel_des"][0]
+								message.velocity.y = self.state_struct["vel_des"][1]
+								message.velocity.z = self.state_struct["vel_des"][2]
+								message.quaternion.w = self.state_struct["quat_des"][0]
+								message.quaternion.x = self.state_struct["quat_des"][1]
+								message.quaternion.y = self.state_struct["quat_des"][2]
+								message.quaternion.z = self.state_struct["quat_des"][3]
+								message.angular_velocity.x = self.state_struct["omega_des"][0]
+								message.angular_velocity.y = self.state_struct["omega_des"][1]
+								message.angular_velocity.z = self.state_struct["omega_des"][2]
+								message.acceleration.x = self.state_struct["acc_des"][0]
+								message.acceleration.y = self.state_struct["acc_des"][1]
+								message.acceleration.z = self.state_struct["acc_des"][2]
+								message.jerk.x = self.state_struct["jrk_des"][0]
+								message.jerk.y = self.state_struct["jrk_des"][1]
+								message.jerk.z = self.state_struct["jrk_des"][2]
+								#print(type(self.current_traj.state_struct["quat_des"][0]))
+								self.pose_list.append(message)
+				else:
+					for i in range(1, length+1):
+						if (t >= self.timepoint[i-1][0]) and (t < self.timepoint[i][0]) and (self.timesegment[i-1, 1] == 0):
+							currenttstart = self.timepoint[i-1][0]
+							state = np.array([[1, (t-currenttstart), (t-currenttstart)**2, (t-currenttstart)**3, (t-currenttstart)**4, (t-currenttstart)**5], [0, 1, 2*(t-currenttstart), 3*(t-currenttstart)**2, 4*(t-currenttstart)**3, 5*(t-currenttstart)**4], [0, 0, 2, 6*(t-currenttstart), 12*(t-currenttstart)**2, 20*(t-currenttstart)**3]]) 
+							state = np.matmul(state, self.coefficient[6*i-6:6*i,0:3])
+						elif (t >= self.timepoint[i-1]) and (t < self.timepoint[i]) and (self.timesegment[i-1, 1] == 1):
+							state[0, :] = self.finalpath[i,:]
+							state[1, :] = np.array([0,0,0])
+							state[2, :] = np.array([0,0,0])
+						elif (t >= self.timepoint[lengthtime-1]):
+							state[0, :] = self.finalpath[lengthtime - 1, :]
+							state[1, :] = np.array([0,0,0])
+							state[2, :] = np.array([0,0,0])
+							self.finished = True
+					self.state_struct["pos_des"] = np.transpose(state[0,:])
+					self.state_struct["vel_des"] = np.transpose(state[1,:])
+					self.state_struct["acc_des"] = np.transpose(state[2,:])
+					self.state_struct["jrk_des"] = np.array([[0.],[0],[0]]).flatten()
+					self.state_struct["quat_des"] = np.array([1.,0,0,0]).flatten()
+					self.state_struct["omega_des"] = np.array([0.,0,0]).flatten()
+					
+
+		
 
 	def min_snap_traj_generator(self, t_current, path = None, options = None):
 		

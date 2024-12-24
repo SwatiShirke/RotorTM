@@ -18,7 +18,8 @@ from rotor_tm_utils import read_params
 from rotor_tm_utils import utilslib 
 from rotor_tm_utils.vec2asym import vec2asym
 import ipdb
-import re
+
+from rotor_tm_msgs.msg import TrajCommand
 
 
 
@@ -122,6 +123,7 @@ class controller_node(Node):
             # depth=1)  # Equivalent to queue_size=1)
 
             self.create_subscription(PositionCommand, '/payload/des_traj', self.desired_traj_callback, qos_profile)
+            self.create_subscription(TrajCommand, '/payload/des_traj_n', self.desired_traj_n_callback, qos_profile)
             self.create_subscription(Odometry, '/payload/odom',  self.pl_odom_callback, qos_profile)
             #ipdb.set_trace()
             uav_name = self.pl_params.uav_in_team[node_id]
@@ -300,9 +302,21 @@ class controller_node(Node):
                                          [des_traj.angular_velocity.y],
                                          [des_traj.angular_velocity.z]])
         self.pl["yaw_des"] = 0.0
-        self.pl["yawdot_des"] = 0.0
+        self.pl["yawdot_des"] = 0.0          
         self.sim_subscriber()
     
+    def desired_traj_n_callback(self, des_traj_n):
+        print("printing n points traj")
+        #print(des_traj_n.points[0])
+        print(len(des_traj_n.points))
+        for i in range(len(des_traj_n.points)):
+            point = des_traj_n.points[i]
+            print("point")
+            print(point.position.x)
+            print(point.position.y)
+            print(point.position.z)
+
+
     def controller_setup(self, pl_params):
         # DESCRIPTION:
         # Prepares input for cooperative cable suspended payload scenario controller

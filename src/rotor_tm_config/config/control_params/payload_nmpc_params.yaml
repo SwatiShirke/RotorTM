@@ -1,0 +1,14 @@
+N : 10
+Tf : 0.1
+pl_max_vel : [5,5,5] #max linear velocity
+pl_min_vel : [-5,-5,-5] 
+pl_max_omega : [5,5,5 ]   #rad/s for RPY
+pl_min_omega : [ -5,-5,-5]
+
+dist_r : 0.0
+dist_OL  : 0.0
+dist_Or : 0.0
+
+
+
+

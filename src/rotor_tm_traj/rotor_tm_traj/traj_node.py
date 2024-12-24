@@ -11,10 +11,12 @@ from matplotlib import pyplot as plt
 
 # ROS 2 message and service imports
 from rotor_tm_msgs.msg import PositionCommand
+from rotor_tm_msgs.msg import TrajCommand
 from nav_msgs.msg import Odometry
 from std_msgs.msg import Header
 from rotor_tm_msgs.srv import Circle, Line, CircleWithRotation, StepPose
 from scipy.spatial.transform import Rotation as rot
+#from nav_msgs.msg import path
 
 
 class TrajNode(Node):
@@ -22,6 +24,7 @@ class TrajNode(Node):
         super().__init__('traj_node')
         
         # Initialize attributes
+        self.is_pl_nmpc = True
         self.timer_period = 0.1
         self.radius = None
         self.period = None
@@ -48,6 +51,7 @@ class TrajNode(Node):
 
         # ROS 2 Publishers
         self.des_traj_pub = self.create_publisher(PositionCommand, 'payload/des_traj', qos_profile)
+        self.des_traj_n_pub = self.create_publisher(TrajCommand, 'payload/des_traj_n', qos_profile)
         self.cir_traj_status_pub = self.create_publisher(Header, 'payload/cir_traj_status', qos_profile)
         self.line_traj_status_pub = self.create_publisher(Header, 'payload/line_traj_status', qos_profile)
         self.min_der_traj_status_pub = self.create_publisher(Header, 'payload/min_der_traj_status', qos_profile)
@@ -71,7 +75,7 @@ class TrajNode(Node):
         if not self.is_finished:
             self.get_logger().info("Please wait for the previous trajectory to finish")
         else:
-            self.current_traj = traj.traj()
+            self.current_traj = traj.traj(self.is_pl_nmpc)
             self.current_traj.circle(0, self.curr_pose[0:3], request.radius, request.tp, request.duration)
             self.time_reference = self.get_clock().now()
             self.traj_start = True
@@ -90,7 +94,7 @@ class TrajNode(Node):
             self.get_logger().info("Please wait for the previous trajectory to finish")
         else:
             angle_amp = [request.angle_amp[0], request.angle_amp[1], request.angle_amp[2]]
-            self.current_traj = traj.traj()
+            self.current_traj = traj.traj(self.is_pl_nmpc)
             self.current_traj.circlewithrotbody(0, self.curr_pose[0:7], request.radius, angle_amp, request.tp, request.duration)
             self.time_reference = self.get_clock().now()
             self.traj_start = True
@@ -111,7 +115,7 @@ class TrajNode(Node):
             path = [[self.curr_pose[0], self.curr_pose[1], self.curr_pose[2]]]
             for pt in request.path:
                 path.append([pt.x, pt.y, pt.z])
-            self.current_traj = traj.traj()
+            self.current_traj = traj.traj(self.is_pl_nmpc)
             self.current_traj.line_quintic_traj(0, self.map, np.array(path))
             self.time_reference = self.get_clock().now()
             self.traj_start = True
@@ -135,7 +139,7 @@ class TrajNode(Node):
             path = np.array(path)
             traj_constant = create_options.options()
             traj_constant.create_default_option(path.shape[0])
-            self.current_traj = traj.traj()
+            self.current_traj = traj.traj(self.is_pl_nmpc)
             self.current_traj.min_snap_traj_generator(self, path, options=traj_constant)
             self.time_reference = self.get_clock().now()
             self.traj_start = True
@@ -155,7 +159,7 @@ class TrajNode(Node):
         else:
             quat = rot.from_euler('ZYX', [request.yaw, request.pitch, request.roll], degrees=True).as_quat()
             pose = np.array([request.position[0], request.position[1], request.position[2], quat[3], quat[0], quat[1], quat[2]])
-            self.current_traj = traj.traj()
+            self.current_traj = traj.traj(self.is_pl_nmpc)
             self.current_traj.step_des(0, pose)
             self.time_reference = self.get_clock().now()
             self.traj_start = True
@@ -220,36 +224,35 @@ class TrajNode(Node):
 
                 # Publish the command
                 now = self.get_clock().now().to_msg()
+                if self.is_pl_nmpc: 
+                    message = TrajCommand()
+                    message.header.stamp = now
+                    message.points = self.current_traj.pose_list                    
+                    self.des_traj_n_pub.publish(message)
+                else:
+                    message = PositionCommand()
+                    message.header.stamp = now
+                    message.position.x = self.current_traj.state_struct["pos_des"][0]
+                    message.position.y = self.current_traj.state_struct["pos_des"][1]
+                    message.position.z = self.current_traj.state_struct["pos_des"][2]
+                    message.velocity.x = self.current_traj.state_struct["vel_des"][0]
+                    message.velocity.y = self.current_traj.state_struct["vel_des"][1]
+                    message.velocity.z = self.current_traj.state_struct["vel_des"][2]
+                    message.acceleration.x = self.current_traj.state_struct["acc_des"][0]
+                    message.acceleration.y = self.current_traj.state_struct["acc_des"][1]
+                    message.acceleration.z = self.current_traj.state_struct["acc_des"][2]
+                    message.jerk.x = self.current_traj.state_struct["jrk_des"][0]
+                    message.jerk.y = self.current_traj.state_struct["jrk_des"][1]
+                    message.jerk.z = self.current_traj.state_struct["jrk_des"][2]
+                    message.quaternion.w = self.current_traj.state_struct["quat_des"][0]
+                    message.quaternion.x = self.current_traj.state_struct["quat_des"][1]
+                    message.quaternion.y = self.current_traj.state_struct["quat_des"][2]
+                    message.quaternion.z = self.current_traj.state_struct["quat_des"][3]
+                    message.angular_velocity.x = self.current_traj.state_struct["omega_des"][0]
+                    message.angular_velocity.y = self.current_traj.state_struct["omega_des"][1]
+                    message.angular_velocity.z = self.current_traj.state_struct["omega_des"][2] 
+                    self.des_traj_pub.publish(message)               
                 
-                message = PositionCommand()
-                message.header.stamp = now
-                message.position.x = self.current_traj.state_struct["pos_des"][0]
-                message.position.y = self.current_traj.state_struct["pos_des"][1]
-                message.position.z = self.current_traj.state_struct["pos_des"][2]
-                message.velocity.x = self.current_traj.state_struct["vel_des"][0]
-                message.velocity.y = self.current_traj.state_struct["vel_des"][1]
-                message.velocity.z = self.current_traj.state_struct["vel_des"][2]
-                message.acceleration.x = self.current_traj.state_struct["acc_des"][0]
-                message.acceleration.y = self.current_traj.state_struct["acc_des"][1]
-                message.acceleration.z = self.current_traj.state_struct["acc_des"][2]
-                message.jerk.x = self.current_traj.state_struct["jrk_des"][0]
-                message.jerk.y = self.current_traj.state_struct["jrk_des"][1]
-                message.jerk.z = self.current_traj.state_struct["jrk_des"][2]
-                #print(type(self.current_traj.state_struct["quat_des"][0]))
-                message.quaternion.w = self.current_traj.state_struct["quat_des"][0]
-                message.quaternion.x = self.current_traj.state_struct["quat_des"][1]
-                message.quaternion.y = self.current_traj.state_struct["quat_des"][2]
-                message.quaternion.z = self.current_traj.state_struct["quat_des"][3]
-                message.angular_velocity.x = self.current_traj.state_struct["omega_des"][0]
-                message.angular_velocity.y = self.current_traj.state_struct["omega_des"][1]
-                message.angular_velocity.z = self.current_traj.state_struct["omega_des"][2]
-                # fig = plt.figure()
-                # ax = fig.ass_sub_plot(111, projection = '3d')
-                # ax.plot(message.position.x, message.position.y, message.position.z)
-                # plt.savefig("trajplot")
-                
-
-                self.des_traj_pub.publish(message)
 
 
 def main(args=None):

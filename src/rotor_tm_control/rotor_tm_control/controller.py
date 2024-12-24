@@ -324,7 +324,6 @@ class controller:
         m = params.mass
 
         e3 = np.array([[0],[0],[1]])
-
         Rot = ql["rot"]
         omega_asym = vec2asym(ql["omega"])
         Rot_des = utilslib.QuatToRot(quat_des)

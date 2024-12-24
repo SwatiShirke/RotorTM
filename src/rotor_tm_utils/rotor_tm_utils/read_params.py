@@ -40,6 +40,18 @@ class pl_params_class:
   inertia: list # payload inertia
   mesh_path: str # payload mesh file path for visualization 
 
+@dataclass
+class pl_nmpc_controller_class:
+    N : int   #prediction horizon
+    Tf : float  #time step size
+    pl_max_vel : list #max linear vel for payload
+    pl_min_vel : list #min linear vel for payload
+    pl_max_omega : list #max angular vel for payload (RPY)
+    pl_min_omega : list #min angular vel for payload
+    dist_r : float #min distance between any 2 quadrotors
+    dist_OL: float #min distance between a objetc and a payload
+    dist_Or : float #min distance between a object and a quadrotor
+
 class read_params:
   def __init__(self,):
     print("Initilizing the read_params")
@@ -259,6 +271,13 @@ class read_params:
     params.minF = params.num_props * params.motor_coefficients * params.min_rpm**2
     self.uav_params = params
     return params
+
+
+  def read_pl_nmpc_params(self, path):
+    params_dict = self.yaml_to_dict(path)
+    params = self.dict_to_class(pl_nmpc_controller_class, pl_nmpc_controller_class, params_dict)
+    return params
+
 
 if __name__ == '__main__':
   uav_params_path = 'config/uav_params/snapdragonfly.yaml'
