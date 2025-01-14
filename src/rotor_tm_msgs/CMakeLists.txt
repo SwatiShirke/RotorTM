@@ -30,6 +30,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/StatusData.msg"
   "msg/TRPYCommand.msg"
   "msg/TrajCommand.msg" 
+  "msg/FMNCommand.msg"
   
   "srv/Vec4.srv"
   "srv/Circle.srv"

@@ -1,0 +1,2 @@
+[console_scripts]
+keyboard_input = rotor_tm_keyboard2wrench.keyboard2wrench:main

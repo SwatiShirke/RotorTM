@@ -80,7 +80,7 @@ int main()
   
     x_current[0] = 0;
     x_current[1] = 0;
-    x_current[2] = 10;
+    x_current[2] = 0;
     x_current[3] = 0;
     x_current[4] = 0;
     x_current[5] = 0;
@@ -129,6 +129,7 @@ int main()
     p[18] = 0;
     p[19] = 0;
     p[20] = 0;
+    p[21] = 0;
 
     payload_model_acados_sim_update_params(capsule, p, NP);
   

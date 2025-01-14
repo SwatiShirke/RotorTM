@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'ros_pynmpc_node = payload_control.ros_controller:main'
         ],
     },
 )

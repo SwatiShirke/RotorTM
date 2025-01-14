@@ -35,14 +35,15 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fopenmp -O3")
 
-# Set the acados source path
-#set(acados_path "$ENV{ACADOS_SOURCE_DIR}")
-#set(acados_lib "${acados_path}/lib") 
+# Set the acados source path from bashrc
+#set(acados_path $ENV{ACADOS_SOURCE_DIR})
 set(acados_path "/home/swati/acados")
-set(acados_lib "/home/swati/acados/lib")
+set(acados_lib ${acados_path}/lib) 
 
-#set(acados_generated_code "${PROJECT_SOURCE_DIR}/c_generated_code")
-set(acados_generated_code "rotor_tm_plcontrol/scripts/c_generated_code")
+
+#set acados c code path
+set(acados_generated_code "scripts/c_generated_code")
+
 
 set(dependencies
   rclcpp
@@ -58,42 +59,65 @@ set(dependencies
   rclcpp_components
 )
 
-include_directories("include",
-  "${EIGEN3_INCLUDE_DIR}",
-  "${acados_generated_code}",
-  "${acados_path}/interfaces",
-  "${acados_path}/acados",
-  "${acados_path}/acados/utils",
-  "${acados_path}",
-  "${acados_path}/external",
-  "${acados_path}/external/blasfeo/include",
-  "${acados_path}/external/hpipm/include"
+include_directories(
+  "include"
+  ${EIGEN3_INCLUDE_DIR}
+  ${acados_generated_code}
+  ${acados_path}
+  ${acados_path}/interfaces
+  ${acados_path}/acados
+  ${acados_path}/acados/utils
+  ${acados_path}/external
+  ${acados_path}/external/blasfeo/include
+  ${acados_path}/external/hpipm/include
 )
-
 
 link_directories(${acados_generated_code})
 add_library(pl_nmpc_shared_lib SHARED src/pl_nmpc_controller_node.cpp src/wrapper.cpp src/nmpc_control.cpp)
 set_target_properties(pl_nmpc_shared_lib PROPERTIES COMPILE_DEFINITIONS "COMPOSITION_BUILDING_DLL")
-
-add_executable(pl_controller src/pl_nmpc_controller_node.cpp)
 ament_target_dependencies(pl_nmpc_shared_lib rclcpp rotor_tm_msgs ${dependencies})
 
+#include .so files
+install( FILES scripts/c_generated_code/libacados_ocp_solver_payload_model.so 
+DESTINATION lib
+)
+
+
 target_link_libraries(pl_nmpc_shared_lib
-  ${YAML_CPP_LIBRARIES}
   libacados_ocp_solver_payload_model.so
+  ${YAML_CPP_LIBRARIES}  
   ${acados_lib}/libacados.so
 )  
-rclcpp_components_register_nodes(pl_nmpc_shared_lib "nmpc_control_nodelet::NMPCControlNodelet")
+
+#rclcpp_components_register_nodes(pl_nmpc_shared_lib "nmpc_control_nodelet::NMPCControlNodelet")
 ament_export_libraries(pl_nmpc_shared_lib)
 ament_export_dependencies(${dependencies})
 
-install(TARGETS
-  
+
+add_executable(pl_nmpc_node src/pl_nmpc_controller_node.cpp)
+ament_target_dependencies(pl_nmpc_node ${dependencies})
+
+target_link_libraries(pl_nmpc_node pl_nmpc_shared_lib)
+
+# Install targets
+install(TARGETS  
+  pl_nmpc_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install( TARGETS
   pl_nmpc_shared_lib
-  ARCHIVE DESTINATION lib
+  ARCHIVE DESTINATION lib/${PROJECT_NAME}
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
-  DESTINATION lib/${PROJECT_NAME})
+
+)
+
+# Install include directory
+install(DIRECTORY include/
+  DESTINATION include/
+)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -107,6 +131,5 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(DIRECTORY launch/ DESTINATION share/${PROJECT_NAME}/launch/)
-
+#install(DIRECTORY launch/ DESTINATION share/${PROJECT_NAME}/launch/)
 ament_package()

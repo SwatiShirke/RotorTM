@@ -4,8 +4,8 @@ namespace nmpc_control_nodelet
 {
 
 NMPCControl::NMPCControl()
-  : current_state_(Eigen::Matrix<double, kStateSize, 1>::Zeros()),
-    reference_states_(Eigen::Matrix<double, kStateSize, kSamples>::Zeros()),
+  : current_state_(Eigen::Matrix<double, kStateSize, 1>::Zero()),
+    reference_states_(Eigen::Matrix<double, kStateSize, kSamples>::Zero()),
     reference_inputs_(Eigen::Matrix<double, kInputSize, kSamples>::Zero()),
     predicted_states_(Eigen::Matrix<double, kStateSize, kSamples>::Zero()),
     predicted_inputs_(Eigen::Matrix<double, kInputSize, kSamples>::Zero()),

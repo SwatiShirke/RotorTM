@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from rotor_tm_msgs/srv/Circle.srv
+// generated code does not contain a copyright notice
+
+
+module rotor_tm_msgs {
+  module srv {
+    struct Circle_Request {
+      float radius;
+
+      float tp;
+
+      float duration;
+    };
+    struct Circle_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

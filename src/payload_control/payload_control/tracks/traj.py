@@ -13,7 +13,7 @@ def generate_length_parameterized_trajectory(start_pos, end_pos, duration, dt, f
     filename  : str - Output file to save the trajectory (default is length_trajectory.txt)
     """
     
-    # Time array (same as before)
+    # Time array
     t = np.arange(0, duration + dt, dt)  
     n = len(t)
 
@@ -36,23 +36,14 @@ def generate_length_parameterized_trajectory(start_pos, end_pos, duration, dt, f
         # Time instant
         ti = t[i]
 
-        # Position (cubic polynomial) - fixing z as constant
-        positions[i, 0] = a0[0] + a1[0] * ti + a2[0] * ti**2 + a3[0] * ti**3  # x
-        positions[i, 1] = a0[1] + a1[1] * ti + a2[1] * ti**2 + a3[1] * ti**3  # y
-        positions[i, 2] = start_z  # constant z
-        positions[i, 3] = a0[3] + a1[3] * ti + a2[3] * ti**2 + a3[3] * ti**3  # yaw
+        # Position (cubic polynomial)
+        positions[i, :] = a0 + a1 * ti + a2 * ti**2 + a3 * ti**3
 
         # Velocity (derivative of position)
-        velocities[i, 0] = a1[0] + 2 * a2[0] * ti + 3 * a3[0] * ti**2  # vx
-        velocities[i, 1] = a1[1] + 2 * a2[1] * ti + 3 * a3[1] * ti**2  # vy
-        velocities[i, 2] = 0  # constant vz = 0 since z is fixed
-        velocities[i, 3] = a1[3] + 2 * a2[3] * ti + 3 * a3[3] * ti**2  # yaw_rate
+        velocities[i, :] = a1 + 2 * a2 * ti + 3 * a3 * ti**2
 
         # Acceleration (derivative of velocity)
-        accelerations[i, 0] = 2 * a2[0] + 6 * a3[0] * ti  # ax
-        accelerations[i, 1] = 2 * a2[1] + 6 * a3[1] * ti  # ay
-        accelerations[i, 2] = 0  # constant az = 0 since z is fixed
-        accelerations[i, 3] = 2 * a2[3] + 6 * a3[3] * ti  # yaw_acc
+        accelerations[i, :] = 2 * a2 + 6 * a3 * ti
 
     # Extract yaw and yaw rate
     yaw = positions[:, 3]
@@ -66,9 +57,9 @@ def generate_length_parameterized_trajectory(start_pos, end_pos, duration, dt, f
     # Now, we have a length-parameterized trajectory
     trajectory_data = np.column_stack((
         cumulative_length,              # Length
-        positions[:, :3],               # x, y, z (z is constant)
-        velocities[:, :3],              # vx, vy, vz (vz is constant)
-        accelerations[:, :3],           # ax, ay, az (az is constant)
+        positions[:, :3],               # x, y, z
+        velocities[:, :3],              # vx, vy, vz
+        accelerations[:, :3],           # ax, ay, az
         yaw,                            # Yaw angle
         yaw_rate                        # Yaw rate
     ))
@@ -77,8 +68,8 @@ def generate_length_parameterized_trajectory(start_pos, end_pos, duration, dt, f
     np.savetxt(filename, trajectory_data, fmt='%.6f', delimiter=' ')
 
 # Example Usage
-start_pos = [0, 0, 10, 0]  # [x, y, z, yaw]
-end_pos = [5, 5, 10, np.pi/4]  # [x, y, z, yaw]
+start_pos = [0, 0, 0, 0]  # [x, y, z, yaw]
+end_pos = [3, 3, 4, np.pi/4]  # [x, y, z, yaw]
 duration = 10  # seconds
 dt = 0.1  # time step
 

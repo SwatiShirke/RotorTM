@@ -9,7 +9,7 @@ solver_output acados_out;
 NMPCWrapper::NMPCWrapper()
 {
 // create solver capsule 
-acados_ocp_capsule = payload_model_acados_create_capsule()
+acados_ocp_capsule = payload_model_acados_create_capsule();
 new_time_steps = NULL;
 status = payload_model_acados_create_with_discretization(acados_ocp_capsule, N, new_time_steps); //capsule, N steps, new time step
 
@@ -48,7 +48,7 @@ acados_reference_end_state_.segment(0, kStateSize) = hover_state.template cast<d
 }
 
 
-NMPCWrapper::initStates()
+void NMPCWrapper::initStates()
 {
 Eigen::Matrix<double, kStateSize, 1> hover_state(Eigen::Matrix<double, kStateSize, 1>::Zero());
   hover_state(6) = 1.0;
@@ -110,11 +110,11 @@ bool NMPCWrapper::update(const Eigen::Ref<const Eigen::Matrix<double, kStateSize
   // loop over horizon and assign to each shooting node a segment of the acados_in.yref
   for (int i = 0; i < N; i++) {
       // sends pointer to element yref[i*NY]
-      quadrotor_acados_update_params(acados_ocp_capsule, i, acados_in.yref + i * yRefSize, NP);
+      payload_model_acados_update_params(acados_ocp_capsule, i, acados_in.yref + i * yRefSize, NP);
        }
-    quadrotor_acados_update_params(acados_ocp_capsule, N, acados_in.yref_e, yRefSize);
+    payload_model_acados_update_params(acados_ocp_capsule, N, acados_in.yref_e, yRefSize);
 
-  acados_status = quadrotor_acados_solve(acados_ocp_capsule);
+  acados_status = payload_model_acados_solve(acados_ocp_capsule);
 
   // getting solved states from acados
   for (int ii = 0; ii <= nlp_dims->N; ii++)

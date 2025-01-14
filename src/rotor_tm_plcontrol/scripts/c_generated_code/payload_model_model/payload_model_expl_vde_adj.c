@@ -33,7 +33,6 @@ extern "C" {
 #define casadi_s0 CASADI_PREFIX(s0)
 #define casadi_s1 CASADI_PREFIX(s1)
 #define casadi_s2 CASADI_PREFIX(s2)
-#define casadi_s3 CASADI_PREFIX(s3)
 #define casadi_sq CASADI_PREFIX(sq)
 
 /* Symbol visibility in DLLs */
@@ -55,46 +54,51 @@ casadi_real casadi_sq(casadi_real x) { return x*x;}
 
 static const casadi_int casadi_s0[17] = {13, 1, 0, 13, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 static const casadi_int casadi_s1[13] = {9, 1, 0, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8};
-static const casadi_int casadi_s2[25] = {21, 1, 0, 21, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
-static const casadi_int casadi_s3[26] = {22, 1, 0, 22, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
+static const casadi_int casadi_s2[26] = {22, 1, 0, 22, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
 
-/* payload_model_expl_vde_adj:(i0[13],i1[13],i2[9],i3[21])->(o0[22]) */
+/* payload_model_expl_vde_adj:(i0[13],i1[13],i2[9],i3[22])->(o0[22]) */
 static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem) {
   casadi_real a0, a1, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a2, a20, a21, a22, a3, a4, a5, a6, a7, a8, a9;
   a0=0.;
   if (res[0]!=0) res[0][0]=a0;
   if (res[0]!=0) res[0][1]=a0;
   if (res[0]!=0) res[0][2]=a0;
+  a1=arg[1]? arg[1][0] : 0;
+  if (res[0]!=0) res[0][3]=a1;
+  a1=arg[1]? arg[1][1] : 0;
+  if (res[0]!=0) res[0][4]=a1;
+  a1=arg[1]? arg[1][2] : 0;
+  if (res[0]!=0) res[0][5]=a1;
   a1=arg[0]? arg[0][12] : 0;
   a2=5.0000000000000000e-01;
-  a3=arg[1]? arg[1][6] : 0;
+  a3=arg[1]? arg[1][9] : 0;
   a4=(a2*a3);
   a5=(a1*a4);
   a6=arg[0]? arg[0][11] : 0;
-  a7=arg[1]? arg[1][5] : 0;
+  a7=arg[1]? arg[1][8] : 0;
   a8=(a2*a7);
   a9=(a6*a8);
   a5=(a5+a9);
   a9=arg[0]? arg[0][10] : 0;
-  a10=arg[1]? arg[1][4] : 0;
+  a10=arg[1]? arg[1][7] : 0;
   a11=(a2*a10);
   a12=(a9*a11);
   a5=(a5+a12);
   a12=1.;
-  a13=arg[0]? arg[0][3] : 0;
+  a13=arg[0]? arg[0][6] : 0;
   a14=casadi_sq(a13);
-  a15=arg[0]? arg[0][4] : 0;
+  a15=arg[0]? arg[0][7] : 0;
   a16=casadi_sq(a15);
   a14=(a14+a16);
-  a16=arg[0]? arg[0][5] : 0;
+  a16=arg[0]? arg[0][8] : 0;
   a17=casadi_sq(a16);
   a14=(a14+a17);
-  a17=arg[0]? arg[0][6] : 0;
+  a17=arg[0]? arg[0][9] : 0;
   a18=casadi_sq(a17);
   a14=(a14+a18);
   a12=(a12-a14);
   a14=2.;
-  a18=arg[1]? arg[1][3] : 0;
+  a18=arg[1]? arg[1][6] : 0;
   a19=(a14*a18);
   a20=(a12*a19);
   a5=(a5+a20);
@@ -111,7 +115,7 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   a21=(a21+a19);
   a20=(a20*a21);
   a5=(a5-a20);
-  if (res[0]!=0) res[0][3]=a5;
+  if (res[0]!=0) res[0][6]=a5;
   a5=(a6*a4);
   a20=(a1*a8);
   a5=(a5-a20);
@@ -123,7 +127,7 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   a18=(a15+a15);
   a18=(a18*a21);
   a5=(a5-a18);
-  if (res[0]!=0) res[0][4]=a5;
+  if (res[0]!=0) res[0][7]=a5;
   a7=(a12*a7);
   a5=(a9*a4);
   a7=(a7-a5);
@@ -134,7 +138,7 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   a5=(a16+a16);
   a5=(a5*a21);
   a7=(a7-a5);
-  if (res[0]!=0) res[0][5]=a7;
+  if (res[0]!=0) res[0][8]=a7;
   a12=(a12*a3);
   a3=(a9*a8);
   a12=(a12+a3);
@@ -145,12 +149,6 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   a3=(a17+a17);
   a3=(a3*a21);
   a12=(a12-a3);
-  if (res[0]!=0) res[0][6]=a12;
-  a12=arg[1]? arg[1][0] : 0;
-  if (res[0]!=0) res[0][7]=a12;
-  a12=arg[1]? arg[1][1] : 0;
-  if (res[0]!=0) res[0][8]=a12;
-  a12=arg[1]? arg[1][2] : 0;
   if (res[0]!=0) res[0][9]=a12;
   a12=1.2459788459999999e-02;
   a3=(a12*a1);
@@ -217,13 +215,13 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   a14=(a14-a17);
   if (res[0]!=0) res[0][12]=a14;
   a14=3.5971223021582732e+00;
-  a17=arg[1]? arg[1][7] : 0;
+  a17=arg[1]? arg[1][3] : 0;
   a17=(a14*a17);
   if (res[0]!=0) res[0][13]=a17;
-  a17=arg[1]? arg[1][8] : 0;
+  a17=arg[1]? arg[1][4] : 0;
   a17=(a14*a17);
   if (res[0]!=0) res[0][14]=a17;
-  a17=arg[1]? arg[1][9] : 0;
+  a17=arg[1]? arg[1][5] : 0;
   a14=(a14*a17);
   if (res[0]!=0) res[0][15]=a14;
   if (res[0]!=0) res[0][16]=a21;
@@ -302,7 +300,7 @@ CASADI_SYMBOL_EXPORT const casadi_int* payload_model_expl_vde_adj_sparsity_in(ca
 
 CASADI_SYMBOL_EXPORT const casadi_int* payload_model_expl_vde_adj_sparsity_out(casadi_int i) {
   switch (i) {
-    case 0: return casadi_s3;
+    case 0: return casadi_s2;
     default: return 0;
   }
 }

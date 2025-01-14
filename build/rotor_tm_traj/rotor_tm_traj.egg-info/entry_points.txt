@@ -1,0 +1,2 @@
+[console_scripts]
+traj_node = rotor_tm_traj.traj_node:main

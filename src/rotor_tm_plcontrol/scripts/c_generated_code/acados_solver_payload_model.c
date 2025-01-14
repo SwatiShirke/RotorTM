@@ -490,8 +490,6 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lbx0 = lubx0;
     double* ubx0 = lubx0 + NBX0;
     // change only the non-zero elements:
-    lbx0[2] = 10;
-    ubx0[2] = 10;
 
     ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, 0, "idxbx", idxbx0);
     ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, 0, "lbx", lbx0);
@@ -538,9 +536,11 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lbu = lubu;
     double* ubu = lubu + NBU;
     
-    ubu[0] = 20;
-    ubu[1] = 20;
-    ubu[2] = 20;
+    lbu[0] = -5;
+    ubu[0] = 5;
+    lbu[1] = -5;
+    ubu[1] = 5;
+    ubu[2] = 5;
     lbu[3] = -10;
     ubu[3] = 10;
     lbu[4] = -10;
@@ -567,12 +567,12 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     // x
     int* idxbx = malloc(NBX * sizeof(int));
     
-    idxbx[0] = 6;
-    idxbx[1] = 7;
-    idxbx[2] = 8;
-    idxbx[3] = 9;
-    idxbx[4] = 10;
-    idxbx[5] = 11;
+    idxbx[0] = 3;
+    idxbx[1] = 4;
+    idxbx[2] = 5;
+    idxbx[3] = 10;
+    idxbx[4] = 11;
+    idxbx[5] = 12;
     double* lubx = calloc(2*NBX, sizeof(double));
     double* lbx = lubx;
     double* ubx = lubx + NBX;
@@ -750,7 +750,6 @@ void payload_model_acados_set_nlp_out(payload_model_solver_capsule* capsule)
 
     // initialize with x0
     
-    x0[2] = 10;
 
 
     double* u0 = xu0 + NX;
@@ -911,7 +910,7 @@ int payload_model_acados_update_params(payload_model_solver_capsule* capsule, in
 {
     int solver_status = 0;
 
-    int casadi_np = 21;
+    int casadi_np = 22;
     if (casadi_np != np) {
         printf("acados_update_params: trying to set %i parameters for external functions."
             " External function has %i parameters. Exiting.\n", np, casadi_np);

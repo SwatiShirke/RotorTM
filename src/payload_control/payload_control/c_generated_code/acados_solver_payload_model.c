@@ -39,7 +39,6 @@
 
 // example specific
 #include "payload_model_model/payload_model_model.h"
-#include "payload_model_constraints/payload_model_constraints.h"
 #include "payload_model_cost/payload_model_cost.h"
 
 
@@ -319,22 +318,6 @@ void payload_model_acados_create_setup_functions(payload_model_solver_capsule* c
         capsule->__CAPSULE_FNC__.casadi_work = & __MODEL_BASE_FNC__ ## _work; \
         external_function_external_param_casadi_create(&capsule->__CAPSULE_FNC__ ); \
     } while(false)
-    // constraints.constr_type == "BGH" and dims.nh > 0
-    capsule->nl_constr_h_fun_jac = (external_function_external_param_casadi *) malloc(sizeof(external_function_external_param_casadi)*(N-1));
-    for (int i = 0; i < N-1; i++) {
-        MAP_CASADI_FNC(nl_constr_h_fun_jac[i], payload_model_constr_h_fun_jac_uxt_zt);
-    }
-    capsule->nl_constr_h_fun = (external_function_external_param_casadi *) malloc(sizeof(external_function_external_param_casadi)*(N-1));
-    for (int i = 0; i < N-1; i++) {
-        MAP_CASADI_FNC(nl_constr_h_fun[i], payload_model_constr_h_fun);
-    }
-    
-    capsule->nl_constr_h_fun_jac_hess = (external_function_external_param_casadi *) malloc(sizeof(external_function_external_param_casadi)*(N-1));
-    for (int i = 0; i < N-1; i++) {
-        MAP_CASADI_FNC(nl_constr_h_fun_jac_hess[i], payload_model_constr_h_fun_jac_uxt_zt_hess);
-    }
-    
-
     // external cost
     MAP_CASADI_FNC(ext_cost_0_fun, payload_model_cost_ext_cost_0_fun);
     MAP_CASADI_FNC(ext_cost_0_fun_jac, payload_model_cost_ext_cost_0_fun_jac);
@@ -507,8 +490,6 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lbx0 = lubx0;
     double* ubx0 = lubx0 + NBX0;
     // change only the non-zero elements:
-    lbx0[2] = 10;
-    ubx0[2] = 10;
 
     ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, 0, "idxbx", idxbx0);
     ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, 0, "lbx", lbx0);
@@ -555,7 +536,9 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lbu = lubu;
     double* ubu = lubu + NBU;
     
+    lbu[0] = -10;
     ubu[0] = 20;
+    lbu[1] = -10;
     ubu[1] = 20;
     ubu[2] = 20;
     lbu[3] = -10;
@@ -584,12 +567,12 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     // x
     int* idxbx = malloc(NBX * sizeof(int));
     
-    idxbx[0] = 6;
-    idxbx[1] = 7;
-    idxbx[2] = 8;
-    idxbx[3] = 9;
-    idxbx[4] = 10;
-    idxbx[5] = 11;
+    idxbx[0] = 3;
+    idxbx[1] = 4;
+    idxbx[2] = 5;
+    idxbx[3] = 10;
+    idxbx[4] = 11;
+    idxbx[5] = 12;
     double* lubx = calloc(2*NBX, sizeof(double));
     double* lbx = lubx;
     double* ubx = lubx + NBX;
@@ -619,30 +602,6 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
 
 
 
-    // set up nonlinear constraints for stage 1 to N-1
-    double* luh = calloc(2*NH, sizeof(double));
-    double* lh = luh;
-    double* uh = luh + NH;
-
-    
-
-    
-    uh[0] = 1;
-
-    for (int i = 1; i < N; i++)
-    {
-        ocp_nlp_constraints_model_set_external_param_fun(nlp_config, nlp_dims, nlp_in, i, "nl_constr_h_fun_jac",
-                                      &capsule->nl_constr_h_fun_jac[i-1]);
-        ocp_nlp_constraints_model_set_external_param_fun(nlp_config, nlp_dims, nlp_in, i, "nl_constr_h_fun",
-                                      &capsule->nl_constr_h_fun[i-1]);
-        
-        ocp_nlp_constraints_model_set_external_param_fun(nlp_config, nlp_dims, nlp_in, i,
-                                      "nl_constr_h_fun_jac_hess", &capsule->nl_constr_h_fun_jac_hess[i-1]);
-        
-        ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, i, "lh", lh);
-        ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, i, "uh", uh);
-    }
-    free(luh);
 
 
 
@@ -791,7 +750,6 @@ void payload_model_acados_set_nlp_out(payload_model_solver_capsule* capsule)
 
     // initialize with x0
     
-    x0[2] = 10;
 
 
     double* u0 = xu0 + NX;
@@ -952,7 +910,7 @@ int payload_model_acados_update_params(payload_model_solver_capsule* capsule, in
 {
     int solver_status = 0;
 
-    int casadi_np = 21;
+    int casadi_np = 22;
     if (casadi_np != np) {
         printf("acados_update_params: trying to set %i parameters for external functions."
             " External function has %i parameters. Exiting.\n", np, casadi_np);
@@ -1044,15 +1002,6 @@ int payload_model_acados_free(payload_model_solver_capsule* capsule)
     
 
     // constraints
-    for (int i = 0; i < N-1; i++)
-    {
-        external_function_external_param_casadi_free(&capsule->nl_constr_h_fun_jac[i]);
-        external_function_external_param_casadi_free(&capsule->nl_constr_h_fun[i]);
-        external_function_external_param_casadi_free(&capsule->nl_constr_h_fun_jac_hess[i]);
-    }
-    free(capsule->nl_constr_h_fun_jac);
-    free(capsule->nl_constr_h_fun);
-    free(capsule->nl_constr_h_fun_jac_hess);
 
     return 0;
 }

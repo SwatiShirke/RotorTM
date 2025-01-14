@@ -5,12 +5,9 @@ from payload_model import payload_model
 from rotor_tm_utils import QuatToYPR
 from rotor_tm_utils import read_params
 import sys
-from cost_functions import cal_square_cost
+from cost_functions import cal_square_cost, calc_quat_cost
 import ipdb
 from constraints import get_constraints
-
-
-
 def controller_setup(control_params,  payload_params):
     #read yaml files
     # pay_load_param_path = sys.argv[1]
@@ -30,11 +27,11 @@ def controller_setup(control_params,  payload_params):
     model = payload_model(payload_params)
     ocp.model = model
     ocp.dims.np = ocp.model.p.size()[0]
-    ocp.parameter_values = np.zeros(21)
+    ocp.parameter_values = np.zeros(ocp.dims.np)
     nx = model.x.rows()
     nu = model.u.rows()
     ny = nx + nu
-    unscale = N/Tf
+    unscale = N/Tf 
 
     ##cost functions and references
     #turing matrices Q, R and Qe
@@ -42,64 +39,72 @@ def controller_setup(control_params,  payload_params):
     #system states = pos, quaternions, linear vel, angular vel (13 x 1)
     #to handle mimatch between refence and model state, we convert quaternions to ypr and formulating new state vector
     #using new state vector for cost calculations
-    Q_mat =  ca.vertcat(500,500,500, 1e-4, 1e-4, 100,   10, 10, 10,   1e-4, 1e-4, 1)
-    R_mat =  ca.vertcat(1e-2, 1e-2, 1, 1e-2, 1e-2, 1e-2, 1e-2, 1e-2, 1e-2)
-    Q_emat = ca.vertcat(2000,2000,2000,  1e-4, 1e-4, 100,  100,100,100,  1e-4, 1e-4, 1)
+    Q_mat =  ca.vertcat(100, 100, 100, 100, 100, 100, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1e-4)
+    R_mat =  ca.vertcat(1000, 1000, 1000, 1000, 1000, 1000, 1e-2, 1e-2, 1e-2)
+    Q_emat = ca.vertcat(1000, 1000, 1000, 1000, 1000, 1000, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4)
 
     #ipdb.set_trace()
     #path cost
-    x_val = model.x
-    quat = x_val[3:7]  
-    y,p,r = QuatToYPR.QuatToYPR(quat)
-    x_array = ca.vertcat(x_val[0:3],r,p,y, x_val[7:10], x_val[10:13] )
+    # x_val = model.x
+    # quat = x_val[3:7]  
+    # y,p,r = QuatToYPR.QuatToYPR(quat) 
+    # x_array = ca.vertcat(x_val[0:3],r,p,y, x_val[7:10], x_val[10:13] )
+    x_array = model.x
     u_aaray = model.u
     ref_array = model.p
     #print(ref_array)
 
     #calculate square cost    
     ocp.cost.cost_type = 'EXTERNAL'  
-    #ocp.cost.yref = np.zeros(ny-1)
     pos_err = cal_square_cost(x_array[0:3], ref_array[0:3], Q_mat[0:3])
-    rpy_err = cal_square_cost(x_array[3:6], ref_array[3:6], Q_mat[3:6])
-    vel_err = cal_square_cost(x_array[6:9], ref_array[6:9], Q_mat[6:9])
-    input_err = cal_square_cost(u_aaray, ref_array[12:21], R_mat)
-    #ipdb.set_trace()
-    ocp.model.cost_expr_ext_cost = pos_err + rpy_err + vel_err + input_err 
-    ocp.model.cost_expr_ext_cost_0 = pos_err + rpy_err + vel_err + input_err 
-    #ocp.cost.W = unscale * ca.diagcat(Q_mat, R_mat).full()
+    vel_err = cal_square_cost(x_array[3:6], ref_array[3:6], Q_mat[3:6])
+    quat_error = calc_quat_cost(x_array[6:10], ref_array[6:10], Q_mat[6:9])    
+    input_err = cal_square_cost(u_aaray, ref_array[13:22], R_mat)
+    ocp.model.cost_expr_ext_cost = pos_err + vel_err + quat_error + input_err 
+    ocp.model.cost_expr_ext_cost_0 = pos_err + vel_err + quat_error + input_err 
+    
 
     #terminal cost
     ocp.cost.cost_type_e = 'EXTERNAL'
-    #ocp.cost.yref_e = np.zeros(nx-1)
     pos_err = cal_square_cost(x_array[0:3], ref_array[0:3], Q_emat[0:3])
-    rpy_err = cal_square_cost(x_array[3:6], ref_array[3:6], Q_emat[3:6])
-    vel_err = cal_square_cost(x_array[6:9], ref_array[6:9], Q_emat[6:9])   
-    ocp.model.cost_expr_ext_cost_e = pos_err + rpy_err + vel_err
-    #ocp.cost.W_e = unscale * Q_emat
-
+    vel_err = cal_square_cost(x_array[3:6], ref_array[3:6], Q_emat[3:6])
+    quat_error = calc_quat_cost(x_array[6:10], ref_array[6:10], Q_emat[6:9])        
+    ocp.model.cost_expr_ext_cost_e = pos_err + vel_err + quat_error
+    
     ##constraints
-    #input constraints
-    mg = 0.250*9.81
-    ocp.constraints.lbu = np.array([0,0,0, -10,-10,-10])
-    ocp.constraints.ubu = np.array([20,20,20,10,10,10])
+    #input constraints    
+    ocp.constraints.lbu = np.array([-5,-5,0,  -10, -10, -10])
+    ocp.constraints.ubu = np.array([5,5,5,  10,10,10])
     ocp.constraints.idxbu = np.array([0,1,2,3,4,5])
     
     #initial state contraints
-    ocp.constraints.x0 = np.array([0.0, 0, 10,     0, 0,  0, 0,    0, 0, 0,  0, 0, 0 ] )
+    ocp.constraints.x0 = np.array([0.0, 0, 0,  0, 0, 0,  0, 0,  0, 0,  0, 0, 0 ])
 
     #lower and upper bound constraints on states - velocity and angular velocities
     ocp.constraints.lbx = np.array([pl_min_vel, pl_min_omega]).flatten()
     ocp.constraints.ubx = np.array([pl_max_vel, pl_max_omega]).flatten()
-    ocp.constraints.idxbx = np.array([ 6,7,8,9,10,11])
+    ocp.constraints.idxbx = np.array([ 3,4,5, 10,11,12])
 
     # ##inequlity constraints
     # u = model.u
     # h_list = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
     # ocp.model.con_h_expr =h_list
     # ocp.dims.nh = h_list.shape[0]
-    # ocp.constraints.lh = -100000000 * np.zeros((h_list.size1(), 1))          # lower bound is 0 (h(x) >= 0)
-    # ocp.constraints.uh = 100000000 * np.ones((h_list.size1(), 1))           # Upper bound is inf
+    # ocp.constraints.lh = np.zeros((h_list.size1(), 1))          # lower bound
+    # ocp.constraints.uh = 1 * np.ones((h_list.size1(), 1))            # Upper bound 
+    # ocp.model.lh = np.zeros((h_list.size1(), 1))          # lower bound
+    # ocp.model.uh = 1 * np.ones((h_list.size1(), 1))  
     
+    # print(ocp.constraints.lbu.shape)
+    # print(ocp.constraints.lbx.shape)
+    # print(ocp.constraints.lg.shape)
+    # print(ocp.constraints.lh.shape)
+    # print(ocp.constraints.lphi.shape)
+    # print(ocp.constraints.ubu.shape)
+    # print(ocp.constraints.ubx.shape)
+    # print(ocp.constraints.ug.shape)
+    # print(ocp.constraints.uh.shape)
+    # ipdb.set_trace() 
 
     ##controller settings
     ocp.solver_options.N_horizon = N
@@ -116,10 +121,11 @@ def controller_setup(control_params,  payload_params):
     solver_json = 'acados_ocp_' + model.name + '.json'
     acados_solver = AcadosOcpSolver(ocp, json_file = solver_json)
     acados_integrator = AcadosSimSolver(ocp, json_file = solver_json)
-    #acados_solver.generate_c_code()
 
     return model, acados_solver, acados_integrator
 
+
+ 
 if __name__ == '__main__':
     nmpc_filename = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/payload_nmpc_params.yaml"
     #pl_filename = '/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/triangular_payload.yaml' 
@@ -137,5 +143,4 @@ if __name__ == '__main__':
     
     model, acados_solver, acados_integrator = controller_setup(control_params, payload_params) 
 
- 
 

@@ -1,0 +1,2 @@
+[console_scripts]
+controller_node = rotor_tm_control.controller_node:main

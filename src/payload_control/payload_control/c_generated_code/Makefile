@@ -44,9 +44,6 @@ MODEL_OBJ := $(MODEL_SRC:.c=.o)
 
 # optimal control problem - mostly CasADi exports
 OCP_SRC=
-OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt.c
-OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun.c
-OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt_hess.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun_jac.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun_jac_hess.c
@@ -153,7 +150,7 @@ ocp_cython_c: ocp_shared_lib
 	-o acados_ocp_solver_pyx.c \
 	-I $(INCLUDE_PATH)/../interfaces/acados_template/acados_template \
 	$(INCLUDE_PATH)/../interfaces/acados_template/acados_template/acados_ocp_solver_pyx.pyx \
-	-I /home/swati/Quad_DR/ros2_ws/src/payload_control/payload_control/c_generated_code \
+	-I /home/swati/Quad_DR/RotorTM/src/payload_control/payload_control/c_generated_code \
 
 ocp_cython_o: ocp_cython_c
 	$(CC) $(ACADOS_FLAGS) -c -O2 \
@@ -180,7 +177,7 @@ sim_cython_c: sim_shared_lib
 	-o acados_sim_solver_pyx.c \
 	-I $(INCLUDE_PATH)/../interfaces/acados_template/acados_template \
 	$(INCLUDE_PATH)/../interfaces/acados_template/acados_template/acados_sim_solver_pyx.pyx \
-	-I /home/swati/Quad_DR/ros2_ws/src/payload_control/payload_control/c_generated_code \
+	-I /home/swati/Quad_DR/RotorTM/src/payload_control/payload_control/c_generated_code \
 
 sim_cython_o: sim_cython_c
 	$(CC) $(ACADOS_FLAGS) -c -O2 \

@@ -78,13 +78,19 @@ def payload_model(params):
 
     W = ca.vertcat(f1, f2, f3, m1, m2, m3, v1, v2, v3)
     
-    #state variables - pos, quaternions, linear and angular velocities
+    #state variables - pos, linear vel, quaternions and angular velocities
     #position 
     x_p = ca.SX.sym('x_p')
     y_p = ca.SX.sym('y_p')
     z_p = ca.SX.sym('z_p')
     x_1 = ca.vertcat(x_p, y_p, z_p)
     
+    #linear vel
+    vx = ca.SX.sym("vx")
+    vy = ca.SX.sym("vy")
+    vz = ca.SX.sym("vz")   
+    vel = ca.vertcat(vx,vy,vz)
+
     #angles quaternion 
     qw = ca.SX.sym('qw')
     qx = ca.SX.sym('qx')
@@ -92,18 +98,13 @@ def payload_model(params):
     qz = ca.SX.sym('qz')        
     quat = ca.vertcat(qw,qx, qy,qz)
 
-    vx = ca.SX.sym("vx")
-    vy = ca.SX.sym("vy")
-    vz = ca.SX.sym("vz")   
-    vel = ca.vertcat(vx,vy,vz)
-
     #angular velocity
     p = ca.SX.sym('p')
     q = ca.SX.sym('q',)
     r = ca.SX.sym('r')
     omega = ca.vertcat(p,q,r) 
 
-    x = ca.vertcat(x_1, quat, vel, omega)
+    x = ca.vertcat(x_1, vel, quat, omega)
 
     ##derivatives
     #position in Inertial frame
@@ -111,23 +112,26 @@ def payload_model(params):
     yp_dt = ca.SX.sym('yp_dt')
     zp_dt = ca.SX.sym('zp_dt')
     x1_dt = ca.vertcat(xp_dt, yp_dt, zp_dt)
+    
+    #linear velocity in Inertial frame 
+    vx_dt = ca.SX.sym('vx_dt')
+    vy_dt = ca.SX.sym('vy_dt')
+    vz_dt = ca.SX.sym('vz_dt')
+    vel_dt = ca.vertcat(vx_dt, vy_dt, vz_dt)
+
     ##angles in Inertial frame
     qw_dt = ca.SX.sym('qw_dt')
     qx_dt = ca.SX.sym('qx_dt')
     qy_dt = ca.SX.sym('qy_dt')
     qz_dt = ca.SX.sym('qz_dt')
     quat_dt = ca.vertcat(qw_dt, qx_dt, qy_dt, qz_dt)
-    #linear velocity in Inertial frame 
-    vx_dt = ca.SX.sym('vx_dt')
-    vy_dt = ca.SX.sym('vy_dt')
-    vz_dt = ca.SX.sym('vz_dt')
-    vel_dt = ca.vertcat(vx_dt, vy_dt, vz_dt)
+
     #angular velolcity in Payload frame
     p_dt = ca.SX.sym('p_dt')
     q_dt = ca.SX.sym('q_dt')
     r_dt = ca.SX.sym('r_dt')
     omega_dt = ca.vertcat(p_dt,q_dt,r_dt)
-    x_dot = ca.vertcat(x1_dt, quat_dt, vel_dt, omega_dt)
+    x_dot = ca.vertcat(x1_dt, vel_dt, quat_dt, omega_dt)
 
     ##refence input
     
@@ -147,13 +151,12 @@ def payload_model(params):
     #Inerttia and other forces     
     cc_forces = ca.cross(omega, ca.mtimes(I_load, omega))               #colaris and centripetel forces 
     f_expl = ca.vertcat(vel,
-                        quat_dt,
                         ca.mtimes(ca.inv(M_load) ,(F - m * g * e3)),
+                        quat_dt,
                         ca.mtimes(ca.inv(I_load), (M - cc_forces))
                         )
-    
-    
-    
+   
+ 
     model = AcadosModel()                
     model.name = model_name
     f_impl = x_dot - f_expl 
@@ -162,12 +165,11 @@ def payload_model(params):
     model.x = x
     model.xdot = x_dot
     model.u = W 
-    model.y = cc_forces
+    #model.y = cc_forces
     nx = model.x.rows()
     nu = model.u.rows()
-    reference_param = ca.SX.sym('references', (nx + nu -1), 1)
-    model.p = reference_param
-    
+    reference_param = ca.SX.sym('references', (nx + nu), 1)
+    model.p = reference_param    
     return model
 
    
