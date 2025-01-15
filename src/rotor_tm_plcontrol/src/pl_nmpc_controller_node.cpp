@@ -241,9 +241,8 @@ void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand
     reference_states = (Eigen::Matrix<double, kStateSize, 1>() << filt_reference_msg->points[0].position.x,
                                                                   filt_reference_msg->points[0].position.y,
                                                                   filt_reference_msg->points[0].position.z,
-                                                                  0, 0,
-                                                                  0, 0,
-                                                                  0.0, 0.0, 0.0,                                                                  
+                                                                  0, 0, 0,
+                                                                  1, 0, 0, 0,                                                                 
                                                                   0.0, 0.0, 0.0).finished().replicate(1, kSamples);
     
     

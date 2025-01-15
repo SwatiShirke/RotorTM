@@ -536,11 +536,11 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lbu = lubu;
     double* ubu = lubu + NBU;
     
-    lbu[0] = -5;
-    ubu[0] = 5;
-    lbu[1] = -5;
-    ubu[1] = 5;
-    ubu[2] = 5;
+    lbu[0] = -10;
+    ubu[0] = 10;
+    lbu[1] = -10;
+    ubu[1] = 10;
+    ubu[2] = 10;
     lbu[3] = -10;
     ubu[3] = 10;
     lbu[4] = -10;

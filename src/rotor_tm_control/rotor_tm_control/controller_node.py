@@ -355,6 +355,8 @@ class controller_node(Node):
         Force=  np.array([fmn_msg.rlink_thrust.x, fmn_msg.rlink_thrust.y, fmn_msg.rlink_thrust.z])
         Moment = np.array([fmn_msg.moments.x, fmn_msg.moments.y, fmn_msg.moments.z])
         Null_space_vec = np.array([fmn_msg.null_space_vec.x, fmn_msg.null_space_vec.y, fmn_msg.null_space_vec.z])
+        print("Force", Force)
+        print("Moment", Moment)
         # print("Force1 :", Force1)
         # Force = np.array([-0.1,-0.1,Force1[2]])
         # Moment = np.array([0.,0,0])

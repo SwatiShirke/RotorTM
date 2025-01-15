@@ -1655,7 +1655,7 @@ class simulation_base(Node):
               self.uav_M[2,0] = fm_command.moments.z
           elif self.pl_params.mechanism_type == 'Cable':
               if self.pl_params.payload_type == 'Rigid Body':
-                  print("uav thrust: ", fm_command.thrust)
+                  #print("uav thrust: ", fm_command.thrust)
                   self.uav_F[uav_id] = fm_command.thrust
                   self.uav_M[0,uav_id] = fm_command.moments.x
                   self.uav_M[1,uav_id] = fm_command.moments.y

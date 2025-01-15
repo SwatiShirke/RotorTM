@@ -10,7 +10,6 @@ setup.py
 ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/top_level.txt
 ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/zip-safe
 launch/controller_launcher.py
-launch/editable_launch copy.py
 launch/editable_launch.py
 launch/rotortm_single_controller_node.py
 launch/rviz.py
