@@ -1,0 +1,34 @@
+[1.181s] Invoking command in '/home/dhruv/RotorTM/src/payload_control': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/dhruv/RotorTM/build/payload_control/build install --record /home/dhruv/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data
+[1.343s] running egg_info
+[1.343s] writing ../../build/payload_control/payload_control.egg-info/PKG-INFO
+[1.343s] writing dependency_links to ../../build/payload_control/payload_control.egg-info/dependency_links.txt
+[1.343s] writing entry points to ../../build/payload_control/payload_control.egg-info/entry_points.txt
+[1.344s] writing requirements to ../../build/payload_control/payload_control.egg-info/requires.txt
+[1.344s] writing top-level names to ../../build/payload_control/payload_control.egg-info/top_level.txt
+[1.345s] reading manifest file '../../build/payload_control/payload_control.egg-info/SOURCES.txt'
+[1.345s] adding license file 'LICENSE'
+[1.345s] writing manifest file '../../build/payload_control/payload_control.egg-info/SOURCES.txt'
+[1.345s] running build
+[1.345s] running build_py
+[1.345s] copying payload_control/test_controller.py -> /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control
+[1.346s] copying payload_control/payload_controller.py -> /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control
+[1.346s] copying payload_control/constraints.py -> /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control
+[1.346s] copying payload_control/plotFcn.py -> /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control
+[1.346s] running install
+[1.346s] running install_lib
+[1.347s] copying /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control/test_controller.py -> /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control
+[1.347s] copying /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control/payload_controller.py -> /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control
+[1.347s] copying /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control/constraints.py -> /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control
+[1.347s] copying /home/dhruv/RotorTM/build/payload_control/build/lib/payload_control/plotFcn.py -> /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control
+[1.347s] byte-compiling /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control/test_controller.py to test_controller.cpython-310.pyc
+[1.348s] byte-compiling /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control/payload_controller.py to payload_controller.cpython-310.pyc
+[1.349s] byte-compiling /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control/constraints.py to constraints.cpython-310.pyc
+[1.349s] byte-compiling /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control/plotFcn.py to plotFcn.cpython-310.pyc
+[1.350s] running install_data
+[1.350s] running install_egg_info
+[1.351s] removing '/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control-0.0.0-py3.10.egg-info' (and everything under it)
+[1.352s] Copying ../../build/payload_control/payload_control.egg-info to /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control-0.0.0-py3.10.egg-info
+[1.352s] running install_scripts
+[1.366s] Installing ros_pynmpc_node script to /home/dhruv/RotorTM/install/payload_control/lib/payload_control
+[1.367s] writing list of installed files to '/home/dhruv/RotorTM/build/payload_control/install.log'
+[1.734s] Invoked command in '/home/dhruv/RotorTM/src/payload_control' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/dhruv/RotorTM/build/payload_control/build install --record /home/dhruv/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data

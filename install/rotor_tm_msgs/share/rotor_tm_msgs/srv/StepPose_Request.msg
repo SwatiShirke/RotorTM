@@ -1,4 +1,1 @@
-float32[3] position 
-float32 roll 
-float32 pitch 
-float32 yaw 
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_cmake/srv/StepPose_Request.msg

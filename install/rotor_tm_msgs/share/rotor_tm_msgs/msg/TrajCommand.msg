@@ -1,2 +1,1 @@
-std_msgs/Header header
-rotor_tm_msgs/PositionCommand[] points
+/home/dhruv/RotorTM/src/rotor_tm_msgs/msg/TrajCommand.msg

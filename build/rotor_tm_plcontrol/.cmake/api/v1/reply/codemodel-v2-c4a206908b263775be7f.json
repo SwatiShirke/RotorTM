@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-369f30c7f364e1a4751e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "rotor_tm_plcontrol",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "pl_nmpc_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pl_nmpc_node-749e9641602a05e91dbf.json",
+					"name" : "pl_nmpc_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pl_nmpc_shared_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pl_nmpc_shared_lib-71ca3e54030222787db4.json",
+					"name" : "pl_nmpc_shared_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_plcontrol_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_plcontrol_uninstall-2231a672a037b696908f.json",
+					"name" : "rotor_tm_plcontrol_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-efcd3c41033f9874a131.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dhruv/RotorTM/build/rotor_tm_plcontrol",
+		"source" : "/home/dhruv/RotorTM/src/rotor_tm_plcontrol"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

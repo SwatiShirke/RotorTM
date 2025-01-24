@@ -1,0 +1,22 @@
+[0.559s] Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_control': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/dhruv/RotorTM/build/rotor_tm_control/build install --record /home/dhruv/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data
+[0.709s] running egg_info
+[0.709s] writing ../../build/rotor_tm_control/rotor_tm_control.egg-info/PKG-INFO
+[0.709s] writing dependency_links to ../../build/rotor_tm_control/rotor_tm_control.egg-info/dependency_links.txt
+[0.709s] writing entry points to ../../build/rotor_tm_control/rotor_tm_control.egg-info/entry_points.txt
+[0.710s] writing requirements to ../../build/rotor_tm_control/rotor_tm_control.egg-info/requires.txt
+[0.710s] writing top-level names to ../../build/rotor_tm_control/rotor_tm_control.egg-info/top_level.txt
+[0.711s] reading manifest file '../../build/rotor_tm_control/rotor_tm_control.egg-info/SOURCES.txt'
+[0.711s] adding license file 'LICENSE'
+[0.711s] writing manifest file '../../build/rotor_tm_control/rotor_tm_control.egg-info/SOURCES.txt'
+[0.711s] running build
+[0.711s] running build_py
+[0.711s] running install
+[0.711s] running install_lib
+[0.712s] running install_data
+[0.712s] running install_egg_info
+[0.713s] removing '/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control-0.0.0-py3.10.egg-info' (and everything under it)
+[0.713s] Copying ../../build/rotor_tm_control/rotor_tm_control.egg-info to /home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control-0.0.0-py3.10.egg-info
+[0.714s] running install_scripts
+[0.727s] Installing controller_node script to /home/dhruv/RotorTM/install/rotor_tm_control/lib/rotor_tm_control
+[0.728s] writing list of installed files to '/home/dhruv/RotorTM/build/rotor_tm_control/install.log'
+[0.740s] Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_control' returned '0': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/dhruv/RotorTM/build/rotor_tm_control/build install --record /home/dhruv/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/swati/Quad_DR/RotorTM/src/rotor_tm_msgs
+CMAKE_SOURCE_DIR = /home/dhruv/RotorTM/src/rotor_tm_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs
+CMAKE_BINARY_DIR = /home/dhruv/RotorTM/build/rotor_tm_msgs
 
 # Utility rule file for rotor_tm_msgs__cpp.
 
@@ -70,62 +70,78 @@ CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_c
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/fm_command.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/rpm_command.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/so3_command.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/cen_pl_command.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/status_data.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/trpy_command.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/traj_command.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/fmn_command.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/vec4.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/circle.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/circle_with_rotation.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/line.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/copr_status_cmd.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/step_pose.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__builder.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__struct.hpp
 CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__traits.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__type_support.hpp
+CMakeFiles/rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -256,8 +272,8 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp: /opt/ros/humble/sha
 rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp: /opt/ros/humble/share/sensor_msgs/msg/Temperature.idl
 rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp: /opt/ros/humble/share/sensor_msgs/msg/TimeReference.idl
 rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp: /opt/ros/humble/share/sensor_msgs/srv/SetCameraInfo.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
-	/home/swati/acados/mpcenv/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs/rosidl_generator_cpp__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dhruv/RotorTM/build/rotor_tm_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_generator_cpp__arguments.json
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__builder.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__builder.hpp
@@ -267,6 +283,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__struct.hpp: rosi
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__traits.hpp
+
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__type_support.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/fm_command.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/fm_command.hpp
@@ -280,6 +299,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__struct.hpp: rosidl_gen
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__type_support.hpp
+
 rosidl_generator_cpp/rotor_tm_msgs/msg/rpm_command.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/rpm_command.hpp
 
@@ -291,6 +313,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__struct.hpp: rosidl_ge
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__traits.hpp
+
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__type_support.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/so3_command.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/so3_command.hpp
@@ -304,6 +329,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__struct.hpp: rosidl_ge
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__type_support.hpp
+
 rosidl_generator_cpp/rotor_tm_msgs/msg/cen_pl_command.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/cen_pl_command.hpp
 
@@ -315,6 +343,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__struct.hpp: rosidl
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__traits.hpp
+
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/status_data.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/status_data.hpp
@@ -328,6 +359,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__struct.hpp: rosidl_ge
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__type_support.hpp
+
 rosidl_generator_cpp/rotor_tm_msgs/msg/trpy_command.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/trpy_command.hpp
 
@@ -339,6 +373,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__struct.hpp: rosidl_g
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__traits.hpp
+
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__type_support.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/traj_command.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/traj_command.hpp
@@ -352,6 +389,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__struct.hpp: rosidl_g
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__type_support.hpp
+
 rosidl_generator_cpp/rotor_tm_msgs/msg/fmn_command.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/fmn_command.hpp
 
@@ -363,6 +403,9 @@ rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__struct.hpp: rosidl_ge
 
 rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__traits.hpp
+
+rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__type_support.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/srv/vec4.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/vec4.hpp
@@ -376,6 +419,9 @@ rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__struct.hpp: rosidl_generator
 rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__type_support.hpp
+
 rosidl_generator_cpp/rotor_tm_msgs/srv/circle.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/circle.hpp
 
@@ -387,6 +433,9 @@ rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__struct.hpp: rosidl_generat
 
 rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__traits.hpp
+
+rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__type_support.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/srv/circle_with_rotation.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/circle_with_rotation.hpp
@@ -400,6 +449,9 @@ rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__struct.hpp: 
 rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.hpp
+
 rosidl_generator_cpp/rotor_tm_msgs/srv/line.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/line.hpp
 
@@ -411,6 +463,9 @@ rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__struct.hpp: rosidl_generator
 
 rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__traits.hpp
+
+rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__type_support.hpp
 
 rosidl_generator_cpp/rotor_tm_msgs/srv/copr_status_cmd.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/copr_status_cmd.hpp
@@ -424,6 +479,9 @@ rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__struct.hpp: rosid
 rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.hpp
+
 rosidl_generator_cpp/rotor_tm_msgs/srv/step_pose.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/step_pose.hpp
 
@@ -436,35 +494,47 @@ rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__struct.hpp: rosidl_gene
 rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__traits.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__traits.hpp
 
+rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__type_support.hpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__type_support.hpp
+
 rotor_tm_msgs__cpp: CMakeFiles/rotor_tm_msgs__cpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/cen_pl_command.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fm_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/fmn_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/position_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/rpm_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/so3_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/status_data__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/traj_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/detail/trpy_command__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/fm_command.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/fmn_command.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/msg/position_command.hpp
@@ -479,21 +549,27 @@ rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/copr_status_cmd.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/line__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/step_pose__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__builder.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__struct.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__traits.hpp
+rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/detail/vec4__type_support.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/line.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/step_pose.hpp
 rotor_tm_msgs__cpp: rosidl_generator_cpp/rotor_tm_msgs/srv/vec4.hpp
@@ -509,6 +585,6 @@ CMakeFiles/rotor_tm_msgs__cpp.dir/clean:
 .PHONY : CMakeFiles/rotor_tm_msgs__cpp.dir/clean
 
 CMakeFiles/rotor_tm_msgs__cpp.dir/depend:
-	cd /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/swati/Quad_DR/RotorTM/src/rotor_tm_msgs /home/swati/Quad_DR/RotorTM/src/rotor_tm_msgs /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs/CMakeFiles/rotor_tm_msgs__cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dhruv/RotorTM/build/rotor_tm_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dhruv/RotorTM/src/rotor_tm_msgs /home/dhruv/RotorTM/src/rotor_tm_msgs /home/dhruv/RotorTM/build/rotor_tm_msgs /home/dhruv/RotorTM/build/rotor_tm_msgs /home/dhruv/RotorTM/build/rotor_tm_msgs/CMakeFiles/rotor_tm_msgs__cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rotor_tm_msgs__cpp.dir/depend
 

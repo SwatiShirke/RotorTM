@@ -14,11 +14,11 @@ import os
 
 # Add Acados library path to the system path for Python imports
 #acados_lib_path = os.getenv('LD_LIBRARY_PATH', '')
-os.environ['LD_LIBRARY_PATH'] = "/home/swati/acados/lib" 
-LD_LIBRARY_PATH="/home/swati/acados/lib"
-sys.path.append("/home/swati/acados/lib" )
-sys.path.append('/home/swati/acados/python')
-sys.path.append("/home/swati/acados" )
+os.environ['LD_LIBRARY_PATH'] = "/home/dhruv/acados/lib" 
+LD_LIBRARY_PATH="/home/dhruv/acados/lib"
+sys.path.append("/home/dhruv/acados/lib" )
+sys.path.append('/home/dhruv/acados/python')
+sys.path.append("/home/dhruv/acados" )
 #acados_source_dir = os.getenv('ACADOS_SOURCE_DIR', '/home/swati/acados')
 
 # Now you can import the Acados Python bindings
@@ -61,8 +61,8 @@ def controller_setup(control_params,  payload_params):
 
     #ipdb.set_trace()
     #path cost
-    # x_val = model.x
-    # quat = x_val[3:7]  
+    x_val = model.x
+    quat = x_val[3:7]  
     # y,p,r = QuatToYPR.QuatToYPR(quat)
     # x_array = ca.vertcat(x_val[0:3],r,p,y, x_val[7:10], x_val[10:13] )
     x_array = model.x
@@ -90,6 +90,7 @@ def controller_setup(control_params,  payload_params):
     ##constraints
     #input constraints
     mg = 0.250*9.81
+    ocp.constraints.constr_type = 'BGH'
     ocp.constraints.lbu = np.array([-10,-10,0, -10,-10,-10])
     ocp.constraints.ubu = np.array([20,20,20,10,10,10])
     ocp.constraints.idxbu = np.array([0,1,2,3,4,5])
@@ -103,12 +104,12 @@ def controller_setup(control_params,  payload_params):
     ocp.constraints.idxbx = np.array([ 3,4,5, 10,11,12])
 
     # ##inequlity constraints
-    # u = model.u
-    # h_list = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
-    # ocp.model.con_h_expr =h_list
-    # ocp.dims.nh = h_list.shape[0]
-    # ocp.constraints.lh = np.zeros((h_list.size1(), 1))          # lower bound
-    # ocp.constraints.uh = 1 * np.ones((h_list.size1(), 1))            # Upper bound 
+    u = model.u
+    h_list = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
+    ocp.model.con_h_expr = h_list
+    ocp.dims.nh = h_list.shape[0]
+    ocp.constraints.lh = 0 #m np.zeros((h_list.size1(), 1))          # lower bound
+    ocp.constraints.uh = 10#m 1 * np.ones((h_list.size1(), 1))            # Upper bound 
     # ocp.model.lh = np.zeros((h_list.size1(), 1))          # lower bound
     # ocp.model.uh = 1 * np.ones((h_list.size1(), 1))  
     

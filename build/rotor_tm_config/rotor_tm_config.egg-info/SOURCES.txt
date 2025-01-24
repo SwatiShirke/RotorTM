@@ -5,6 +5,7 @@ setup.py
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/PKG-INFO
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/SOURCES.txt
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/dependency_links.txt
+../../build/rotor_tm_config/rotor_tm_config.egg-info/entry_points.txt
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/requires.txt
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/top_level.txt
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/zip-safe

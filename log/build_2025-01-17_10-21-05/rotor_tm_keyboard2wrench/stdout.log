@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating rotor_tm_keyboard2wrench.egg-info
+writing rotor_tm_keyboard2wrench.egg-info/PKG-INFO
+writing dependency_links to rotor_tm_keyboard2wrench.egg-info/dependency_links.txt
+writing entry points to rotor_tm_keyboard2wrench.egg-info/entry_points.txt
+writing requirements to rotor_tm_keyboard2wrench.egg-info/requires.txt
+writing top-level names to rotor_tm_keyboard2wrench.egg-info/top_level.txt
+writing manifest file 'rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+reading manifest file 'rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+writing manifest file 'rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor-tm-keyboard2wrench.egg-link (link to .)
+Installing keyboard_input script to /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/rotor_tm_keyboard2wrench
+
+Installed /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench
+running symlink_data
+creating /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/ament_index
+creating /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/ament_index/resource_index
+creating /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/ament_index/resource_index/packages
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/resource/rotor_tm_keyboard2wrench -> /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/ament_index/resource_index/packages
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/package.xml -> /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol
+CMAKE_SOURCE_DIR = /home/dhruv/RotorTM/src/rotor_tm_plcontrol
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol
+CMAKE_BINARY_DIR = /home/dhruv/RotorTM/build/rotor_tm_plcontrol
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol/CMakeFiles /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dhruv/RotorTM/build/rotor_tm_plcontrol/CMakeFiles /home/dhruv/RotorTM/build/rotor_tm_plcontrol//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dhruv/RotorTM/build/rotor_tm_plcontrol/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

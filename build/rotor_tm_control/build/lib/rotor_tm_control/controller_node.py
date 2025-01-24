@@ -629,7 +629,7 @@ def main():
         control_node = controller_node(int(nr), False, payload_params_path, uav_params_path, mechanism_params_path, payload_control_gain_path, uav_control_gain_path)
     
     rclpy.spin(control_node)
-    node.destroy_node()
+    control_node.destroy_node()
     rclpy.shutdown()
 
 

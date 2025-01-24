@@ -1,3 +1,1 @@
-float32 radius
-float32 tp
-float32 duration
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_cmake/srv/Circle_Request.msg

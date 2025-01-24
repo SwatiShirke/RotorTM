@@ -1,0 +1,21 @@
+[1.201s] Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_utils': PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_utils build --build-base /home/dhruv/RotorTM/build/rotor_tm_utils/build install --record /home/dhruv/RotorTM/build/rotor_tm_utils/install.log --single-version-externally-managed install_data
+[1.359s] running egg_info
+[1.360s] writing ../../build/rotor_tm_utils/rotor_tm_utils.egg-info/PKG-INFO
+[1.360s] writing dependency_links to ../../build/rotor_tm_utils/rotor_tm_utils.egg-info/dependency_links.txt
+[1.360s] writing entry points to ../../build/rotor_tm_utils/rotor_tm_utils.egg-info/entry_points.txt
+[1.360s] writing requirements to ../../build/rotor_tm_utils/rotor_tm_utils.egg-info/requires.txt
+[1.360s] writing top-level names to ../../build/rotor_tm_utils/rotor_tm_utils.egg-info/top_level.txt
+[1.361s] reading manifest file '../../build/rotor_tm_utils/rotor_tm_utils.egg-info/SOURCES.txt'
+[1.361s] adding license file 'LICENSE'
+[1.361s] writing manifest file '../../build/rotor_tm_utils/rotor_tm_utils.egg-info/SOURCES.txt'
+[1.361s] running build
+[1.362s] running build_py
+[1.362s] running install
+[1.362s] running install_lib
+[1.363s] running install_data
+[1.363s] running install_egg_info
+[1.364s] removing '/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils-0.0.0-py3.10.egg-info' (and everything under it)
+[1.364s] Copying ../../build/rotor_tm_utils/rotor_tm_utils.egg-info to /home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils-0.0.0-py3.10.egg-info
+[1.365s] running install_scripts
+[1.379s] writing list of installed files to '/home/dhruv/RotorTM/build/rotor_tm_utils/install.log'
+[1.404s] Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_utils' returned '0': PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_utils build --build-base /home/dhruv/RotorTM/build/rotor_tm_utils/build install --record /home/dhruv/RotorTM/build/rotor_tm_utils/install.log --single-version-externally-managed install_data

@@ -1,1 +1,1 @@
-uint8 copr_status
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_cmake/srv/CoprStatusCmd_Request.msg

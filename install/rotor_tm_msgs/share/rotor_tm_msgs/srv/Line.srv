@@ -1,4 +1,1 @@
-geometry_msgs/Point[] path 
----
-bool success
-string message
+/home/dhruv/RotorTM/src/rotor_tm_msgs/srv/Line.srv

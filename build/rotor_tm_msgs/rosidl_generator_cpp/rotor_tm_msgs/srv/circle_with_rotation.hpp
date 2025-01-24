@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/srv/detail/circle_with_rotation__struct.hpp"
 #include "rotor_tm_msgs/srv/detail/circle_with_rotation__builder.hpp"
 #include "rotor_tm_msgs/srv/detail/circle_with_rotation__traits.hpp"
+#include "rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__SRV__CIRCLE_WITH_ROTATION_HPP_

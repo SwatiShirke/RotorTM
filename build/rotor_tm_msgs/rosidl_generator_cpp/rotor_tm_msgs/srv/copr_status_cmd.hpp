@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/srv/detail/copr_status_cmd__struct.hpp"
 #include "rotor_tm_msgs/srv/detail/copr_status_cmd__builder.hpp"
 #include "rotor_tm_msgs/srv/detail/copr_status_cmd__traits.hpp"
+#include "rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__SRV__COPR_STATUS_CMD_HPP_

@@ -1,0 +1,586 @@
+[0.069s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.069s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=32, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b3aacd715d0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b3aacd70820>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b3aacd70820>>, mixin_verb=('build',))
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.176s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/dhruv/RotorTM'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.183s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['ignore', 'ignore_ament_install']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'ignore'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'ignore_ament_install'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['colcon_pkg']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'colcon_pkg'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['colcon_meta']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'colcon_meta'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['ros']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'ros'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['cmake', 'python']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'cmake'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'python'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['python_setup_py']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'python_setup_py'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['ignore', 'ignore_ament_install']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'ignore'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'ignore_ament_install'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['colcon_pkg']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'colcon_pkg'
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['colcon_meta']
+[0.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'colcon_meta'
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['ros']
+[0.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'ros'
+[0.186s] DEBUG:colcon.colcon_core.package_identification:Package 'src/payload_control' with type 'ros.ament_python' and name 'payload_control'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['ignore', 'ignore_ament_install']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'ignore'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'ignore_ament_install'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['colcon_pkg']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'colcon_pkg'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['colcon_meta']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'colcon_meta'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['ros']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'ros'
+[0.187s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_config' with type 'ros.ament_python' and name 'rotor_tm_config'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['ignore', 'ignore_ament_install']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'ignore'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'ignore_ament_install'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['colcon_pkg']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'colcon_pkg'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['colcon_meta']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'colcon_meta'
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['ros']
+[0.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'ros'
+[0.188s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_control' with type 'ros.ament_python' and name 'rotor_tm_control'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['ignore', 'ignore_ament_install']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'ignore'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'ignore_ament_install'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['colcon_pkg']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'colcon_pkg'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['colcon_meta']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'colcon_meta'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['ros']
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'ros'
+[0.188s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_keyboard2wrench' with type 'ros.ament_python' and name 'rotor_tm_keyboard2wrench'
+[0.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'ignore'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'ignore_ament_install'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['colcon_pkg']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'colcon_pkg'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['colcon_meta']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'colcon_meta'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['ros']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'ros'
+[0.194s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_msgs' with type 'ros.ament_cmake' and name 'rotor_tm_msgs'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['ignore', 'ignore_ament_install']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'ignore'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'ignore_ament_install'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['colcon_meta']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'colcon_meta'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['ros']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'ros'
+[0.195s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_plcontrol' with type 'ros.ament_cmake' and name 'rotor_tm_plcontrol'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['ignore', 'ignore_ament_install']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'ignore'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'ignore_ament_install'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['colcon_meta']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'colcon_meta'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['ros']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'ros'
+[0.196s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_sim' with type 'ros.ament_python' and name 'rotor_tm_sim'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['ignore', 'ignore_ament_install']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'ignore'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'ignore_ament_install'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['colcon_pkg']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'colcon_pkg'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['colcon_meta']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'colcon_meta'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['ros']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'ros'
+[0.197s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_traj' with type 'ros.ament_python' and name 'rotor_tm_traj'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['ignore', 'ignore_ament_install']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'ignore'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'ignore_ament_install'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['colcon_pkg']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'colcon_pkg'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['colcon_meta']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'colcon_meta'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['ros']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'ros'
+[0.197s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_utils' with type 'ros.ament_python' and name 'rotor_tm_utils'
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.213s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/dhruv/RotorTM/install
+[0.213s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 18 installed packages in /home/dhruv/rbe500-ros/install
+[0.214s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 329 installed packages in /opt/ros/humble
+[0.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_target' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.239s] DEBUG:colcon.colcon_core.verb:Building package 'payload_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/payload_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/payload_control', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/payload_control', 'symlink_install': False, 'test_result_base': None}
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_target' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.239s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_config', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_config', 'symlink_install': False, 'test_result_base': None}
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_target' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_clean_cache' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_clean_first' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_force_configure' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'ament_cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'catkin_cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.240s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_keyboard2wrench' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_keyboard2wrench', 'symlink_install': False, 'test_result_base': None}
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_target' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.240s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_msgs', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_target' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_clean_cache' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_clean_first' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_force_configure' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'ament_cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'catkin_cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.240s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_traj' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_traj', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_traj', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_traj', 'symlink_install': False, 'test_result_base': None}
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_target' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_clean_cache' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_clean_first' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_force_configure' from command line to 'False'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'ament_cmake_args' from command line to 'None'
+[0.240s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'catkin_cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.241s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_utils' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_utils', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_utils', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_utils', 'symlink_install': False, 'test_result_base': None}
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_target' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.241s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_control', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_control', 'symlink_install': False, 'test_result_base': None}
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_target' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_clean_cache' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_clean_first' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_force_configure' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'ament_cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'catkin_cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.241s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_plcontrol' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_plcontrol', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_plcontrol', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_plcontrol', 'symlink_install': False, 'test_result_base': None}
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_target' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_clean_cache' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_clean_first' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_force_configure' from command line to 'False'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'ament_cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'catkin_cmake_args' from command line to 'None'
+[0.241s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.241s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_sim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhruv/RotorTM/build/rotor_tm_sim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhruv/RotorTM/install/rotor_tm_sim', 'merge_install': False, 'path': '/home/dhruv/RotorTM/src/rotor_tm_sim', 'symlink_install': False, 'test_result_base': None}
+[0.241s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.242s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.242s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_msgs' with build type 'ament_cmake'
+[0.243s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/dhruv/RotorTM/src/rotor_tm_msgs'
+[0.244s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.244s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.244s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.247s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_utils' with build type 'ament_python'
+[0.248s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_utils', 'ament_prefix_path')
+[0.248s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/ament_prefix_path.ps1'
+[0.248s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/ament_prefix_path.dsv'
+[0.248s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/ament_prefix_path.sh'
+[0.249s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.249s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.251s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_config' with build type 'ament_python'
+[0.252s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_config', 'ament_prefix_path')
+[0.252s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/ament_prefix_path.ps1'
+[0.252s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/ament_prefix_path.dsv'
+[0.252s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/ament_prefix_path.sh'
+[0.252s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.252s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.255s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhruv/RotorTM/src/payload_control' with build type 'ament_python'
+[0.255s] Level 1:colcon.colcon_core.shell:create_environment_hook('payload_control', 'ament_prefix_path')
+[0.255s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/payload_control/share/payload_control/hook/ament_prefix_path.ps1'
+[0.256s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/payload_control/share/payload_control/hook/ament_prefix_path.dsv'
+[0.256s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/payload_control/share/payload_control/hook/ament_prefix_path.sh'
+[0.256s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.256s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.259s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_keyboard2wrench' with build type 'ament_python'
+[0.259s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_keyboard2wrench', 'ament_prefix_path')
+[0.259s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/ament_prefix_path.ps1'
+[0.259s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/ament_prefix_path.dsv'
+[0.260s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/ament_prefix_path.sh'
+[0.260s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.260s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.263s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_traj' with build type 'ament_python'
+[0.263s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_traj', 'ament_prefix_path')
+[0.263s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/ament_prefix_path.ps1'
+[0.263s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/ament_prefix_path.dsv'
+[0.263s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/ament_prefix_path.sh'
+[0.264s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.264s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.271s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/dhruv/RotorTM/build/rotor_tm_msgs -- -j32 -l32
+[0.444s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhruv/RotorTM/src/rotor_tm_utils'
+[0.445s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.445s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.615s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhruv/RotorTM/src/rotor_tm_config'
+[0.616s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.616s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.790s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhruv/RotorTM/src/payload_control'
+[0.791s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.791s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.963s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhruv/RotorTM/src/rotor_tm_keyboard2wrench'
+[0.963s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.963s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.137s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhruv/RotorTM/src/rotor_tm_traj'
+[1.138s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.138s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.141s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/dhruv/RotorTM/build/rotor_tm_msgs -- -j32 -l32
+[1.153s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/dhruv/RotorTM/build/rotor_tm_msgs
+[1.222s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_msgs)
+[1.222s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/dhruv/RotorTM/build/rotor_tm_msgs
+[1.225s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs' for CMake module files
+[1.225s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs' for CMake config files
+[1.227s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'cmake_prefix_path')
+[1.227s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.ps1'
+[1.228s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.dsv'
+[1.228s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.sh'
+[1.228s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib'
+[1.229s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'ld_library_path_lib')
+[1.229s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.ps1'
+[1.229s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.dsv'
+[1.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.sh'
+[1.230s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/bin'
+[1.230s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/pkgconfig/rotor_tm_msgs.pc'
+[1.230s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages'
+[1.230s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/bin'
+[1.231s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.ps1'
+[1.231s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.dsv'
+[1.232s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.sh'
+[1.233s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.bash'
+[1.233s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.zsh'
+[1.234s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_msgs/share/colcon-core/packages/rotor_tm_msgs)
+[1.234s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_msgs)
+[1.235s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs' for CMake module files
+[1.235s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs' for CMake config files
+[1.237s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'cmake_prefix_path')
+[1.237s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.ps1'
+[1.237s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.dsv'
+[1.238s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.sh'
+[1.238s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib'
+[1.238s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'ld_library_path_lib')
+[1.238s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.ps1'
+[1.239s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.dsv'
+[1.239s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.sh'
+[1.239s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/bin'
+[1.239s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/pkgconfig/rotor_tm_msgs.pc'
+[1.240s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages'
+[1.240s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_msgs/bin'
+[1.240s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.ps1'
+[1.241s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.dsv'
+[1.241s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.sh'
+[1.241s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.bash'
+[1.242s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.zsh'
+[1.242s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_msgs/share/colcon-core/packages/rotor_tm_msgs)
+[1.242s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_plcontrol' with build type 'ament_cmake'
+[1.243s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/dhruv/RotorTM/src/rotor_tm_plcontrol'
+[1.243s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.243s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.257s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_plcontrol': CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib /usr/bin/cmake --build /home/dhruv/RotorTM/build/rotor_tm_plcontrol -- -j32 -l32
+[1.350s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_plcontrol' returned '0': CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib /usr/bin/cmake --build /home/dhruv/RotorTM/build/rotor_tm_plcontrol -- -j32 -l32
+[1.352s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_plcontrol': CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib /usr/bin/cmake --install /home/dhruv/RotorTM/build/rotor_tm_plcontrol
+[1.369s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_plcontrol)
+[1.369s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol' for CMake module files
+[1.370s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_plcontrol' returned '0': CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib /usr/bin/cmake --install /home/dhruv/RotorTM/build/rotor_tm_plcontrol
+[1.370s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol' for CMake config files
+[1.370s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'cmake_prefix_path')
+[1.370s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.ps1'
+[1.370s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.dsv'
+[1.371s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.sh'
+[1.371s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib'
+[1.371s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'ld_library_path_lib')
+[1.371s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.ps1'
+[1.371s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.dsv'
+[1.371s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.sh'
+[1.372s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.372s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib/pkgconfig/rotor_tm_plcontrol.pc'
+[1.372s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib/python3.10/site-packages'
+[1.372s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.372s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.ps1'
+[1.372s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.dsv'
+[1.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.sh'
+[1.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.bash'
+[1.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.zsh'
+[1.373s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/colcon-core/packages/rotor_tm_plcontrol)
+[1.373s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_plcontrol)
+[1.374s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol' for CMake module files
+[1.374s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol' for CMake config files
+[1.374s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'cmake_prefix_path')
+[1.374s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.ps1'
+[1.380s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.dsv'
+[1.380s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.sh'
+[1.380s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib'
+[1.380s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'ld_library_path_lib')
+[1.380s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.ps1'
+[1.381s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.dsv'
+[1.381s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.sh'
+[1.381s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.381s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib/pkgconfig/rotor_tm_plcontrol.pc'
+[1.381s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib/python3.10/site-packages'
+[1.381s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.381s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.ps1'
+[1.382s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.dsv'
+[1.382s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.sh'
+[1.382s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.bash'
+[1.382s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.zsh'
+[1.383s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/colcon-core/packages/rotor_tm_plcontrol)
+[1.426s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_utils': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_utils build --build-base /home/dhruv/RotorTM/build/rotor_tm_utils/build install --record /home/dhruv/RotorTM/build/rotor_tm_utils/install.log --single-version-externally-managed install_data
+[1.428s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_keyboard2wrench': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data
+[1.440s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_traj': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_traj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_traj build --build-base /home/dhruv/RotorTM/build/rotor_tm_traj/build install --record /home/dhruv/RotorTM/build/rotor_tm_traj/install.log --single-version-externally-managed install_data
+[1.442s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/src/payload_control': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/dhruv/RotorTM/build/payload_control/build install --record /home/dhruv/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data
+[1.445s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_config': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_config/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_config build --build-base /home/dhruv/RotorTM/build/rotor_tm_config/build install --record /home/dhruv/RotorTM/build/rotor_tm_config/install.log --single-version-externally-managed install_data
+[1.619s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_utils' for CMake module files
+[1.620s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_utils' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_utils build --build-base /home/dhruv/RotorTM/build/rotor_tm_utils/build install --record /home/dhruv/RotorTM/build/rotor_tm_utils/install.log --single-version-externally-managed install_data
+[1.621s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_utils' for CMake config files
+[1.622s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_utils/lib'
+[1.622s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_utils/bin'
+[1.622s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_utils/lib/pkgconfig/rotor_tm_utils.pc'
+[1.623s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages'
+[1.623s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_utils', 'pythonpath')
+[1.623s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/pythonpath.ps1'
+[1.624s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/pythonpath.dsv'
+[1.624s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/pythonpath.sh'
+[1.624s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_utils/bin'
+[1.624s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_utils)
+[1.624s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.ps1'
+[1.625s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.dsv'
+[1.625s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.sh'
+[1.626s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.bash'
+[1.626s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.zsh'
+[1.626s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_utils/share/colcon-core/packages/rotor_tm_utils)
+[1.626s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_control' with build type 'ament_python'
+[1.626s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_control', 'ament_prefix_path')
+[1.627s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/ament_prefix_path.ps1'
+[1.627s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/ament_prefix_path.dsv'
+[1.628s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/ament_prefix_path.sh'
+[1.629s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.629s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.635s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench' for CMake module files
+[1.636s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_keyboard2wrench' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data
+[1.636s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench' for CMake config files
+[1.637s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib'
+[1.637s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/bin'
+[1.637s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/pkgconfig/rotor_tm_keyboard2wrench.pc'
+[1.637s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages'
+[1.637s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_keyboard2wrench', 'pythonpath')
+[1.637s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/pythonpath.ps1'
+[1.638s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/pythonpath.dsv'
+[1.638s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/pythonpath.sh'
+[1.639s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/bin'
+[1.639s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_keyboard2wrench)
+[1.639s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.ps1'
+[1.640s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.dsv'
+[1.640s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.sh'
+[1.641s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.bash'
+[1.641s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.zsh'
+[1.641s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/share/colcon-core/packages/rotor_tm_keyboard2wrench)
+[1.642s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_traj' for CMake module files
+[1.642s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_traj' for CMake config files
+[1.643s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_traj' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_traj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_traj build --build-base /home/dhruv/RotorTM/build/rotor_tm_traj/build install --record /home/dhruv/RotorTM/build/rotor_tm_traj/install.log --single-version-externally-managed install_data
+[1.643s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_traj/lib'
+[1.643s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_traj/bin'
+[1.643s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_traj/lib/pkgconfig/rotor_tm_traj.pc'
+[1.644s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages'
+[1.644s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_traj', 'pythonpath')
+[1.644s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/pythonpath.ps1'
+[1.644s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/pythonpath.dsv'
+[1.644s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/pythonpath.sh'
+[1.645s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_traj/bin'
+[1.645s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_traj)
+[1.645s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.ps1'
+[1.645s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.dsv'
+[1.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.sh'
+[1.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.bash'
+[1.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.zsh'
+[1.646s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_traj/share/colcon-core/packages/rotor_tm_traj)
+[1.820s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhruv/RotorTM/src/rotor_tm_control'
+[1.820s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.820s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.824s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/payload_control' for CMake module files
+[1.825s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/src/payload_control' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/dhruv/RotorTM/build/payload_control/build install --record /home/dhruv/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data
+[1.825s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/payload_control' for CMake config files
+[1.825s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/payload_control/lib'
+[1.825s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/payload_control/bin'
+[1.825s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/payload_control/lib/pkgconfig/payload_control.pc'
+[1.825s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages'
+[1.825s] Level 1:colcon.colcon_core.shell:create_environment_hook('payload_control', 'pythonpath')
+[1.826s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/payload_control/share/payload_control/hook/pythonpath.ps1'
+[1.826s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/payload_control/share/payload_control/hook/pythonpath.dsv'
+[1.826s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/payload_control/share/payload_control/hook/pythonpath.sh'
+[1.826s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/payload_control/bin'
+[1.826s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(payload_control)
+[1.827s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/payload_control/share/payload_control/package.ps1'
+[1.827s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/payload_control/share/payload_control/package.dsv'
+[1.827s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/payload_control/share/payload_control/package.sh'
+[1.827s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/payload_control/share/payload_control/package.bash'
+[1.827s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/payload_control/share/payload_control/package.zsh'
+[1.828s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/payload_control/share/colcon-core/packages/payload_control)
+[1.829s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_config' for CMake module files
+[1.829s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_config' for CMake config files
+[1.829s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_config' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_config/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_config build --build-base /home/dhruv/RotorTM/build/rotor_tm_config/build install --record /home/dhruv/RotorTM/build/rotor_tm_config/install.log --single-version-externally-managed install_data
+[1.830s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_config/lib'
+[1.830s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_config/bin'
+[1.830s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_config/lib/pkgconfig/rotor_tm_config.pc'
+[1.830s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages'
+[1.830s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_config', 'pythonpath')
+[1.830s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/pythonpath.ps1'
+[1.830s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/pythonpath.dsv'
+[1.831s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/pythonpath.sh'
+[1.831s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_config/bin'
+[1.831s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_config)
+[1.831s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.ps1'
+[1.831s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.dsv'
+[1.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.sh'
+[1.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.bash'
+[1.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.zsh'
+[1.832s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_config/share/colcon-core/packages/rotor_tm_config)
+[1.832s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhruv/RotorTM/src/rotor_tm_sim' with build type 'ament_python'
+[1.833s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_sim', 'ament_prefix_path')
+[1.833s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/ament_prefix_path.ps1'
+[1.833s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/ament_prefix_path.dsv'
+[1.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/ament_prefix_path.sh'
+[1.834s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.834s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.019s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhruv/RotorTM/src/rotor_tm_sim'
+[2.019s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.019s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.103s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_control': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/grp_assn_3:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/opt/ros/humble CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/rbe500_example_py/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_2/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_1/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/grp_assn_3/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/dhruv/RotorTM/build/rotor_tm_control/build install --record /home/dhruv/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data
+[2.300s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_sim': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/grp_assn_3:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/opt/ros/humble CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/rbe500_example_py/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_2/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_1/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/grp_assn_3/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_sim build --build-base /home/dhruv/RotorTM/build/rotor_tm_sim/build install --record /home/dhruv/RotorTM/build/rotor_tm_sim/install.log --single-version-externally-managed install_data
+[2.301s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_control' for CMake module files
+[2.302s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_control' returned '0': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/grp_assn_3:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/opt/ros/humble CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/rbe500_example_py/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_2/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_1/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/grp_assn_3/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/dhruv/RotorTM/build/rotor_tm_control/build install --record /home/dhruv/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data
+[2.302s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_control' for CMake config files
+[2.302s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_control/lib'
+[2.302s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_control/bin'
+[2.302s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_control/lib/pkgconfig/rotor_tm_control.pc'
+[2.302s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages'
+[2.303s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_control', 'pythonpath')
+[2.303s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/pythonpath.ps1'
+[2.303s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/pythonpath.dsv'
+[2.303s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/pythonpath.sh'
+[2.303s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_control/bin'
+[2.304s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_control)
+[2.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.ps1'
+[2.304s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.dsv'
+[2.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.sh'
+[2.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.bash'
+[2.305s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.zsh'
+[2.305s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_control/share/colcon-core/packages/rotor_tm_control)
+[2.495s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_sim' for CMake module files
+[2.495s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_sim' returned '0': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/grp_assn_3:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/opt/ros/humble CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/rbe500_example_py/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_2/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_1/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/grp_assn_3/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_sim build --build-base /home/dhruv/RotorTM/build/rotor_tm_sim/build install --record /home/dhruv/RotorTM/build/rotor_tm_sim/install.log --single-version-externally-managed install_data
+[2.495s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_sim' for CMake config files
+[2.496s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_sim/lib'
+[2.496s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_sim/bin'
+[2.496s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_sim/lib/pkgconfig/rotor_tm_sim.pc'
+[2.496s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages'
+[2.496s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_sim', 'pythonpath')
+[2.496s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/pythonpath.ps1'
+[2.496s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/pythonpath.dsv'
+[2.497s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/pythonpath.sh'
+[2.497s] Level 1:colcon.colcon_core.environment:checking '/home/dhruv/RotorTM/install/rotor_tm_sim/bin'
+[2.497s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_sim)
+[2.497s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.ps1'
+[2.497s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.dsv'
+[2.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.sh'
+[2.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.bash'
+[2.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.zsh'
+[2.498s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhruv/RotorTM/install/rotor_tm_sim/share/colcon-core/packages/rotor_tm_sim)
+[2.498s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.498s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.499s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.499s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.503s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.503s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.503s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.517s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.517s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhruv/RotorTM/install/local_setup.ps1'
+[2.518s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dhruv/RotorTM/install/_local_setup_util_ps1.py'
+[2.518s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhruv/RotorTM/install/setup.ps1'
+[2.519s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhruv/RotorTM/install/local_setup.sh'
+[2.520s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dhruv/RotorTM/install/_local_setup_util_sh.py'
+[2.520s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhruv/RotorTM/install/setup.sh'
+[2.521s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhruv/RotorTM/install/local_setup.bash'
+[2.521s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhruv/RotorTM/install/setup.bash'
+[2.522s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhruv/RotorTM/install/local_setup.zsh'
+[2.522s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhruv/RotorTM/install/setup.zsh'

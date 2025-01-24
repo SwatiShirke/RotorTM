@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/msg/detail/status_data__struct.hpp"
 #include "rotor_tm_msgs/msg/detail/status_data__builder.hpp"
 #include "rotor_tm_msgs/msg/detail/status_data__traits.hpp"
+#include "rotor_tm_msgs/msg/detail/status_data__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__MSG__STATUS_DATA_HPP_

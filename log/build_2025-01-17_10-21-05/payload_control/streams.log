@@ -1,0 +1,24 @@
+[1.084s] Invoking command in '/home/dhruv/RotorTM/build/payload_control': PYTHONPATH=/home/dhruv/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhruv/RotorTM/build/payload_control/build --no-deps symlink_data
+[1.250s] running develop
+[1.353s] running egg_info
+[1.354s] creating payload_control.egg-info
+[1.354s] writing payload_control.egg-info/PKG-INFO
+[1.354s] writing dependency_links to payload_control.egg-info/dependency_links.txt
+[1.354s] writing entry points to payload_control.egg-info/entry_points.txt
+[1.354s] writing requirements to payload_control.egg-info/requires.txt
+[1.354s] writing top-level names to payload_control.egg-info/top_level.txt
+[1.354s] writing manifest file 'payload_control.egg-info/SOURCES.txt'
+[1.355s] reading manifest file 'payload_control.egg-info/SOURCES.txt'
+[1.356s] writing manifest file 'payload_control.egg-info/SOURCES.txt'
+[1.356s] running build_ext
+[1.356s] Creating /home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages/payload-control.egg-link (link to .)
+[1.357s] Installing ros_pynmpc_node script to /home/dhruv/RotorTM/install/payload_control/lib/payload_control
+[1.357s] 
+[1.357s] Installed /home/dhruv/RotorTM/build/payload_control
+[1.357s] running symlink_data
+[1.357s] creating /home/dhruv/RotorTM/install/payload_control/share/ament_index
+[1.358s] creating /home/dhruv/RotorTM/install/payload_control/share/ament_index/resource_index
+[1.358s] creating /home/dhruv/RotorTM/install/payload_control/share/ament_index/resource_index/packages
+[1.358s] symbolically linking /home/dhruv/RotorTM/build/payload_control/resource/payload_control -> /home/dhruv/RotorTM/install/payload_control/share/ament_index/resource_index/packages
+[1.358s] symbolically linking /home/dhruv/RotorTM/build/payload_control/package.xml -> /home/dhruv/RotorTM/install/payload_control/share/payload_control
+[1.399s] Invoked command in '/home/dhruv/RotorTM/build/payload_control' returned '0': PYTHONPATH=/home/dhruv/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhruv/RotorTM/build/payload_control/build --no-deps symlink_data

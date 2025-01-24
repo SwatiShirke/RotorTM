@@ -1,18 +1,1 @@
-// generated from rosidl_adapter/resource/srv.idl.em
-// with input from rotor_tm_msgs/srv/Vec4.srv
-// generated code does not contain a copyright notice
-
-
-module rotor_tm_msgs {
-  module srv {
-    typedef float float__4[4];
-    struct Vec4_Request {
-      float__4 goal;
-    };
-    struct Vec4_Response {
-      boolean success;
-
-      string message;
-    };
-  };
-};
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_adapter/rotor_tm_msgs/srv/Vec4.idl

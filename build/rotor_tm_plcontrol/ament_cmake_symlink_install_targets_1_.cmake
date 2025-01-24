@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/dhruv/RotorTM/build/rotor_tm_plcontrol/libpl_nmpc_shared_lib.so" "TARGETS" "pl_nmpc_shared_lib" "ARCHIVE_DESTINATION" "lib/rotor_tm_plcontrol" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

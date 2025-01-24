@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/msg/detail/cen_pl_command__struct.hpp"
 #include "rotor_tm_msgs/msg/detail/cen_pl_command__builder.hpp"
 #include "rotor_tm_msgs/msg/detail/cen_pl_command__traits.hpp"
+#include "rotor_tm_msgs/msg/detail/cen_pl_command__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__MSG__CEN_PL_COMMAND_HPP_

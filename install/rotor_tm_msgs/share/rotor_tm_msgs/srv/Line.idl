@@ -1,18 +1,1 @@
-// generated from rosidl_adapter/resource/srv.idl.em
-// with input from rotor_tm_msgs/srv/Line.srv
-// generated code does not contain a copyright notice
-
-#include "geometry_msgs/msg/Point.idl"
-
-module rotor_tm_msgs {
-  module srv {
-    struct Line_Request {
-      sequence<geometry_msgs::msg::Point> path;
-    };
-    struct Line_Response {
-      boolean success;
-
-      string message;
-    };
-  };
-};
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_adapter/rotor_tm_msgs/srv/Line.idl

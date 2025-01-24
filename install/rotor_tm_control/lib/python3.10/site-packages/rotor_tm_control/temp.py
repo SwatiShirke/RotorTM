@@ -473,11 +473,11 @@ def main():
     #mode = sys.argv[2]
 
     #**Case 1
-    payload_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/pointmass_payload.yaml"
-    uav_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/uav_params/"
-    mechanism_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/attach_mechanism/cable/1_robot_point_mass_0-5m.yaml"
-    payload_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/pointmass_cable_gains.yaml"
-    uav_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/"
+    payload_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/load_params/pointmass_payload.yaml"
+    uav_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/uav_params/"
+    mechanism_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/attach_mechanism/cable/1_robot_point_mass_0-5m.yaml"
+    payload_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/pointmass_cable_gains.yaml"
+    uav_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/"
     mode = 1
 
     #node_name = 'controller_'+str(int(sys.argv[1])+1)

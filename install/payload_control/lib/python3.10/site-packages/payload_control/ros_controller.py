@@ -117,7 +117,7 @@ class NMPCControlNode(Node):
 
         ## Publish the FMNCommand message
         self.pub_FMN_cmd.publish(fmn_cmd_msg)
-        #self.get_logger().info(f"Published FMN Command: Thrust: {desired_force[2]}, Moments: {desired_moment}")
+        # self.get_logger().info(f"Published FMN Command: Thrust: {desired_force[2]}, Moments: {desired_moment}")
 
     def publish_reference(self, reference_states):
         """ Publish the reference trajectory (Path message). """
@@ -157,12 +157,12 @@ class NMPCControlNode(Node):
     
 if __name__ == '__main__':
     # Define the paths to your configuration files
-    nmpc_filename = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/payload_nmpc_params.yaml"
-    payload_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/triangular_payload.yaml"
-    uav_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/uav_params/"
-    mechanism_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml"
-    payload_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/triangular_payload_cooperative_cable_gains.yaml"
-    uav_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/"
+    nmpc_filename = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/payload_nmpc_params.yaml"
+    payload_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/load_params/triangular_payload.yaml"
+    uav_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/uav_params/"
+    mechanism_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml"
+    payload_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/triangular_payload_cooperative_cable_gains.yaml"
+    uav_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/"
 
     # Read the parameters using your read_params module
     read_params_funcs = read_params.read_params()

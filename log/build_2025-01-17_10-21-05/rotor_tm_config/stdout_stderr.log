@@ -1,0 +1,75 @@
+running develop
+running egg_info
+creating rotor_tm_config.egg-info
+writing rotor_tm_config.egg-info/PKG-INFO
+writing dependency_links to rotor_tm_config.egg-info/dependency_links.txt
+writing entry points to rotor_tm_config.egg-info/entry_points.txt
+writing requirements to rotor_tm_config.egg-info/requires.txt
+writing top-level names to rotor_tm_config.egg-info/top_level.txt
+writing manifest file 'rotor_tm_config.egg-info/SOURCES.txt'
+reading manifest file 'rotor_tm_config.egg-info/SOURCES.txt'
+writing manifest file 'rotor_tm_config.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages/rotor-tm-config.egg-link (link to .)
+
+Installed /home/dhruv/RotorTM/build/rotor_tm_config
+running symlink_data
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/ament_index
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/ament_index/resource_index
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/ament_index/resource_index/packages
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/resource/rotor_tm_config -> /home/dhruv/RotorTM/install/rotor_tm_config/share/ament_index/resource_index/packages
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/package.xml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/1_robot_point_mass_0-5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/2_robots_long_bar_payload_0-5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/6_robots_fedex_box_0_5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/3_robots_triangular_payload_0-5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/3_robots_triangular_payload_1m_bullnose_dragonfly.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/1_robot_point_mass_0-5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/4_robots_fedex_box_0_5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/3_robots_triangular_payload_1m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/3_robots_triangular_payload_1m_different_robots_dynamics.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/3_robots_triangular_payload_1-2m_1m_0-8m_different_cable_length.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/cable/3_robots_triangular_payload_1m_0-5m_different_cable_length.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/cable
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/load_params/pointmass_payload.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/load_params/fedex_box_payload.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/load_params/triangular_payload.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/load_params/long_bar_wood_payload.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/load_params
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/initial_condition/3_robots_triangular_payload_initial_condition.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/initial_condition/singlequad_ptmass_initial_condition.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/initial_condition/6_robots_fedexbox_initial_condition.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/initial_condition
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/2_robots_long_bar_payload_0-5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/6_robots_fedex_box_0_5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_1m_bullnose_dragonfly.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/1_robot_point_mass_0-5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/4_robots_fedex_box_0_5m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_1m.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_1m_different_robots_dynamics.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_1-2m_1m_0-8m_different_cable_length.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_1m_0-5m_different_cable_length.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/cable
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/rigid_link/2_robots_long_bar.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/rigid_link/5_robots_triangular_payload.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/rigid_link/3_robots_triangular_payload.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/attach_mechanism/rigid_link/3_hetereogeneous_robots_triangular_payload.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/attach_mechanism/rigid_link
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/uav_params/hummingbird.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/uav_params/snapdragonfly_bullnose_prop.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/uav_params/race.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/uav_params/snapdragonfly.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/uav_params
+creating /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/triangular_payload_cooperative_rigidlink_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/snapdragonfly_bullnose_prop_control_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/payload_nmpc_params.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/pointmass_cable_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/long_bar_payload_cooperative_cable_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/race_control_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/hummingbird_control_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/snapdragonfly_control_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_config/config/control_params/triangular_payload_cooperative_cable_gains.yaml -> /home/dhruv/RotorTM/install/rotor_tm_config/share/rotor_tm_config/config/control_params

@@ -1,0 +1,271 @@
+[0.000000] (-) TimerEvent: {}
+[0.000132] (-) JobUnselected: {'identifier': 'payload_control'}
+[0.000209] (-) JobUnselected: {'identifier': 'rotor_tm_config'}
+[0.000238] (-) JobUnselected: {'identifier': 'rotor_tm_control'}
+[0.000312] (-) JobUnselected: {'identifier': 'rotor_tm_keyboard2wrench'}
+[0.000331] (-) JobUnselected: {'identifier': 'rotor_tm_msgs'}
+[0.000368] (-) JobUnselected: {'identifier': 'rotor_tm_sim'}
+[0.000390] (-) JobUnselected: {'identifier': 'rotor_tm_traj'}
+[0.000436] (-) JobUnselected: {'identifier': 'rotor_tm_utils'}
+[0.000464] (rotor_tm_plcontrol) JobQueued: {'identifier': 'rotor_tm_plcontrol', 'dependencies': OrderedDict([('rotor_tm_msgs', '/home/dhruv/RotorTM/install/rotor_tm_msgs')])}
+[0.000488] (rotor_tm_plcontrol) JobStarted: {'identifier': 'rotor_tm_plcontrol'}
+[0.009467] (rotor_tm_plcontrol) JobProgress: {'identifier': 'rotor_tm_plcontrol', 'progress': 'cmake'}
+[0.009628] (rotor_tm_plcontrol) JobProgress: {'identifier': 'rotor_tm_plcontrol', 'progress': 'build'}
+[0.010175] (rotor_tm_plcontrol) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/dhruv/RotorTM/build/rotor_tm_plcontrol', '--', '-j32', '-l32'], 'cwd': '/home/dhruv/RotorTM/build/rotor_tm_plcontrol', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('no_proxy', 'localhost,127.0.0.0/8,::1'), ('USER', 'dhruv'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib'), ('ACADOS_SOURCE_DIR', '/home/dhruv/acados'), ('HOME', '/home/dhruv'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/dhruv/RotorTM/src/rotor_tm_plcontrol'), ('TERM_PROGRAM_VERSION', '1.96.2'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.0/8,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '2675'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=3943b2666bf3468070f6f5cb678fbea3'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('COLCON_PREFIX_PATH', '/home/dhruv/RotorTM/install:/home/dhruv/rbe500-ros/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'dhruv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'dhruv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/dhruv/anaconda3/bin:/home/dhruv/anaconda3/condabin:/home/dhruv/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/dhruv:@/tmp/.ICE-unix/2675,unix/dhruv:/tmp/.ICE-unix/2675'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/c248aea5_753a_45bb_8e2b_9fce2ac7a667'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d09a506432.sock'), ('GNOME_TERMINAL_SERVICE', ':1.105'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/dhruv/anaconda3/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/grp_assn_3:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/dhruv/anaconda3/bin/python'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dhruv/RotorTM/build/rotor_tm_plcontrol'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/dhruv/anaconda3/bin/conda'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=3943b2666bf3468070f6f5cb678fbea3'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/rbe500_example_py/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_2/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_1/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/grp_assn_3/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CONDA_PREFIX', '/home/dhruv/anaconda3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble')]), 'shell': False}
+[0.060093] (rotor_tm_plcontrol) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pl_nmpc_shared_lib\x1b[0m\n'}
+[0.083174] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/pl_nmpc_controller_node.cpp.o\x1b[0m\n'}
+[0.084536] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/wrapper.cpp.o\x1b[0m\n'}
+[0.086864] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/nmpc_control.cpp.o\x1b[0m\n'}
+[0.099406] (-) TimerEvent: {}
+[0.199765] (-) TimerEvent: {}
+[0.300193] (-) TimerEvent: {}
+[0.400602] (-) TimerEvent: {}
+[0.501012] (-) TimerEvent: {}
+[0.601401] (-) TimerEvent: {}
+[0.701809] (-) TimerEvent: {}
+[0.802228] (-) TimerEvent: {}
+[0.902629] (-) TimerEvent: {}
+[0.939129] (rotor_tm_plcontrol) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/nmpc_control.cpp:1\x1b[m\x1b[K:\n'}
+[0.939364] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Knmpc_control_nodelet::NMPCControl::NMPCControl()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[0.939461] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:37:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knmpc_control_nodelet::NMPCControl::predicted_inputs_\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.939550] (rotor_tm_plcontrol) StderrLine: {'line': b'   37 |   Eigen::Matrix<double, kInputSize, kSamples> \x1b[01;35m\x1b[Kpredicted_inputs_\x1b[m\x1b[K;\n'}
+[0.939626] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                                               \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.939700] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:32:8:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbool nmpc_control_nodelet::NMPCControl::solve_from_scratch_\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.939778] (rotor_tm_plcontrol) StderrLine: {'line': b'   32 |   bool \x1b[01;35m\x1b[Ksolve_from_scratch_\x1b[m\x1b[K;\n'}
+[0.939850] (rotor_tm_plcontrol) StderrLine: {'line': b'      |        \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.939929] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/nmpc_control.cpp:6:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.940013] (rotor_tm_plcontrol) StderrLine: {'line': b'    6 | \x1b[01;35m\x1b[KNMPCControl\x1b[m\x1b[K::NMPCControl()\n'}
+[0.940086] (rotor_tm_plcontrol) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.002835] (-) TimerEvent: {}
+[1.103259] (-) TimerEvent: {}
+[1.203698] (-) TimerEvent: {}
+[1.304111] (-) TimerEvent: {}
+[1.404502] (-) TimerEvent: {}
+[1.504926] (-) TimerEvent: {}
+[1.605371] (-) TimerEvent: {}
+[1.705784] (-) TimerEvent: {}
+[1.806196] (-) TimerEvent: {}
+[1.906600] (-) TimerEvent: {}
+[2.007016] (-) TimerEvent: {}
+[2.107426] (-) TimerEvent: {}
+[2.207840] (-) TimerEvent: {}
+[2.308165] (-) TimerEvent: {}
+[2.408429] (-) TimerEvent: {}
+[2.413191] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid nmpc_control_nodelet::NMPCControlNodelet::referenceCallback(rotor_tm_msgs::msg::TrajCommand_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.413302] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:163:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Kang_acc\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.413340] (rotor_tm_plcontrol) StderrLine: {'line': b'  163 |   Eigen::Vector3d \x1b[01;35m\x1b[Kang_acc\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[2.413371] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[2.413402] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:164:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Kang_vel\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.413432] (rotor_tm_plcontrol) StderrLine: {'line': b'  164 |   Eigen::Vector3d \x1b[01;35m\x1b[Kang_vel\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[2.413459] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[2.413493] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:166:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Klin_vel\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.413522] (rotor_tm_plcontrol) StderrLine: {'line': b'  166 |   Eigen::Vector3d \x1b[01;35m\x1b[Klin_vel\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[2.413549] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[2.413575] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:167:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Kmoments\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.413603] (rotor_tm_plcontrol) StderrLine: {'line': b'  167 |   Eigen::Vector3d \x1b[01;35m\x1b[Kmoments\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[2.413630] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[2.508542] (-) TimerEvent: {}
+[2.608889] (-) TimerEvent: {}
+[2.709123] (-) TimerEvent: {}
+[2.809381] (-) TimerEvent: {}
+[2.909613] (-) TimerEvent: {}
+[3.009935] (-) TimerEvent: {}
+[3.110166] (-) TimerEvent: {}
+[3.210444] (-) TimerEvent: {}
+[3.310780] (-) TimerEvent: {}
+[3.411030] (-) TimerEvent: {}
+[3.511257] (-) TimerEvent: {}
+[3.611479] (-) TimerEvent: {}
+[3.711791] (-) TimerEvent: {}
+[3.812053] (-) TimerEvent: {}
+[3.912304] (-) TimerEvent: {}
+[4.012589] (-) TimerEvent: {}
+[4.112939] (-) TimerEvent: {}
+[4.213186] (-) TimerEvent: {}
+[4.313441] (-) TimerEvent: {}
+[4.413769] (-) TimerEvent: {}
+[4.514033] (-) TimerEvent: {}
+[4.614272] (-) TimerEvent: {}
+[4.714516] (-) TimerEvent: {}
+[4.814837] (-) TimerEvent: {}
+[4.915075] (-) TimerEvent: {}
+[5.015330] (-) TimerEvent: {}
+[5.115659] (-) TimerEvent: {}
+[5.215994] (-) TimerEvent: {}
+[5.316208] (-) TimerEvent: {}
+[5.416460] (-) TimerEvent: {}
+[5.516757] (-) TimerEvent: {}
+[5.617028] (-) TimerEvent: {}
+[5.717259] (-) TimerEvent: {}
+[5.817539] (-) TimerEvent: {}
+[5.917848] (-) TimerEvent: {}
+[6.018076] (-) TimerEvent: {}
+[6.118308] (-) TimerEvent: {}
+[6.218558] (-) TimerEvent: {}
+[6.318877] (-) TimerEvent: {}
+[6.419223] (-) TimerEvent: {}
+[6.519464] (-) TimerEvent: {}
+[6.619764] (-) TimerEvent: {}
+[6.719941] (-) TimerEvent: {}
+[6.820150] (-) TimerEvent: {}
+[6.920404] (-) TimerEvent: {}
+[7.020716] (-) TimerEvent: {}
+[7.121080] (-) TimerEvent: {}
+[7.221310] (-) TimerEvent: {}
+[7.321636] (-) TimerEvent: {}
+[7.421873] (-) TimerEvent: {}
+[7.522272] (-) TimerEvent: {}
+[7.622586] (-) TimerEvent: {}
+[7.722890] (-) TimerEvent: {}
+[7.823226] (-) TimerEvent: {}
+[7.923554] (-) TimerEvent: {}
+[8.023887] (-) TimerEvent: {}
+[8.124244] (-) TimerEvent: {}
+[8.224539] (-) TimerEvent: {}
+[8.324873] (-) TimerEvent: {}
+[8.336604] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX shared library libpl_nmpc_shared_lib.so\x1b[0m\n'}
+[8.425026] (-) TimerEvent: {}
+[8.525250] (-) TimerEvent: {}
+[8.625474] (-) TimerEvent: {}
+[8.725790] (-) TimerEvent: {}
+[8.826058] (-) TimerEvent: {}
+[8.837444] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 66%] Built target pl_nmpc_shared_lib\n'}
+[8.852882] (rotor_tm_plcontrol) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pl_nmpc_node\x1b[0m\n'}
+[8.879155] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_node.dir/src/pl_nmpc_controller_node.cpp.o\x1b[0m\n'}
+[8.926124] (-) TimerEvent: {}
+[9.026335] (-) TimerEvent: {}
+[9.126593] (-) TimerEvent: {}
+[9.226935] (-) TimerEvent: {}
+[9.327167] (-) TimerEvent: {}
+[9.427418] (-) TimerEvent: {}
+[9.527690] (-) TimerEvent: {}
+[9.628011] (-) TimerEvent: {}
+[9.728242] (-) TimerEvent: {}
+[9.828497] (-) TimerEvent: {}
+[9.928802] (-) TimerEvent: {}
+[10.029049] (-) TimerEvent: {}
+[10.129270] (-) TimerEvent: {}
+[10.229532] (-) TimerEvent: {}
+[10.329836] (-) TimerEvent: {}
+[10.430096] (-) TimerEvent: {}
+[10.530368] (-) TimerEvent: {}
+[10.630684] (-) TimerEvent: {}
+[10.731009] (-) TimerEvent: {}
+[10.831249] (-) TimerEvent: {}
+[10.931582] (-) TimerEvent: {}
+[11.031953] (-) TimerEvent: {}
+[11.132181] (-) TimerEvent: {}
+[11.184024] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid nmpc_control_nodelet::NMPCControlNodelet::referenceCallback(rotor_tm_msgs::msg::TrajCommand_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[11.184156] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:163:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Kang_acc\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.184204] (rotor_tm_plcontrol) StderrLine: {'line': b'  163 |   Eigen::Vector3d \x1b[01;35m\x1b[Kang_acc\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[11.184236] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.184268] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:164:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Kang_vel\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.184298] (rotor_tm_plcontrol) StderrLine: {'line': b'  164 |   Eigen::Vector3d \x1b[01;35m\x1b[Kang_vel\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[11.184325] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.184353] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:166:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Klin_vel\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.184384] (rotor_tm_plcontrol) StderrLine: {'line': b'  166 |   Eigen::Vector3d \x1b[01;35m\x1b[Klin_vel\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[11.184410] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.184437] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dhruv/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:167:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Kmoments\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.184465] (rotor_tm_plcontrol) StderrLine: {'line': b'  167 |   Eigen::Vector3d \x1b[01;35m\x1b[Kmoments\x1b[m\x1b[K = Eigen::Vector3d::Zero();\n'}
+[11.184492] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.232267] (-) TimerEvent: {}
+[11.332532] (-) TimerEvent: {}
+[11.432840] (-) TimerEvent: {}
+[11.533069] (-) TimerEvent: {}
+[11.633293] (-) TimerEvent: {}
+[11.733604] (-) TimerEvent: {}
+[11.833936] (-) TimerEvent: {}
+[11.934166] (-) TimerEvent: {}
+[12.034437] (-) TimerEvent: {}
+[12.134748] (-) TimerEvent: {}
+[12.235031] (-) TimerEvent: {}
+[12.335262] (-) TimerEvent: {}
+[12.435521] (-) TimerEvent: {}
+[12.535869] (-) TimerEvent: {}
+[12.636109] (-) TimerEvent: {}
+[12.736366] (-) TimerEvent: {}
+[12.836654] (-) TimerEvent: {}
+[12.936942] (-) TimerEvent: {}
+[13.037270] (-) TimerEvent: {}
+[13.137606] (-) TimerEvent: {}
+[13.237954] (-) TimerEvent: {}
+[13.338337] (-) TimerEvent: {}
+[13.438692] (-) TimerEvent: {}
+[13.539034] (-) TimerEvent: {}
+[13.639277] (-) TimerEvent: {}
+[13.739661] (-) TimerEvent: {}
+[13.839949] (-) TimerEvent: {}
+[13.940170] (-) TimerEvent: {}
+[14.040409] (-) TimerEvent: {}
+[14.140651] (-) TimerEvent: {}
+[14.240967] (-) TimerEvent: {}
+[14.341183] (-) TimerEvent: {}
+[14.441486] (-) TimerEvent: {}
+[14.541803] (-) TimerEvent: {}
+[14.642039] (-) TimerEvent: {}
+[14.742353] (-) TimerEvent: {}
+[14.842650] (-) TimerEvent: {}
+[14.942955] (-) TimerEvent: {}
+[15.043276] (-) TimerEvent: {}
+[15.143581] (-) TimerEvent: {}
+[15.243879] (-) TimerEvent: {}
+[15.344196] (-) TimerEvent: {}
+[15.444503] (-) TimerEvent: {}
+[15.544830] (-) TimerEvent: {}
+[15.645170] (-) TimerEvent: {}
+[15.745407] (-) TimerEvent: {}
+[15.845705] (-) TimerEvent: {}
+[15.946040] (-) TimerEvent: {}
+[16.046379] (-) TimerEvent: {}
+[16.146680] (-) TimerEvent: {}
+[16.246986] (-) TimerEvent: {}
+[16.347315] (-) TimerEvent: {}
+[16.447540] (-) TimerEvent: {}
+[16.547986] (-) TimerEvent: {}
+[16.648239] (-) TimerEvent: {}
+[16.748557] (-) TimerEvent: {}
+[16.848880] (-) TimerEvent: {}
+[16.949112] (-) TimerEvent: {}
+[17.049393] (-) TimerEvent: {}
+[17.119696] (rotor_tm_plcontrol) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable pl_nmpc_node\x1b[0m\n'}
+[17.149483] (-) TimerEvent: {}
+[17.249759] (-) TimerEvent: {}
+[17.350117] (-) TimerEvent: {}
+[17.450357] (-) TimerEvent: {}
+[17.550684] (-) TimerEvent: {}
+[17.604096] (rotor_tm_plcontrol) StdoutLine: {'line': b'[100%] Built target pl_nmpc_node\n'}
+[17.616509] (rotor_tm_plcontrol) CommandEnded: {'returncode': 0}
+[17.617604] (rotor_tm_plcontrol) JobProgress: {'identifier': 'rotor_tm_plcontrol', 'progress': 'install'}
+[17.629289] (rotor_tm_plcontrol) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/dhruv/RotorTM/build/rotor_tm_plcontrol'], 'cwd': '/home/dhruv/RotorTM/build/rotor_tm_plcontrol', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('no_proxy', 'localhost,127.0.0.0/8,::1'), ('USER', 'dhruv'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:/home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs/lib:/home/dhruv/rbe500-ros/install/robotis_manipulator/lib:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/lib:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/lib:/home/dhruv/rbe500-ros/install/dynamixel_sdk/lib:/home/dhruv/rbe500-ros/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/dhruv/acados/lib:/home/dhruv/acados/lib'), ('ACADOS_SOURCE_DIR', '/home/dhruv/acados'), ('HOME', '/home/dhruv'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/dhruv/RotorTM/src/rotor_tm_plcontrol'), ('TERM_PROGRAM_VERSION', '1.96.2'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.0/8,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '2675'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=3943b2666bf3468070f6f5cb678fbea3'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('COLCON_PREFIX_PATH', '/home/dhruv/RotorTM/install:/home/dhruv/rbe500-ros/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'dhruv'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'dhruv'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/dhruv/anaconda3/bin:/home/dhruv/anaconda3/condabin:/home/dhruv/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/dhruv:@/tmp/.ICE-unix/2675,unix/dhruv:/tmp/.ICE-unix/2675'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/c248aea5_753a_45bb_8e2b_9fce2ac7a667'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d09a506432.sock'), ('GNOME_TERMINAL_SERVICE', ':1.105'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/dhruv/anaconda3/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/grp_assn_3:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/dhruv/anaconda3/bin/python'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dhruv/RotorTM/build/rotor_tm_plcontrol'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/dhruv/anaconda3/bin/conda'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=3943b2666bf3468070f6f5cb678fbea3'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/payload_control/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/rbe500_example_py/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_2/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/grp_assn_1/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/open_manipulator_msgs/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/grp_assn_3/lib/python3.10/site-packages:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/home/dhruv/rbe500-ros/install/custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CONDA_PREFIX', '/home/dhruv/anaconda3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_plcontrol:/home/dhruv/rbe500-ros/install/open_manipulator:/home/dhruv/rbe500-ros/install/open_manipulator_x_controller:/home/dhruv/rbe500-ros/install/open_manipulator_x_libs:/home/dhruv/rbe500-ros/install/robotis_manipulator:/home/dhruv/rbe500-ros/install/rbe500-example:/home/dhruv/rbe500-ros/install/open_manipulator_x_description:/home/dhruv/rbe500-ros/install/open_manipulator_msgs:/home/dhruv/rbe500-ros/install/dynamixel_workbench:/home/dhruv/rbe500-ros/install/dynamixel_workbench_toolbox:/home/dhruv/rbe500-ros/install/dynamixel_sdk_examples:/home/dhruv/rbe500-ros/install/dynamixel_sdk_custom_interfaces:/home/dhruv/rbe500-ros/install/dynamixel_sdk:/home/dhruv/rbe500-ros/install/custom_interfaces:/home/dhruv/rbe500-ros/install/cmake_modules:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble')]), 'shell': False}
+[17.639490] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[17.640312] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[17.640460] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib/libacados_ocp_solver_payload_model.so\n'}
+[17.640696] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/library_path.sh\n'}
+[17.640883] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/library_path.dsv\n'}
+[17.641218] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib/rotor_tm_plcontrol/pl_nmpc_node\n'}
+[17.641512] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/lib/libpl_nmpc_shared_lib.so\n'}
+[17.641976] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/acados_solver_payload_model.h\n'}
+[17.642128] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/nmpc_control.h\n'}
+[17.642250] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/payload_model_model.h\n'}
+[17.642397] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/wrapper.h\n'}
+[17.642554] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/package_run_dependencies/rotor_tm_plcontrol\n'}
+[17.642741] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/parent_prefix_path/rotor_tm_plcontrol\n'}
+[17.642895] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/ament_prefix_path.sh\n'}
+[17.643047] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/ament_prefix_path.dsv\n'}
+[17.643226] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/path.sh\n'}
+[17.643396] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/path.dsv\n'}
+[17.643560] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.bash\n'}
+[17.643721] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.sh\n'}
+[17.643881] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.zsh\n'}
+[17.644052] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.dsv\n'}
+[17.644173] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.dsv\n'}
+[17.650756] (-) TimerEvent: {}
+[17.654324] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/packages/rotor_tm_plcontrol\n'}
+[17.654448] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[17.654553] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[17.654625] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/rotor_tm_plcontrolConfig.cmake\n'}
+[17.654704] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/rotor_tm_plcontrolConfig-version.cmake\n'}
+[17.654789] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.xml\n'}
+[17.656622] (rotor_tm_plcontrol) CommandEnded: {'returncode': 0}
+[17.675131] (rotor_tm_plcontrol) JobEnded: {'identifier': 'rotor_tm_plcontrol', 'rc': 0}
+[17.675671] (-) EventReactorShutdown: {}

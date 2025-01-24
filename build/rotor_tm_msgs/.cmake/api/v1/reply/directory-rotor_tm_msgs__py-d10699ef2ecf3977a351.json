@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "rotor_tm_msgs__py",
+		"source" : "/home/dhruv/RotorTM/build/rotor_tm_msgs/rotor_tm_msgs__py"
+	}
+}

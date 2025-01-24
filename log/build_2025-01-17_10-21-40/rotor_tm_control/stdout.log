@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing rotor_tm_control.egg-info/PKG-INFO
+writing dependency_links to rotor_tm_control.egg-info/dependency_links.txt
+writing entry points to rotor_tm_control.egg-info/entry_points.txt
+writing requirements to rotor_tm_control.egg-info/requires.txt
+writing top-level names to rotor_tm_control.egg-info/top_level.txt
+reading manifest file 'rotor_tm_control.egg-info/SOURCES.txt'
+writing manifest file 'rotor_tm_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/dhruv/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor-tm-control.egg-link (link to .)
+Installing controller_node script to /home/dhruv/RotorTM/install/rotor_tm_control/lib/rotor_tm_control
+
+Installed /home/dhruv/RotorTM/build/rotor_tm_control
+running symlink_data

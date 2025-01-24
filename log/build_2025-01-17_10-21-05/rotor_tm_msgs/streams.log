@@ -1,0 +1,588 @@
+[0.035s] Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble /usr/bin/cmake /home/dhruv/RotorTM/src/rotor_tm_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dhruv/RotorTM/install/rotor_tm_msgs
+[0.703s] -- The C compiler identification is GNU 11.4.0
+[0.703s] -- The CXX compiler identification is GNU 11.4.0
+[0.703s] -- Detecting C compiler ABI info
+[0.703s] -- Detecting C compiler ABI info - done
+[0.703s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.703s] -- Detecting C compile features
+[0.703s] -- Detecting C compile features - done
+[0.703s] -- Detecting CXX compiler ABI info
+[0.703s] -- Detecting CXX compiler ABI info - done
+[0.703s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.704s] -- Detecting CXX compile features
+[0.704s] -- Detecting CXX compile features - done
+[0.704s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.704s] -- Found ament_cmake_core: 1.3.11 (/opt/ros/humble/share/ament_cmake_core/cmake)
+[0.704s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.704s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.704s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.704s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.704s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.704s] -- Found rclpy: 3.3.15 (/opt/ros/humble/share/rclpy/cmake)
+[0.704s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.704s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.929s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.166s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.461s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.490s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.493s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.538s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.538s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.538s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.538s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.564s] -- Found PythonExtra: .so  
+[1.636s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.654s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.654s] -- Configured cppcheck include dirs: 
+[1.654s] -- Configured cppcheck exclude dirs and/or files: 
+[1.655s] -- Added test 'lint_cmake' to check CMake code style
+[1.656s] -- Added test 'uncrustify' to check C / C++ code style
+[1.656s] -- Configured uncrustify additional arguments: 
+[1.656s] -- Added test 'xmllint' to check XML markup files
+[1.658s] -- Configuring done
+[1.694s] -- Generating done
+[1.702s] -- Build files have been written to: /home/dhruv/RotorTM/build/rotor_tm_msgs
+[1.710s] Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble /usr/bin/cmake /home/dhruv/RotorTM/src/rotor_tm_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dhruv/RotorTM/install/rotor_tm_msgs
+[1.710s] Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble /usr/bin/cmake --build /home/dhruv/RotorTM/build/rotor_tm_msgs -- -j32 -l32
+[1.750s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.766s] [  1%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.770s] [  1%] Built target ament_cmake_python_symlink_rotor_tm_msgs
+[1.943s] running egg_info
+[1.944s] creating rotor_tm_msgs.egg-info
+[1.944s] writing rotor_tm_msgs.egg-info/PKG-INFO
+[1.944s] writing dependency_links to rotor_tm_msgs.egg-info/dependency_links.txt
+[1.944s] writing top-level names to rotor_tm_msgs.egg-info/top_level.txt
+[1.944s] writing manifest file 'rotor_tm_msgs.egg-info/SOURCES.txt'
+[1.945s] reading manifest file 'rotor_tm_msgs.egg-info/SOURCES.txt'
+[1.945s] writing manifest file 'rotor_tm_msgs.egg-info/SOURCES.txt'
+[1.964s] [  1%] Built target ament_cmake_python_build_rotor_tm_msgs_egg
+[2.550s] [  1%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/so3_command__functions.c.o[0m
+[2.550s] [  3%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/fm_command__functions.c.o[0m
+[2.550s] [  4%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/rpm_command__functions.c.o[0m
+[2.551s] [  4%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/status_data__functions.c.o[0m
+[2.551s] [  5%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/traj_command__functions.c.o[0m
+[2.551s] [  7%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/cen_pl_command__functions.c.o[0m
+[2.551s] [  7%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/fmn_command__functions.c.o[0m
+[2.551s] [  7%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/trpy_command__functions.c.o[0m
+[2.551s] [  7%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/msg/detail/position_command__functions.c.o[0m
+[2.553s] [  8%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/srv/detail/circle__functions.c.o[0m
+[2.553s] [  8%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/srv/detail/vec4__functions.c.o[0m
+[2.553s] [  8%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/srv/detail/copr_status_cmd__functions.c.o[0m
+[2.553s] [  9%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/srv/detail/circle_with_rotation__functions.c.o[0m
+[2.553s] [ 10%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/srv/detail/line__functions.c.o[0m
+[2.556s] [ 11%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/rotor_tm_msgs/srv/detail/step_pose__functions.c.o[0m
+[2.583s] [ 11%] Built target rotor_tm_msgs__cpp
+[2.593s] [ 11%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.595s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.596s] [ 13%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.627s] [ 14%] [32m[1mLinking C shared library librotor_tm_msgs__rosidl_generator_c.so[0m
+[2.659s] [ 14%] Built target rotor_tm_msgs__rosidl_generator_c
+[2.670s] [ 15%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.670s] [ 17%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.670s] [ 17%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.103s] [ 18%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/position_command__type_support.cpp.o[0m
+[3.103s] [ 18%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/fm_command__type_support.cpp.o[0m
+[3.103s] [ 19%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/rpm_command__type_support.cpp.o[0m
+[3.104s] [ 20%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/srv/vec4__type_support.cpp.o[0m
+[3.104s] [ 21%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/cen_pl_command__type_support.cpp.o[0m
+[3.104s] [ 21%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/so3_command__type_support.cpp.o[0m
+[3.105s] [ 21%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/srv/circle_with_rotation__type_support.cpp.o[0m
+[3.105s] [ 22%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/srv/line__type_support.cpp.o[0m
+[3.105s] [ 23%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/status_data__type_support.cpp.o[0m
+[3.105s] [ 24%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/trpy_command__type_support.cpp.o[0m
+[3.106s] [ 25%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/traj_command__type_support.cpp.o[0m
+[3.106s] [ 25%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/msg/fmn_command__type_support.cpp.o[0m
+[3.107s] [ 27%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/srv/circle__type_support.cpp.o[0m
+[3.107s] [ 27%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/srv/copr_status_cmd__type_support.cpp.o[0m
+[3.108s] [ 27%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rotor_tm_msgs/srv/step_pose__type_support.cpp.o[0m
+[3.175s] [ 27%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/position_command__type_support.cpp.o[0m
+[3.187s] [ 29%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/rpm_command__type_support.cpp.o[0m
+[3.188s] [ 29%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/fm_command__type_support.cpp.o[0m
+[3.188s] [ 29%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/so3_command__type_support.cpp.o[0m
+[3.188s] [ 30%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/cen_pl_command__type_support.cpp.o[0m
+[3.188s] [ 31%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/status_data__type_support.cpp.o[0m
+[3.188s] [ 32%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/trpy_command__type_support.cpp.o[0m
+[3.188s] [ 33%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/fmn_command__type_support.cpp.o[0m
+[3.188s] [ 33%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/msg/traj_command__type_support.cpp.o[0m
+[3.188s] [ 33%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/srv/circle__type_support.cpp.o[0m
+[3.189s] [ 34%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/srv/vec4__type_support.cpp.o[0m
+[3.191s] [ 35%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/srv/circle_with_rotation__type_support.cpp.o[0m
+[3.194s] [ 36%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/srv/line__type_support.cpp.o[0m
+[3.210s] [ 37%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/position_command__type_support.cpp.o[0m
+[3.220s] [ 37%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/srv/copr_status_cmd__type_support.cpp.o[0m
+[3.222s] [ 38%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/fm_command__type_support.cpp.o[0m
+[3.224s] [ 40%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/rotor_tm_msgs/srv/step_pose__type_support.cpp.o[0m
+[3.224s] [ 40%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/rpm_command__type_support.cpp.o[0m
+[3.224s] [ 41%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.cpp.o[0m
+[3.224s] [ 41%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/so3_command__type_support.cpp.o[0m
+[3.231s] [ 42%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/status_data__type_support.cpp.o[0m
+[3.231s] [ 42%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/trpy_command__type_support.cpp.o[0m
+[3.231s] [ 44%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/fmn_command__type_support.cpp.o[0m
+[3.231s] [ 44%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/msg/detail/traj_command__type_support.cpp.o[0m
+[3.231s] [ 44%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/srv/detail/vec4__type_support.cpp.o[0m
+[3.235s] [ 46%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/srv/detail/circle__type_support.cpp.o[0m
+[3.235s] [ 46%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.cpp.o[0m
+[3.267s] [ 47%] [32m[1mLinking CXX shared library librotor_tm_msgs__rosidl_typesupport_c.so[0m
+[3.267s] [ 47%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/srv/detail/line__type_support.cpp.o[0m
+[3.326s] [ 47%] Built target rotor_tm_msgs__rosidl_typesupport_c
+[3.338s] [ 48%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.cpp.o[0m
+[3.421s] [ 49%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rotor_tm_msgs/srv/detail/step_pose__type_support.cpp.o[0m
+[3.464s] [ 50%] [32m[1mLinking CXX shared library librotor_tm_msgs__rosidl_typesupport_cpp.so[0m
+[3.520s] [ 51%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/rpm_command__type_support.cpp.o[0m
+[3.521s] [ 51%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/status_data__type_support.cpp.o[0m
+[3.521s] [ 52%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/so3_command__type_support.cpp.o[0m
+[3.521s] [ 55%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/cen_pl_command__type_support.cpp.o[0m
+[3.521s] [ 56%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/fm_command__type_support.cpp.o[0m
+[3.521s] [ 56%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/traj_command__type_support.cpp.o[0m
+[3.521s] [ 56%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/trpy_command__type_support.cpp.o[0m
+[3.521s] [ 57%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/srv/detail/dds_fastrtps/vec4__type_support.cpp.o[0m
+[3.522s] [ 58%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/srv/detail/dds_fastrtps/circle__type_support.cpp.o[0m
+[3.522s] [ 56%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/position_command__type_support.cpp.o[0m
+[3.522s] [ 58%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/msg/detail/dds_fastrtps/fmn_command__type_support.cpp.o[0m
+[3.522s] [ 58%] Built target rotor_tm_msgs__rosidl_typesupport_cpp
+[3.522s] [ 59%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/position_command__type_support.c.o[0m
+[3.524s] [ 59%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/srv/detail/dds_fastrtps/line__type_support.cpp.o[0m
+[3.524s] [ 60%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/srv/detail/dds_fastrtps/circle_with_rotation__type_support.cpp.o[0m
+[3.527s] [ 60%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/fm_command__type_support.c.o[0m
+[3.536s] [ 61%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/srv/detail/dds_fastrtps/copr_status_cmd__type_support.cpp.o[0m
+[3.572s] [ 62%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/rpm_command__type_support.c.o[0m
+[3.577s] [ 63%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/so3_command__type_support.c.o[0m
+[3.626s] [ 64%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.c.o[0m
+[3.638s] [ 65%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rotor_tm_msgs/srv/detail/dds_fastrtps/step_pose__type_support.cpp.o[0m
+[3.684s] [ 65%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/status_data__type_support.c.o[0m
+[3.687s] [ 66%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/trpy_command__type_support.c.o[0m
+[3.690s] [ 67%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/traj_command__type_support.c.o[0m
+[3.699s] [ 67%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/msg/detail/fmn_command__type_support.c.o[0m
+[3.701s] [ 68%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/srv/detail/vec4__type_support.c.o[0m
+[3.708s] [ 69%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/srv/detail/circle__type_support.c.o[0m
+[3.731s] [ 70%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/srv/detail/line__type_support.c.o[0m
+[3.734s] [ 70%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.c.o[0m
+[3.734s] [ 71%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.c.o[0m
+[3.740s] [ 72%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rotor_tm_msgs/srv/detail/step_pose__type_support.c.o[0m
+[3.775s] [ 72%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/cen_pl_command__type_support_c.cpp.o[0m
+[3.775s] [ 72%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/fm_command__type_support_c.cpp.o[0m
+[3.776s] [ 72%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/traj_command__type_support_c.cpp.o[0m
+[3.776s] [ 73%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/rpm_command__type_support_c.cpp.o[0m
+[3.776s] [ 74%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/position_command__type_support_c.cpp.o[0m
+[3.776s] [ 76%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/status_data__type_support_c.cpp.o[0m
+[3.776s] [ 76%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/trpy_command__type_support_c.cpp.o[0m
+[3.777s] [ 77%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/so3_command__type_support_c.cpp.o[0m
+[3.777s] [ 78%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/msg/detail/fmn_command__type_support_c.cpp.o[0m
+[3.786s] [ 79%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/srv/detail/circle__type_support_c.cpp.o[0m
+[3.788s] [ 80%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/srv/detail/vec4__type_support_c.cpp.o[0m
+[3.789s] [ 80%] [32m[1mLinking C shared library librotor_tm_msgs__rosidl_typesupport_introspection_c.so[0m
+[3.809s] [ 81%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/srv/detail/line__type_support_c.cpp.o[0m
+[3.809s] [ 81%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support_c.cpp.o[0m
+[3.817s] [ 82%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support_c.cpp.o[0m
+[3.842s] [ 82%] Built target rotor_tm_msgs__rosidl_typesupport_introspection_c
+[3.847s] [ 82%] [32mBuilding CXX object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rotor_tm_msgs/srv/detail/step_pose__type_support_c.cpp.o[0m
+[3.947s] [ 83%] [32m[1mLinking CXX shared library librotor_tm_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[4.062s] [ 83%] Built target rotor_tm_msgs__rosidl_typesupport_introspection_cpp
+[4.121s] [ 83%] [32m[1mLinking CXX shared library librotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.191s] [ 83%] Built target rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp
+[4.241s] [ 84%] [32m[1mLinking CXX shared library librotor_tm_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[4.311s] [ 84%] Built target rotor_tm_msgs__rosidl_typesupport_fastrtps_c
+[4.334s] [ 84%] Built target rotor_tm_msgs
+[4.360s] [ 85%] [34m[1mGenerating Python code for ROS interfaces[0m
+[5.703s] [ 85%] Built target rotor_tm_msgs__py
+[5.721s] [ 86%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_fm_command_s.c.o[0m
+[5.724s] [ 86%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_position_command_s.c.o[0m
+[5.724s] [ 87%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/srv/_vec4_s.c.o[0m
+[5.724s] [ 87%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/srv/_circle_s.c.o[0m
+[5.724s] [ 88%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_rpm_command_s.c.o[0m
+[5.725s] [ 90%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/srv/_copr_status_cmd_s.c.o[0m
+[5.725s] [ 90%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/srv/_line_s.c.o[0m
+[5.725s] [ 91%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_cen_pl_command_s.c.o[0m
+[5.725s] [ 91%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_so3_command_s.c.o[0m
+[5.726s] [ 93%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_trpy_command_s.c.o[0m
+[5.726s] [ 93%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_status_data_s.c.o[0m
+[5.726s] [ 93%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/srv/_step_pose_s.c.o[0m
+[5.727s] [ 94%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_fmn_command_s.c.o[0m
+[5.727s] [ 94%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/msg/_traj_command_s.c.o[0m
+[5.729s] [ 95%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_msgs/srv/_circle_with_rotation_s.c.o[0m
+[5.856s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/rotor_tm_msgs/librotor_tm_msgs__rosidl_generator_py.so[0m
+[5.891s] [ 96%] Built target rotor_tm_msgs__rosidl_generator_py
+[5.911s] [ 99%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/rotor_tm_msgs/_rotor_tm_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[5.911s] [ 99%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/rotor_tm_msgs/_rotor_tm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[5.912s] [ 99%] [32mBuilding C object CMakeFiles/rotor_tm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/rotor_tm_msgs/_rotor_tm_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[6.019s] [ 99%] [32m[1mLinking C shared library rosidl_generator_py/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.020s] [100%] [32m[1mLinking C shared library rosidl_generator_py/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.030s] [100%] [32m[1mLinking C shared library rosidl_generator_py/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.055s] [100%] Built target rotor_tm_msgs__rosidl_typesupport_c__pyext
+[6.062s] [100%] Built target rotor_tm_msgs__rosidl_typesupport_introspection_c__pyext
+[6.068s] [100%] Built target rotor_tm_msgs__rosidl_typesupport_fastrtps_c__pyext
+[6.082s] Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble /usr/bin/cmake --build /home/dhruv/RotorTM/build/rotor_tm_msgs -- -j32 -l32
+[6.095s] Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble /usr/bin/cmake --install /home/dhruv/RotorTM/build/rotor_tm_msgs
+[6.106s] -- Install configuration: ""
+[6.107s] -- Execute custom install script
+[6.107s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/ament_index/resource_index/rosidl_interfaces/rotor_tm_msgs
+[6.117s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/cen_pl_command.h
+[6.126s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__functions.h
+[6.137s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__struct.h
+[6.148s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.h
+[6.160s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__functions.h
+[6.172s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__struct.h
+[6.182s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__type_support.h
+[6.191s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__functions.h
+[6.202s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__struct.h
+[6.212s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__type_support.h
+[6.221s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__functions.h
+[6.231s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__struct.h
+[6.240s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__type_support.h
+[6.250s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__functions.h
+[6.259s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__struct.h
+[6.270s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__type_support.h
+[6.280s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__functions.h
+[6.287s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__struct.h
+[6.294s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__type_support.h
+[6.302s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__functions.h
+[6.309s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__struct.h
+[6.315s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__type_support.h
+[6.322s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__functions.h
+[6.328s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__struct.h
+[6.334s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__type_support.h
+[6.342s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__functions.h
+[6.349s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__struct.h
+[6.355s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__type_support.h
+[6.361s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/fm_command.h
+[6.368s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/fmn_command.h
+[6.378s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/position_command.h
+[6.387s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/rosidl_generator_c__visibility_control.h
+[6.394s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/rpm_command.h
+[6.404s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/so3_command.h
+[6.410s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/status_data.h
+[6.419s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/traj_command.h
+[6.427s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/trpy_command.h
+[6.438s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/circle.h
+[6.447s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/circle_with_rotation.h
+[6.456s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/copr_status_cmd.h
+[6.465s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__functions.h
+[6.475s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__struct.h
+[6.484s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__type_support.h
+[6.489s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__functions.h
+[6.495s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__struct.h
+[6.501s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.h
+[6.508s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__functions.h
+[6.516s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__struct.h
+[6.525s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.h
+[6.533s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__functions.h
+[6.543s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__struct.h
+[6.553s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__type_support.h
+[6.562s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__functions.h
+[6.573s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__struct.h
+[6.583s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__type_support.h
+[6.588s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__functions.h
+[6.596s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__struct.h
+[6.602s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__type_support.h
+[6.608s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/line.h
+[6.616s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/step_pose.h
+[6.622s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/vec4.h
+[6.631s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/library_path.sh
+[6.637s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/library_path.dsv
+[6.643s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__rosidl_typesupport_fastrtps_c.h
+[6.648s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__rosidl_typesupport_fastrtps_c.h
+[6.655s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__rosidl_typesupport_fastrtps_c.h
+[6.663s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__rosidl_typesupport_fastrtps_c.h
+[6.672s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__rosidl_typesupport_fastrtps_c.h
+[6.679s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__rosidl_typesupport_fastrtps_c.h
+[6.687s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__rosidl_typesupport_fastrtps_c.h
+[6.696s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__rosidl_typesupport_fastrtps_c.h
+[6.702s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__rosidl_typesupport_fastrtps_c.h
+[6.710s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[6.718s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__rosidl_typesupport_fastrtps_c.h
+[6.728s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__rosidl_typesupport_fastrtps_c.h
+[6.738s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__rosidl_typesupport_fastrtps_c.h
+[6.749s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__rosidl_typesupport_fastrtps_c.h
+[6.758s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__rosidl_typesupport_fastrtps_c.h
+[6.767s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__rosidl_typesupport_fastrtps_c.h
+[6.777s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__rosidl_typesupport_introspection_c.h
+[6.786s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__rosidl_typesupport_introspection_c.h
+[6.796s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__rosidl_typesupport_introspection_c.h
+[6.803s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__rosidl_typesupport_introspection_c.h
+[6.811s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__rosidl_typesupport_introspection_c.h
+[6.819s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__rosidl_typesupport_introspection_c.h
+[6.828s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__rosidl_typesupport_introspection_c.h
+[6.839s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__rosidl_typesupport_introspection_c.h
+[6.850s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__rosidl_typesupport_introspection_c.h
+[6.861s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[6.874s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__rosidl_typesupport_introspection_c.h
+[6.885s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__rosidl_typesupport_introspection_c.h
+[6.896s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__rosidl_typesupport_introspection_c.h
+[6.907s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__rosidl_typesupport_introspection_c.h
+[6.916s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__rosidl_typesupport_introspection_c.h
+[6.925s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__rosidl_typesupport_introspection_c.h
+[6.935s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/cen_pl_command.hpp
+[6.949s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__builder.hpp
+[6.960s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__struct.hpp
+[6.969s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__traits.hpp
+[6.977s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__type_support.hpp
+[6.987s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__builder.hpp
+[6.996s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__struct.hpp
+[7.004s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__traits.hpp
+[7.014s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__type_support.hpp
+[7.021s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__builder.hpp
+[7.029s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__struct.hpp
+[7.040s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__traits.hpp
+[7.051s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__type_support.hpp
+[7.061s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__builder.hpp
+[7.072s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__struct.hpp
+[7.081s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__traits.hpp
+[7.090s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__type_support.hpp
+[7.098s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__builder.hpp
+[7.108s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__struct.hpp
+[7.118s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__traits.hpp
+[7.125s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__type_support.hpp
+[7.134s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__builder.hpp
+[7.143s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__struct.hpp
+[7.154s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__traits.hpp
+[7.161s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__type_support.hpp
+[7.169s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__builder.hpp
+[7.179s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__struct.hpp
+[7.188s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__traits.hpp
+[7.198s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__type_support.hpp
+[7.204s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__builder.hpp
+[7.212s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__struct.hpp
+[7.221s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__traits.hpp
+[7.228s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__type_support.hpp
+[7.235s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__builder.hpp
+[7.242s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__struct.hpp
+[7.252s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__traits.hpp
+[7.259s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__type_support.hpp
+[7.268s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/fm_command.hpp
+[7.278s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/fmn_command.hpp
+[7.287s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/position_command.hpp
+[7.295s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[7.303s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/rpm_command.hpp
+[7.312s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/so3_command.hpp
+[7.320s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/status_data.hpp
+[7.330s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/traj_command.hpp
+[7.339s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/trpy_command.hpp
+[7.347s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/circle.hpp
+[7.355s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/circle_with_rotation.hpp
+[7.365s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/copr_status_cmd.hpp
+[7.374s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__builder.hpp
+[7.383s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__struct.hpp
+[7.391s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__traits.hpp
+[7.400s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__type_support.hpp
+[7.408s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__builder.hpp
+[7.417s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__struct.hpp
+[7.427s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__traits.hpp
+[7.434s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__type_support.hpp
+[7.444s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__builder.hpp
+[7.452s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__struct.hpp
+[7.463s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__traits.hpp
+[7.469s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__type_support.hpp
+[7.476s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__builder.hpp
+[7.484s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__struct.hpp
+[7.491s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__traits.hpp
+[7.498s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__type_support.hpp
+[7.506s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__builder.hpp
+[7.514s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__struct.hpp
+[7.522s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__traits.hpp
+[7.531s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__type_support.hpp
+[7.540s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__builder.hpp
+[7.550s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__struct.hpp
+[7.559s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__traits.hpp
+[7.570s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__type_support.hpp
+[7.581s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/line.hpp
+[7.589s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/step_pose.hpp
+[7.599s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/vec4.hpp
+[7.607s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.613s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.620s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.629s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.639s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.649s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.659s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__rosidl_typesupport_fastrtps_cpp.hpp
+[7.668s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.677s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.687s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.693s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__rosidl_typesupport_fastrtps_cpp.hpp
+[7.701s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__rosidl_typesupport_fastrtps_cpp.hpp
+[7.709s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__rosidl_typesupport_fastrtps_cpp.hpp
+[7.717s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__rosidl_typesupport_fastrtps_cpp.hpp
+[7.726s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__rosidl_typesupport_fastrtps_cpp.hpp
+[7.736s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__rosidl_typesupport_fastrtps_cpp.hpp
+[7.746s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/cen_pl_command__rosidl_typesupport_introspection_cpp.hpp
+[7.755s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fm_command__rosidl_typesupport_introspection_cpp.hpp
+[7.764s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/fmn_command__rosidl_typesupport_introspection_cpp.hpp
+[7.774s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/position_command__rosidl_typesupport_introspection_cpp.hpp
+[7.782s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/rpm_command__rosidl_typesupport_introspection_cpp.hpp
+[7.791s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/so3_command__rosidl_typesupport_introspection_cpp.hpp
+[7.801s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/status_data__rosidl_typesupport_introspection_cpp.hpp
+[7.810s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/traj_command__rosidl_typesupport_introspection_cpp.hpp
+[7.818s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/msg/detail/trpy_command__rosidl_typesupport_introspection_cpp.hpp
+[7.829s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle__rosidl_typesupport_introspection_cpp.hpp
+[7.839s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/circle_with_rotation__rosidl_typesupport_introspection_cpp.hpp
+[7.850s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/copr_status_cmd__rosidl_typesupport_introspection_cpp.hpp
+[7.859s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/line__rosidl_typesupport_introspection_cpp.hpp
+[7.870s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/step_pose__rosidl_typesupport_introspection_cpp.hpp
+[7.878s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/include/rotor_tm_msgs/rotor_tm_msgs/srv/detail/vec4__rosidl_typesupport_introspection_cpp.hpp
+[7.889s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/pythonpath.sh
+[7.898s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/pythonpath.dsv
+[7.908s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[7.918s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[7.926s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[7.936s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[7.946s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/__init__.py
+[7.957s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/_rotor_tm_msgs_s.ep.rosidl_typesupport_c.c
+[7.966s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/_rotor_tm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[7.975s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/_rotor_tm_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[7.985s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/librotor_tm_msgs__rosidl_generator_py.so
+[7.994s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/__init__.py
+[8.003s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_cen_pl_command.py
+[8.012s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_cen_pl_command_s.c
+[8.020s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_fm_command.py
+[8.028s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_fm_command_s.c
+[8.038s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_fmn_command.py
+[8.047s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_fmn_command_s.c
+[8.055s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_position_command.py
+[8.065s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_position_command_s.c
+[8.071s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_rpm_command.py
+[8.080s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_rpm_command_s.c
+[8.090s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_so3_command.py
+[8.100s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_so3_command_s.c
+[8.108s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_status_data.py
+[8.118s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_status_data_s.c
+[8.127s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_traj_command.py
+[8.137s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_traj_command_s.c
+[8.146s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_trpy_command.py
+[8.156s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_trpy_command_s.c
+[8.166s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[8.177s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[8.182s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[8.189s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/__init__.py
+[8.197s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_circle.py
+[8.206s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_circle_s.c
+[8.215s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_circle_with_rotation.py
+[8.223s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_circle_with_rotation_s.c
+[8.233s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_copr_status_cmd.py
+[8.244s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_copr_status_cmd_s.c
+[8.253s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_line.py
+[8.263s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_line_s.c
+[8.271s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_step_pose.py
+[8.280s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_step_pose_s.c
+[8.289s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_vec4.py
+[8.297s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_vec4_s.c
+[8.308s] -- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[8.308s] -- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[8.308s] -- Up-to-date symlink: /home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/rotor_tm_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[8.308s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/PositionCommand.idl
+[8.315s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/FMCommand.idl
+[8.324s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/RPMCommand.idl
+[8.334s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/SO3Command.idl
+[8.345s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/CenPLCommand.idl
+[8.354s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/StatusData.idl
+[8.364s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/TRPYCommand.idl
+[8.373s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/TrajCommand.idl
+[8.383s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/FMNCommand.idl
+[8.390s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Vec4.idl
+[8.398s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Circle.idl
+[8.407s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CircleWithRotation.idl
+[8.414s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Line.idl
+[8.421s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CoprStatusCmd.idl
+[8.429s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/StepPose.idl
+[8.440s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/PositionCommand.msg
+[8.447s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/FMCommand.msg
+[8.452s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/RPMCommand.msg
+[8.458s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/SO3Command.msg
+[8.466s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/CenPLCommand.msg
+[8.475s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/StatusData.msg
+[8.484s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/TRPYCommand.msg
+[8.492s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/TrajCommand.msg
+[8.501s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/msg/FMNCommand.msg
+[8.511s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Vec4.srv
+[8.519s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Vec4_Request.msg
+[8.527s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Vec4_Response.msg
+[8.537s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Circle.srv
+[8.547s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Circle_Request.msg
+[8.556s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Circle_Response.msg
+[8.566s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CircleWithRotation.srv
+[8.576s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CircleWithRotation_Request.msg
+[8.585s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CircleWithRotation_Response.msg
+[8.593s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Line.srv
+[8.601s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Line_Request.msg
+[8.612s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/Line_Response.msg
+[8.622s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CoprStatusCmd.srv
+[8.632s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CoprStatusCmd_Request.msg
+[8.643s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/CoprStatusCmd_Response.msg
+[8.653s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/StepPose.srv
+[8.665s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/StepPose_Request.msg
+[8.676s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/srv/StepPose_Response.msg
+[8.685s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/ament_index/resource_index/package_run_dependencies/rotor_tm_msgs
+[8.691s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/ament_index/resource_index/parent_prefix_path/rotor_tm_msgs
+[8.698s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/ament_prefix_path.sh
+[8.706s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/ament_prefix_path.dsv
+[8.713s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/path.sh
+[8.723s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/environment/path.dsv
+[8.733s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/local_setup.bash
+[8.744s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/local_setup.sh
+[8.754s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/local_setup.zsh
+[8.763s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/local_setup.dsv
+[8.772s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.dsv
+[8.781s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/ament_index/resource_index/packages/rotor_tm_msgs
+[8.790s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rosidl_cmake-extras.cmake
+[8.800s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.808s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.818s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[8.827s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[8.836s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[8.845s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[8.855s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgsConfig.cmake
+[8.864s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgsConfig-version.cmake
+[8.874s] -- Symlinking: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.xml
+[8.884s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_generator_c.so
+[8.885s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_generator_c.so" to ""
+[8.885s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_fastrtps_c.so
+[8.885s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[8.885s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_introspection_c.so
+[8.885s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_introspection_c.so" to ""
+[8.885s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_c.so
+[8.885s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_c.so" to ""
+[8.886s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.so
+[8.886s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[8.886s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_introspection_cpp.so
+[8.886s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[8.886s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_cpp.so
+[8.887s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_typesupport_cpp.so" to ""
+[8.936s] Listing '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs'...
+[8.936s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/__init__.py'...
+[8.936s] Listing '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg'...
+[8.936s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/__init__.py'...
+[8.936s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_cen_pl_command.py'...
+[8.936s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_fm_command.py'...
+[8.936s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_fmn_command.py'...
+[8.936s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_position_command.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_rpm_command.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_so3_command.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_status_data.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_traj_command.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/msg/_trpy_command.py'...
+[8.937s] Listing '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/__init__.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_circle.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_circle_with_rotation.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_copr_status_cmd.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_line.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_step_pose.py'...
+[8.937s] Compiling '/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages/rotor_tm_msgs/srv/_vec4.py'...
+[8.939s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_generator_py.so
+[8.939s] -- Set runtime path of "/home/dhruv/RotorTM/install/rotor_tm_msgs/lib/librotor_tm_msgs__rosidl_generator_py.so" to ""
+[8.939s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_generator_cExport.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_generator_cExport-noconfig.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_introspection_cExport.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_cExport.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_generator_cppExport.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[8.940s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[8.941s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[8.941s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_cppExport.cmake
+[8.941s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/rotor_tm_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[8.941s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_generator_pyExport.cmake
+[8.941s] -- Installing: /home/dhruv/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/cmake/export_rotor_tm_msgs__rosidl_generator_pyExport-noconfig.cmake
+[8.942s] Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dhruv/RotorTM/install/rotor_tm_sim:/home/dhruv/RotorTM/install/rotor_tm_control:/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_traj:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench:/home/dhruv/RotorTM/install/rotor_tm_config:/home/dhruv/RotorTM/install/payload_control:/home/dhruv/rbe500-ros/install/rbe500_example_py:/home/dhruv/rbe500-ros/install/grp_assn_2:/home/dhruv/rbe500-ros/install/grp_assn_1:/home/dhruv/rbe500-ros/install/grp_assn_3:/opt/ros/humble /usr/bin/cmake --install /home/dhruv/RotorTM/build/rotor_tm_msgs

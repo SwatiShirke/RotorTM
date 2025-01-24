@@ -1,0 +1,22 @@
+[0.562s] Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_sim': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_config:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_sim build --build-base /home/dhruv/RotorTM/build/rotor_tm_sim/build install --record /home/dhruv/RotorTM/build/rotor_tm_sim/install.log --single-version-externally-managed install_data
+[0.721s] running egg_info
+[0.721s] writing ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/PKG-INFO
+[0.722s] writing dependency_links to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/dependency_links.txt
+[0.722s] writing entry points to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/entry_points.txt
+[0.722s] writing requirements to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/requires.txt
+[0.722s] writing top-level names to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/top_level.txt
+[0.723s] reading manifest file '../../build/rotor_tm_sim/rotor_tm_sim.egg-info/SOURCES.txt'
+[0.723s] adding license file 'LICENSE'
+[0.723s] writing manifest file '../../build/rotor_tm_sim/rotor_tm_sim.egg-info/SOURCES.txt'
+[0.724s] running build
+[0.724s] running build_py
+[0.724s] running install
+[0.724s] running install_lib
+[0.724s] running install_data
+[0.725s] running install_egg_info
+[0.726s] removing '/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages/rotor_tm_sim-0.0.0-py3.10.egg-info' (and everything under it)
+[0.726s] Copying ../../build/rotor_tm_sim/rotor_tm_sim.egg-info to /home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages/rotor_tm_sim-0.0.0-py3.10.egg-info
+[0.726s] running install_scripts
+[0.740s] Installing sim_node script to /home/dhruv/RotorTM/install/rotor_tm_sim/lib/rotor_tm_sim
+[0.740s] writing list of installed files to '/home/dhruv/RotorTM/build/rotor_tm_sim/install.log'
+[0.753s] Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_sim' returned '0': AMENT_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_utils:/home/dhruv/RotorTM/install/rotor_tm_msgs:/home/dhruv/RotorTM/install/rotor_tm_config:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/dhruv/RotorTM/install/rotor_tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/dhruv/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_sim build --build-base /home/dhruv/RotorTM/build/rotor_tm_sim/build install --record /home/dhruv/RotorTM/build/rotor_tm_sim/install.log --single-version-externally-managed install_data

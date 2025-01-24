@@ -1,0 +1,88 @@
+cd /home/dhruv/RotorTM_ws
+colcon build
+source install/setup.bash
+
+
+
+POINT MASS AND SINGLE ROBOT
+##############################
+Launch the visualizer, type of congifuration, controller, trajectory generator
+
+ros2 launch rotor_tm_sim editable_launch.py
+------In another terminal---------
+cd src/rotor_tm_plcontrol
+source build.sh
+colcon build in RotorTM
+##############################
+Call the circular trajectory service
+
+ros2 service call /Circle rotor_tm_msgs/srv/Circle "radius: 1.0
+tp: 10.0
+duration: 10.0"
+##############################
+To run the circular trajectory service with RigidbodyRotation
+
+ros2 service call /Circle_Rot_Rigidbody rotor_tm_msgs/srv/CircleWithRotation "{radius: 1.0, angle_amp: [30.0, 45.0, 60.0], tp: 10.0, duration: 10.0}"
+# This is giving me the error
+# AssertionError: The 'x' field must be of type 'float'
+# [ros2run]: Process exited with failure 1
+# also I had to run the node (not done by the launcher for some reason) by using the command
+ros2 run rotor_tm_traj traj_node
+##############################
+Run the Line trajectory generator service
+
+# You can change the coordinates for it to go to a different point
+ros2 service call /Line rotor_tm_msgs/srv/Line "{path: [{x: 0.0, y: -2.0, z: -1.0}]}"
+##############################
+For running just the simulation
+
+ros2 launch rotor_tm_sim sim_launch.py
+# The rviz window does not open up
+##############################
+Run keyboard interrupts package
+
+ros2 run rotor_tm_keyboard2wrench keyboard_input
+# Keyboard Interrupts package not working
+# I tried launching the editable_launch.py as well as the sim_launch.py but with both, it is showing error and not launching.
+# Working now. In simulation_base.py, the self.logger.info() wasnt there in ROS1 implementation, IDK how it got there. Fixed the logger error and now atleast something is working
+##############################
+
+
+TRIANGULAR RIGID BODY MASS AND 3 ROBOTS
+##############################
+Launch the visualizer, type of congifuration, controller, trajectory generator (make sure to comment and uncomment the different parts)
+
+ros2 launch rotor_tm_sim editable_launch.py
+##############################
+Call the circular trajectory service
+
+ros2 service call /Circle rotor_tm_msgs/srv/Circle "radius: 1.0
+tp: 10.0
+duration: 10.0"
+##############################
+To run the circular trajectory service with RigidbodyRotation
+
+ros2 service call /Circle_Rot_Rigidbody rotor_tm_msgs/srv/CircleWithRotation "{radius: 1.0, angle_amp: [30.0, 45.0, 60.0], tp: 10.0, duration: 10.0}"
+# This is giving me the error
+# AssertionError: The 'x' field must be of type 'float'
+# [ros2run]: Process exited with failure 1
+# also I had to run the node (not done by the launcher for some reason) by using the command
+ros2 run rotor_tm_traj traj_node
+##############################
+Run the Line trajectory generator service
+
+# You can change the coordinates for it to go to a different point
+ros2 service call /Line rotor_tm_msgs/srv/Line "{path: [{x: 0.0, y: -2.0, z: -1.0}]}"
+##############################
+For running just the simulation
+
+ros2 launch rotor_tm_sim sim_launch.py
+# The rviz window does not open up
+##############################
+Run keyboard interrupts package
+
+ros2 run rotor_tm_keyboard2wrench keyboard_input
+# Keyboard Interrupts package not working
+# I tried launching the editable_launch.py as well as the sim_launch.py but with both, it is showing error and not launching.
+# Working now. In simulation_base.py, the self.logger.info() wasnt there in ROS1 implementation, IDK how it got there. Fixed the logger error and now atleast something is working
+##############################

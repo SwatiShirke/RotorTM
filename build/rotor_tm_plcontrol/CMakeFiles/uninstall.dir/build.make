@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol
+CMAKE_SOURCE_DIR = /home/dhruv/RotorTM/src/rotor_tm_plcontrol
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol
+CMAKE_BINARY_DIR = /home/dhruv/RotorTM/build/rotor_tm_plcontrol
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol /home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dhruv/RotorTM/build/rotor_tm_plcontrol && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dhruv/RotorTM/src/rotor_tm_plcontrol /home/dhruv/RotorTM/src/rotor_tm_plcontrol /home/dhruv/RotorTM/build/rotor_tm_plcontrol /home/dhruv/RotorTM/build/rotor_tm_plcontrol /home/dhruv/RotorTM/build/rotor_tm_plcontrol/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

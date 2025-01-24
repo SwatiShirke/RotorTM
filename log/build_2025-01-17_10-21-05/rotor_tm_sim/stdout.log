@@ -1,0 +1,36 @@
+running develop
+running egg_info
+creating rotor_tm_sim.egg-info
+writing rotor_tm_sim.egg-info/PKG-INFO
+writing dependency_links to rotor_tm_sim.egg-info/dependency_links.txt
+writing entry points to rotor_tm_sim.egg-info/entry_points.txt
+writing requirements to rotor_tm_sim.egg-info/requires.txt
+writing top-level names to rotor_tm_sim.egg-info/top_level.txt
+writing manifest file 'rotor_tm_sim.egg-info/SOURCES.txt'
+reading manifest file 'rotor_tm_sim.egg-info/SOURCES.txt'
+writing manifest file 'rotor_tm_sim.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/dhruv/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages/rotor-tm-sim.egg-link (link to .)
+Installing sim_node script to /home/dhruv/RotorTM/install/rotor_tm_sim/lib/rotor_tm_sim
+
+Installed /home/dhruv/RotorTM/build/rotor_tm_sim
+running symlink_data
+creating /home/dhruv/RotorTM/install/rotor_tm_sim/share/ament_index
+creating /home/dhruv/RotorTM/install/rotor_tm_sim/share/ament_index/resource_index
+creating /home/dhruv/RotorTM/install/rotor_tm_sim/share/ament_index/resource_index/packages
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/resource/rotor_tm_sim -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/ament_index/resource_index/packages
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/package.xml -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim
+creating /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/launch/editable_launch.py -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/launch/sim_launch.py -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/launch/rotortm_single_controller_node.py -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/launch/controller_launcher.py -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/launch/rviz.py -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+creating /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/mesh/fedex_box_24x24x18in.STL -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/mesh/triangular_payload_bin.STL -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/mesh/long_bar.STL -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/mesh/triangular_payload.STL -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh
+creating /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh/uav
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/mesh/uav/race.stl -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh/uav
+symbolically linking /home/dhruv/RotorTM/build/rotor_tm_sim/mesh/uav/snapdragonflight.stl -> /home/dhruv/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/mesh/uav

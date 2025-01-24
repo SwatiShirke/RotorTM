@@ -1,16 +1,1 @@
-// generated from rosidl_adapter/resource/msg.idl.em
-// with input from rotor_tm_msgs/msg/TrajCommand.msg
-// generated code does not contain a copyright notice
-
-#include "rotor_tm_msgs/msg/PositionCommand.idl"
-#include "std_msgs/msg/Header.idl"
-
-module rotor_tm_msgs {
-  module msg {
-    struct TrajCommand {
-      std_msgs::msg::Header header;
-
-      sequence<rotor_tm_msgs::msg::PositionCommand> points;
-    };
-  };
-};
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_adapter/rotor_tm_msgs/msg/TrajCommand.idl

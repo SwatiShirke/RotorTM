@@ -1,3 +1,1 @@
-
-bool success
-string message
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_cmake/srv/Line_Response.msg

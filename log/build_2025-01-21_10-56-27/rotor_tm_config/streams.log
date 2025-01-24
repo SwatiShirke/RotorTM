@@ -1,0 +1,21 @@
+[0.459s] Invoking command in '/home/dhruv/RotorTM/src/rotor_tm_config': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_config/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_config build --build-base /home/dhruv/RotorTM/build/rotor_tm_config/build install --record /home/dhruv/RotorTM/build/rotor_tm_config/install.log --single-version-externally-managed install_data
+[0.617s] running egg_info
+[0.617s] writing ../../build/rotor_tm_config/rotor_tm_config.egg-info/PKG-INFO
+[0.617s] writing dependency_links to ../../build/rotor_tm_config/rotor_tm_config.egg-info/dependency_links.txt
+[0.617s] writing entry points to ../../build/rotor_tm_config/rotor_tm_config.egg-info/entry_points.txt
+[0.617s] writing requirements to ../../build/rotor_tm_config/rotor_tm_config.egg-info/requires.txt
+[0.618s] writing top-level names to ../../build/rotor_tm_config/rotor_tm_config.egg-info/top_level.txt
+[0.619s] reading manifest file '../../build/rotor_tm_config/rotor_tm_config.egg-info/SOURCES.txt'
+[0.619s] adding license file 'LICENSE'
+[0.619s] writing manifest file '../../build/rotor_tm_config/rotor_tm_config.egg-info/SOURCES.txt'
+[0.619s] running build
+[0.620s] running build_py
+[0.620s] running install
+[0.620s] running install_lib
+[0.621s] running install_data
+[0.621s] running install_egg_info
+[0.623s] removing '/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages/rotor_tm_config-0.0.0-py3.10.egg-info' (and everything under it)
+[0.623s] Copying ../../build/rotor_tm_config/rotor_tm_config.egg-info to /home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages/rotor_tm_config-0.0.0-py3.10.egg-info
+[0.623s] running install_scripts
+[0.637s] writing list of installed files to '/home/dhruv/RotorTM/build/rotor_tm_config/install.log'
+[0.651s] Invoked command in '/home/dhruv/RotorTM/src/rotor_tm_config' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_config/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_config build --build-base /home/dhruv/RotorTM/build/rotor_tm_config/build install --record /home/dhruv/RotorTM/build/rotor_tm_config/install.log --single-version-externally-managed install_data

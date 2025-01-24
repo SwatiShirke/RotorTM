@@ -1,4 +1,1 @@
-# generated from rosidl_cmake/cmake/rosidl_cmake-extras.cmake.in
-
-set(rotor_tm_msgs_IDL_FILES "msg/PositionCommand.idl;msg/FMCommand.idl;msg/RPMCommand.idl;msg/SO3Command.idl;msg/CenPLCommand.idl;msg/StatusData.idl;msg/TRPYCommand.idl;msg/TrajCommand.idl;msg/FMNCommand.idl;srv/Vec4.idl;srv/Circle.idl;srv/CircleWithRotation.idl;srv/Line.idl;srv/CoprStatusCmd.idl;srv/StepPose.idl")
-set(rotor_tm_msgs_INTERFACE_FILES "msg/PositionCommand.msg;msg/FMCommand.msg;msg/RPMCommand.msg;msg/SO3Command.msg;msg/CenPLCommand.msg;msg/StatusData.msg;msg/TRPYCommand.msg;msg/TrajCommand.msg;msg/FMNCommand.msg;srv/Vec4.srv;srv/Vec4_Request.msg;srv/Vec4_Response.msg;srv/Circle.srv;srv/Circle_Request.msg;srv/Circle_Response.msg;srv/CircleWithRotation.srv;srv/CircleWithRotation_Request.msg;srv/CircleWithRotation_Response.msg;srv/Line.srv;srv/Line_Request.msg;srv/Line_Response.msg;srv/CoprStatusCmd.srv;srv/CoprStatusCmd_Request.msg;srv/CoprStatusCmd_Response.msg;srv/StepPose.srv;srv/StepPose_Request.msg;srv/StepPose_Response.msg")
+/home/dhruv/RotorTM/build/rotor_tm_msgs/rosidl_cmake/rosidl_cmake-extras.cmake

@@ -40,6 +40,7 @@
 #define PAYLOAD_MODEL_NZ     0
 #define PAYLOAD_MODEL_NU     9
 #define PAYLOAD_MODEL_NP     22
+#define PAYLOAD_MODEL_NP_GLOBAL     0
 #define PAYLOAD_MODEL_NBX    6
 #define PAYLOAD_MODEL_NBX0   13
 #define PAYLOAD_MODEL_NBU    6
@@ -94,12 +95,14 @@ typedef struct payload_model_solver_capsule
     unsigned int nlp_np;
 
     /* external functions */
+
     // dynamics
 
-    external_function_external_param_casadi *forw_vde_casadi;
+    external_function_external_param_casadi *expl_vde_forw;
     external_function_external_param_casadi *expl_ode_fun;
+    external_function_external_param_casadi *expl_vde_adj;
 
-    external_function_external_param_casadi *hess_vde_casadi;
+    external_function_external_param_casadi *expl_ode_hess;
 
 
 
@@ -160,9 +163,19 @@ ACADOS_SYMBOL_EXPORT int payload_model_acados_update_time_steps(payload_model_so
 ACADOS_SYMBOL_EXPORT int payload_model_acados_update_qp_solver_cond_N(payload_model_solver_capsule * capsule, int qp_solver_cond_N);
 ACADOS_SYMBOL_EXPORT int payload_model_acados_update_params(payload_model_solver_capsule * capsule, int stage, double *value, int np);
 ACADOS_SYMBOL_EXPORT int payload_model_acados_update_params_sparse(payload_model_solver_capsule * capsule, int stage, int *idx, double *p, int n_update);
+ACADOS_SYMBOL_EXPORT int payload_model_acados_set_p_global_and_precompute_dependencies(payload_model_solver_capsule* capsule, double* data, int data_len);
 
 ACADOS_SYMBOL_EXPORT int payload_model_acados_solve(payload_model_solver_capsule * capsule);
-ACADOS_SYMBOL_EXPORT void payload_model_acados_batch_solve(payload_model_solver_capsule ** capsules, int N_batch);
+
+ACADOS_SYMBOL_EXPORT void payload_model_acados_batch_solve(payload_model_solver_capsule ** capsules, int * status_out, int N_batch);
+
+ACADOS_SYMBOL_EXPORT void payload_model_acados_batch_set_flat(payload_model_solver_capsule ** capsules, const char *field, double *data, int N_data, int N_batch);
+ACADOS_SYMBOL_EXPORT void payload_model_acados_batch_get_flat(payload_model_solver_capsule ** capsules, const char *field, double *data, int N_data, int N_batch);
+
+ACADOS_SYMBOL_EXPORT void payload_model_acados_batch_eval_solution_sens_adj_p(payload_model_solver_capsule ** capsules, const char *field, int stage, double *out, int offset, int N_batch);
+ACADOS_SYMBOL_EXPORT void payload_model_acados_batch_eval_params_jac(payload_model_solver_capsule ** capsules, int N_batch);
+
+
 ACADOS_SYMBOL_EXPORT int payload_model_acados_free(payload_model_solver_capsule * capsule);
 ACADOS_SYMBOL_EXPORT void payload_model_acados_print_stats(payload_model_solver_capsule * capsule);
 ACADOS_SYMBOL_EXPORT int payload_model_acados_custom_update(payload_model_solver_capsule* capsule, double* data, int data_len);

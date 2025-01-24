@@ -29,7 +29,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             'payload_params_path',
-            #default_value=os.path.join(pkg_path , 'config', 'load_params/pointmass_payload.yaml'),
+            # default_value=os.path.join(pkg_path , 'config', 'load_params/pointmass_payload.yaml'),
             default_value=os.path.join(pkg_path , 'config', 'load_params/triangular_payload.yaml'),
             description='Path to the payload parameters file'
         ),
@@ -40,13 +40,13 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             'mechanism_params_path',
-            #default_value=os.path.join(pkg_path , 'config', 'attach_mechanism/cable/1_robot_point_mass_0-5m.yaml'),
+            # default_value=os.path.join(pkg_path , 'config', 'attach_mechanism/cable/1_robot_point_mass_0-5m.yaml'),
             default_value=os.path.join(pkg_path , 'config', 'attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml'),
             description='Path to the mechanism parameters file'
         ),
         DeclareLaunchArgument(
             'payload_control_gain_path',
-            #default_value=os.path.join(pkg_path , 'config', 'control_params/pointmass_cable_gains.yaml'), 
+            # default_value=os.path.join(pkg_path , 'config', 'control_params/pointmass_cable_gains.yaml'), 
             default_value=os.path.join(pkg_path , 'config', 'control_params/triangular_payload_cooperative_cable_gains.yaml'),
             description='Path to the payload control gains file'
         ),
@@ -57,6 +57,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             'number_of_robots',
+            # default_value='1',
             default_value='3',
             description='Number of UAVs'
         ),

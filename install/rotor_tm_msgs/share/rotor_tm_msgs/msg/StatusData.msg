@@ -1,4 +1,1 @@
-# Include the header
-std_msgs/Header header
-
-std_msgs/String status
+/home/dhruv/RotorTM/src/rotor_tm_msgs/msg/StatusData.msg

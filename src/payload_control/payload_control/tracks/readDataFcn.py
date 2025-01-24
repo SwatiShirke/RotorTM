@@ -74,6 +74,7 @@ def read_interpl(filename):
     acc = np.array([spl_ax, spl_ay, spl_az]) 
     start_pose = np.array([x[0], y[0], z[0]])
     last_pose = np.array([x[-1], y[-1], z[-1]]) 
+
     return time_points, pos, vel, acc, spl_yaw, spl_yaw_rate, start_pose, last_pose
 
 
@@ -82,11 +83,19 @@ def read_interpl(filename):
 def visualize_traj(filename):
     [time_points, pos, vel, acc, spl_yaw, spl_yaw_rate, start_pose, last_pose ] = read_interpl(filename)
     dense_time_pt = np.linspace(time_points[0], time_points[-1], 1000)
+    dense_time_pt2 = dense_time_pt[0:709]
     pos_x = pos[0]
     pos_y = pos[1]
     pos_z = pos[2]
+    vel_x = vel[0]
+    vel_y = vel[1]
+    vel_z = vel[2]
     # plt.figure()
     # plt.plot(pos_x(dense_time_pt),pos_y(dense_time_pt), pos_z(dense_time_pt))
     # plt.show()
+    print(vel_x(dense_time_pt2))
     plot_graph(pos_x(dense_time_pt),pos_y(dense_time_pt), pos_z(dense_time_pt))
   
+if __name__ =="__main__":
+    print("Hello")
+    visualize_traj('trajectory.txt')

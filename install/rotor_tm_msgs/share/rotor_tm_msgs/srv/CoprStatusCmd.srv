@@ -1,4 +1,1 @@
-uint8 copr_status
----
-bool success
-string message
+/home/dhruv/RotorTM/src/rotor_tm_msgs/srv/CoprStatusCmd.srv

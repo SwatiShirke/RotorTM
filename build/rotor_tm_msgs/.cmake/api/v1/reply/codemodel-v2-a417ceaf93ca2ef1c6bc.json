@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-e60cb9b5a0994f037abe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "rotor_tm_msgs__py",
+					"jsonFile" : "directory-rotor_tm_msgs__py-d10699ef2ecf3977a351.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/dhruv/RotorTM/build/rotor_tm_msgs/rotor_tm_msgs__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "rotor_tm_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_rotor_tm_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_rotor_tm_msgs_egg-b25f53793e8a0dbaef51.json",
+					"name" : "ament_cmake_python_build_rotor_tm_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_rotor_tm_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_rotor_tm_msgs-329aa5e563618dc7a96a.json",
+					"name" : "ament_cmake_python_symlink_rotor_tm_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs-c0671cb76f66d8b6661f.json",
+					"name" : "rotor_tm_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__cpp-478c572b24f1a93ffd8b.json",
+					"name" : "rotor_tm_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "rotor_tm_msgs__py::@232e34b35b220948f26d",
+					"jsonFile" : "target-rotor_tm_msgs__py-8320d798befa674d47d7.json",
+					"name" : "rotor_tm_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_generator_c-3deb0b28df4bba891492.json",
+					"name" : "rotor_tm_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_generator_py-86c2dce39c0ba46b5dd2.json",
+					"name" : "rotor_tm_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_c-7a69f358e8f625f8e0e7.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_c__pyext-f30b8513ef98c005ce3a.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_cpp-a2e43e4756e6fdfd6722.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_fastrtps_c-f446891201546962d8e6.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_fastrtps_c__pyext-d7c792841f4110f93285.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp-1e737d4a68f172832aae.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_introspection_c-615edb23dd1cf75447b3.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_introspection_c__pyext-1e1f1dd3302bc0005df2.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs__rosidl_typesupport_introspection_cpp-f27efcdacf17bc0ae1cc.json",
+					"name" : "rotor_tm_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rotor_tm_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rotor_tm_msgs_uninstall-3e0c2a812510085b1eed.json",
+					"name" : "rotor_tm_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-e1344dfc01d39d645de8.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dhruv/RotorTM/build/rotor_tm_msgs",
+		"source" : "/home/dhruv/RotorTM/src/rotor_tm_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

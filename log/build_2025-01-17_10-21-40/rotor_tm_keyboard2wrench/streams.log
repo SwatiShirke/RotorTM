@@ -1,0 +1,17 @@
+[1.170s] Invoking command in '/home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench': PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/build --no-deps symlink_data
+[1.343s] running develop
+[1.452s] running egg_info
+[1.452s] writing rotor_tm_keyboard2wrench.egg-info/PKG-INFO
+[1.452s] writing dependency_links to rotor_tm_keyboard2wrench.egg-info/dependency_links.txt
+[1.452s] writing entry points to rotor_tm_keyboard2wrench.egg-info/entry_points.txt
+[1.452s] writing requirements to rotor_tm_keyboard2wrench.egg-info/requires.txt
+[1.452s] writing top-level names to rotor_tm_keyboard2wrench.egg-info/top_level.txt
+[1.454s] reading manifest file 'rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+[1.454s] writing manifest file 'rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+[1.455s] running build_ext
+[1.455s] Creating /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor-tm-keyboard2wrench.egg-link (link to .)
+[1.456s] Installing keyboard_input script to /home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/rotor_tm_keyboard2wrench
+[1.456s] 
+[1.456s] Installed /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench
+[1.456s] running symlink_data
+[1.495s] Invoked command in '/home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench' returned '0': PYTHONPATH=/home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhruv/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhruv/RotorTM/build/rotor_tm_keyboard2wrench/build --no-deps symlink_data

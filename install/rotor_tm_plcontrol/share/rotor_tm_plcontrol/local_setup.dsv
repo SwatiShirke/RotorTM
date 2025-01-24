@@ -1,3 +1,1 @@
-source;share/rotor_tm_plcontrol/environment/ament_prefix_path.sh
-source;share/rotor_tm_plcontrol/environment/library_path.sh
-source;share/rotor_tm_plcontrol/environment/path.sh
+/home/dhruv/RotorTM/build/rotor_tm_plcontrol/ament_cmake_environment_hooks/local_setup.dsv

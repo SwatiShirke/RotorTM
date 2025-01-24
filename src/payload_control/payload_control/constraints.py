@@ -4,6 +4,8 @@ from scipy.linalg import null_space
 from utils import QuatToRot
 import numpy as np
 import ipdb
+from casadi import Function
+
 def get_constraints(u, quat, payload_params, control_params, pyaload_pose):
     #F = Force vector in Intertial Frame
     #M = Moment vector in Payload frame
@@ -40,14 +42,15 @@ def get_constraints(u, quat, payload_params, control_params, pyaload_pose):
     obj_pl_dist = control_params.dist_OL
     obj_quad_dist = control_params.dist_Or
     h_list = cal_constarints(quad_pose_list, quad_dist)
+    h_list_f = cal_constarints_2(quad_pose_list,F,M,V,quat)
 
     #test simple constraint
     c_list = test_simple_constraints(F)
-    return c_list
+    return h_list, h_list_f
 
 def test_simple_constraints(F):
     h_list = []
-    h_list = ca.vertcat(h_list, 1)
+    h_list = ca.vertcat(h_list, 5, 4, 3, 4, 6, 101)
     # print("here now..")
     # print(h_list)
     return h_list
@@ -60,11 +63,27 @@ def cal_constarints(quad_pose_list, quad_dist):
     for i in range(N_quad - 1):
         for j in range(i +1 , N_quad):
             #h_list = ca.vertcat(h_list, (ca.norm_2(quad_pose_list[i] - quad_pose_list[j]) - quad_dist))
-            h_list = ca.vertcat(h_list, (ca.norm_2(quad_pose_list[i] - quad_pose_list[j])))
+            difference = quad_pose_list[i] - quad_pose_list[j]
+            diff = ca.SX(difference)
+            dot_prod = ca.mtimes(difference.T,difference)
+            h_list = ca.vertcat(h_list, dot_prod)
             #h_list.append(ca.norm_2(quad_pose_list[i] - quad_pose_list[j]) - quad_dist)
     return h_list
 
-
+def cal_constarints_2(quad_pose_list,F,M,V,quat):
+    h_list = []     
+    N_quad = len(quad_pose_list)
+    #ipdb.set_trace()
+    for i in range(N_quad - 1):
+        for j in range(i +1 , N_quad):
+            #h_list = ca.vertcat(h_list, (ca.norm_2(quad_pose_list[i] - quad_pose_list[j]) - quad_dist))
+            difference = quad_pose_list[i] - quad_pose_list[j]
+            diff = ca.SX(difference)
+            dot_prod = ca.mtimes(difference.T,difference)
+            h_list = ca.vertcat(h_list, dot_prod)
+            #h_list.append(ca.norm_2(quad_pose_list[i] - quad_pose_list[j]) - quad_dist)
+    dist_list = Function('dist_f', [F,M,V,quat], [h_list])
+    return dist_list
 
 def create_p_mat(rho_list):
     mat = []
@@ -84,13 +103,15 @@ def skew_mat(rho):
 def cal_quad_pose(mu_list, rho_list, cabel_length):
     mu_list = ca.reshape(mu_list, 3,3)
     quad_pose_list = []
-    len = rho_list.shape
-    for i in range(len[0]):
+    len = rho_list.shape[0]
+    for i in range(len):
         #ipdb.set_trace()
-        mu = mu_list[i]
-        rho = rho_list[i]
+        # mu = mu_list[i]
+        mu = mu_list[:,i]
+        # rho = rho_list[i]
+        rho = rho_list[:,i]
         lk = cabel_length
-        zeta = 1 * mu / ca.norm_2(mu)
+        zeta = 1 * mu / (ca.norm_2(mu)+ 1e-6)
         quad_position = rho  + lk * zeta
         quad_pose_list.append(quad_position)
     return quad_pose_list

@@ -1,4 +1,1 @@
-float32[4] goal
----
-bool success
-string message
+/home/dhruv/RotorTM/src/rotor_tm_msgs/srv/Vec4.srv
