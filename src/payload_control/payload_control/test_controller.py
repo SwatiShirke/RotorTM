@@ -49,14 +49,24 @@ if __name__ == '__main__':
     Ts = Tf / N 
     Nsim = int(T /Ts)
 
-    err_theshold = 0.05 # changed 0.05 to 0.5
+    ########################################
+    dense_time_pt = np.linspace(time_points[0], time_points[-1], Nsim)
+    pos_ref_x = pos_ref[0]
+    pos_ref_y = pos_ref[1]
+    pos_ref_z = pos_ref[2]
+    vel_ref_x = vel_ref[0]
+    vel_ref_y = vel_ref[1]
+    vel_ref_z = vel_ref[2]
+    ########################################
+
+    err_theshold = 0.01 # changed 0.05 to 0.5
     nx = model.x.rows()
     nu = model.u.rows()
     ny = nx + nu
     
     simX = np.zeros((Nsim+1, nx), dtype= float)
     simU = np.zeros((Nsim+1, nu), dtype= float)
-    model.x0 = [start_pose[0],start_pose[1],start_pose[2], 0,0,0, 1,0,0,0, 0,0,0]# changed qw to 1
+    model.x0 = [0,0,0, 0,0,0, 1,0,0,0, 0,0,0]  # [start_pose[0],start_pose[1],start_pose[2], 0,0,0, 1,0,0,0, 0,0,0]# changed qw to 1
     simX[0,:] = model.x0
     mg = payload_params.mass * payload_params.grav
     # mg = 0.250*9.81
@@ -70,33 +80,60 @@ if __name__ == '__main__':
 
     # Get the current time
     start_time = clock.now()
+    # Reset Solver
+    acados_solver.reset()
+
+    for stage in range(N + 1):
+        acados_solver.set(stage, "x", simX[0,:])
+    for stage in range(N):
+        acados_solver.set(stage, "u", u_ref)
+
     for i in range(Nsim - N):
         for j in range(N):
             t_j = t0 + (j) * Ts
-            print("t_j")
-            print(t_j)
-            x_ref_j = pos_ref[0](t_j)
-            y_ref_j = pos_ref[1](t_j)
-            z_ref_j = pos_ref[2](t_j)
+            # print("t_j")
+            # print(t_j)
+            # x_ref_j = pos_ref[0](t_j)
+            # y_ref_j = pos_ref[1](t_j)
+            # z_ref_j = pos_ref[2](t_j)
 
-            vx_ref_j = vel_ref[0](t_j)
-            vy_ref_i = vel_ref[1](t_j)
-            vz_ref_j = vel_ref[2](t_j)
+            # vx_ref_j = vel_ref[0](t_j)
+            # vy_ref_j = vel_ref[1](t_j)
+            # vz_ref_j = vel_ref[2](t_j)
             
-            yaw_ref_i = yaw_ref(t_j)
-            yawr_ref_i = yawr_ref(t_j)
+            # yaw_ref_i = yaw_ref(t_j)
+            # yawr_ref_i = yawr_ref(t_j)
 
+            # yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_j, vz_ref_j,  1,0,0,0,  0,0,yawr_ref_i, 0, 0, mg, 0, 0, 0, 0, 0, 0])# changed qw to 1
 
-
-            yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_i, vz_ref_j,  1,0,0,0,  0,0,yawr_ref_i, 0, 0, mg, 0, 0, 0, 0, 0, 0])# changed qw to 1
+            ###########################
+            x_ref_j  = pos_ref_x(dense_time_pt[i+j])
+            y_ref_j  = pos_ref_y(dense_time_pt[i+j])
+            z_ref_j  = pos_ref_z(dense_time_pt[i+j])
+            vx_ref_j = vel_ref_x(dense_time_pt[i+j])
+            vy_ref_j = vel_ref_y(dense_time_pt[i+j])
+            vz_ref_j = vel_ref_z(dense_time_pt[i+j])
+            yawr_ref_i = yawr_ref(dense_time_pt[i+j])
+            yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_j, vz_ref_j,  1,0,0,0,  0,0,yawr_ref_i, 0, 0, mg, 0, 0, 0, 0, 0, 0])# changed qw to 1
+            ###########################
             # if err_theshold<= 0.02:
             #     yref = np.array([*last_pose, 0.0, 0.0, 0.0, 1,0,0,0, 0,0,0, *u_ref ])
             # print(yref)
             # print(simX[i, :])
 
             #ipdb.set_trace()
+            ###########################
             acados_solver.set(j, "p", yref)
-        yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_i, vz_ref_j,  1,0,0,0,  0,0,yawr_ref_i,*u_ref])# changed qw to 1    
+        ###########################
+        x_ref_j  = pos_ref_x(dense_time_pt[i+j])
+        y_ref_j  = pos_ref_y(dense_time_pt[i+j])
+        z_ref_j  = pos_ref_z(dense_time_pt[i+j])
+        vx_ref_j = vel_ref_x(dense_time_pt[i+j])
+        vy_ref_j = vel_ref_y(dense_time_pt[i+j])
+        vz_ref_j = vel_ref_z(dense_time_pt[i+j])
+        yawr_ref_i = yawr_ref(dense_time_pt[i+j])
+        ###########################
+        yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_j, vz_ref_j,  1,0,0,0,  0,0,yawr_ref_i,*u_ref])# changed qw to 1    
         acados_solver.set(N, "p", yref) 
         acados_solver.set(0, "lbx", simX[i, :])
         acados_solver.set(0, "ubx", simX[i, :])
@@ -133,6 +170,8 @@ if __name__ == '__main__':
         check_hlist_f = h_list_f(F,M,V,quat) 
         print("h_list")
         print(check_hlist_f) 
+        print("P")
+        print(payload_params.P)
         print("PseudoInv_P")
         print(payload_params.pseudo_inv_P)
         print("Null space")
@@ -181,11 +220,12 @@ if __name__ == '__main__':
     #post processing - plotiing and print
     tracked_traj = simX[0:i+1, :]
     #ipdb.set_trace()
+    plot_followed_traj(tracked_traj[:Nsim+1-N,0], tracked_traj[:Nsim+1-N,1],tracked_traj[:Nsim+1-N,2], pos_ref[0](time_points), pos_ref[1](time_points), pos_ref[2](time_points))
     t = np.linspace(0.0, Nsim+1-N, Nsim+1-N)
     #plotRes(simX, simU, t)
-    plot_followed_traj(tracked_traj[:Nsim+1-N,0], tracked_traj[:Nsim+1-N,1],tracked_traj[:Nsim+1-N,2], pos_ref[0](time_points), pos_ref[1](time_points), pos_ref[2](time_points))
-    
-    #plot_inputs(simU[:,0:3],simU[:,3:6],t)
+    plot_inputs(simU[:,0:3],simU[:,3:6],t)
+    t = np.linspace(time_points[0], time_points[-1],NSim+1)
+    plotPosVsTime(simX,pos_ref,t)
     # Print some statstime_points
     #print("Average speed:{}m/s".format(np.average(simX[:, 3])))
     print("Lap time: {}s".format(T))

@@ -187,7 +187,7 @@ if __name__ == "__main__":
     f_expl = payload_model(control_params)
     q_in = np.array([1.0, 0,0,0])
     omg = np.array([0,0,0])
-    Mass = np.diag([0.250,0.250,0.250])
+    Mass = np.diag([0.250,0.250,0.250])# check the mass
     F = [1,1,1]
 
    

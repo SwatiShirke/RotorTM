@@ -4,7 +4,9 @@ from time2spatial import transformProj2Orig,transformOrig2Proj
 from matplotlib import cm
 import matplotlib.pyplot as plt
 import numpy as np
-
+###Check these values for your experiment!
+NSim=700
+N=10
 def plotTrackProj(simX,filename='LMS_Track.txt', T_opt=None):
     # load track
     s=simX[:,0]
@@ -100,7 +102,7 @@ def plot_followed_traj( x, y,z,  xref, yref,zref):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection = '3d')
     ax.plot(x, y, z, label='followed', color='b', linestyle='-')
-    ax.plot(xref, yref, zref, label = 'referecne', color = 'r', linestyle = ':')
+    ax.plot(xref, yref, zref, label = 'reference', color = 'r', linestyle = ':')
     ax.legend()
     ax.set_xlabel('x in m', fontsize=12)
     ax.set_ylabel('y in m', fontsize=12)
@@ -114,8 +116,30 @@ def plot_followed_traj( x, y,z,  xref, yref,zref):
 
 
 def plot_inputs(F, M, t):
-    plt.figure()
-    plt.plot(F[0],t, label = "Force in X (N)")
-    plt.plot(F[1],t, label = "Force in Y (N)" )
-    plt.plot(F[2], t, label = "Force in Z (N)")
+    fig = plt.figure()
+    ax1 = fig.add_subplot(321)
+    ax1.plot(t,F[:NSim-N+1,0], label = "Force in X (N)")
+    ax3 = fig.add_subplot(323)
+    ax3.plot(t,F[:NSim-N+1,1], label = "Force in Y (N)" )
+    ax5 = fig.add_subplot(325)
+    ax5.plot(t,F[:NSim-N+1,2], label = "Force in Z (N)")
+    ax2 = fig.add_subplot(322)
+    ax2.plot(t,M[:NSim-N+1,0], label = "Moment in X (N)")
+    ax4 = fig.add_subplot(324)
+    ax4.plot(t,M[:NSim-N+1,1], label = "Moment in Y (N)" )
+    ax6 = fig.add_subplot(326)
+    ax6.plot(t,M[:NSim-N+1,2], label = "Moment in Z (N)")
     plt.show()
+
+def plotPosVsTime(simX,pos_ref,t):
+    fig = plt.figure()
+    ax1 = fig.add_subplot(131)
+    ax1.plot(t[:NSim+1-N],simX[:NSim+1-N,0],label='followed',color='r')
+    ax1.plot(t[:NSim+1-N],pos_ref[0](t[:NSim+1-N]),label='followed',color='g')
+    ax2 = fig.add_subplot(132)
+    ax2.plot(t[:NSim+1-N],simX[:NSim+1-N,1],label='followed',color='r')
+    ax2.plot(t[:NSim+1-N],pos_ref[1](t[:NSim+1-N]),label='followed',color='g')
+    ax3 = fig.add_subplot(133)
+    ax3.plot(t[:NSim+1-N],simX[:NSim+1-N,2],label='followed',color='r')
+    ax3.plot(t[:NSim+1-N],pos_ref[2](t[:NSim+1-N]),label='followed',color='g')
+    plt.xlabel('t [s]')

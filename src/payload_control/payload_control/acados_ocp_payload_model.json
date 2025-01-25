@@ -16,7 +16,10 @@
             2,
             3,
             4,
-            5
+            5,
+            6,
+            7,
+            8
         ],
         "idxbx": [
             3,
@@ -62,19 +65,24 @@
         "idxsbx_e": [],
         "idxsg": [],
         "idxsg_e": [],
-        "idxsh": [],
+        "idxsh": [
+            0
+        ],
         "idxsh_0": [],
         "idxsh_e": [],
         "idxsphi": [],
         "idxsphi_0": [],
         "idxsphi_e": [],
         "lbu": [
-            -100,
-            -100,
-            -100,
-            -100,
-            -100,
-            -100
+            -10,
+            -10,
+            -10,
+            -10,
+            -10,
+            -10,
+            -10,
+            -10,
+            -10
         ],
         "lbx": [
             -30,
@@ -102,7 +110,9 @@
         "lbx_e": [],
         "lg": [],
         "lg_e": [],
-        "lh": [],
+        "lh": [
+            0.0
+        ],
         "lh_0": [],
         "lh_e": [],
         "lphi": [],
@@ -113,7 +123,9 @@
         "lsbx_e": [],
         "lsg": [],
         "lsg_e": [],
-        "lsh": [],
+        "lsh": [
+            0.0
+        ],
         "lsh_0": [],
         "lsh_e": [],
         "lsphi": [],
@@ -123,6 +135,9 @@
             20,
             20,
             20,
+            10,
+            10,
+            10,
             10,
             10,
             10
@@ -153,7 +168,9 @@
         "ubx_e": [],
         "ug": [],
         "ug_e": [],
-        "uh": [],
+        "uh": [
+            100.0
+        ],
         "uh_0": [],
         "uh_e": [],
         "uphi": [],
@@ -164,7 +181,9 @@
         "usbx_e": [],
         "usg": [],
         "usg_e": [],
-        "ush": [],
+        "ush": [
+            0.0
+        ],
         "ush_0": [],
         "ush_e": [],
         "usphi": [],
@@ -182,10 +201,14 @@
         "W": [],
         "W_0": [],
         "W_e": [],
-        "Zl": [],
+        "Zl": [
+            100.0
+        ],
         "Zl_0": [],
         "Zl_e": [],
-        "Zu": [],
+        "Zu": [
+            100.0
+        ],
         "Zu_0": [],
         "Zu_e": [],
         "cost_ext_fun_type": "casadi",
@@ -203,10 +226,14 @@
         "yref": [],
         "yref_0": [],
         "yref_e": [],
-        "zl": [],
+        "zl": [
+            100.0
+        ],
         "zl_0": [],
         "zl_e": [],
-        "zu": [],
+        "zu": [
+            100.0
+        ],
         "zu_0": [],
         "zu_e": []
     },
@@ -217,14 +244,14 @@
     "dims": {
         "N": 10,
         "n_global_data": 0,
-        "nbu": 6,
+        "nbu": 9,
         "nbx": 6,
         "nbx_0": 13,
         "nbx_e": 0,
         "nbxe_0": 13,
         "ng": 0,
         "ng_e": 0,
-        "nh": 0,
+        "nh": 1,
         "nh_0": 0,
         "nh_e": 0,
         "np": 22,
@@ -235,7 +262,7 @@
         "nr": 0,
         "nr_0": 0,
         "nr_e": 0,
-        "ns": 0,
+        "ns": 1,
         "ns_0": 0,
         "ns_e": 0,
         "nsbu": 0,
@@ -243,7 +270,7 @@
         "nsbx_e": 0,
         "nsg": 0,
         "nsg_e": 0,
-        "nsh": 0,
+        "nsh": 1,
         "nsh_0": 0,
         "nsh_e": 0,
         "nsphi": 0,
@@ -264,6 +291,9 @@
         "payload_model_model/payload_model_expl_ode_hess.c"
     ],
     "external_function_files_ocp": [
+        "payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt.c",
+        "payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt_hess.c",
+        "payload_model_constraints/payload_model_constr_h_fun.c",
         "payload_model_cost/payload_model_cost_ext_cost_0_fun.c",
         "payload_model_cost/payload_model_cost_ext_cost_0_fun_jac_hess.c",
         "payload_model_cost/payload_model_cost_ext_cost_0_fun_jac.c",
@@ -276,7 +306,7 @@
     ],
     "json_file": "acados_ocp_payload_model.json",
     "model": {
-        "con_h_expr": [],
+        "con_h_expr": "jhpnnagiieahaaaadaaaaaaaaaaaaaaaaaegfaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachaaaaaaaaaaaaippdegpcaaaaaaaaaaaaaadaaaaaaaihpfaheglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaajhpfaheglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgcaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaakhpfahegmcaaaaaaaaaaaaaachmhebokhebokhekpd",
         "con_h_expr_0": [],
         "con_h_expr_e": [],
         "con_phi_expr": [],
@@ -291,12 +321,12 @@
         "cost_conl_custom_outer_hess": [],
         "cost_conl_custom_outer_hess_0": [],
         "cost_conl_custom_outer_hess_e": [],
-        "cost_expr_ext_cost": "jhpnnagiieahaaaadaaaaaaaaaaaaaaaaaegfaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgiodaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaaihpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfadegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaajhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfbdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaakhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfcdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfddegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfedegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpffdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachncdemblocogdkbpdegeaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhhhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfgdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfhdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfidegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfjdegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegkaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachedaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachmpjkbpcnnecgafpdchdfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachedaaaaaaaaaaaaaachdeaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachldaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachjfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachnfaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgkaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdddegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdedegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdfdegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdgdegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdhdegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdidegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachlhebokhebokheipdeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdjdegdaaaaaaaaaaaaaaachgiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdadegdaaaaaaaaaaaaaaachgiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdbd",
-        "cost_expr_ext_cost_0": "jhpnnagiieahaaaadaaaaaaaaaaaaaaaaaegfaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgiodaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaaihpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfadegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaajhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfbdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaakhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfcdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfddegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfedegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpffdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachncdemblocogdkbpdegeaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhhhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfgdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfhdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfidegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfjdegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegkaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachedaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachmpjkbpcnnecgafpdchdfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachedaaaaaaaaaaaaaachdeaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachldaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachjfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachnfaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgkaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdddegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdedegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdfdegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdgdegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdhdegdaaaaaaaaaaaaaaachcgaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdidegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachlhebokhebokheipdeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdjdegdaaaaaaaaaaaaaaachgiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdadegdaaaaaaaaaaaaaaachgiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdbd",
+        "cost_expr_ext_cost": "jhpnnagiieahaaaadaaaaaaaaaaaaaaaaaegfaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgkaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaaihpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfadegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaajhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfbdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaakhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfcdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfddegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfedegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpffdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachncdemblocogdkbpdegeaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhhhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfgdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfhdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfidegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfjdegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegkaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachedaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachmpjkbpcnnecgafpdchdfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachedaaaaaaaaaaaaaachdeaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachldaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachjfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachnfaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdddegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdedegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdfdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdgdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdhdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdidegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachlhebokhebokheipdeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdjdegdaaaaaaaaaaaaaaachfiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdadegdaaaaaaaaaaaaaaachfiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdbd",
+        "cost_expr_ext_cost_0": "jhpnnagiieahaaaadaaaaaaaaaaaaaaaaaegfaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgkaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaaihpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfadegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaajhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfbdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaakhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfcdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfddegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfedegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpffdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachncdemblocogdkbpdegeaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhhhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfgdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfhdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfidegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfjdegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegkaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachedaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachmpjkbpcnnecgafpdchdfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachedaaaaaaaaaaaaaachdeaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachldaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachjfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachnfaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdddegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdedegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaggddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdfdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdgdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdhdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaangddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdidegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachlhebokhebokheipdeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghbdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfbdjdegdaaaaaaaaaaaaaaachfiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghcdegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdadegdaaaaaaaaaaaaaaachfiaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghddegpcaaaaaaaaaaaaaanaaaaaaachfgggfgchfgogdgfgdhpfcdbd",
         "cost_expr_ext_cost_custom_hess": [],
         "cost_expr_ext_cost_custom_hess_0": [],
         "cost_expr_ext_cost_custom_hess_e": [],
-        "cost_expr_ext_cost_e": "jhpnnagiieahaaaadaaaaaaaaaaaaaaaaaegfaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgajpfbaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaaihpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfadegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaajhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfbdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaakhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfcdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgiodaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfddegdaaaaaaaaaaaaaaachdbaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfedegdaaaaaaaaaaaaaaachdbaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpffdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachncdemblocogdkbpdegeaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhhhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfgdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfhdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfidegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfjdegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachhcaaaaaaaaaaaaaachlcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachkcaaaaaaaaaaaaaachicaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachocaaaaaaaaaaaaaachddaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachcdaaaaaaaaaaaaaachpcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachhcaaaaaaaaaaaaaachpcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachkcaaaaaaaaaaaaaachddaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachocaaaaaaaaaaaaaachicaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachcdaaaaaaaaaaaaaachlcaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachhcaaaaaaaaaaaaaachddaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachkcaaaaaaaaaaaaaachpcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachocaaaaaaaaaaaaaachlcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachcdaaaaaaaaaaaaaachicaaaaaaaaaaaaaaegkaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachfdaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachleaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachmpjkbpcnnecgafpdchefaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfdaaaaaaaaaaaaaacheeaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachmdaaaaaaaaaaaaaachleaaaaaaaaaaaaaachdfaaaaaaaaaaaaaachkfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaachleaaaaaaaaaaaaaachdfaaaaaaaaaaaaaachofaaaaaaaaaaaaaa",
+        "cost_expr_ext_cost_e": "jhpnnagiieahaaaadaaaaaaaaaaaaaaaaaegfaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaajgegaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaaihpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfadegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaajhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfbdegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaadaaaaaaakhpfahegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfcdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfddegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfedegdaaaaaaaaaaaaaaachbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaaghkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpffdegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachncdemblocogdkbpdegeaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhhhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfgdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhihegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfhdegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhjhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfidegdaaaaaaaaaaaaaaaegpcaaaaaaaaaaaaaacaaaaaaabhkhegpcaaaaaaaaaaaaaamaaaaaaachfgggfgchfgogdgfgdhpfjdegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegcaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachgcaaaaaaaaaaaaaachcdaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachjcaaaaaaaaaaaaaachocaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachncaaaaaaaaaaaaaachkcaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachbdaaaaaaaaaaaaaachhcaaaaaaaaaaaaaaegkaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachedaaaaaaaaaaaaaaeglaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaaegmcaaaaaaaaaaaaaachmpjkbpcnnecgafpdchdfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaaegbaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachedaaaaaaaaaaaaaachdeaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachldaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachjfaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaaegdaaaaaaaaaaaaaaachfcaaaaaaaaaaaaaaegeaaaaaaaaaaaaaaachkeaaaaaaaaaaaaaachcfaaaaaaaaaaaaaachnfaaaaaaaaaaaaaa",
         "cost_psi_expr": [],
         "cost_psi_expr_0": [],
         "cost_psi_expr_e": [],

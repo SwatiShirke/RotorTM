@@ -8,6 +8,8 @@ import sys
 from cost_functions import cal_square_cost, calc_quat_cost
 import ipdb
 from constraints import get_constraints
+from rotor_tm_utils import read_params
+
 
 import sys
 import os
@@ -55,13 +57,14 @@ def controller_setup(control_params,  payload_params):
     #system states = pos, quaternions, linear vel, angular vel (13 x 1)
     #to handle mimatch between refence and model state, we convert quaternions to ypr and formulating new state vector
     #using new state vector for cost calculations
-    # Q_mat =  ca.vertcat(1,1,1, 1, 1, 1, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
-    # R_mat =  ca.vertcat(1, 1, 1, 0.1, 0.1, 0.1, 1e-2, 1e-2, 1e-2)
-    # Q_emat = ca.vertcat(1,1,1, 0.1, 0.1, 0.1, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
-    Q_mat =  ca.vertcat(1000,1000,1000, 1000, 1000, 1000, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
+    Q_mat =  ca.vertcat(10,10,10, 10, 10, 10, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
     R_mat =  ca.vertcat(10, 10, 10, 10, 10, 10, 1e-2, 1e-2, 1e-2)
-    Q_emat = ca.vertcat(90000,90000,90000, 1000, 1000, 1000, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
-
+    Q_emat = ca.vertcat(100,100,100, 100, 100, 100, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
+    # Q_mat =  ca.vertcat(1000,1000,1000, 1000, 1000, 1000, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
+    # R_mat =  ca.vertcat(10, 10, 10, 10, 10, 10, 1e-2, 1e-2, 1e-2)
+    # Q_emat = ca.vertcat(90000,90000,90000, 1000, 1000, 1000, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
+    Q_emat = 1*Q_emat
+    Q_mat = 1*Q_mat
     #ipdb.set_trace()
     #path cost
     x_val = model.x
@@ -94,9 +97,9 @@ def controller_setup(control_params,  payload_params):
     #input constraints
     # mg = 0.250*9.81 # 0.25 is the wrong mass value check the params file
     ocp.constraints.constr_type = 'BGH'
-    ocp.constraints.lbu = np.array([-100,-100,-100, -100,-100,-100])# changed Fx,Fy,Fz,Mx,My,Mz to -20
-    ocp.constraints.ubu = np.array([20,20,20,10,10,10])
-    ocp.constraints.idxbu = np.array([0,1,2,3,4,5])
+    ocp.constraints.lbu = np.array([-10,-10,-10, -10,-10,-10 , -10,-10,-10]) #np.array([-10,-10,-10, -10,-10,-10])
+    ocp.constraints.ubu = np.array([20,20,20,10,10,10,10,10,10]) #np.array([20,20,20,10,10,10])
+    ocp.constraints.idxbu = np.array([0,1,2,3,4,5,6,7,8]) #np.array([0,1,2,3,4,5])
     
     #initial state contraints
     ocp.constraints.x0 = np.array([0.0, 0, 0,  0, 0, 0,  1, 0,  0, 0,  0, 0, 0 ] )
@@ -110,7 +113,15 @@ def controller_setup(control_params,  payload_params):
     u = model.u
     h_list, hlist_f = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
     # ocp.model.con_h_expr = h_list
-    # ocp.dims.nh = h_list.shape[0]
+    obstacle = ca.vertcat(1.5,1.5,2)
+    diff = obstacle - x_array[0:3]
+    distance = diff.T@diff
+    j = distance - 0.2**2
+    h_list = j
+    ocp.model.con_h_expr = j 
+    # print("Hello")
+    # print(hlist_f)
+    ocp.dims.nh = j.shape[0]
 
 
 
@@ -121,18 +132,18 @@ def controller_setup(control_params,  payload_params):
     # # ocp.model.lh = np.zeros((h_list.size1(), 1))          # lower bound
     # # ocp.model.uh = 1 * np.ones((h_list.size1(), 1))  
 
-    # ocp.cost.zl = 0.1*np.ones((h_list.size1(),))
-    # ocp.cost.Zl = 0.1*np.ones((h_list.size1(),))
+    ocp.cost.zl = 100*np.ones((h_list.size1(),))
+    ocp.cost.Zl = 100*np.ones((h_list.size1(),))
 
-    # ocp.cost.zu = 0.1*np.ones((h_list.size1(),))
-    # ocp.cost.Zu = 0.1*np.ones((h_list.size1(),))
+    ocp.cost.zu = 100*np.ones((h_list.size1(),))
+    ocp.cost.Zu = 100*np.ones((h_list.size1(),))
 
     # ##### Lower and upper limits
-    # ocp.constraints.lh = 0.02*np.ones((h_list.size1()))
-    # ocp.constraints.uh = 2 * np.ones((h_list.size1()))
-    # ocp.constraints.lsh = np.zeros((h_list.size1()))
-    # ocp.constraints.ush = np.zeros((h_list.size1()))
-    # ocp.constraints.idxsh = np.array(range(h_list.size1()))
+    ocp.constraints.lh = 0.0*np.ones((h_list.size1()))
+    ocp.constraints.uh = 100 * np.ones((h_list.size1()))
+    ocp.constraints.lsh = np.zeros((h_list.size1()))
+    ocp.constraints.ush = np.zeros((h_list.size1()))
+    ocp.constraints.idxsh = np.array(range(h_list.size1()))
     
     # print(ocp.constraints.lbu.shape)
     # print(ocp.constraints.lbx.shape)
@@ -162,3 +173,18 @@ def controller_setup(control_params,  payload_params):
     acados_integrator = AcadosSimSolver(ocp, json_file = solver_json)
 
     return model, acados_solver, acados_integrator, hlist_f
+
+if __name__ == "__main__":
+    nmpc_filename = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/payload_nmpc_params.yaml"
+    #pl_filename = '/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/triangular_payload.yaml' 
+
+    #**Case 1
+    payload_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/load_params/triangular_payload.yaml"
+    uav_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/uav_params/"
+    mechanism_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml"
+    payload_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/triangular_payload_cooperative_cable_gains.yaml"
+    uav_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/"
+    read_params_funcs = read_params.read_params()
+    payload_params, quad_params = read_params_funcs.system_setup(payload_params_path,uav_params_path,mechanism_params_path, payload_control_gain_path, uav_control_gain_path)
+    control_params = read_params_funcs.read_pl_nmpc_params(nmpc_filename)
+    a,b,c,d = controller_setup(control_params,payload_params)

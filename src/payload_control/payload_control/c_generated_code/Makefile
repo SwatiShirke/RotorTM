@@ -45,6 +45,9 @@ MODEL_OBJ := $(MODEL_SRC:.c=.o)
 OCP_SRC=
 
 
+OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt.c
+OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt_hess.c
+OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun_jac_hess.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun_jac.c
