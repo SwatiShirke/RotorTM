@@ -66,7 +66,7 @@ if __name__ == '__main__':
     
     simX = np.zeros((Nsim+1, nx), dtype= float)
     simU = np.zeros((Nsim+1, nu), dtype= float)
-    model.x0 = [0,0,0, 0,0,0, 1,0,0,0, 0,0,0]  # [start_pose[0],start_pose[1],start_pose[2], 0,0,0, 1,0,0,0, 0,0,0]# changed qw to 1
+    model.x0 = [1, 1, 1, 0,0,0, 1,0,0,0, 0,0,0]  # [start_pose[0],start_pose[1],start_pose[2], 0,0,0, 1,0,0,0, 0,0,0]# changed qw to 1
     simX[0,:] = model.x0
     mg = payload_params.mass * payload_params.grav
     # mg = 0.250*9.81

@@ -112,16 +112,16 @@ def controller_setup(control_params,  payload_params):
     # ##inequlity constraints
     u = model.u
     h_list, hlist_f = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
-    # ocp.model.con_h_expr = h_list
-    obstacle = ca.vertcat(1.5,1.5,2)
-    diff = obstacle - x_array[0:3]
-    distance = diff.T@diff
-    j = distance - 0.2**2
-    h_list = j
-    ocp.model.con_h_expr = j 
-    # print("Hello")
-    # print(hlist_f)
-    ocp.dims.nh = j.shape[0]
+    ocp.model.con_h_expr = h_list
+    ocp.dims.nh = h_list.shape[0]
+    
+    # obstacle = ca.vertcat(1.5,1.5,2)
+    # diff = obstacle - x_array[0:3]
+    # distance = diff.T@diff
+    # j = distance - 1**2
+    # h_list = j
+    # ocp.model.con_h_expr = j 
+    # ocp.dims.nh = j.shape[0]
 
 
 
@@ -140,7 +140,7 @@ def controller_setup(control_params,  payload_params):
 
     # ##### Lower and upper limits
     ocp.constraints.lh = 0.0*np.ones((h_list.size1()))
-    ocp.constraints.uh = 100 * np.ones((h_list.size1()))
+    ocp.constraints.uh = 2.0 * np.ones((h_list.size1()))
     ocp.constraints.lsh = np.zeros((h_list.size1()))
     ocp.constraints.ush = np.zeros((h_list.size1()))
     ocp.constraints.idxsh = np.array(range(h_list.size1()))

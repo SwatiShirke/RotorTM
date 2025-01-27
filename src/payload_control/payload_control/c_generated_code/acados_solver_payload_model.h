@@ -46,7 +46,7 @@
 #define PAYLOAD_MODEL_NBU    9
 #define PAYLOAD_MODEL_NSBX   0
 #define PAYLOAD_MODEL_NSBU   0
-#define PAYLOAD_MODEL_NSH    1
+#define PAYLOAD_MODEL_NSH    3
 #define PAYLOAD_MODEL_NSH0   0
 #define PAYLOAD_MODEL_NSG    0
 #define PAYLOAD_MODEL_NSPHI  0
@@ -55,7 +55,7 @@
 #define PAYLOAD_MODEL_NSPHIN 0
 #define PAYLOAD_MODEL_NSPHI0 0
 #define PAYLOAD_MODEL_NSBXN  0
-#define PAYLOAD_MODEL_NS     1
+#define PAYLOAD_MODEL_NS     3
 #define PAYLOAD_MODEL_NS0    0
 #define PAYLOAD_MODEL_NSN    0
 #define PAYLOAD_MODEL_NG     0
@@ -65,7 +65,7 @@
 #define PAYLOAD_MODEL_NY     0
 #define PAYLOAD_MODEL_NYN    0
 #define PAYLOAD_MODEL_N      10
-#define PAYLOAD_MODEL_NH     1
+#define PAYLOAD_MODEL_NH     3
 #define PAYLOAD_MODEL_NHN    0
 #define PAYLOAD_MODEL_NH0    0
 #define PAYLOAD_MODEL_NPHI0  0

@@ -529,9 +529,17 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* zu = zlumem+NS*3;
     // change only the non-zero elements:
     Zl[0] = 100;
+    Zl[1] = 100;
+    Zl[2] = 100;
     Zu[0] = 100;
+    Zu[1] = 100;
+    Zu[2] = 100;
     zl[0] = 100;
+    zl[1] = 100;
+    zl[2] = 100;
     zu[0] = 100;
+    zu[1] = 100;
+    zu[2] = 100;
 
     for (int i = 1; i < N; i++)
     {
@@ -649,6 +657,8 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     // set up soft bounds for nonlinear constraints
     int* idxsh = malloc(NSH * sizeof(int));
     idxsh[0] = 0;
+    idxsh[1] = 1;
+    idxsh[2] = 2;
     double* lush = calloc(2*NSH, sizeof(double));
     double* lsh = lush;
     double* ush = lush + NSH;
@@ -705,7 +715,9 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* luh = calloc(2*NH, sizeof(double));
     double* lh = luh;
     double* uh = luh + NH;
-    uh[0] = 100;
+    uh[0] = 2;
+    uh[1] = 2;
+    uh[2] = 2;
 
     for (int i = 1; i < N; i++)
     {
