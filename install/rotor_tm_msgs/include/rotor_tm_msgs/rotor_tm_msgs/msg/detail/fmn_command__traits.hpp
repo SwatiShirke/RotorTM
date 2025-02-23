@@ -20,6 +20,7 @@
 // Member 'rlink_thrust'
 // Member 'moments'
 // Member 'null_space_vec'
+// Member 'acceleration'
 #include "geometry_msgs/msg/detail/vector3__traits.hpp"
 
 namespace rotor_tm_msgs
@@ -58,6 +59,13 @@ inline void to_flow_style_yaml(
   {
     out << "null_space_vec: ";
     to_flow_style_yaml(msg.null_space_vec, out);
+    out << ", ";
+  }
+
+  // member: acceleration
+  {
+    out << "acceleration: ";
+    to_flow_style_yaml(msg.acceleration, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -100,6 +108,15 @@ inline void to_block_style_yaml(
     }
     out << "null_space_vec:\n";
     to_block_style_yaml(msg.null_space_vec, out, indentation + 2);
+  }
+
+  // member: acceleration
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "acceleration:\n";
+    to_block_style_yaml(msg.acceleration, out, indentation + 2);
   }
 }  // NOLINT(readability/fn_size)
 

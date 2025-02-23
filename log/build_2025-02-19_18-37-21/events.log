@@ -1,0 +1,250 @@
+[0.000000] (-) TimerEvent: {}
+[0.000430] (-) JobUnselected: {'identifier': 'payload_control'}
+[0.000469] (-) JobUnselected: {'identifier': 'rotor_tm_config'}
+[0.000493] (-) JobUnselected: {'identifier': 'rotor_tm_control'}
+[0.000917] (-) JobUnselected: {'identifier': 'rotor_tm_keyboard2wrench'}
+[0.001067] (-) JobUnselected: {'identifier': 'rotor_tm_msgs'}
+[0.001079] (-) JobUnselected: {'identifier': 'rotor_tm_sim'}
+[0.001088] (-) JobUnselected: {'identifier': 'rotor_tm_traj'}
+[0.001097] (-) JobUnselected: {'identifier': 'rotor_tm_utils'}
+[0.001108] (rotor_tm_plcontrol) JobQueued: {'identifier': 'rotor_tm_plcontrol', 'dependencies': OrderedDict([('rotor_tm_msgs', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs')])}
+[0.001122] (rotor_tm_plcontrol) JobStarted: {'identifier': 'rotor_tm_plcontrol'}
+[0.009864] (rotor_tm_plcontrol) JobProgress: {'identifier': 'rotor_tm_plcontrol', 'progress': 'cmake'}
+[0.010191] (rotor_tm_plcontrol) JobProgress: {'identifier': 'rotor_tm_plcontrol', 'progress': 'build'}
+[0.010586] (rotor_tm_plcontrol) Command: {'cmd': ['/opt/cmake-3.28.3-linux-x86_64/bin/cmake', '--build', '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol', '--', '-j20', '-l20'], 'cwd': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'swati'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib'), ('ACADOS_SOURCE_DIR', '/home/swati/acados'), ('HOME', '/home/swati'), ('OLDPWD', '/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PS1', '(mpcenv) \\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$'), ('SYSTEMD_EXEC_PID', '2800'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('CARLA_ROOT', '/home/swati/carla_sim/'), ('COLCON_PREFIX_PATH', '/home/swati/Quad_DR/RotorTM/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'swati'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'swati'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/swati/acados/mpcenv/bin:/opt/cmake-3.28.3-linux-x86_64/bin:/opt/ros/humble/bin:/home/swati/miniconda3/bin:/home/swati/.cargo/bin:/home/swati/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/swati-Legion-Slim-5-16IRH8:@/tmp/.ICE-unix/2508,unix/swati-Legion-Slim-5-16IRH8:/tmp/.ICE-unix/2508'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/0ba330ac_daa6_4f6a_b06c_9a0b73bf540b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('VIRTUAL_ENV', '/home/swati/acados/mpcenv'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble')]), 'shell': False}
+[0.042545] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/pl_nmpc_controller_node.cpp.o\x1b[0m\n'}
+[0.043322] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/wrapper.cpp.o\x1b[0m\n'}
+[0.043452] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/nmpc_control.cpp.o\x1b[0m\n'}
+[0.100066] (-) TimerEvent: {}
+[0.200414] (-) TimerEvent: {}
+[0.300652] (-) TimerEvent: {}
+[0.400995] (-) TimerEvent: {}
+[0.501346] (-) TimerEvent: {}
+[0.601598] (-) TimerEvent: {}
+[0.701852] (-) TimerEvent: {}
+[0.802195] (-) TimerEvent: {}
+[0.902537] (-) TimerEvent: {}
+[0.949738] (rotor_tm_plcontrol) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/nmpc_control.cpp:1\x1b[m\x1b[K:\n'}
+[0.949899] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Knmpc_control_nodelet::NMPCControl::NMPCControl()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[0.949943] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:37:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knmpc_control_nodelet::NMPCControl::predicted_inputs_\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.949978] (rotor_tm_plcontrol) StderrLine: {'line': b'   37 |   Eigen::Matrix<double, kInputSize, kSamples> \x1b[01;35m\x1b[Kpredicted_inputs_\x1b[m\x1b[K;\n'}
+[0.950007] (rotor_tm_plcontrol) StderrLine: {'line': b'      |                                               \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.950034] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:32:8:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbool nmpc_control_nodelet::NMPCControl::solve_from_scratch_\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.950062] (rotor_tm_plcontrol) StderrLine: {'line': b'   32 |   bool \x1b[01;35m\x1b[Ksolve_from_scratch_\x1b[m\x1b[K;\n'}
+[0.950088] (rotor_tm_plcontrol) StderrLine: {'line': b'      |        \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.950114] (rotor_tm_plcontrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/nmpc_control.cpp:6:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.950142] (rotor_tm_plcontrol) StderrLine: {'line': b'    6 | \x1b[01;35m\x1b[KNMPCControl\x1b[m\x1b[K::NMPCControl()\n'}
+[0.950169] (rotor_tm_plcontrol) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.002631] (-) TimerEvent: {}
+[1.102907] (-) TimerEvent: {}
+[1.203247] (-) TimerEvent: {}
+[1.303546] (-) TimerEvent: {}
+[1.403779] (-) TimerEvent: {}
+[1.504125] (-) TimerEvent: {}
+[1.604466] (-) TimerEvent: {}
+[1.704715] (-) TimerEvent: {}
+[1.805006] (-) TimerEvent: {}
+[1.905363] (-) TimerEvent: {}
+[2.005617] (-) TimerEvent: {}
+[2.105902] (-) TimerEvent: {}
+[2.206255] (-) TimerEvent: {}
+[2.306547] (-) TimerEvent: {}
+[2.406799] (-) TimerEvent: {}
+[2.507160] (-) TimerEvent: {}
+[2.607526] (-) TimerEvent: {}
+[2.707780] (-) TimerEvent: {}
+[2.808140] (-) TimerEvent: {}
+[2.908501] (-) TimerEvent: {}
+[3.008743] (-) TimerEvent: {}
+[3.109025] (-) TimerEvent: {}
+[3.209373] (-) TimerEvent: {}
+[3.309626] (-) TimerEvent: {}
+[3.409910] (-) TimerEvent: {}
+[3.510265] (-) TimerEvent: {}
+[3.610552] (-) TimerEvent: {}
+[3.710824] (-) TimerEvent: {}
+[3.811171] (-) TimerEvent: {}
+[3.911522] (-) TimerEvent: {}
+[4.011780] (-) TimerEvent: {}
+[4.112128] (-) TimerEvent: {}
+[4.212492] (-) TimerEvent: {}
+[4.312733] (-) TimerEvent: {}
+[4.413076] (-) TimerEvent: {}
+[4.513352] (-) TimerEvent: {}
+[4.613603] (-) TimerEvent: {}
+[4.713873] (-) TimerEvent: {}
+[4.814225] (-) TimerEvent: {}
+[4.914552] (-) TimerEvent: {}
+[5.014794] (-) TimerEvent: {}
+[5.115143] (-) TimerEvent: {}
+[5.215491] (-) TimerEvent: {}
+[5.315728] (-) TimerEvent: {}
+[5.415988] (-) TimerEvent: {}
+[5.516332] (-) TimerEvent: {}
+[5.616561] (-) TimerEvent: {}
+[5.716785] (-) TimerEvent: {}
+[5.817120] (-) TimerEvent: {}
+[5.917456] (-) TimerEvent: {}
+[6.017689] (-) TimerEvent: {}
+[6.117959] (-) TimerEvent: {}
+[6.218299] (-) TimerEvent: {}
+[6.318549] (-) TimerEvent: {}
+[6.418786] (-) TimerEvent: {}
+[6.519059] (-) TimerEvent: {}
+[6.619411] (-) TimerEvent: {}
+[6.719647] (-) TimerEvent: {}
+[6.819923] (-) TimerEvent: {}
+[6.920261] (-) TimerEvent: {}
+[7.020548] (-) TimerEvent: {}
+[7.120782] (-) TimerEvent: {}
+[7.221125] (-) TimerEvent: {}
+[7.321467] (-) TimerEvent: {}
+[7.421703] (-) TimerEvent: {}
+[7.521983] (-) TimerEvent: {}
+[7.622321] (-) TimerEvent: {}
+[7.722548] (-) TimerEvent: {}
+[7.822854] (-) TimerEvent: {}
+[7.923246] (-) TimerEvent: {}
+[8.023651] (-) TimerEvent: {}
+[8.124062] (-) TimerEvent: {}
+[8.224468] (-) TimerEvent: {}
+[8.324882] (-) TimerEvent: {}
+[8.425294] (-) TimerEvent: {}
+[8.525726] (-) TimerEvent: {}
+[8.538684] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX shared library libpl_nmpc_shared_lib.so\x1b[0m\n'}
+[8.625895] (-) TimerEvent: {}
+[8.726295] (-) TimerEvent: {}
+[8.826719] (-) TimerEvent: {}
+[8.927133] (-) TimerEvent: {}
+[9.027536] (-) TimerEvent: {}
+[9.037234] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 66%] Built target pl_nmpc_shared_lib\n'}
+[9.055227] (rotor_tm_plcontrol) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/pl_nmpc_node.dir/src/pl_nmpc_controller_node.cpp.o\x1b[0m\n'}
+[9.127678] (-) TimerEvent: {}
+[9.228091] (-) TimerEvent: {}
+[9.328516] (-) TimerEvent: {}
+[9.428946] (-) TimerEvent: {}
+[9.529356] (-) TimerEvent: {}
+[9.629782] (-) TimerEvent: {}
+[9.730191] (-) TimerEvent: {}
+[9.830609] (-) TimerEvent: {}
+[9.931022] (-) TimerEvent: {}
+[10.031446] (-) TimerEvent: {}
+[10.131853] (-) TimerEvent: {}
+[10.232253] (-) TimerEvent: {}
+[10.332592] (-) TimerEvent: {}
+[10.433013] (-) TimerEvent: {}
+[10.533436] (-) TimerEvent: {}
+[10.633960] (-) TimerEvent: {}
+[10.734305] (-) TimerEvent: {}
+[10.834548] (-) TimerEvent: {}
+[10.934825] (-) TimerEvent: {}
+[11.035157] (-) TimerEvent: {}
+[11.135508] (-) TimerEvent: {}
+[11.235790] (-) TimerEvent: {}
+[11.336131] (-) TimerEvent: {}
+[11.436475] (-) TimerEvent: {}
+[11.536771] (-) TimerEvent: {}
+[11.637113] (-) TimerEvent: {}
+[11.737453] (-) TimerEvent: {}
+[11.837734] (-) TimerEvent: {}
+[11.938072] (-) TimerEvent: {}
+[12.038421] (-) TimerEvent: {}
+[12.138658] (-) TimerEvent: {}
+[12.239002] (-) TimerEvent: {}
+[12.339341] (-) TimerEvent: {}
+[12.439594] (-) TimerEvent: {}
+[12.539946] (-) TimerEvent: {}
+[12.640281] (-) TimerEvent: {}
+[12.740549] (-) TimerEvent: {}
+[12.840850] (-) TimerEvent: {}
+[12.941188] (-) TimerEvent: {}
+[13.041526] (-) TimerEvent: {}
+[13.141802] (-) TimerEvent: {}
+[13.242146] (-) TimerEvent: {}
+[13.342489] (-) TimerEvent: {}
+[13.442776] (-) TimerEvent: {}
+[13.543127] (-) TimerEvent: {}
+[13.643467] (-) TimerEvent: {}
+[13.743711] (-) TimerEvent: {}
+[13.844053] (-) TimerEvent: {}
+[13.944446] (-) TimerEvent: {}
+[14.044756] (-) TimerEvent: {}
+[14.145110] (-) TimerEvent: {}
+[14.245452] (-) TimerEvent: {}
+[14.345685] (-) TimerEvent: {}
+[14.446011] (-) TimerEvent: {}
+[14.546342] (-) TimerEvent: {}
+[14.646579] (-) TimerEvent: {}
+[14.746947] (-) TimerEvent: {}
+[14.847302] (-) TimerEvent: {}
+[14.947572] (-) TimerEvent: {}
+[15.047882] (-) TimerEvent: {}
+[15.148230] (-) TimerEvent: {}
+[15.248548] (-) TimerEvent: {}
+[15.348846] (-) TimerEvent: {}
+[15.449188] (-) TimerEvent: {}
+[15.549542] (-) TimerEvent: {}
+[15.649848] (-) TimerEvent: {}
+[15.750190] (-) TimerEvent: {}
+[15.850551] (-) TimerEvent: {}
+[15.950789] (-) TimerEvent: {}
+[16.051164] (-) TimerEvent: {}
+[16.151590] (-) TimerEvent: {}
+[16.251971] (-) TimerEvent: {}
+[16.352311] (-) TimerEvent: {}
+[16.452556] (-) TimerEvent: {}
+[16.552839] (-) TimerEvent: {}
+[16.653192] (-) TimerEvent: {}
+[16.753538] (-) TimerEvent: {}
+[16.853832] (-) TimerEvent: {}
+[16.954169] (-) TimerEvent: {}
+[17.054512] (-) TimerEvent: {}
+[17.154787] (-) TimerEvent: {}
+[17.255126] (-) TimerEvent: {}
+[17.355466] (-) TimerEvent: {}
+[17.455705] (-) TimerEvent: {}
+[17.501777] (rotor_tm_plcontrol) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable pl_nmpc_node\x1b[0m\n'}
+[17.555840] (-) TimerEvent: {}
+[17.656192] (-) TimerEvent: {}
+[17.756544] (-) TimerEvent: {}
+[17.856857] (-) TimerEvent: {}
+[17.957233] (-) TimerEvent: {}
+[17.984402] (rotor_tm_plcontrol) StdoutLine: {'line': b'[100%] Built target pl_nmpc_node\n'}
+[17.994840] (rotor_tm_plcontrol) CommandEnded: {'returncode': 0}
+[18.026909] (rotor_tm_plcontrol) JobProgress: {'identifier': 'rotor_tm_plcontrol', 'progress': 'install'}
+[18.029476] (rotor_tm_plcontrol) Command: {'cmd': ['/opt/cmake-3.28.3-linux-x86_64/bin/cmake', '--install', '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol'], 'cwd': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'swati'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib'), ('ACADOS_SOURCE_DIR', '/home/swati/acados'), ('HOME', '/home/swati'), ('OLDPWD', '/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PS1', '(mpcenv) \\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$'), ('SYSTEMD_EXEC_PID', '2800'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('CARLA_ROOT', '/home/swati/carla_sim/'), ('COLCON_PREFIX_PATH', '/home/swati/Quad_DR/RotorTM/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'swati'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'swati'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/swati/acados/mpcenv/bin:/opt/cmake-3.28.3-linux-x86_64/bin:/opt/ros/humble/bin:/home/swati/miniconda3/bin:/home/swati/.cargo/bin:/home/swati/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/swati-Legion-Slim-5-16IRH8:@/tmp/.ICE-unix/2508,unix/swati-Legion-Slim-5-16IRH8:/tmp/.ICE-unix/2508'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/0ba330ac_daa6_4f6a_b06c_9a0b73bf540b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('VIRTUAL_ENV', '/home/swati/acados/mpcenv'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble')]), 'shell': False}
+[18.032153] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[18.032213] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Installing: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/libacados_ocp_solver_payload_model.so\n'}
+[18.032361] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/library_path.sh\n'}
+[18.032398] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/library_path.dsv\n'}
+[18.032470] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Installing: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/rotor_tm_plcontrol/pl_nmpc_node\n'}
+[18.038400] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/rotor_tm_plcontrol/pl_nmpc_node" to ""\n'}
+[18.038462] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Installing: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/libpl_nmpc_shared_lib.so\n'}
+[18.048580] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/libpl_nmpc_shared_lib.so" to ""\n'}
+[18.048659] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/include/\n'}
+[18.048782] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol\n'}
+[18.048841] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Installing: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/acados_solver_payload_model.h\n'}
+[18.048910] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Installing: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/payload_model_model.h\n'}
+[18.048970] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/nmpc_control.h\n'}
+[18.049032] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/include//rotor_tm_plcontrol/wrapper.h\n'}
+[18.049151] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/package_run_dependencies/rotor_tm_plcontrol\n'}
+[18.049215] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/parent_prefix_path/rotor_tm_plcontrol\n'}
+[18.049348] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/ament_prefix_path.sh\n'}
+[18.049448] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/ament_prefix_path.dsv\n'}
+[18.049509] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/path.sh\n'}
+[18.049559] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/environment/path.dsv\n'}
+[18.049609] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.bash\n'}
+[18.049659] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.sh\n'}
+[18.049709] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.zsh\n'}
+[18.049757] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.dsv\n'}
+[18.049808] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Installing: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.dsv\n'}
+[18.049861] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/packages/rotor_tm_plcontrol\n'}
+[18.049909] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[18.049958] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[18.050008] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/rotor_tm_plcontrolConfig.cmake\n'}
+[18.050061] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/rotor_tm_plcontrolConfig-version.cmake\n'}
+[18.050117] (rotor_tm_plcontrol) StdoutLine: {'line': b'-- Up-to-date: /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.xml\n'}
+[18.052908] (rotor_tm_plcontrol) CommandEnded: {'returncode': 0}
+[18.057821] (-) TimerEvent: {}
+[18.123804] (rotor_tm_plcontrol) JobEnded: {'identifier': 'rotor_tm_plcontrol', 'rc': 0}
+[18.124267] (-) EventReactorShutdown: {}

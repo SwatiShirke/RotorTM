@@ -34,21 +34,11 @@ extern "C"
 {
 #endif
 
-#include "rotor_tm_msgs/msg/detail/position_command__functions.h"  // points
+#include "rosidl_runtime_c/primitives_sequence.h"  // points
+#include "rosidl_runtime_c/primitives_sequence_functions.h"  // points
 #include "std_msgs/msg/detail/header__functions.h"  // header
 
 // forward declare type support functions
-size_t get_serialized_size_rotor_tm_msgs__msg__PositionCommand(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-size_t max_serialized_size_rotor_tm_msgs__msg__PositionCommand(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-
-const rosidl_message_type_support_t *
-  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, rotor_tm_msgs, msg, PositionCommand)();
 ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_rotor_tm_msgs
 size_t get_serialized_size_std_msgs__msg__Header(
   const void * untyped_ros_message,
@@ -92,21 +82,10 @@ static bool _TrajCommand__cdr_serialize(
 
   // Field name: points
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, rotor_tm_msgs, msg, PositionCommand
-      )()->data);
     size_t size = ros_message->points.size;
     auto array_ptr = ros_message->points.data;
     cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; ++i) {
-      if (!callbacks->cdr_serialize(
-          &array_ptr[i], cdr))
-      {
-        return false;
-      }
-    }
+    cdr.serializeArray(array_ptr, size);
   }
 
   return true;
@@ -137,29 +116,18 @@ static bool _TrajCommand__cdr_deserialize(
 
   // Field name: points
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, rotor_tm_msgs, msg, PositionCommand
-      )()->data);
     uint32_t cdrSize;
     cdr >> cdrSize;
     size_t size = static_cast<size_t>(cdrSize);
     if (ros_message->points.data) {
-      rotor_tm_msgs__msg__PositionCommand__Sequence__fini(&ros_message->points);
+      rosidl_runtime_c__float__Sequence__fini(&ros_message->points);
     }
-    if (!rotor_tm_msgs__msg__PositionCommand__Sequence__init(&ros_message->points, size)) {
+    if (!rosidl_runtime_c__float__Sequence__init(&ros_message->points, size)) {
       fprintf(stderr, "failed to create array for field 'points'");
       return false;
     }
     auto array_ptr = ros_message->points.data;
-    for (size_t i = 0; i < size; ++i) {
-      if (!callbacks->cdr_deserialize(
-          cdr, &array_ptr[i]))
-      {
-        return false;
-      }
-    }
+    cdr.deserializeArray(array_ptr, size);
   }
 
   return true;
@@ -189,11 +157,10 @@ size_t get_serialized_size_rotor_tm_msgs__msg__TrajCommand(
     auto array_ptr = ros_message->points.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += get_serialized_size_rotor_tm_msgs__msg__PositionCommand(
-        &array_ptr[index], current_alignment);
-    }
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
   return current_alignment - initial_alignment;
@@ -251,20 +218,9 @@ size_t max_serialized_size_rotor_tm_msgs__msg__TrajCommand(
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
-
-    last_member_size = 0;
-    for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size;
-      inner_size =
-        max_serialized_size_rotor_tm_msgs__msg__PositionCommand(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
-    }
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   size_t ret_val = current_alignment - initial_alignment;

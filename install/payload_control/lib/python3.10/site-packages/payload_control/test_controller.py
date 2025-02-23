@@ -68,9 +68,10 @@ if __name__ == '__main__':
     clock = Clock()
 
     # Get the current time
-    start_time = clock.now()
+    
     for i in range(Nsim):
-          
+        start_time = time.time()  
+
         for j in range(N):
             t_j = t0 + (j) * Ts
             x_ref_j = pos_ref[0](t_j)
@@ -93,14 +94,17 @@ if __name__ == '__main__':
         acados_solver.set(N, "p", yref) 
         acados_solver.set(0, "lbx", simX[i, :])
         acados_solver.set(0, "ubx", simX[i, :])
-        #solve ocp
-        t = time.time()
-        status = acados_solver.solve()
-        if status != 0:
-            print("acados returned status {} in closed loop iteration {}.".format(status, i))
-        solve_elapsed = time.time() - t
-        
+
         simU[i, : ] = acados_solver.get(0, "u") 
+        #solve ocp
+        end_time = time.time()
+        # status = acados_solver.solve()
+        # if status != 0:
+        #     print("acados returned status {} in closed loop iteration {}.".format(status, i))
+        solve_elapsed = end_time - start_time
+        print("solve_elapsed: ", solve_elapsed)
+        ipdb.set_trace()
+        
         print("simU")
         print(simU[i, : ])
         print(simU[i, : ].shape)

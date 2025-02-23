@@ -1,0 +1,29 @@
+[1.321s] Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_traj': PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_traj build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/install.log --single-version-externally-managed install_data
+[1.428s] /home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[1.428s]   warnings.warn(msg)
+[1.510s] running egg_info
+[1.520s] writing ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/PKG-INFO
+[1.521s] writing dependency_links to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/dependency_links.txt
+[1.521s] writing entry points to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/entry_points.txt
+[1.521s] writing requirements to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/requires.txt
+[1.521s] writing top-level names to ../../build/rotor_tm_traj/rotor_tm_traj.egg-info/top_level.txt
+[1.554s] reading manifest file '../../build/rotor_tm_traj/rotor_tm_traj.egg-info/SOURCES.txt'
+[1.554s] adding license file 'LICENSE'
+[1.555s] writing manifest file '../../build/rotor_tm_traj/rotor_tm_traj.egg-info/SOURCES.txt'
+[1.555s] running build
+[1.556s] running build_py
+[1.556s] copying rotor_tm_traj/traj.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/build/lib/rotor_tm_traj
+[1.556s] copying rotor_tm_traj/traj_node.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/build/lib/rotor_tm_traj
+[1.558s] copying rotor_tm_traj/Optimization/entire_path/__init__.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/build/lib/rotor_tm_traj/Optimization/entire_path
+[1.558s] running install
+[1.563s] running install_lib
+[1.583s] running install_data
+[1.583s] copying resource/rotor_tm_traj -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/ament_index/resource_index/packages
+[1.584s] copying package.xml -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj
+[1.584s] running install_egg_info
+[1.595s] removing '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj-0.0.0-py3.10.egg-info' (and everything under it)
+[1.596s] Copying ../../build/rotor_tm_traj/rotor_tm_traj.egg-info to /home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages/rotor_tm_traj-0.0.0-py3.10.egg-info
+[1.596s] running install_scripts
+[1.683s] Installing traj_node script to /home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/rotor_tm_traj
+[1.683s] writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/install.log'
+[1.704s] Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_traj' returned '0': PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_traj build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/install.log --single-version-externally-managed install_data

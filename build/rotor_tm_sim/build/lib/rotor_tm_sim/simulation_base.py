@@ -7,9 +7,9 @@ import scipy.integrate
 from scipy.spatial.transform import Rotation as rot_math
 from visualization_msgs.msg import MarkerArray, Marker
 from nav_msgs.msg import Odometry, Path
-from geometry_msgs.msg import PoseStamped, Wrench, TransformStamped
+from geometry_msgs.msg import PoseStamped, Wrench, TransformStamped, Point, Vector3, Quaternion
 from sensor_msgs.msg import Imu
-from rotor_tm_msgs.msg import RPMCommand, FMCommand
+from rotor_tm_msgs.msg import RPMCommand, FMCommand, TrajCommand, PositionCommand
 from rotor_tm_utils import utilslib, rosutilslib
 from rotor_tm_utils.vee import vee
 import time
@@ -19,6 +19,7 @@ from rotor_tm_sim.sim_utils import ptmassslackToTaut, ptmasstautToSlack, coopera
 import ipdb
 from geometry_msgs.msg import Wrench as WrenchMsg
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
+from std_msgs.msg import Float32MultiArray, MultiArrayDimension
 
 
 class simulation_base(Node):
@@ -27,7 +28,7 @@ class simulation_base(Node):
         print("here")
         super().__init__('simulation')
         self.get_logger().info('Node has been initialized')
-        self.timer_period = 0.01
+        self.timer_period = 0.02
         self.t_span = (0,self.timer_period)
         self.clock = Clock()        
 
@@ -36,7 +37,10 @@ class simulation_base(Node):
         self.white_noise_cov = np.diag(np.zeros(12))
         self.uav_white_noise_cov = np.diag(np.zeros(12))
         self.worldframe = "simulator"
-        
+        self.tracking_error_list = []   #holds squared erros for each point
+        self.traj_RMSE = 0
+        self.current_ref_pose = PositionCommand()
+        self.trajectory_finished = False  
         ################################## init parameters ################################
         self.pl_params = pl_params
         self.uav_params = uav_params
@@ -173,21 +177,25 @@ class simulation_base(Node):
         #ROS Publisher         
         self.system_publisher = self.create_publisher(MarkerArray, 'system/marker', 10)
         self.payload_odom_publisher = self.create_publisher(Odometry, 'payload/odom', qos_profile )
-        self.payload_odom_ground_truth_publisher = self.create_publisher(Odometry, 'payload/odom_ground_truth', 1)
-        self.payload_path_publisher = self.create_publisher(Path, 'payload/path' ,1)
-        self.robot_vio_publisher = self.create_publisher(Odometry, 'payload/vio', qos_profile )
+        #self.payload_odom_ground_truth_publisher = self.create_publisher(Odometry, 'payload/odom_ground_truth', 1)
+        #self.payload_path_publisher = self.create_publisher(Path, 'payload/path' ,1)
+        #self.payload_ref_path_publisher = self.create_publisher(Path, 'payload/reference_path' ,1)
+        #self.robot_vio_publisher = self.create_publisher(Odometry, 'payload/vio', qos_profile )
         
         #Create a static transform broadcaster for 'map' -> 'simulator'
         self.static_tf_broadcaster = StaticTransformBroadcaster(self)
         self.publish_static_transform()
 
         self.payload_path = Path()
+        self.payload_reference_path = Path()
         self.robot_odom_publisher = []
         self.attach_publisher = []
         self.robot_command_subscriber = []
         uav_type = []
         uav_in_team = []
-        
+        #self.create_subscription(TrajCommand, '/payload/des_traj_n', self.desired_traj_n_callback, qos_profile) 
+        #self.create_subscription(Float32MultiArray, 'trajectory_topic', self.desired_traj_n_callback, qos_profile)
+
         for i in range(self.nquad):
             uav_name = self.uav_params[i].uav_name
             uav_name_with_id = pl_params.uav_in_team[i]
@@ -223,7 +231,7 @@ class simulation_base(Node):
         print("The list of uav is", sum(uav_in_team, []))
         # Visualization Init
         self.cable_marker_scale = 0.01 * np.ones(3)
-        self.cable_marker_color = np.array([1.0,0.5,0.5,0.5])
+        self.cable_marker_color = np.array([1.0,0.5,0.5,0.5]) 
         self.uav_marker_scale = 0.5 * np.ones(3)
         self.uav_marker_color = np.array([1.0,0.0,0.0,1.0])
         self.uav_mesh = []
@@ -261,8 +269,7 @@ class simulation_base(Node):
 
 
 
-    def timer_callback(self):
-          #ipdb.set_trace()
+    def timer_callback(self):          
           if self.hybrid_flag:
             # print("\n############################################################")
             # print("HYBRID DYNAMICS IS ON")
@@ -315,6 +322,7 @@ class simulation_base(Node):
                         #print("Cable is taut")
                         #print(self.x)
                         sol = scipy.integrate.solve_ivp(self.hybrid_ptmass_pl_transportationEOM, self.t_span, self.x, method= 'RK45', t_eval=self.t_span, events=ptmasstautToSlack)
+                    
                     
                     ## extract state from solver soltion
                     if (np.all(self.x==sol.y[:, -1])) and (len(sol.y_events[0]) != 0):
@@ -575,6 +583,7 @@ class simulation_base(Node):
                     sol = scipy.integrate.solve_ivp(self.hybrid_ptmass_pl_transportationEOM, self.t_span, self.x, method= 'RK45', t_eval=self.t_span)
                 else:    
                     sol = scipy.integrate.solve_ivp(self.hybrid_cooperative_rigidbody_pl_transportationEOM, self.t_span, self.x, method='RK45', t_eval=self.t_span)
+            
             end = time.time()
             
             self.x = sol.y[:,1]
@@ -589,25 +598,27 @@ class simulation_base(Node):
                 load_pos = self.x[0:3].reshape((3,1)) + payload_rotmat @ self.pl_params.rho_load
             else:
                 load_pos = self.x[0:3].reshape((3,1)) 
+
             load_pos = load_pos.flatten()
-            white_noise = np.random.multivariate_normal(np.zeros(12),self.white_noise_cov)
-            deltaR = utilslib.expSO3(white_noise[6:9])
-            payload_rot_with_noise = np.matmul(rot_math.from_quat([self.x[7],self.x[8],self.x[9],self.x[6]]).as_matrix(), deltaR)
-            payload_quat_with_noise = rot_math.from_matrix(payload_rot_with_noise).as_quat()
-            payload_odom.pose.pose.position.x = load_pos[0] + white_noise[0]
-            payload_odom.pose.pose.position.y = load_pos[1] + white_noise[1]
-            payload_odom.pose.pose.position.z = load_pos[2] + white_noise[2]
-            payload_odom.twist.twist.linear.x    = self.x[3] + white_noise[3]
-            payload_odom.twist.twist.linear.y    = self.x[4] + white_noise[4]
-            payload_odom.twist.twist.linear.z    = self.x[5] + white_noise[5]
-            payload_odom.pose.pose.orientation.w = payload_quat_with_noise[3] 
-            payload_odom.pose.pose.orientation.x = payload_quat_with_noise[0]
-            payload_odom.pose.pose.orientation.y = payload_quat_with_noise[1]
-            payload_odom.pose.pose.orientation.z = payload_quat_with_noise[2]
-            payload_odom.twist.twist.angular.x   = self.x[10] + white_noise[9]
-            payload_odom.twist.twist.angular.y   = self.x[11] + white_noise[10]
-            payload_odom.twist.twist.angular.z   = self.x[12] + white_noise[11]
-            self.payload_odom_publisher.publish(payload_odom)
+            # white_noise = np.random.multivariate_normal(np.zeros(12),self.white_noise_cov)
+            # deltaR = utilslib.expSO3(white_noise[6:9])
+            # payload_rot_with_noise = np.matmul(rot_math.from_quat([self.x[7],self.x[8],self.x[9],self.x[6]]).as_matrix(), deltaR)
+            # payload_quat_with_noise = rot_math.from_matrix(payload_rot_with_noise).as_quat()
+            # payload_odom.pose.pose.position.x = load_pos[0] + white_noise[0]
+            # payload_odom.pose.pose.position.y = load_pos[1] + white_noise[1]
+            # payload_odom.pose.pose.position.z = load_pos[2] + white_noise[2]
+            # payload_odom.twist.twist.linear.x    = self.x[3] + white_noise[3]
+            # payload_odom.twist.twist.linear.y    = self.x[4] + white_noise[4]
+            # payload_odom.twist.twist.linear.z    = self.x[5] + white_noise[5]
+            # payload_odom.pose.pose.orientation.w = payload_quat_with_noise[3] 
+            # payload_odom.pose.pose.orientation.x = payload_quat_with_noise[0]
+            # payload_odom.pose.pose.orientation.y = payload_quat_with_noise[1]
+            # payload_odom.pose.pose.orientation.z = payload_quat_with_noise[2]
+            # payload_odom.twist.twist.angular.x   = self.x[10] + white_noise[9]
+            # payload_odom.twist.twist.angular.y   = self.x[11] + white_noise[10]
+            # payload_odom.twist.twist.angular.z   = self.x[12] + white_noise[11]
+            # self.payload_odom_publisher.publish(payload_odom)
+            
             payload_odom.pose.pose.position.x = load_pos[0]
             payload_odom.pose.pose.position.y = load_pos[1]
             payload_odom.pose.pose.position.z = load_pos[2]
@@ -621,22 +632,25 @@ class simulation_base(Node):
             payload_odom.twist.twist.angular.x   = self.x[10]
             payload_odom.twist.twist.angular.y   = self.x[11]
             payload_odom.twist.twist.angular.z   = self.x[12]
-            self.payload_odom_ground_truth_publisher.publish(payload_odom)
+            #self.payload_odom_ground_truth_publisher.publish(payload_odom)
             self.payload_odom_publisher.publish(payload_odom)
-            self.robot_vio_publisher.publish(payload_vio)
+
+            #self.robot_vio_publisher.publish(payload_vio)
             # self.payload_ctrl_wrench.publish(self.wrench_value)
             # Publish payload path
-            current_time = self.clock.now().to_msg()
-            self.payload_path.header.stamp = current_time
-            self.payload_path.header.frame_id = self.worldframe 
-            payload_rotmat = utilslib.QuatToRot(sol.y[:,0][6:10])
-            pl_pose_stamped = PoseStamped()
-            current_time = self.clock.now().to_msg()
-            pl_pose_stamped.header.stamp = current_time
-            pl_pose_stamped.header.frame_id = self.worldframe
-            pl_pose_stamped.pose = payload_odom.pose.pose 
-            self.payload_path.poses.append(pl_pose_stamped)
-            self.payload_path_publisher.publish(self.payload_path)
+            # current_time = self.clock.now().to_msg()
+            # self.payload_path.header.stamp = current_time
+            # self.payload_path.header.frame_id = self.worldframe 
+            # payload_rotmat = utilslib.QuatToRot(sol.y[:,0][6:10])
+            # pl_pose_stamped = PoseStamped()
+            # current_time = self.clock.now().to_msg()
+            # pl_pose_stamped.header.stamp = current_time
+            # pl_pose_stamped.header.frame_id = self.worldframe
+            # pl_pose_stamped.pose = payload_odom.pose.pose 
+            # self.payload_path.poses.append(pl_pose_stamped)
+            # self.payload_path_publisher.publish(self.payload_path)
+
+
             system_marker = MarkerArray()
             cable_point_list = np.zeros((2*self.nquad,3))
             for uav_id in range(self.nquad-1, -1, -1):
@@ -708,7 +722,20 @@ class simulation_base(Node):
             #print(load_pos[0:3])
             system_marker.markers.append(rosutilslib.update_marker_msg(self.payload_marker_msg,load_pos[0:3],self.x[6:10], self.nquad + 2))
             self.system_publisher.publish(system_marker)
+
           #ipdb.set_trace() 
+          #calculate tracking error           
+        #   if self.trajectory_finished:
+        #     self.traj_RMSE = np.sqrt(np.sum(self.tracking_error_list) / len(self.tracking_error_list))
+        #     print("Trajectory RMSE :",self.traj_RMSE)
+        #   else:
+        #     # print("load_pose ", load_pos)
+        #     # print("ref_pose ",self.current_ref_pose)
+        #     pl_curent_pose = np.array(load_pos[0:3])
+        #     pl_traj_pose = np.array([self.current_ref_pose.position.x, self.current_ref_pose.position.y, self.current_ref_pose.position.z])
+        #     error = np.linalg.norm(pl_curent_pose - pl_traj_pose )
+        #     self.tracking_error_list.append(error**2) 
+              
           self.publish_static_transform()
 
     def publish_static_transform(self):
@@ -819,6 +846,8 @@ class simulation_base(Node):
       
       # OUTPUTS:
       # sdot          - 13*(nquad+1) x 1, derivative of state vector s
+      start_time1 = time.time()
+      
       if not self.sim_start :
           self.pl_accel = np.zeros(3)
           self.pl_ang_accel = np.zeros(3)
@@ -833,7 +862,9 @@ class simulation_base(Node):
       pl_rot = utilslib.QuatToRot(pl_quat) # This needs to be the rotation matrix of the payload w.r.t the world frame
       pl_omg = pl_state[10:13]
       pl_omg_asym = utilslib.vec2asym(pl_omg)
-
+      
+      #print("********************Frequncy dignosis checkpoint 1.2***********************************************")
+      start_time = time.time()
       # convert UAV state
       qd_state = np.reshape(s[self.pl_dim_num:],(self.nquad,13))
       qd_pos = qd_state[:,0:3]
@@ -848,6 +879,11 @@ class simulation_base(Node):
       self.attach_accel = self.pl_accel + np.array([0,0,self.pl_params.grav]) + \
                           np.matmul(pl_rot, np.matmul(utilslib.vec2asym(self.pl_ang_accel), self.rho_vec_list)).T + \
                           np.matmul(pl_rot, attach_centrifugal_accel).T
+      end_time = time.time()
+      #print("time : ", end_time - start_time) 
+
+      #print("********************Frequncy dignosis checkpoint 1.3***********************************************")
+      start_time = time.time()
 
       ## payload dynamics
       ML = self.pl_params.mass * np.eye(3)
@@ -858,6 +894,13 @@ class simulation_base(Node):
       pl_net_M = np.zeros(3)
       uav_u = np.zeros((3,self.nquad))
       tension_vector = np.zeros((3,self.nquad))
+      end_time = time.time()
+      #print("time : ", end_time - start_time)
+
+      #print("********************Frequncy dignosis checkpoint 1***********************************************")
+      end_time1 = time.time()
+      #print("time : ", end_time1 - start_time1)
+
 
       for uav_idx in range(self.nquad):
           xi = qd_xi[uav_idx,:]
@@ -1667,3 +1710,57 @@ class simulation_base(Node):
                   self.uav_M[1,0] = fm_command.moments.y
                   self.uav_M[2,0] = fm_command.moments.z
       
+     
+    def desired_traj_n_callback(self, des_traj_n):
+        #point = des_traj_n.points
+        # array_size = des_traj_n.layout.dim[0].size
+        # point_size = des_traj_n.layout.dim[1].size # 1 data point of trajectory has point_size values 
+        point_size = 16 
+        no_points = int(len(des_traj_n.points)/ point_size)
+        point_0 = des_traj_n.points[0:point_size]
+        #pos, vel , quaternion, ang vel, accel = 3,3,4,3,3 
+        position = Point(x=point_0[0], y=point_0[1], z=point_0[2])
+        velocity = Vector3(x=point_0[3], y=point_0[4], z=point_0[5]) 
+        quaternion = Quaternion( w = point_0[6], x=point_0[7], y=point_0[8], z=point_0[9])
+        angular_velocity = Vector3(x=point_0[10], y=point_0[11], z=point_0[12]) 
+        acceleration = Vector3(x=point_0[13], y=point_0[14], z=point_0[15]) 
+
+        self.current_ref_pose.position = position
+        self.current_ref_pose.velocity = velocity
+        self.current_ref_pose.quaternion = quaternion
+        self.current_ref_pose.angular_velocity = angular_velocity
+        self.current_ref_pose.acceleration = acceleration 
+
+
+        current_time = self.clock.now().to_msg()
+        self.payload_reference_path.header.stamp = current_time
+        self.payload_reference_path.header.frame_id = self.worldframe
+        pl_pose_stamped = PoseStamped()        
+        
+        pl_pose_stamped.header.stamp = current_time
+        pl_pose_stamped.header.frame_id = self.worldframe        
+
+        #pos, vel , quaternion, ang vel, accel = 3,3,4,3,3      
+        pl_pose_stamped.pose.position.x = position.x
+        pl_pose_stamped.pose.position.y = position.y
+        pl_pose_stamped.pose.position.z = position.z
+       
+        pl_pose_stamped.pose.orientation.w = quaternion.w
+        pl_pose_stamped.pose.orientation.x = quaternion.x
+        pl_pose_stamped.pose.orientation.y = quaternion.y
+        pl_pose_stamped.pose.orientation.z = quaternion.z
+       
+        self.payload_reference_path.poses.append(pl_pose_stamped)
+        self.payload_ref_path_publisher.publish(self.payload_reference_path)
+
+        #calculate RMSE when trajectory ends - des_traj_n has only one point/pose value
+        if no_points == 1:
+            print("trajectory finished")
+            self.trajectory_finished = True
+        else:
+            print("trajectory continued")
+            self.trajectory_finished = False
+            
+        
+      
+        

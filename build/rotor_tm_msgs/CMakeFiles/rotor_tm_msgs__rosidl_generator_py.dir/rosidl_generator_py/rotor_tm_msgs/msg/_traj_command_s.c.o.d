@@ -212,11 +212,6 @@ CMakeFiles/rotor_tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/rotor_tm_m
  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
- /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs/rosidl_generator_c/rotor_tm_msgs/msg/detail/position_command__struct.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.h \
  /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs/rosidl_generator_c/rotor_tm_msgs/msg/detail/traj_command__functions.h \
  /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs/rosidl_generator_c/rotor_tm_msgs/msg/rosidl_generator_c__visibility_control.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
- /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs/rosidl_generator_c/rotor_tm_msgs/msg/detail/position_command__functions.h
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h

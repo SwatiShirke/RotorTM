@@ -1,0 +1,38 @@
+[1.347s] Invoking command in '/home/swati/Quad_DR/RotorTM/src/payload_control': PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/swati/Quad_DR/RotorTM/build/payload_control/build install --record /home/swati/Quad_DR/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data
+[1.455s] /home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[1.455s]   warnings.warn(msg)
+[1.537s] running egg_info
+[1.547s] writing ../../build/payload_control/payload_control.egg-info/PKG-INFO
+[1.547s] writing dependency_links to ../../build/payload_control/payload_control.egg-info/dependency_links.txt
+[1.547s] writing entry points to ../../build/payload_control/payload_control.egg-info/entry_points.txt
+[1.548s] writing requirements to ../../build/payload_control/payload_control.egg-info/requires.txt
+[1.548s] writing top-level names to ../../build/payload_control/payload_control.egg-info/top_level.txt
+[1.581s] reading manifest file '../../build/payload_control/payload_control.egg-info/SOURCES.txt'
+[1.581s] adding license file 'LICENSE'
+[1.582s] writing manifest file '../../build/payload_control/payload_control.egg-info/SOURCES.txt'
+[1.582s] running build
+[1.582s] running build_py
+[1.582s] copying payload_control/ros_controller.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.582s] copying payload_control/cost_functions.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.582s] copying payload_control/test_numpy.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.582s] copying payload_control/payload_controller.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/constraints.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/plotFcn.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/utils.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/test_control.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/time2spatial.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/__init__.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/payload_model.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] copying payload_control/test_controller.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+[1.583s] running install
+[1.586s] running install_lib
+[1.598s] running install_data
+[1.598s] copying resource/payload_control -> /home/swati/Quad_DR/RotorTM/install/payload_control/share/ament_index/resource_index/packages
+[1.599s] copying package.xml -> /home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control
+[1.599s] running install_egg_info
+[1.610s] removing '/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control-0.0.0-py3.10.egg-info' (and everything under it)
+[1.610s] Copying ../../build/payload_control/payload_control.egg-info to /home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control-0.0.0-py3.10.egg-info
+[1.611s] running install_scripts
+[1.698s] Installing ros_pynmpc_node script to /home/swati/Quad_DR/RotorTM/install/payload_control/lib/payload_control
+[1.699s] writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/payload_control/install.log'
+[1.721s] Invoked command in '/home/swati/Quad_DR/RotorTM/src/payload_control' returned '0': PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/swati/Quad_DR/RotorTM/build/payload_control/build install --record /home/swati/Quad_DR/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data

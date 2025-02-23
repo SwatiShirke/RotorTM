@@ -21,13 +21,13 @@ extern "C"
 // Member 'header'
 #include "std_msgs/msg/detail/header__struct.h"
 // Member 'points'
-#include "rotor_tm_msgs/msg/detail/position_command__struct.h"
+#include "rosidl_runtime_c/primitives_sequence.h"
 
 /// Struct defined in msg/TrajCommand in the package rotor_tm_msgs.
 typedef struct rotor_tm_msgs__msg__TrajCommand
 {
   std_msgs__msg__Header header;
-  rotor_tm_msgs__msg__PositionCommand__Sequence points;
+  rosidl_runtime_c__float__Sequence points;
 } rotor_tm_msgs__msg__TrajCommand;
 
 // Struct for a sequence of rotor_tm_msgs__msg__TrajCommand.

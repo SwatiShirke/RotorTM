@@ -15,7 +15,7 @@
 // Member `header`
 #include "std_msgs/msg/detail/header__functions.h"
 // Member `points`
-#include "rotor_tm_msgs/msg/detail/position_command__functions.h"
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 bool
 rotor_tm_msgs__msg__TrajCommand__init(rotor_tm_msgs__msg__TrajCommand * msg)
@@ -29,7 +29,7 @@ rotor_tm_msgs__msg__TrajCommand__init(rotor_tm_msgs__msg__TrajCommand * msg)
     return false;
   }
   // points
-  if (!rotor_tm_msgs__msg__PositionCommand__Sequence__init(&msg->points, 0)) {
+  if (!rosidl_runtime_c__float__Sequence__init(&msg->points, 0)) {
     rotor_tm_msgs__msg__TrajCommand__fini(msg);
     return false;
   }
@@ -45,7 +45,7 @@ rotor_tm_msgs__msg__TrajCommand__fini(rotor_tm_msgs__msg__TrajCommand * msg)
   // header
   std_msgs__msg__Header__fini(&msg->header);
   // points
-  rotor_tm_msgs__msg__PositionCommand__Sequence__fini(&msg->points);
+  rosidl_runtime_c__float__Sequence__fini(&msg->points);
 }
 
 bool
@@ -61,7 +61,7 @@ rotor_tm_msgs__msg__TrajCommand__are_equal(const rotor_tm_msgs__msg__TrajCommand
     return false;
   }
   // points
-  if (!rotor_tm_msgs__msg__PositionCommand__Sequence__are_equal(
+  if (!rosidl_runtime_c__float__Sequence__are_equal(
       &(lhs->points), &(rhs->points)))
   {
     return false;
@@ -84,7 +84,7 @@ rotor_tm_msgs__msg__TrajCommand__copy(
     return false;
   }
   // points
-  if (!rotor_tm_msgs__msg__PositionCommand__Sequence__copy(
+  if (!rosidl_runtime_c__float__Sequence__copy(
       &(input->points), &(output->points)))
   {
     return false;

@@ -21,6 +21,7 @@
 // Member 'rlink_thrust'
 // Member 'moments'
 // Member 'null_space_vec'
+// Member 'acceleration'
 #include "geometry_msgs/msg/detail/vector3__struct.hpp"
 
 #ifndef _WIN32
@@ -45,7 +46,8 @@ struct FMNCommand_
   : header(_init),
     rlink_thrust(_init),
     moments(_init),
-    null_space_vec(_init)
+    null_space_vec(_init),
+    acceleration(_init)
   {
     (void)_init;
   }
@@ -54,7 +56,8 @@ struct FMNCommand_
   : header(_alloc, _init),
     rlink_thrust(_alloc, _init),
     moments(_alloc, _init),
-    null_space_vec(_alloc, _init)
+    null_space_vec(_alloc, _init),
+    acceleration(_alloc, _init)
   {
     (void)_init;
   }
@@ -72,6 +75,9 @@ struct FMNCommand_
   using _null_space_vec_type =
     geometry_msgs::msg::Vector3_<ContainerAllocator>;
   _null_space_vec_type null_space_vec;
+  using _acceleration_type =
+    geometry_msgs::msg::Vector3_<ContainerAllocator>;
+  _acceleration_type acceleration;
 
   // setters for named parameter idiom
   Type & set__header(
@@ -96,6 +102,12 @@ struct FMNCommand_
     const geometry_msgs::msg::Vector3_<ContainerAllocator> & _arg)
   {
     this->null_space_vec = _arg;
+    return *this;
+  }
+  Type & set__acceleration(
+    const geometry_msgs::msg::Vector3_<ContainerAllocator> & _arg)
+  {
+    this->acceleration = _arg;
     return *this;
   }
 
@@ -151,6 +163,9 @@ struct FMNCommand_
       return false;
     }
     if (this->null_space_vec != other.null_space_vec) {
+      return false;
+    }
+    if (this->acceleration != other.acceleration) {
       return false;
     }
     return true;

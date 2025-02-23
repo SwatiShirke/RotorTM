@@ -68,6 +68,8 @@ max_serialized_size_Vector3(
 
 // functions for geometry_msgs::msg::Vector3 already declared above
 
+// functions for geometry_msgs::msg::Vector3 already declared above
+
 
 namespace rotor_tm_msgs
 {
@@ -100,6 +102,10 @@ cdr_serialize(
   geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
     ros_message.null_space_vec,
     cdr);
+  // Member: acceleration
+  geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+    ros_message.acceleration,
+    cdr);
   return true;
 }
 
@@ -124,6 +130,10 @@ cdr_deserialize(
   // Member: null_space_vec
   geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
     cdr, ros_message.null_space_vec);
+
+  // Member: acceleration
+  geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+    cdr, ros_message.acceleration);
 
   return true;
 }
@@ -161,6 +171,11 @@ get_serialized_size(
   current_alignment +=
     geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
     ros_message.null_space_vec, current_alignment);
+  // Member: acceleration
+
+  current_alignment +=
+    geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+    ros_message.acceleration, current_alignment);
 
   return current_alignment - initial_alignment;
 }
@@ -261,6 +276,25 @@ max_serialized_size_FMNCommand(
     }
   }
 
+  // Member: acceleration
+  {
+    size_t array_size = 1;
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Vector3(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -269,7 +303,7 @@ max_serialized_size_FMNCommand(
     using DataType = rotor_tm_msgs::msg::FMNCommand;
     is_plain =
       (
-      offsetof(DataType, null_space_vec) +
+      offsetof(DataType, acceleration) +
       last_member_size
       ) == ret_val;
   }

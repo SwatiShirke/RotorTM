@@ -16,6 +16,7 @@ from nav_msgs.msg import Odometry
 from std_msgs.msg import Header
 from rotor_tm_msgs.srv import Circle, Line, CircleWithRotation, StepPose
 from scipy.spatial.transform import Rotation as rot
+from std_msgs.msg import Float32MultiArray, MultiArrayDimension
 #from nav_msgs.msg import path
 
 
@@ -37,6 +38,7 @@ class TrajNode(Node):
         self.curr_pose = np.append(np.zeros(3), np.array([1, 0, 0, 0]))
         self.traj_start = False
         self.is_finished = True
+        self.msg_array_size = 16
         
         #QoS profile 
         qos_profile = QoSProfile(
@@ -52,6 +54,7 @@ class TrajNode(Node):
         # ROS 2 Publishers
         self.des_traj_pub = self.create_publisher(PositionCommand, 'payload/des_traj', qos_profile)
         self.des_traj_n_pub = self.create_publisher(TrajCommand, 'payload/des_traj_n', qos_profile)
+        #self.des_traj_n_pub = self.create_publisher(Float32MultiArray, 'trajectory_topic', 10)
         self.cir_traj_status_pub = self.create_publisher(Header, 'payload/cir_traj_status', qos_profile)
         self.line_traj_status_pub = self.create_publisher(Header, 'payload/line_traj_status', qos_profile)
         self.min_der_traj_status_pub = self.create_publisher(Header, 'payload/min_der_traj_status', qos_profile)
@@ -172,11 +175,16 @@ class TrajNode(Node):
         return response
 
     def odom_callback(self, msg):
+        start_time = self.get_clock().now()
         self.curr_pose = np.array([
             msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z,
             msg.pose.pose.orientation.w, msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z
         ])        
         self.send_des_traj(self.get_clock().now())
+        end_time = self.get_clock().now()
+        elpased_time = end_time - start_time
+        print("elapsed_time", elpased_time) 
+        
 
     def send_des_traj(self, t):
         # DESCRIPTION
@@ -222,13 +230,17 @@ class TrajNode(Node):
                         status_msgs.stamp = self.get_clock().now().to_msg()
                         self.step_traj_status_pub.publish(status_msgs)
 
-                # Publish the command
+                #Publish the command
                 now = self.get_clock().now().to_msg()
                 if self.is_pl_nmpc: 
-                    message = TrajCommand()
-                    message.header.stamp = now
-                    message.points = self.current_traj.pose_list                    
-                    self.des_traj_n_pub.publish(message)
+                    msg_len = len(self.current_traj.traj_points_1d_arr) 
+                    msg = TrajCommand() 
+                    #msg.header.stamp = now
+                    msg.points = self.current_traj.traj_points_1d_arr 
+                    # msg.layout.dim.append(MultiArrayDimension(label="points", size= int(msg_len/self.msg_array_size), stride= msg_len)) 
+                    # msg.layout.dim.append(MultiArrayDimension(label="values_per_point", size=self.msg_array_size, stride=self.msg_array_size))
+                    self.des_traj_n_pub.publish(msg)
+                    
                 else:
                     message = PositionCommand()
                     message.header.stamp = now
@@ -253,7 +265,7 @@ class TrajNode(Node):
                     message.angular_velocity.z = self.current_traj.state_struct["omega_des"][2] 
                     self.des_traj_pub.publish(message)               
                 
-
+               
 
 def main(args=None):
     rclpy.init(args=args)

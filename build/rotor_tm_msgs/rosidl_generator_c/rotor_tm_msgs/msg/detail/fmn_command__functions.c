@@ -17,6 +17,7 @@
 // Member `rlink_thrust`
 // Member `moments`
 // Member `null_space_vec`
+// Member `acceleration`
 #include "geometry_msgs/msg/detail/vector3__functions.h"
 
 bool
@@ -45,6 +46,11 @@ rotor_tm_msgs__msg__FMNCommand__init(rotor_tm_msgs__msg__FMNCommand * msg)
     rotor_tm_msgs__msg__FMNCommand__fini(msg);
     return false;
   }
+  // acceleration
+  if (!geometry_msgs__msg__Vector3__init(&msg->acceleration)) {
+    rotor_tm_msgs__msg__FMNCommand__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -62,6 +68,8 @@ rotor_tm_msgs__msg__FMNCommand__fini(rotor_tm_msgs__msg__FMNCommand * msg)
   geometry_msgs__msg__Vector3__fini(&msg->moments);
   // null_space_vec
   geometry_msgs__msg__Vector3__fini(&msg->null_space_vec);
+  // acceleration
+  geometry_msgs__msg__Vector3__fini(&msg->acceleration);
 }
 
 bool
@@ -91,6 +99,12 @@ rotor_tm_msgs__msg__FMNCommand__are_equal(const rotor_tm_msgs__msg__FMNCommand *
   // null_space_vec
   if (!geometry_msgs__msg__Vector3__are_equal(
       &(lhs->null_space_vec), &(rhs->null_space_vec)))
+  {
+    return false;
+  }
+  // acceleration
+  if (!geometry_msgs__msg__Vector3__are_equal(
+      &(lhs->acceleration), &(rhs->acceleration)))
   {
     return false;
   }
@@ -126,6 +140,12 @@ rotor_tm_msgs__msg__FMNCommand__copy(
   // null_space_vec
   if (!geometry_msgs__msg__Vector3__copy(
       &(input->null_space_vec), &(output->null_space_vec)))
+  {
+    return false;
+  }
+  // acceleration
+  if (!geometry_msgs__msg__Vector3__copy(
+      &(input->acceleration), &(output->acceleration)))
   {
     return false;
   }

@@ -40,30 +40,6 @@ max_serialized_size_Header(
 }  // namespace msg
 }  // namespace std_msgs
 
-namespace rotor_tm_msgs
-{
-namespace msg
-{
-namespace typesupport_fastrtps_cpp
-{
-bool cdr_serialize(
-  const rotor_tm_msgs::msg::PositionCommand &,
-  eprosima::fastcdr::Cdr &);
-bool cdr_deserialize(
-  eprosima::fastcdr::Cdr &,
-  rotor_tm_msgs::msg::PositionCommand &);
-size_t get_serialized_size(
-  const rotor_tm_msgs::msg::PositionCommand &,
-  size_t current_alignment);
-size_t
-max_serialized_size_PositionCommand(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-}  // namespace typesupport_fastrtps_cpp
-}  // namespace msg
-}  // namespace rotor_tm_msgs
-
 
 namespace rotor_tm_msgs
 {
@@ -86,13 +62,7 @@ cdr_serialize(
     cdr);
   // Member: points
   {
-    size_t size = ros_message.points.size();
-    cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; i++) {
-      rotor_tm_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
-        ros_message.points[i],
-        cdr);
-    }
+    cdr << ros_message.points;
   }
   return true;
 }
@@ -109,14 +79,7 @@ cdr_deserialize(
 
   // Member: points
   {
-    uint32_t cdrSize;
-    cdr >> cdrSize;
-    size_t size = static_cast<size_t>(cdrSize);
-    ros_message.points.resize(size);
-    for (size_t i = 0; i < size; i++) {
-      rotor_tm_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
-        cdr, ros_message.points[i]);
-    }
+    cdr >> ros_message.points;
   }
 
   return true;
@@ -146,12 +109,9 @@ get_serialized_size(
 
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment +=
-        rotor_tm_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
-        ros_message.points[index], current_alignment);
-    }
+    size_t item_size = sizeof(ros_message.points[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
   return current_alignment - initial_alignment;
@@ -204,19 +164,9 @@ max_serialized_size_TrajCommand(
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
-
-    last_member_size = 0;
-    for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size =
-        rotor_tm_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_PositionCommand(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
-    }
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   size_t ret_val = current_alignment - initial_alignment;

@@ -1,0 +1,32 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 12662635519
+  starting_time:
+    nanoseconds_since_epoch: 1739770566523742566
+  message_count: 1946
+  topics_with_message_count:
+    - topic_metadata:
+        name: /tf_static
+        type: tf2_msgs/msg/TFMessage
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 973
+    - topic_metadata:
+        name: system/marker
+        type: visualization_msgs/msg/MarkerArray
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 973
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - marker_data_0.db3
+  files:
+    - path: marker_data_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 1739770566523742566
+      duration:
+        nanoseconds: 12662635519
+      message_count: 1946

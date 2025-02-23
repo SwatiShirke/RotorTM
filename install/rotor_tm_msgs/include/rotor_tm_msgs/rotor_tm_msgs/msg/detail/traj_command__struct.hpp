@@ -18,8 +18,6 @@
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__struct.hpp"
-// Member 'points'
-#include "rotor_tm_msgs/msg/detail/position_command__struct.hpp"
 
 #ifndef _WIN32
 # define DEPRECATED__rotor_tm_msgs__msg__TrajCommand __attribute__((deprecated))
@@ -56,7 +54,7 @@ struct TrajCommand_
     std_msgs::msg::Header_<ContainerAllocator>;
   _header_type header;
   using _points_type =
-    std::vector<rotor_tm_msgs::msg::PositionCommand_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<rotor_tm_msgs::msg::PositionCommand_<ContainerAllocator>>>;
+    std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>>;
   _points_type points;
 
   // setters for named parameter idiom
@@ -67,7 +65,7 @@ struct TrajCommand_
     return *this;
   }
   Type & set__points(
-    const std::vector<rotor_tm_msgs::msg::PositionCommand_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<rotor_tm_msgs::msg::PositionCommand_<ContainerAllocator>>> & _arg)
+    const std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>> & _arg)
   {
     this->points = _arg;
     return *this;

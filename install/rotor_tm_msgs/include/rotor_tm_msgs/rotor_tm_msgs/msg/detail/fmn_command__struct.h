@@ -23,6 +23,7 @@ extern "C"
 // Member 'rlink_thrust'
 // Member 'moments'
 // Member 'null_space_vec'
+// Member 'acceleration'
 #include "geometry_msgs/msg/detail/vector3__struct.h"
 
 /// Struct defined in msg/FMNCommand in the package rotor_tm_msgs.
@@ -32,6 +33,7 @@ typedef struct rotor_tm_msgs__msg__FMNCommand
   geometry_msgs__msg__Vector3 rlink_thrust;
   geometry_msgs__msg__Vector3 moments;
   geometry_msgs__msg__Vector3 null_space_vec;
+  geometry_msgs__msg__Vector3 acceleration;
 } rotor_tm_msgs__msg__FMNCommand;
 
 // Struct for a sequence of rotor_tm_msgs__msg__FMNCommand.

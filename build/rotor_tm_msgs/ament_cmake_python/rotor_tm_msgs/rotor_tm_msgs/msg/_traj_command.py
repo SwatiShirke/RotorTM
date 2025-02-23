@@ -5,7 +5,12 @@
 
 # Import statements for member types
 
+# Member 'points'
+import array  # noqa: E402, I100
+
 import builtins  # noqa: E402, I100
+
+import math  # noqa: E402, I100
 
 import rosidl_parser.definition  # noqa: E402, I100
 
@@ -42,10 +47,6 @@ class Metaclass_TrajCommand(type):
             cls._TYPE_SUPPORT = module.type_support_msg__msg__traj_command
             cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__msg__traj_command
 
-            from rotor_tm_msgs.msg import PositionCommand
-            if PositionCommand.__class__._TYPE_SUPPORT is None:
-                PositionCommand.__class__.__import_type_support__()
-
             from std_msgs.msg import Header
             if Header.__class__._TYPE_SUPPORT is None:
                 Header.__class__.__import_type_support__()
@@ -69,12 +70,12 @@ class TrajCommand(metaclass=Metaclass_TrajCommand):
 
     _fields_and_field_types = {
         'header': 'std_msgs/Header',
-        'points': 'sequence<rotor_tm_msgs/PositionCommand>',
+        'points': 'sequence<float>',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
-        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['rotor_tm_msgs', 'msg'], 'PositionCommand')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('float')),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -83,7 +84,7 @@ class TrajCommand(metaclass=Metaclass_TrajCommand):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         from std_msgs.msg import Header
         self.header = kwargs.get('header', Header())
-        self.points = kwargs.get('points', [])
+        self.points = array.array('f', kwargs.get('points', []))
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -146,8 +147,12 @@ class TrajCommand(metaclass=Metaclass_TrajCommand):
 
     @points.setter
     def points(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'f', \
+                "The 'points' array.array() must have the type code of 'f'"
+            self._points = value
+            return
         if __debug__:
-            from rotor_tm_msgs.msg import PositionCommand
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -158,7 +163,7 @@ class TrajCommand(metaclass=Metaclass_TrajCommand):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 all(isinstance(v, PositionCommand) for v in value) and
-                 True), \
-                "The 'points' field must be a set or sequence and each value of type 'PositionCommand'"
-        self._points = value
+                 all(isinstance(v, float) for v in value) and
+                 all(not (val < -3.402823466e+38 or val > 3.402823466e+38) or math.isinf(val) for val in value)), \
+                "The 'points' field must be a set or sequence and each value of type 'float' and each float in [-340282346600000016151267322115014000640.000000, 340282346600000016151267322115014000640.000000]"
+        self._points = array.array('f', value)

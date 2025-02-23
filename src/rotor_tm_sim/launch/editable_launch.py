@@ -74,6 +74,7 @@ def generate_launch_description():
                 LaunchConfiguration('payload_control_gain_path'),
                 LaunchConfiguration('uav_control_gain_path')
             ],
+            #parameters=[{'use_sim_time': True}]
         ),
         
         Node(
@@ -107,9 +108,8 @@ def generate_launch_description():
         #                         output='screen',
         #                         emulate_tty=True),
            
-        # Include RViz launch file
+        #Include RViz launch file
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(sim_pkg_path , 'launch', 'rviz.py')),
-
+            PythonLaunchDescriptionSource(os.path.join(sim_pkg_path , 'launch', 'rviz_launch.py')),
             ),
     ])

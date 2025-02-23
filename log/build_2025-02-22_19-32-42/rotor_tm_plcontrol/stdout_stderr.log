@@ -1,0 +1,9 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/pl_nmpc_controller_node.cpp.o[0m
+[01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:[m[K In member function ‘[01m[Kvoid nmpc_control_nodelet::NMPCControlNodelet::publishControl()[m[K’:
+[01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/pl_nmpc_controller_node.cpp:306:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kfm_msg[m[K’ was not declared in this scope; did you mean ‘[01m[Kfmn_msg[m[K’?
+  306 |   [01;31m[Kfm_msg[m[K.acceleration.x = this->lin_accel(0);
+      |   [01;31m[K^~~~~~[m[K
+      |   [32m[Kfmn_msg[m[K
+gmake[2]: *** [CMakeFiles/pl_nmpc_shared_lib.dir/build.make:76: CMakeFiles/pl_nmpc_shared_lib.dir/src/pl_nmpc_controller_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/pl_nmpc_shared_lib.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

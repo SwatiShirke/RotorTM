@@ -34,7 +34,7 @@ extern "C"
 {
 #endif
 
-#include "geometry_msgs/msg/detail/vector3__functions.h"  // moments, null_space_vec, rlink_thrust
+#include "geometry_msgs/msg/detail/vector3__functions.h"  // acceleration, moments, null_space_vec, rlink_thrust
 #include "std_msgs/msg/detail/header__functions.h"  // header
 
 // forward declare type support functions
@@ -135,6 +135,20 @@ static bool _FMNCommand__cdr_serialize(
     }
   }
 
+  // Field name: acceleration
+  {
+    const message_type_support_callbacks_t * callbacks =
+      static_cast<const message_type_support_callbacks_t *>(
+      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
+        rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Vector3
+      )()->data);
+    if (!callbacks->cdr_serialize(
+        &ros_message->acceleration, cdr))
+    {
+      return false;
+    }
+  }
+
   return true;
 }
 
@@ -203,6 +217,20 @@ static bool _FMNCommand__cdr_deserialize(
     }
   }
 
+  // Field name: acceleration
+  {
+    const message_type_support_callbacks_t * callbacks =
+      static_cast<const message_type_support_callbacks_t *>(
+      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
+        rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Vector3
+      )()->data);
+    if (!callbacks->cdr_deserialize(
+        cdr, &ros_message->acceleration))
+    {
+      return false;
+    }
+  }
+
   return true;
 }  // NOLINT(readability/fn_size)
 
@@ -236,6 +264,10 @@ size_t get_serialized_size_rotor_tm_msgs__msg__FMNCommand(
 
   current_alignment += get_serialized_size_geometry_msgs__msg__Vector3(
     &(ros_message->null_space_vec), current_alignment);
+  // field.name acceleration
+
+  current_alignment += get_serialized_size_geometry_msgs__msg__Vector3(
+    &(ros_message->acceleration), current_alignment);
 
   return current_alignment - initial_alignment;
 }
@@ -341,6 +373,25 @@ size_t max_serialized_size_rotor_tm_msgs__msg__FMNCommand(
       is_plain &= inner_is_plain;
     }
   }
+  // member: acceleration
+  {
+    size_t array_size = 1;
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size;
+      inner_size =
+        max_serialized_size_geometry_msgs__msg__Vector3(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -350,7 +401,7 @@ size_t max_serialized_size_rotor_tm_msgs__msg__FMNCommand(
     using DataType = rotor_tm_msgs__msg__FMNCommand;
     is_plain =
       (
-      offsetof(DataType, null_space_vec) +
+      offsetof(DataType, acceleration) +
       last_member_size
       ) == ret_val;
   }

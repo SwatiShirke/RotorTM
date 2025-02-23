@@ -32,6 +32,10 @@ ROSIDL_GENERATOR_C_IMPORT
 bool geometry_msgs__msg__vector3__convert_from_py(PyObject * _pymsg, void * _ros_message);
 ROSIDL_GENERATOR_C_IMPORT
 PyObject * geometry_msgs__msg__vector3__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__vector3__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__vector3__convert_to_py(void * raw_ros_message);
 
 ROSIDL_GENERATOR_C_EXPORT
 bool rotor_tm_msgs__msg__fmn_command__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -110,6 +114,17 @@ bool rotor_tm_msgs__msg__fmn_command__convert_from_py(PyObject * _pymsg, void * 
     }
     Py_DECREF(field);
   }
+  {  // acceleration
+    PyObject * field = PyObject_GetAttrString(_pymsg, "acceleration");
+    if (!field) {
+      return false;
+    }
+    if (!geometry_msgs__msg__vector3__convert_from_py(field, &ros_message->acceleration)) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -182,6 +197,20 @@ PyObject * rotor_tm_msgs__msg__fmn_command__convert_to_py(void * raw_ros_message
     }
     {
       int rc = PyObject_SetAttrString(_pymessage, "null_space_vec", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // acceleration
+    PyObject * field = NULL;
+    field = geometry_msgs__msg__vector3__convert_to_py(&ros_message->acceleration);
+    if (!field) {
+      return NULL;
+    }
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "acceleration", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

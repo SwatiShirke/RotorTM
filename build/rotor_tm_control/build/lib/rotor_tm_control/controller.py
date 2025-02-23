@@ -148,6 +148,7 @@ class controller:
 
         e_omega = qd["omega"] - np.matmul(Rot.T, np.matmul(Rot_des, omega_des))
         M = np.cross(qd["omega"], np.matmul(params.I, qd["omega"]), axisa=0, axisb=0).T - np.matmul(params.Kpe, e_angle) - np.matmul(params.Kde, e_omega) 
+        
         return M
 
     def cooperative_suspended_payload_controller(self, ql, qd, pl_params, qd_params, uav_id):
@@ -306,7 +307,7 @@ class controller:
         return mu, att_acc_c, qd_F, qd_M, qd_quat_des, qd_rot_des
 
 
-    def cooperative_suspended_payload_nmpc_controller(self, ql, qd, pl_params, qd_params, uav_id, Force, Moment, Null_vec):
+    def cooperative_suspended_payload_nmpc_controller(self, ql, qd, pl_params, qd_params, uav_id, Force, Moment, Null_vec, lin_accel):
         # DESCRIPTION:
         # Controller for cooperative cable suspended payload and MAV(s) 
 
@@ -412,7 +413,7 @@ class controller:
         # Missing the angular acceleration term but in general it is neglectable.
         #M = np.matmul(-pl_params.Kpe, e_angle) - np.matmul(pl_params.Kde, e_omega) # may need to be changed to scalar product
         M = Moment
-        #N_mat = null_space(pl_params.P) #Null_space_mat
+        N_mat = null_space(pl_params.P) #Null_space_mat
         W = np.append(F,M)
         # J_bar = np.block( [ [pl_params.mass * np.eye((3)), np.zeros((3,3)) ], 
         #                     [np.zeros((3,3)), pl_params.I] ])
@@ -429,7 +430,7 @@ class controller:
         # print("lin_ang_accel")
         # print(lin_ang_accel)
 
-        acceleration_des = ql["acc_des"] 
+        acceleration_des =  lin_accel #np.array([0.0,0,0])#ql["acc_des"] 
         # Cable tension distribution
         diag_rot = np.zeros((0,0), dtype=float)
         for i in range(1, nquad+1):
@@ -438,8 +439,8 @@ class controller:
         pl_M = M
 
         #will be included with constraints 
-        #mu = diag_rot @ ( pl_params.pseudo_inv_P @ np.append(Rot.T @ F, M, axis=0) - N_mat @ Null_vec )
-        mu = diag_rot @ ( pl_params.pseudo_inv_P @ np.append(Rot.T @ F, M, axis=0))
+        mu = diag_rot @ ( pl_params.pseudo_inv_P @ np.append(Rot.T @ F, M, axis=0) - N_mat @ Null_vec )
+        #mu = diag_rot @ ( pl_params.pseudo_inv_P @ np.append(Rot.T @ F, M, axis=0))
         
         #print("force:")
         #print("   x: " + str(np.around(mu[2,0], 10)))

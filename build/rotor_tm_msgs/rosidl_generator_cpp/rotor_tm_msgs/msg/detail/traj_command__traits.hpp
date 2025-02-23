@@ -17,8 +17,6 @@
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__traits.hpp"
-// Member 'points'
-#include "rotor_tm_msgs/msg/detail/position_command__traits.hpp"
 
 namespace rotor_tm_msgs
 {
@@ -46,7 +44,7 @@ inline void to_flow_style_yaml(
       out << "points: [";
       size_t pending_items = msg.points.size();
       for (auto item : msg.points) {
-        to_flow_style_yaml(item, out);
+        rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
         }
@@ -83,8 +81,9 @@ inline void to_block_style_yaml(
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
-        out << "-\n";
-        to_block_style_yaml(item, out, indentation + 2);
+        out << "- ";
+        rosidl_generator_traits::value_to_yaml(item, out);
+        out << "\n";
       }
     }
   }

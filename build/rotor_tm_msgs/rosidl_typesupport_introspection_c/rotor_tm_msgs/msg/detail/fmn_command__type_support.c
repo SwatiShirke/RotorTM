@@ -20,10 +20,12 @@
 // Member `rlink_thrust`
 // Member `moments`
 // Member `null_space_vec`
+// Member `acceleration`
 #include "geometry_msgs/msg/vector3.h"
 // Member `rlink_thrust`
 // Member `moments`
 // Member `null_space_vec`
+// Member `acceleration`
 #include "geometry_msgs/msg/detail/vector3__rosidl_typesupport_introspection_c.h"
 
 #ifdef __cplusplus
@@ -45,7 +47,7 @@ void rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNComm
   rotor_tm_msgs__msg__FMNCommand__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_member_array[4] = {
+static rosidl_typesupport_introspection_c__MessageMember rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_member_array[5] = {
   {
     "header",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
@@ -113,13 +115,30 @@ static rosidl_typesupport_introspection_c__MessageMember rotor_tm_msgs__msg__FMN
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "acceleration",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message (initialized later)
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(rotor_tm_msgs__msg__FMNCommand, acceleration),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_members = {
   "rotor_tm_msgs__msg",  // message namespace
   "FMNCommand",  // message name
-  4,  // number of fields
+  5,  // number of fields
   sizeof(rotor_tm_msgs__msg__FMNCommand),
   rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_member_array,  // message members
   rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_init_function,  // function to initialize message memory (memory has to be allocated)
@@ -144,6 +163,8 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
   rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_member_array[2].members_ =
     ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, geometry_msgs, msg, Vector3)();
   rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_member_array[3].members_ =
+    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, geometry_msgs, msg, Vector3)();
+  rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_member_array[4].members_ =
     ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, geometry_msgs, msg, Vector3)();
   if (!rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_type_support_handle.typesupport_identifier) {
     rotor_tm_msgs__msg__FMNCommand__rosidl_typesupport_introspection_c__FMNCommand_message_type_support_handle.typesupport_identifier =

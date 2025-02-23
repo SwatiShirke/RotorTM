@@ -1,0 +1,30 @@
+[0.594s] Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_control': AMENT_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data
+[0.697s] /home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[0.697s]   warnings.warn(msg)
+[0.777s] running egg_info
+[0.787s] writing ../../build/rotor_tm_control/rotor_tm_control.egg-info/PKG-INFO
+[0.787s] writing dependency_links to ../../build/rotor_tm_control/rotor_tm_control.egg-info/dependency_links.txt
+[0.787s] writing entry points to ../../build/rotor_tm_control/rotor_tm_control.egg-info/entry_points.txt
+[0.787s] writing requirements to ../../build/rotor_tm_control/rotor_tm_control.egg-info/requires.txt
+[0.787s] writing top-level names to ../../build/rotor_tm_control/rotor_tm_control.egg-info/top_level.txt
+[0.819s] reading manifest file '../../build/rotor_tm_control/rotor_tm_control.egg-info/SOURCES.txt'
+[0.819s] adding license file 'LICENSE'
+[0.820s] writing manifest file '../../build/rotor_tm_control/rotor_tm_control.egg-info/SOURCES.txt'
+[0.820s] running build
+[0.820s] running build_py
+[0.821s] copying rotor_tm_control/temp.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+[0.821s] copying rotor_tm_control/controller_node.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+[0.821s] copying rotor_tm_control/controller.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+[0.821s] copying rotor_tm_control/__init__.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+[0.821s] running install
+[0.824s] running install_lib
+[0.835s] running install_data
+[0.835s] copying resource/rotor_tm_control -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/ament_index/resource_index/packages
+[0.836s] copying package.xml -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control
+[0.836s] running install_egg_info
+[0.847s] removing '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control-0.0.0-py3.10.egg-info' (and everything under it)
+[0.847s] Copying ../../build/rotor_tm_control/rotor_tm_control.egg-info to /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control-0.0.0-py3.10.egg-info
+[0.847s] running install_scripts
+[0.932s] Installing controller_node script to /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/rotor_tm_control
+[0.932s] writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/rotor_tm_control/install.log'
+[0.950s] Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_control' returned '0': AMENT_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data

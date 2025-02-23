@@ -1,2 +1,4 @@
 [console_scripts]
+data_saver_node = rotor_tm_sim.data_saver_node:main
+marker_saver_node = rotor_tm_sim.marker_saver_node:main
 sim_node = rotor_tm_sim.runsim:main

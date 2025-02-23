@@ -21,16 +21,32 @@ namespace msg
 namespace builder
 {
 
+class Init_FMNCommand_acceleration
+{
+public:
+  explicit Init_FMNCommand_acceleration(::rotor_tm_msgs::msg::FMNCommand & msg)
+  : msg_(msg)
+  {}
+  ::rotor_tm_msgs::msg::FMNCommand acceleration(::rotor_tm_msgs::msg::FMNCommand::_acceleration_type arg)
+  {
+    msg_.acceleration = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::rotor_tm_msgs::msg::FMNCommand msg_;
+};
+
 class Init_FMNCommand_null_space_vec
 {
 public:
   explicit Init_FMNCommand_null_space_vec(::rotor_tm_msgs::msg::FMNCommand & msg)
   : msg_(msg)
   {}
-  ::rotor_tm_msgs::msg::FMNCommand null_space_vec(::rotor_tm_msgs::msg::FMNCommand::_null_space_vec_type arg)
+  Init_FMNCommand_acceleration null_space_vec(::rotor_tm_msgs::msg::FMNCommand::_null_space_vec_type arg)
   {
     msg_.null_space_vec = std::move(arg);
-    return std::move(msg_);
+    return Init_FMNCommand_acceleration(msg_);
   }
 
 private:

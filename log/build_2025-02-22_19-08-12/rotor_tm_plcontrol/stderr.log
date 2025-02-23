@@ -1,0 +1,11 @@
+In file included from [01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/nmpc_control.cpp:1[m[K:
+[01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:[m[K In constructor ‘[01m[Knmpc_control_nodelet::NMPCControl::NMPCControl()[m[K’:
+[01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:37:47:[m[K [01;35m[Kwarning: [m[K‘[01m[Knmpc_control_nodelet::NMPCControl::predicted_inputs_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   37 |   Eigen::Matrix<double, kInputSize, kSamples> [01;35m[Kpredicted_inputs_[m[K;
+      |                                               [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/include/rotor_tm_plcontrol/nmpc_control.h:32:8:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool nmpc_control_nodelet::NMPCControl::solve_from_scratch_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   32 |   bool [01;35m[Ksolve_from_scratch_[m[K;
+      |        [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/nmpc_control.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    6 | [01;35m[KNMPCControl[m[K::NMPCControl()
+      | [01;35m[K^~~~~~~~~~~[m[K

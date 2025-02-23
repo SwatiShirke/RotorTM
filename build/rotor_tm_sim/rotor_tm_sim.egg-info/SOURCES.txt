@@ -10,9 +10,10 @@ setup.py
 ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/top_level.txt
 ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/zip-safe
 launch/controller_launcher.py
+launch/editable_ctrl_launch.py
 launch/editable_launch.py
 launch/rotortm_single_controller_node.py
-launch/rviz.py
+launch/rviz_launch.py
 launch/sim_launch.py
 mesh/fedex_box_24x24x18in.STL
 mesh/long_bar.STL
@@ -22,6 +23,9 @@ mesh/uav/race.stl
 mesh/uav/snapdragonflight.stl
 resource/rotor_tm_sim
 rotor_tm_sim/__init__.py
+rotor_tm_sim/data_saver_node.py
+rotor_tm_sim/marker_saver_node.py
+rotor_tm_sim/plot_graphs.py
 rotor_tm_sim/runsim.py
 rotor_tm_sim/sim_utils.py
 rotor_tm_sim/simulation_base.py

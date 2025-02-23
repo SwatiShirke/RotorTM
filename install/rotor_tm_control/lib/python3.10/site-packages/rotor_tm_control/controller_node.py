@@ -11,15 +11,15 @@ from rotor_tm_control.controller import controller
 from std_msgs.msg import Bool 
 from nav_msgs.msg import Odometry 
 from rotor_tm_msgs.msg import PositionCommand,RPMCommand,FMCommand, FMNCommand, TrajCommand
+from geometry_msgs.msg import PoseStamped, Wrench, TransformStamped, Point, Vector3, Quaternion
 from rotor_tm_msgs.msg import CenPLCommand
 from geometry_msgs.msg import Vector3, Wrench
 
 from rotor_tm_utils import read_params
 from rotor_tm_utils import utilslib 
 from rotor_tm_utils.vec2asym import vec2asym
+from std_msgs.msg import Float32MultiArray, MultiArrayDimension 
 import ipdb
-
-
 
 
 
@@ -81,7 +81,7 @@ class controller_node(Node):
             
             
             # Initialize ROS2 Subscribers
-            self.create_subscription(PositionCommand, '/payload/des_traj', self.desired_traj_callback, qos_profile)
+            #self.create_subscription(PositionCommand, '/payload/des_traj', self.desired_traj_callback, qos_profile)
             self.create_subscription(Odometry, '/payload/odom', self.pl_odom_callback, qos_profile)
             self.create_subscription(FMNCommand , "/payload/pl_nmpc_FMN_cmd", self.desired_fmn_callback, qos_profile)
 
@@ -114,18 +114,19 @@ class controller_node(Node):
             #print(node_id)
             node_name = 'controller_'+str( node_id + 1)
             super().__init__(node_name)          
-            self.timer_period = 0.01
-            self.timer = self.create_timer(self.timer_period, self.timer_callback)
+            # self.timer_period = 0.02
+            # self.timer = self.create_timer(self.timer_period, self.timer_callback)
             # # init ROS Subscribers
             # qos_profile = QoSProfile(
             # reliability=QoSReliabilityPolicy.BEST_EFFORT,  # Best effort, similar to TCP no delay
             # history=QoSHistoryPolicy.KEEP_LAST,
             # depth=1)  # Equivalent to queue_size=1)
 
-            self.create_subscription(PositionCommand, '/payload/des_traj', self.desired_traj_callback, qos_profile)
-            self.create_subscription(TrajCommand, '/payload/des_traj_n', self.desired_traj_n_callback, qos_profile)
+            #self.create_subscription(PositionCommand, '/payload/des_traj', self.desired_traj_callback, qos_profile)
+            #self.create_subscription(TrajCommand, '/payload/des_traj_n', self.desired_traj_n_callback, qos_profile)
+            #self.create_subscription(Float32MultiArray, 'trajectory_topic', self.desired_traj_n_callback, qos_profile)
             self.create_subscription(FMNCommand , "/payload/pl_nmpc_FMN_cmd", self.desired_fmn_callback, qos_profile)
-            self.create_subscription(Odometry, '/payload/odom',  self.pl_odom_callback, qos_profile)
+            self.create_subscription(Odometry, '/payload/odom',  self.pl_odom_callback, qos_profile) 
             #ipdb.set_trace()
             uav_name = self.pl_params.uav_in_team[node_id]
             uav_odom = '/' + uav_name + '/odom'
@@ -149,10 +150,10 @@ class controller_node(Node):
             #     self.status_pub.publish(msg)
             #     rate.sleep()
 
-    def timer_callback(self):
-        msg = Bool()
-        msg.data = True 
-        self.status_pub.publish(msg)
+    # def timer_callback(self):
+    #     msg = Bool()
+    #     msg.data = True 
+    #     self.status_pub.publish(msg)
 
     def assembly_FM_message(self, F_list, M_list, uav_id):
         # DESCRIPTION:
@@ -306,61 +307,44 @@ class controller_node(Node):
         self.pl["yawdot_des"] = 0.0          
         self.sim_subscriber()
     
-    def desired_traj_n_callback(self, des_traj_n):
-        # print("printing n points traj")
-        # #print(des_traj_n.points[0])
-        # print(len(des_traj_n.points))
-        # for i in range(len(des_traj_n.points)):
-        #     point = des_traj_n.points[i]
-        #     print("point")
-        #     print(point.position.x)
-        #     print(point.position.y)
-        #     print(point.position.z)
-        point = des_traj_n.points[0]
+    def desired_traj_n_callback(self, des_traj_n):        
+        point = des_traj_n.points
+        array_size = len(des_traj_n.points)
+        point_size =  16#des_traj_n.layout.dim[1].size # 1 data point of trajectory has point_size values 
+        no_points = int(array_size/ point_size)
+        point_0 = point[0:point_size]         
 
-        self.pl["pos_des"] = np.array([ [point.position.x],
-                                        [point.position.y],
-                                        [point.position.z]])
-        self.pl["vel_des"] = np.array([ [point.velocity.x],
-                                        [point.velocity.y],
-                                        [point.velocity.z]])
-        self.pl["acc_des"] = np.array([ [point.acceleration.x],
-                                        [point.acceleration.y],
-                                        [point.acceleration.z]])     
-        self.pl["jrk_des"] = np.array([ [point.jerk.x],
-                                        [point.jerk.y],
-                                        [point.jerk.z]])                     
-        self.pl["quat_des"] = np.array([[point.quaternion.w],
-                                        [point.quaternion.x],
-                                        [point.quaternion.y],
-                                        [point.quaternion.z]])
-        self.pl["omega_des"] = np.array([[point.angular_velocity.x],
-                                         [point.angular_velocity.y],
-                                         [point.angular_velocity.z]])
+        self.pl["pos_des"] = np.array([point_0[0:3]])
+        self.pl["vel_des"] = np.array([point_0[3:6]])
+        self.pl["quat_des"] = np.array([point_0[6:10]])
+        self.pl["omega_des"] = np.array([point_0[10:13]])
+        self.pl["acc_des"] = np.array([point_0[13:16]])     
+        self.pl["jrk_des"] = np.array([[0.,0,0]])      
+        
         self.pl["yaw_des"] = 0.0
         self.pl["yawdot_des"] = 0.0  
+        
 
 
-        # if len(des_traj_n.points)== 1:
-        #     point = des_traj_n.points[0]
-        #     print("got last point")
-        #     acc = np.array([ [point.acceleration.x],
-        #                                 [point.acceleration.y],
-        #                                 [point.acceleration.z]])
-        #     print("acc ", acc)
 
     def desired_fmn_callback(self,fmn_msg):
         
-        #print(fmn_msg.rlink_thrust)
+        # print(fmn_msg.rlink_thrust)
         Force=  np.array([fmn_msg.rlink_thrust.x, fmn_msg.rlink_thrust.y, fmn_msg.rlink_thrust.z])
         Moment = np.array([fmn_msg.moments.x, fmn_msg.moments.y, fmn_msg.moments.z])
         Null_space_vec = np.array([fmn_msg.null_space_vec.x, fmn_msg.null_space_vec.y, fmn_msg.null_space_vec.z])
-        print("Force", Force)
-        print("Moment", Moment)
-        # print("Force1 :", Force1)
-        # Force = np.array([-0.1,-0.1,Force1[2]])
+        lin_accel = np.array([fmn_msg.acceleration.x, fmn_msg.acceleration.y, fmn_msg.acceleration.z])
+        # print("Force", Force)
+        # print("Moment", Moment)
+
+        # Force = np.array([-0.02626351, -0.18158122,  2.73475694])
+        # Moment = np.array([2.03590766e-06 , -2.32710160e-05 , 1.28840495e-06])
+        # Null_space_vec = np.array([0.,0,0])
+        # # print("Force1 :", Force1)
+        # Force = np.array([-0.1,-0.1, 2.73475694])
         # Moment = np.array([0.,0,0])
-        mu, att_acc, F_list, M_list, quat_list, rot_list = self.controller.cooperative_suspended_payload_nmpc_controller(self.pl, self.qd, self.pl_params, self.quad_params, self.node_id, Force, Moment, Null_space_vec)
+
+        mu, att_acc, F_list, M_list, quat_list, rot_list = self.controller.cooperative_suspended_payload_nmpc_controller(self.pl, self.qd, self.pl_params, self.quad_params, self.node_id, Force, Moment, Null_space_vec, lin_accel)
         cen_pl_command = CenPLCommand()
         cen_pl_command.header.stamp = self.clock.now().to_msg()
         cen_pl_command.header.frame_id = "simulator" 
@@ -533,7 +517,7 @@ class controller_node(Node):
         qd_state["jrk_des"] = self.pl["jrk_des"]
         qd_state["qd_yaw_des"] = 0.0
         qd_state["qd_yawdot_des"] = 0.0
-        qd_state["quat_des"] = self.pl["quat_des"]
+        qd_state["quat_des"] = self.pl["quat_des"] 
         qd_state["omega_des"] = self.pl["omega_des"]
         return qd_state
 
@@ -555,35 +539,35 @@ class controller_node(Node):
             F_list, M_list = self.controller.rigid_links_cooperative_payload_controller(ql, self.pl_params)
         elif self.pl_params.mechanism_type == 'Cable':
             if self.pl_params.payload_type == 'Rigid Body':
-                pass
-            #     mu, att_acc, F_list, M_list, quat_list, rot_list = self.controller.cooperative_suspended_payload_controller(self.pl, self.qd, self.pl_params, self.quad_params, self.node_id)
-            #     cen_pl_command = CenPLCommand()
-            #     cen_pl_command.header.stamp = self.clock.now().to_msg()
-            #     cen_pl_command.header.frame_id = "simulator" 
-            #     cen_pl_command.copr_status = 3
-            #     for i in range(self.pl_params.nquad):
-            #         acc_command = Vector3()
-            #         acc_command.x = att_acc[0,i]
-            #         acc_command.y = att_acc[1,i]
-            #         acc_command.z = att_acc[2,i]
-
-            #         mu_command = Vector3()
-            #         mu_command.x = mu[3*i,0]
-            #         mu_command.y = mu[3*i+1,0]
-            #         mu_command.z = mu[3*i+2,0]
-
-            #         cen_pl_command.acc.append(acc_command)
-            #         cen_pl_command.mu.append(mu_command)
-            #         cen_pl_command.estimated_acc.append(acc_command)
-
-            #     cen_pl_command.pos_cmd.quaternion.x = self.pl["quat"][1,0]
-            #     cen_pl_command.pos_cmd.quaternion.y = self.pl["quat"][2,0]
-            #     cen_pl_command.pos_cmd.quaternion.z = self.pl["quat"][3,0]
-            #     cen_pl_command.pos_cmd.quaternion.w = self.pl["quat"][0,0]
-            #     self.cen_pl_cmd_pub.publish(cen_pl_command)
-            # elif self.pl_params.payload_type == 'Point Mass':
-            #     plqd = self.assembly_plqd()
-            #     F_list, M_list = self.controller.single_payload_geometric_controller(ql = plqd, pl_params = self.pl_params, qd_params = self.quad_params)
+                
+                mu, att_acc, F_list, M_list, quat_list, rot_list = self.controller.cooperative_suspended_payload_controller(self.pl, self.qd, self.pl_params, self.quad_params, self.node_id)
+                cen_pl_command = CenPLCommand()
+                cen_pl_command.header.stamp = self.clock.now().to_msg()
+                cen_pl_command.header.frame_id = "simulator" 
+                cen_pl_command.copr_status = 3
+                for i in range(self.pl_params.nquad):
+                    acc_command = Vector3()
+                    acc_command.x = att_acc[0,i]
+                    acc_command.y = att_acc[1,i]
+                    acc_command.z = att_acc[2,i]
+ 
+                    mu_command = Vector3()
+                    mu_command.x = mu[3*i,0]
+                    mu_command.y = mu[3*i+1,0]
+                    mu_command.z = mu[3*i+2,0]
+ 
+                    cen_pl_command.acc.append(acc_command)
+                    cen_pl_command.mu.append(mu_command)
+                    cen_pl_command.estimated_acc.append(acc_command)
+ 
+                cen_pl_command.pos_cmd.quaternion.x = self.pl["quat"][1,0]
+                cen_pl_command.pos_cmd.quaternion.y = self.pl["quat"][2,0]
+                cen_pl_command.pos_cmd.quaternion.z = self.pl["quat"][3,0]
+                cen_pl_command.pos_cmd.quaternion.w = self.pl["quat"][0,0]
+                self.cen_pl_cmd_pub.publish(cen_pl_command)
+            elif self.pl_params.payload_type == 'Point Mass':
+                plqd = self.assembly_plqd()
+                F_list, M_list = self.controller.single_payload_geometric_controller(ql = plqd, pl_params = self.pl_params, qd_params = self.quad_params)
         
         if self.single_node:
             print("The self.single_node is ", self.single_node)

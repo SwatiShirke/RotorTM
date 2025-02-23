@@ -37,7 +37,7 @@ void FMNCommand_fini_function(void * message_memory)
   typed_message->~FMNCommand();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember FMNCommand_message_member_array[4] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember FMNCommand_message_member_array[5] = {
   {
     "header",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
@@ -105,13 +105,30 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FMNCommand_me
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "acceleration",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Vector3>(),  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(rotor_tm_msgs::msg::FMNCommand, acceleration),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers FMNCommand_message_members = {
   "rotor_tm_msgs::msg",  // message namespace
   "FMNCommand",  // message name
-  4,  // number of fields
+  5,  // number of fields
   sizeof(rotor_tm_msgs::msg::FMNCommand),
   FMNCommand_message_member_array,  // message members
   FMNCommand_init_function,  // function to initialize message memory (memory has to be allocated)

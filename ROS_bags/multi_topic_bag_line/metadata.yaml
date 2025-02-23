@@ -1,0 +1,38 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 18873100817
+  starting_time:
+    nanoseconds_since_epoch: 1737250885860230605
+  message_count: 3982
+  topics_with_message_count:
+    - topic_metadata:
+        name: payload/des_traj_n
+        type: rotor_tm_msgs/msg/TrajCommand
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 1327
+    - topic_metadata:
+        name: payload/pl_nmpc_FMN_cmd
+        type: rotor_tm_msgs/msg/FMNCommand
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 1326
+    - topic_metadata:
+        name: payload/odom
+        type: nav_msgs/msg/Odometry
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 1329
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - multi_topic_bag_0.db3
+  files:
+    - path: multi_topic_bag_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 1737250885860230605
+      duration:
+        nanoseconds: 18873100817
+      message_count: 3982

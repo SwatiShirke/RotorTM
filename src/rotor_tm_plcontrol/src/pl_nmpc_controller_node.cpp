@@ -11,6 +11,8 @@
 #include "rotor_tm_msgs/msg/fmn_command.hpp"
 #include "rotor_tm_msgs/msg/position_command.hpp"
 #include "rotor_tm_msgs/msg/traj_command.hpp"
+#include "std_msgs/msg/float32_multi_array.hpp"
+
 //#include "utils.hpp"
 namespace nmpc_control_nodelet
 {
@@ -58,13 +60,15 @@ namespace nmpc_control_nodelet
     auto qos_profile_ = this->create_custom_qos();
     //punlsihers
     pub_FMN_cmd_ = this->create_publisher<rotor_tm_msgs::msg::FMNCommand>("/payload/pl_nmpc_FMN_cmd",qos_profile_);
-    pub_ref_traj_ = this->create_publisher<nav_msgs::msg::Path>("/payload/reference_path", 1);
-    pub_pred_traj_ = this->create_publisher<nav_msgs::msg::Path>("/payload/predicted_path", 1);   
+    pub_ref_traj_ = this->create_publisher<nav_msgs::msg::Path>("/payload/nmpc_reference_path", 1);
+    pub_pred_traj_ = this->create_publisher<nav_msgs::msg::Path>("/payload/nmpc_predicted_path", 1);   
 
     //subscribers    
     
     sub_traj_cmd_ = this->create_subscription<rotor_tm_msgs::msg::TrajCommand>(
-      "/payload/des_traj_n", qos_profile_, std::bind(&NMPCControlNodelet::referenceCallback, this, std::placeholders::_1));
+    "/payload/des_traj_n", qos_profile_, std::bind(&NMPCControlNodelet::referenceCallback, this, std::placeholders::_1)); 
+    // sub_traj_cmd_ = this->create_subscription<rotor_tm_msgs::msg::TrajCommand>(
+    //   "/payload/des_traj_n", qos_profile_, std::bind(&NMPCControlNodelet::referenceCallback, this, std::placeholders::_1));
     sub_odometry_ = this->create_subscription<nav_msgs::msg::Odometry>(
       "/payload/odom", qos_profile_, std::bind(&NMPCControlNodelet::odomCallback, this, std::placeholders::_1));
     }
@@ -85,6 +89,7 @@ namespace nmpc_control_nodelet
     Eigen::Vector4d pre_odom_quat_;
     bool set_pre_odom_quat_;
     Eigen::Matrix<double,kStateSize, 1> pl_current_state; 
+    Eigen::Vector3d lin_accel;
 
     // ros functions
     Eigen::Matrix<double,kStateSize, 1> get_pl_current_state();
@@ -99,6 +104,7 @@ namespace nmpc_control_nodelet
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr pub_pred_traj_;       
     
     rclcpp::Subscription<rotor_tm_msgs::msg::TrajCommand>::SharedPtr sub_traj_cmd_;
+    //rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr sub_traj_cmd_;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_odometry_;
     //rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_imu_;
     
@@ -129,29 +135,7 @@ rclcpp::QoS NMPCControlNodelet::create_custom_qos() {
 
 void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand::SharedPtr reference_msg )
 { 
-  //std::cout<<"breakpoint 3"<<'\n';
-  // for ( auto point : reference_msg->points)
-  // {
-  //   std::cout<<point.position.x<<'\n';
-  // }
-  rotor_tm_msgs::msg::TrajCommand::SharedPtr filt_reference_msg(reference_msg);
-  Eigen::Vector4d pre_quat(pre_odom_quat_(0), pre_odom_quat_(1), pre_odom_quat_(2), pre_odom_quat_(3));
-  Eigen::Vector4d current_quat;
-
-  for (auto point : filt_reference_msg->points)
-  {
-    current_quat = Eigen::Vector4d(point.quaternion.w, point.quaternion.x, point.quaternion.y, point.quaternion.z);
-    if (current_quat.dot(pre_quat) < 0)
-    {
-      point.quaternion.w = -point.quaternion.w;
-      point.quaternion.x = -point.quaternion.x;
-      point.quaternion.y = -point.quaternion.y;
-      point.quaternion.z = -point.quaternion.z;
-      current_quat = -current_quat;
-    }
-    pre_quat = current_quat;
-  }
-
+  const rotor_tm_msgs::msg::TrajCommand::SharedPtr filtered_msg(reference_msg);
   //initialize ref state and input variables
   Eigen::Matrix<double,kStateSize, kSamples> reference_states;
   Eigen::Matrix<double, kInputSize, kSamples> reference_inputs;
@@ -159,40 +143,37 @@ void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand
   reference_inputs = Eigen::Matrix<double,kInputSize, kSamples>::Zero();
 
   //declare variables used for reference inout calculations
-  Eigen::VectorXd force_moments_null_vec = Eigen::VectorXd::Zero(9);
-  Eigen::Vector3d ang_acc = Eigen::Vector3d::Zero();
-  Eigen::Vector3d ang_vel = Eigen::Vector3d::Zero();
+  //Eigen::VectorXd force_moments_null_vec = Eigen::VectorXd::Zero(9);
+  //Eigen::Vector3d ang_acc = Eigen::Vector3d::Zero();
+  //Eigen::Vector3d ang_vel = Eigen::Vector3d::Zero();
   Eigen::Vector3d lin_acc = Eigen::Vector3d::Zero();
-  Eigen::Vector3d lin_vel = Eigen::Vector3d::Zero();
-  Eigen::Vector3d moments = Eigen::Vector3d::Zero();
+  //Eigen::Vector3d lin_vel = Eigen::Vector3d::Zero();
+  //Eigen::Vector3d moments = Eigen::Vector3d::Zero();
   Eigen::Vector3d force = Eigen::Vector3d::Zero();
   Eigen::Vector3d e3_vector = Eigen::Vector3d::Zero();
-  e3_vector << 0.0,0,1;
+  e3_vector << 0.0,0,1; 
+  auto start_time = this->now();
+  auto point_size = 16; //reference_msg->layout.dim[1].size;
+  auto point_no = int(reference_msg->points.size()/point_size);
   
-  //Q: where will we get force value from
-  //Q: why is force_moments = 4d vetor it should be 6d vector
-  // we have to make input vector 9d - F, M , V (null vector)
-  
-  if (filt_reference_msg->points.size() > 1)
+  if (point_no > 1)
   {
-    auto iterator(filt_reference_msg->points.begin());
-    for (int i=0; i < kSamples; i++)
+    
+    for (int i=0; i < kSamples; ++i)
     { 
+      
+      reference_states.col(i) << reference_msg->points[i*16+0],  reference_msg->points[i*16+1], reference_msg->points[i*16+2],
+                                reference_msg->points[i*16+3], reference_msg->points[i*16+4], reference_msg->points[i*16+5],
+                                reference_msg->points[i*16+6], reference_msg->points[i*16+7], reference_msg->points[i*16+8], reference_msg->points[i*16+9],
+                                reference_msg->points[i*16+10], reference_msg->points[i*16+11], reference_msg->points[i*16+12];
+                                      
+
+      lin_acc << reference_msg->points[i*16+13], reference_msg->points[i*16+14], reference_msg->points[i*16+15]; 
+      
       if (i==0)
       {
-        std::cout<< " x " << iterator->position.x << " y " << iterator->position.y << " z " << iterator->position.z << '\n';
+        this->lin_accel = lin_acc;
       }
-      // std::cout << "inside pl controller"<< '\n';
-      // std::cout << iterator->position.x << iterator->position.y << iterator->position.z<< '\n';  
-      reference_states.col(i) << iterator->position.x, iterator->position.y, iterator->position.z,
-      iterator->velocity.x, iterator->velocity.y, iterator->velocity.z,
-      iterator->quaternion.w, iterator->quaternion.x, iterator->quaternion.y, iterator->quaternion.z,
-      iterator->angular_velocity.x, iterator->angular_velocity.y, iterator->angular_velocity.z;
-      
-
-      // ang_vel << iterator->angular_velocity.x, iterator->angular_velocity.y, iterator->angular_velocity.z;
-      lin_acc << iterator->acceleration.x, iterator->acceleration.y, iterator->acceleration.z;
-      
       // moments = inertia_matrix_ * ang_acc + ang_vel.cross(inertia_matrix_ * ang_vel);
       // force_moments << iterator->force, moments;
       // reference_inputs.col(i) = mixer_matrix_ * force_moments;
@@ -209,38 +190,15 @@ void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand
       // std::cout << "ref forces" << '\n';
       // std::cout << force << '\n';
       reference_inputs.col(i) << force , 0,0,0,0,0,0;
-      iterator++;
+      
     }
   }
-  else if(filt_reference_msg->points.size() == 1)
+  else if(point_no == 1)
   { 
-    //std::cout << "one msg recieved"<< '\n';
-    // Eigen::Quaterniond q_heading;
-    // q_heading = Eigen::Quaterniond(Eigen::AngleAxisd(filt_reference_msg->yaw, Eigen::Matrix<double, 3, 1>::UnitZ()));
-    // Eigen::Vector4d state_q_heading_quat(pre_odom_quat_(0), pre_odom_quat_(1), pre_odom_quat_(2), pre_odom_quat_(3));
-    // Eigen::Vector4d current_q_heading_quat = Eigen::Vector4d(q_heading.w(), q_heading.x(), q_heading.y(), q_heading.z());
-
-    // if (current_q_heading_quat.dot(state_q_heading_quat) < 0)
-    // {
-    //   q_heading.w() = -q_heading.w();
-    //   q_heading.x() = -q_heading.x();
-    //   q_heading.y() = -q_heading.y();
-    //   q_heading.z() = -q_heading.z();
-    // }
-
-    // reference_states = (Eigen::Matrix<double, kStateSize, 1>() << filt_reference_msg->position.x,
-    //                                                               filt_reference_msg->position.y,
-    //                                                               filt_reference_msg->position.z,
-    //                                                               q_heading.w(), q_heading.x(),
-    //                                                               q_heading.y(), q_heading.z(),
-    //                                                               0.0, 0.0, 0.0,                                                                  
-    //                                                               0.0, 0.0, 0.0).finished().replicate(1, kSamples);
     
- 
-
-    reference_states = (Eigen::Matrix<double, kStateSize, 1>() << filt_reference_msg->points[0].position.x,
-                                                                  filt_reference_msg->points[0].position.y,
-                                                                  filt_reference_msg->points[0].position.z,
+    reference_states = (Eigen::Matrix<double, kStateSize, 1>() << reference_msg->points[0],
+                                                                  reference_msg->points[1],
+                                                                  reference_msg->points[2],
                                                                   0, 0, 0,
                                                                   1, 0, 0, 0,                                                                 
                                                                   0.0, 0.0, 0.0).finished().replicate(1, kSamples);
@@ -271,13 +229,20 @@ void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand
   controller_.setReferenceInputs(reference_inputs);
 
   // run controller at reference frequency
-  std::cout <<"running mpc controller now"<< '\n';
+  //std::cout <<"running mpc controller now"<< '\n';
   controller_.run();
+
+  auto end_time = this->now();
+  auto elapsed_time = end_time - start_time;
+  //std::cout << "elapsed_time" << elapsed_time.seconds() << '\n';
 
   // publish control and predicted path
   publishControl();
   publishReference();
   publishPrediction();
+
+  
+
 }
 
 void NMPCControlNodelet::odomCallback(const nav_msgs::msg::Odometry::SharedPtr odom_msg)
@@ -338,6 +303,9 @@ void NMPCControlNodelet::publishControl()
   fmn_msg.null_space_vec.x = pred_input(6);
   fmn_msg.null_space_vec.y = pred_input(7);
   fmn_msg.null_space_vec.z = pred_input(8);
+  fmn_msg.acceleration.x = this->lin_accel(0);
+  fmn_msg.acceleration.y = this->lin_accel(1);
+  fmn_msg.acceleration.z = this->lin_accel(2);  
   pub_FMN_cmd_->publish(fmn_msg);
 
 }

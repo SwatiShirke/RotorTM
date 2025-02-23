@@ -13,8 +13,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/wrapper.cpp" "CMakeFiles/pl_nmpc_shared_lib.dir/src/wrapper.cpp.o" "gcc" "CMakeFiles/pl_nmpc_shared_lib.dir/src/wrapper.cpp.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

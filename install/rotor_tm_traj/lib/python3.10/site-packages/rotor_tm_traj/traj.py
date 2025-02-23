@@ -7,13 +7,7 @@ from rotor_tm_traj import Optimization
 from rotor_tm_traj.Optimization.entire_path.generate_poly import generate_poly
 from rotor_tm_msgs.msg import PositionCommand
 
-# from Optimization.entire_path.generate_poly import generate_poly
-# from Optimization.entire_path.generate_poly_coeff import generate_poly_coeff
-# from Optimization.optimize_traj import optimize_traj
-# from Optimization.entire_path.generate_polynomial_matrix import generate_polynomial_matrix
-# from Optimization.allocate_time import allocate_time
-
-Tf = 0.1
+Tf = 0.2
 N  = 10 
 class traj:
 	def __init__(self,is_pl_nmpc = False):
@@ -73,8 +67,8 @@ class traj:
 			self.ramp_t = self.omega_des/self.alpha_des
 			self.duration = circle_duration
 
-			thetainitial = np.array([[0.],[0],[0],[self.ramp_t*self.omega_des],[0],[0]])
-			A = np.append(generate_poly(5,2,0), generate_poly(5,2,1), axis = 0)
+			thetainitial = np.array([[0.],[0],[0],[self.ramp_t*self.omega_des],[0.],[0]])
+			A = np.append(generate_poly(5,2,0.0), generate_poly(5,2,1), axis = 0)
 
 			self.ramp_theta_coeff = np.matmul(np.linalg.inv(A), thetainitial)
 			self.ramp_dist = sum(np.multiply(self.ramp_theta_coeff, np.array([[1],[1/2],[1/3],[1/4],[1/5],[1/6]])))
@@ -86,85 +80,141 @@ class traj:
 			#print(type(self.tf))
 			self.pose_list = []
 			t0 = t.nanoseconds / 1e9
-			for j in range(N):
-				message = PositionCommand()
-				t_pred = t0 + j * Tf/ N
-				if (t_pred) < self.tf:
-					if t_pred <= self.ramp_t:  # ramping up the circle
+			traj_points_1d = []			
+				
+			if (t0) < self.tf:
+				if t0 <= self.ramp_t:  # ramping up the circle						
+					for j in range(N):
+						t_pred = t0 + j * Tf/ N
 						dt = t_pred /self.ramp_t
 						integral_poly = generate_poly(6,0,dt)
 						integral_poly = np.multiply(integral_poly[:,1:7],[1,1/2,1/3,1/4,1/5,1/6])
 						polynominalmat = np.append(integral_poly, generate_poly(5,2,dt), axis=0)
 						theta_d = np.matmul(polynominalmat, self.ramp_theta_coeff)
 						theta_d = np.multiply(theta_d, np.array([[1],[1/self.ramp_t],[1/self.ramp_t**2],[1/self.ramp_t**3]]))
-					else:
-						if t_pred <=(self.ramp_t + self.duration): # constant velocity cruising
+						x_pos = self.Radius * cos(theta_d[0])
+						y_pos = self.Radius * sin(theta_d[0])
+						x_vel = -self.Radius * sin(theta_d[0]) * theta_d[1]
+						y_vel =  self.Radius * cos(theta_d[0]) * theta_d[1]
+						x_acc = -self.Radius * cos(theta_d[0]) * theta_d[1]**2 - self.Radius * sin(theta_d[0]) * theta_d[2]
+						y_acc = -self.Radius * sin(theta_d[0]) * theta_d[1]**2 + self.Radius * cos(theta_d[0]) * theta_d[2]
+						x_jrk = self.Radius * sin(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * cos(theta_d[0]) * theta_d[1] * theta_d[2] - self.Radius * sin(theta_d[0]) * theta_d[3]
+						y_jrk = -self.Radius * cos(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * sin(theta_d[0]) * theta_d[1] * theta_d[2] + self.Radius * cos(theta_d[0]) * theta_d[3]
+						pos = self.offset_pos + np.array([x_pos[0], y_pos[0], 0.0]) 
+						self.last_pos = pos 
+						vel = np.array([x_vel[0], y_vel[0], 0.0])
+						acc = np.array([x_acc[0], y_acc[0], 0.0])
+						jrk = np.array([x_jrk[0], y_jrk[0], 0.0])
+						traj_points_1d.extend(pos.flatten())
+						traj_points_1d.extend(vel.flatten())
+						traj_points_1d.extend(np.array([1.,0,0,0]))
+						traj_points_1d.extend(np.array([0.,0,0]))
+						traj_points_1d.extend(acc.flatten())
+				else:
+					if t0 <=(self.ramp_t + self.duration): # constant velocity cruising					    
+						for j in range(N):
+							t_pred = t0 + j * Tf/ N
 							dt = t_pred - self.ramp_t
 							theta_d = np.zeros((4,1),dtype=float)
 							theta_d[0] = self.omega_des * dt + self.ramp_dist
 							theta_d[1] = self.omega_des
-
-						else:  # ramping down the circle
+							x_pos = self.Radius * cos(theta_d[0])
+							y_pos = self.Radius * sin(theta_d[0])
+							x_vel = -self.Radius * sin(theta_d[0]) * theta_d[1]
+							y_vel =  self.Radius * cos(theta_d[0]) * theta_d[1]
+							x_acc = -self.Radius * cos(theta_d[0]) * theta_d[1]**2 - self.Radius * sin(theta_d[0]) * theta_d[2]
+							y_acc = -self.Radius * sin(theta_d[0]) * theta_d[1]**2 + self.Radius * cos(theta_d[0]) * theta_d[2]
+							x_jrk = self.Radius * sin(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * cos(theta_d[0]) * theta_d[1] * theta_d[2] - self.Radius * sin(theta_d[0]) * theta_d[3]
+							y_jrk = -self.Radius * cos(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * sin(theta_d[0]) * theta_d[1] * theta_d[2] + self.Radius * cos(theta_d[0]) * theta_d[3]
+							pos = self.offset_pos + np.array([x_pos[0], y_pos[0], 0.0]) 
+							self.last_pos = pos 
+							vel = np.array([x_vel[0], y_vel[0], 0.0])
+							acc = np.array([x_acc[0], y_acc[0], 0.0])
+							jrk = np.array([x_jrk[0], y_jrk[0], 0.0])
+							traj_points_1d.extend(pos.flatten())
+							traj_points_1d.extend(vel.flatten())
+							traj_points_1d.extend(np.array([1.,0,0,0]))
+							traj_points_1d.extend(np.array([0.,0,0]))
+							traj_points_1d.extend(acc.flatten())
+					else:  # ramping down the circle
+						for j in range(N):
+							t_pred = t0 + j * Tf/ N
 							dt = 1 - (t_pred - self.duration - self.ramp_t)/self.ramp_t
 							integral_poly = generate_poly(6,0,dt)
 							integral_poly = np.multiply(integral_poly[:,1:7],[1,1/2,1/3,1/4,1/5,1/6])
 							polynominalmat = np.append(integral_poly, generate_poly(5,2,dt), axis=0)
-
 							theta_d = np.matmul(polynominalmat, self.ramp_theta_coeff)
 							theta_d = np.multiply(theta_d, np.array([[1],[1/self.ramp_t],[1/self.ramp_t**2],[1/self.ramp_t**3]]))
 							theta_d[0] = self.circle_dist + 2*self.ramp_dist - theta_d[0]
-
-					x_pos = self.Radius * cos(theta_d[0])
-					y_pos = self.Radius * sin(theta_d[0])
-					x_vel = -self.Radius * sin(theta_d[0]) * theta_d[1]
-					y_vel =  self.Radius * cos(theta_d[0]) * theta_d[1]
-					x_acc = -self.Radius * cos(theta_d[0]) * theta_d[1]**2 - self.Radius * sin(theta_d[0]) * theta_d[2]
-					y_acc = -self.Radius * sin(theta_d[0]) * theta_d[1]**2 + self.Radius * cos(theta_d[0]) * theta_d[2]
-					x_jrk = self.Radius * sin(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * cos(theta_d[0]) * theta_d[1] * theta_d[2] - self.Radius * sin(theta_d[0]) * theta_d[3]
-					y_jrk = -self.Radius * cos(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * sin(theta_d[0]) * theta_d[1] * theta_d[2] + self.Radius * cos(theta_d[0]) * theta_d[3]
-
-					pos = self.offset_pos + np.array([x_pos[0], y_pos[0], 0]) 
-					self.last_pos = pos 
-
-					vel = np.array([x_vel[0], y_vel[0], 0.0])
-					acc = np.array([x_acc[0], y_acc[0], 0.0])
-					jrk = np.array([x_jrk[0], y_jrk[0], 0.0])
-				else:
-					pos = self.last_pos
-					vel = np.array([[0.],[0],[0]])
-					acc = np.array([[0.],[0],[0]])
-					jrk = np.array([[0.],[0],[0]])
-					self.finished = True
-
-				self.state_struct["pos_des"] = pos
-				self.state_struct["vel_des"] = vel.flatten()
-				self.state_struct["acc_des"] = acc.flatten()
-				self.state_struct["jrk_des"] = jrk.flatten()
-				self.state_struct["quat_des"] = np.array([1.,0,0,0])
-				self.state_struct["omega_des"] = np.array([0.,0,0])
-				#message.header.stamp = now
-				message.position.x = self.state_struct["pos_des"][0]
-				message.position.y = self.state_struct["pos_des"][1]
-				message.position.z = self.state_struct["pos_des"][2]
-				message.velocity.x = self.state_struct["vel_des"][0]
-				message.velocity.y = self.state_struct["vel_des"][1]
-				message.velocity.z = self.state_struct["vel_des"][2]
-				message.quaternion.w = self.state_struct["quat_des"][0]
-				message.quaternion.x = self.state_struct["quat_des"][1]
-				message.quaternion.y = self.state_struct["quat_des"][2]
-				message.quaternion.z = self.state_struct["quat_des"][3]
-				message.angular_velocity.x = self.state_struct["omega_des"][0]
-				message.angular_velocity.y = self.state_struct["omega_des"][1]
-				message.angular_velocity.z = self.state_struct["omega_des"][2]
-				message.acceleration.x = self.state_struct["acc_des"][0]
-				message.acceleration.y = self.state_struct["acc_des"][1]
-				message.acceleration.z = self.state_struct["acc_des"][2]
-				message.jerk.x = self.state_struct["jrk_des"][0]
-				message.jerk.y = self.state_struct["jrk_des"][1]
-				message.jerk.z = self.state_struct["jrk_des"][2]
-				#print(type(self.current_traj.state_struct["quat_des"][0]))
-				self.pose_list.append(message)
+							x_pos = self.Radius * cos(theta_d[0])
+							y_pos = self.Radius * sin(theta_d[0])
+							x_vel = -self.Radius * sin(theta_d[0]) * theta_d[1]
+							y_vel =  self.Radius * cos(theta_d[0]) * theta_d[1]
+							x_acc = -self.Radius * cos(theta_d[0]) * theta_d[1]**2 - self.Radius * sin(theta_d[0]) * theta_d[2]
+							y_acc = -self.Radius * sin(theta_d[0]) * theta_d[1]**2 + self.Radius * cos(theta_d[0]) * theta_d[2]
+							x_jrk = self.Radius * sin(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * cos(theta_d[0]) * theta_d[1] * theta_d[2] - self.Radius * sin(theta_d[0]) * theta_d[3]
+							y_jrk = -self.Radius * cos(theta_d[0]) * theta_d[1]**3 - 3 * self.Radius * sin(theta_d[0]) * theta_d[1] * theta_d[2] + self.Radius * cos(theta_d[0]) * theta_d[3]
+							pos = self.offset_pos + np.array([x_pos[0], y_pos[0], 0.0]) 
+							self.last_pos = pos 
+							vel = np.array([x_vel[0], y_vel[0], 0.0])
+							acc = np.array([x_acc[0], y_acc[0], 0.0])
+							jrk = np.array([x_jrk[0], y_jrk[0], 0.0])
+							traj_points_1d.extend(pos.flatten())
+							traj_points_1d.extend(vel.flatten())
+							traj_points_1d.extend(np.array([1.,0,0,0]))
+							traj_points_1d.extend(np.array([0.,0,0]))
+							traj_points_1d.extend(acc.flatten())
 				
+			else:
+				pos = self.last_pos					
+				vel = np.array([[0.],[0],[0]])
+				acc = np.array([[0.],[0],[0]])
+				jrk = np.array([[0.],[0],[0]])
+				self.finished = True
+				traj_points_1d.extend(pos.flatten())
+				traj_points_1d.extend(vel.flatten())
+				traj_points_1d.extend(np.array([1.,0,0,0]))
+				traj_points_1d.extend(np.array([0.,0,0]))
+				traj_points_1d.extend(acc.flatten())
+			# self.state_struct["pos_des"] = pos
+			# self.state_struct["vel_des"] = vel.flatten()
+			# self.state_struct["acc_des"] = acc.flatten()
+			# self.state_struct["jrk_des"] = jrk.flatten()
+			# self.state_struct["quat_des"] = np.array([1.,0,0,0])
+			# self.state_struct["omega_des"] = np.array([0.,0,0])
+			
+			#point_data = np.array([ pos.flatten() , vel.flatten(),np.array([1.,0,0,0]), np.array([0.,0,0]), acc.flatten()]).flatten()
+				 
+			#print(traj_points_1d)			
+			# #message.header.stamp = now
+			# message.position.x = self.state_struct["pos_des"][0]
+			# message.position.y = self.state_struct["pos_des"][1]
+			# message.position.z = self.state_struct["pos_des"][2]
+			# message.velocity.x = self.state_struct["vel_des"][0]
+			# message.velocity.y = self.state_struct["vel_des"][1]
+			# message.velocity.z = self.state_struct["vel_des"][2]
+			# message.quaternion.w = self.state_struct["quat_des"][0]
+			# message.quaternion.x = self.state_struct["quat_des"][1]
+			# message.quaternion.y = self.state_struct["quat_des"][2]
+			# message.quaternion.z = self.state_struct["quat_des"][3]
+			# message.angular_velocity.x = self.state_struct["omega_des"][0]
+			# message.angular_velocity.y = self.state_struct["omega_des"][1]
+			# message.angular_velocity.z = self.state_struct["omega_des"][2]
+			# message.acceleration.x = self.state_struct["acc_des"][0]
+			# message.acceleration.y = self.state_struct["acc_des"][1]
+			# message.acceleration.z = self.state_struct["acc_des"][2]
+			# message.jerk.x = self.state_struct["jrk_des"][0]
+			# message.jerk.y = self.state_struct["jrk_des"][1]
+			# message.jerk.z = self.state_struct["jrk_des"][2]
+			# #print(type(self.current_traj.state_struct["quat_des"][0]))
+			# self.pose_list.append(message)
+			
+			# if self.finished == True:					
+			# 	break
+			self.traj_points_1d_arr = traj_points_1d
+			# print(self.traj_points_1d_arr)
+			
+			
 
 	def circlewithrotbody(self, t, init_pos = None, r = None, rangle = None, period = None, circle_duration = None):
 		# CIRCLE trajectory generator for a circle

@@ -39,9 +39,9 @@ def controller_setup(control_params,  payload_params):
     #system states = pos, quaternions, linear vel, angular vel (13 x 1)
     #to handle mimatch between refence and model state, we convert quaternions to ypr and formulating new state vector
     #using new state vector for cost calculations
-    Q_mat =  ca.vertcat(10000, 10000, 10000, 10000, 10000, 10000, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1e-4)
-    R_mat =  ca.vertcat(10000, 10000, 10000, 1000, 1000, 1000, 1e-2, 1e-2, 1e-2)
-    Q_emat = ca.vertcat(100000, 100000, 100000, 10000, 10000, 10000, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4)
+    Q_mat =  ca.vertcat(100,100, 100, 100, 100, 100, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1e-4)
+    R_mat =  ca.vertcat(100, 100, 100, 100, 100, 100, 1e-2, 1e-2, 1e-2)    
+    Q_emat = ca.vertcat(10000, 10000 , 10000, 10000, 10000, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4)
 
     #ipdb.set_trace()
     #path cost

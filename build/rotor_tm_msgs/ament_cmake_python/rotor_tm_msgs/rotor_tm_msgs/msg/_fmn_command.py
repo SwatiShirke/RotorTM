@@ -67,6 +67,7 @@ class FMNCommand(metaclass=Metaclass_FMNCommand):
         '_rlink_thrust',
         '_moments',
         '_null_space_vec',
+        '_acceleration',
     ]
 
     _fields_and_field_types = {
@@ -74,10 +75,12 @@ class FMNCommand(metaclass=Metaclass_FMNCommand):
         'rlink_thrust': 'geometry_msgs/Vector3',
         'moments': 'geometry_msgs/Vector3',
         'null_space_vec': 'geometry_msgs/Vector3',
+        'acceleration': 'geometry_msgs/Vector3',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
+        rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Vector3'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Vector3'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Vector3'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Vector3'),  # noqa: E501
@@ -95,6 +98,8 @@ class FMNCommand(metaclass=Metaclass_FMNCommand):
         self.moments = kwargs.get('moments', Vector3())
         from geometry_msgs.msg import Vector3
         self.null_space_vec = kwargs.get('null_space_vec', Vector3())
+        from geometry_msgs.msg import Vector3
+        self.acceleration = kwargs.get('acceleration', Vector3())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -132,6 +137,8 @@ class FMNCommand(metaclass=Metaclass_FMNCommand):
         if self.moments != other.moments:
             return False
         if self.null_space_vec != other.null_space_vec:
+            return False
+        if self.acceleration != other.acceleration:
             return False
         return True
 
@@ -195,3 +202,17 @@ class FMNCommand(metaclass=Metaclass_FMNCommand):
                 isinstance(value, Vector3), \
                 "The 'null_space_vec' field must be a sub message of type 'Vector3'"
         self._null_space_vec = value
+
+    @builtins.property
+    def acceleration(self):
+        """Message field 'acceleration'."""
+        return self._acceleration
+
+    @acceleration.setter
+    def acceleration(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Vector3
+            assert \
+                isinstance(value, Vector3), \
+                "The 'acceleration' field must be a sub message of type 'Vector3'"
+        self._acceleration = value
