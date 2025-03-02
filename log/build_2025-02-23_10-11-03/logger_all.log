@@ -1,0 +1,593 @@
+[0.072s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.072s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x78431b64a920>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78431b7a36d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78431b7a36d0>>, mixin_verb=('build',))
+[0.096s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.097s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.097s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.097s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.097s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.097s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.097s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/swati/Quad_DR/RotorTM'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.107s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'ignore_ament_install'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['colcon_pkg']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'colcon_pkg'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['colcon_meta']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'colcon_meta'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['ros']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'ros'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['cmake', 'python']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'cmake'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'python'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extensions ['python_setup_py']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/doc) by extension 'python_setup_py'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'ignore_ament_install'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['colcon_pkg']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'colcon_pkg'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/payload_control) by extension 'ros'
+[0.110s] DEBUG:colcon.colcon_core.package_identification:Package 'src/payload_control' with type 'ros.ament_python' and name 'payload_control'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['ignore', 'ignore_ament_install']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'ignore'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'ignore_ament_install'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['colcon_pkg']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'colcon_pkg'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['colcon_meta']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'colcon_meta'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extensions ['ros']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_config) by extension 'ros'
+[0.111s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_config' with type 'ros.ament_python' and name 'rotor_tm_config'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'ignore'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'ignore_ament_install'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['colcon_pkg']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'colcon_pkg'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['colcon_meta']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'colcon_meta'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extensions ['ros']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_control) by extension 'ros'
+[0.112s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_control' with type 'ros.ament_python' and name 'rotor_tm_control'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['colcon_pkg']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'colcon_pkg'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['colcon_meta']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'colcon_meta'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extensions ['ros']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_keyboard2wrench) by extension 'ros'
+[0.112s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_keyboard2wrench' with type 'ros.ament_python' and name 'rotor_tm_keyboard2wrench'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['colcon_pkg']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'colcon_pkg'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['colcon_meta']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'colcon_meta'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extensions ['ros']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_msgs) by extension 'ros'
+[0.113s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_msgs' with type 'ros.ament_cmake' and name 'rotor_tm_msgs'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'ignore'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'ignore_ament_install'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['colcon_pkg']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'colcon_pkg'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['colcon_meta']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'colcon_meta'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extensions ['ros']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_plcontrol) by extension 'ros'
+[0.113s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_plcontrol' with type 'ros.ament_cmake' and name 'rotor_tm_plcontrol'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'ignore'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'ignore_ament_install'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['colcon_pkg']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'colcon_pkg'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['colcon_meta']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'colcon_meta'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extensions ['ros']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_sim) by extension 'ros'
+[0.114s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_sim' with type 'ros.ament_python' and name 'rotor_tm_sim'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['ignore', 'ignore_ament_install']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'ignore'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'ignore_ament_install'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['colcon_pkg']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'colcon_pkg'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['colcon_meta']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'colcon_meta'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extensions ['ros']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_traj) by extension 'ros'
+[0.115s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_traj' with type 'ros.ament_python' and name 'rotor_tm_traj'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['ignore', 'ignore_ament_install']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'ignore'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'ignore_ament_install'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['colcon_pkg']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'colcon_pkg'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['colcon_meta']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'colcon_meta'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extensions ['ros']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/rotor_tm_utils) by extension 'ros'
+[0.116s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rotor_tm_utils' with type 'ros.ament_python' and name 'rotor_tm_utils'
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.130s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.130s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.132s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/swati/Quad_DR/RotorTM/install
+[0.133s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 383 installed packages in /opt/ros/humble
+[0.134s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_args' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_target' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'payload_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.162s] DEBUG:colcon.colcon_core.verb:Building package 'payload_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/payload_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/payload_control', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/payload_control', 'symlink_install': False, 'test_result_base': None}
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_args' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_target' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.162s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_config', 'symlink_install': False, 'test_result_base': None}
+[0.162s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_target' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_clean_cache' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_clean_first' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'cmake_force_configure' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'ament_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'catkin_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_keyboard2wrench' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.163s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_keyboard2wrench' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench', 'symlink_install': False, 'test_result_base': None}
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_target' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.163s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_target' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_clean_cache' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_clean_first' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'cmake_force_configure' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'ament_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'catkin_cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_traj' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.163s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_traj' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_traj', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_traj', 'symlink_install': False, 'test_result_base': None}
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_args' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_target' from command line to 'None'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_clean_cache' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_clean_first' from command line to 'False'
+[0.163s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'cmake_force_configure' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'ament_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'catkin_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_utils' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.164s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_utils' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_utils', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_utils', 'symlink_install': False, 'test_result_base': None}
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_target' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.164s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_control', 'symlink_install': False, 'test_result_base': None}
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_target' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_clean_cache' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_clean_first' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'cmake_force_configure' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'ament_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'catkin_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_plcontrol' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.164s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_plcontrol' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol', 'symlink_install': False, 'test_result_base': None}
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_target' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_clean_cache' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_clean_first' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'cmake_force_configure' from command line to 'False'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'ament_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'catkin_cmake_args' from command line to 'None'
+[0.164s] Level 5:colcon.colcon_core.verb:set package 'rotor_tm_sim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.164s] DEBUG:colcon.colcon_core.verb:Building package 'rotor_tm_sim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/swati/Quad_DR/RotorTM/build/rotor_tm_sim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim', 'merge_install': False, 'path': '/home/swati/Quad_DR/RotorTM/src/rotor_tm_sim', 'symlink_install': False, 'test_result_base': None}
+[0.165s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.165s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.165s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_msgs' with build type 'ament_cmake'
+[0.166s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_msgs'
+[0.167s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.167s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.167s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.170s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_utils' with build type 'ament_python'
+[0.170s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_utils', 'ament_prefix_path')
+[0.170s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/ament_prefix_path.ps1'
+[0.171s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/ament_prefix_path.dsv'
+[0.171s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/ament_prefix_path.sh'
+[0.171s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.171s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.173s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_config' with build type 'ament_python'
+[0.173s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_config', 'ament_prefix_path')
+[0.174s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/ament_prefix_path.ps1'
+[0.174s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/ament_prefix_path.dsv'
+[0.174s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/ament_prefix_path.sh'
+[0.174s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.174s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.176s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/payload_control' with build type 'ament_python'
+[0.177s] Level 1:colcon.colcon_core.shell:create_environment_hook('payload_control', 'ament_prefix_path')
+[0.177s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/hook/ament_prefix_path.ps1'
+[0.177s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/hook/ament_prefix_path.dsv'
+[0.177s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/hook/ament_prefix_path.sh'
+[0.178s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.178s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.180s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench' with build type 'ament_python'
+[0.180s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_keyboard2wrench', 'ament_prefix_path')
+[0.180s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/ament_prefix_path.ps1'
+[0.180s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/ament_prefix_path.dsv'
+[0.180s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/ament_prefix_path.sh'
+[0.181s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.181s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.183s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_traj' with build type 'ament_python'
+[0.183s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_traj', 'ament_prefix_path')
+[0.183s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/ament_prefix_path.ps1'
+[0.184s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/ament_prefix_path.dsv'
+[0.184s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/ament_prefix_path.sh'
+[0.184s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.184s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.191s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --build /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs -- -j20 -l20
+[0.375s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_utils'
+[0.375s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.375s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.552s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_config'
+[0.552s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.552s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.729s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/swati/Quad_DR/RotorTM/src/payload_control'
+[0.729s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.729s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.908s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench'
+[0.908s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.908s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.084s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_traj'
+[1.085s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.085s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.098s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --build /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs -- -j20 -l20
+[1.391s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --install /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs
+[1.446s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_msgs)
+[1.448s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --install /home/swati/Quad_DR/RotorTM/build/rotor_tm_msgs
+[1.451s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs' for CMake module files
+[1.452s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs' for CMake config files
+[1.453s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'cmake_prefix_path')
+[1.453s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.ps1'
+[1.454s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.dsv'
+[1.454s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.sh'
+[1.455s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib'
+[1.455s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'ld_library_path_lib')
+[1.455s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.ps1'
+[1.456s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.dsv'
+[1.456s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.sh'
+[1.456s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/bin'
+[1.456s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/pkgconfig/rotor_tm_msgs.pc'
+[1.457s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages'
+[1.457s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'pythonpath')
+[1.457s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/pythonpath.ps1'
+[1.457s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/pythonpath.dsv'
+[1.458s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/pythonpath.sh'
+[1.458s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/bin'
+[1.459s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.ps1'
+[1.460s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.dsv'
+[1.460s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.sh'
+[1.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.bash'
+[1.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.zsh'
+[1.463s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/colcon-core/packages/rotor_tm_msgs)
+[1.543s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_config': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_config/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_config build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_config/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_config/install.log --single-version-externally-managed install_data
+[1.547s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_traj': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_traj build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/install.log --single-version-externally-managed install_data
+[1.559s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data
+[1.621s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/src/payload_control': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/swati/Quad_DR/RotorTM/build/payload_control/build install --record /home/swati/Quad_DR/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data
+[1.653s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_utils': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_utils build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_utils/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_utils/install.log --single-version-externally-managed install_data
+[1.765s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_msgs)
+[1.765s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs' for CMake module files
+[1.766s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs' for CMake config files
+[1.767s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'cmake_prefix_path')
+[1.767s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.ps1'
+[1.768s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.dsv'
+[1.768s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/cmake_prefix_path.sh'
+[1.768s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib'
+[1.768s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'ld_library_path_lib')
+[1.768s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.ps1'
+[1.769s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.dsv'
+[1.769s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/ld_library_path_lib.sh'
+[1.769s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/bin'
+[1.769s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/pkgconfig/rotor_tm_msgs.pc'
+[1.769s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages'
+[1.769s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_msgs', 'pythonpath')
+[1.769s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/pythonpath.ps1'
+[1.770s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/pythonpath.dsv'
+[1.770s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/hook/pythonpath.sh'
+[1.770s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/bin'
+[1.770s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.ps1'
+[1.771s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.dsv'
+[1.771s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.sh'
+[1.771s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.bash'
+[1.771s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/rotor_tm_msgs/package.zsh'
+[1.772s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/share/colcon-core/packages/rotor_tm_msgs)
+[1.772s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol' with build type 'ament_cmake'
+[1.772s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol'
+[1.772s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.772s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.780s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol': CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --build /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol -- -j20 -l20
+[1.861s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol' returned '0': CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --build /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol -- -j20 -l20
+[1.886s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol': CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --install /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol
+[1.891s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_plcontrol)
+[1.891s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol' for CMake module files
+[1.892s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol' returned '0': CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /opt/cmake-3.28.3-linux-x86_64/bin/cmake --install /home/swati/Quad_DR/RotorTM/build/rotor_tm_plcontrol
+[1.893s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol' for CMake config files
+[1.894s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'cmake_prefix_path')
+[1.894s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.ps1'
+[1.894s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.dsv'
+[1.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.sh'
+[1.895s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib'
+[1.895s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'ld_library_path_lib')
+[1.896s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.ps1'
+[1.896s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.dsv'
+[1.896s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.sh'
+[1.897s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.897s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/pkgconfig/rotor_tm_plcontrol.pc'
+[1.897s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/python3.10/site-packages'
+[1.897s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.ps1'
+[1.898s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.dsv'
+[1.899s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.sh'
+[1.900s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.bash'
+[1.900s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.zsh'
+[1.901s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/colcon-core/packages/rotor_tm_plcontrol)
+[1.925s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_plcontrol)
+[1.925s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol' for CMake module files
+[1.925s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol' for CMake config files
+[1.926s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'cmake_prefix_path')
+[1.926s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.ps1'
+[1.927s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.dsv'
+[1.927s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/cmake_prefix_path.sh'
+[1.928s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib'
+[1.928s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_plcontrol', 'ld_library_path_lib')
+[1.928s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.ps1'
+[1.929s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.dsv'
+[1.929s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/hook/ld_library_path_lib.sh'
+[1.930s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.930s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/pkgconfig/rotor_tm_plcontrol.pc'
+[1.931s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib/python3.10/site-packages'
+[1.931s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/bin'
+[1.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.ps1'
+[1.933s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.dsv'
+[1.934s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.sh'
+[1.934s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.bash'
+[1.935s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.zsh'
+[1.935s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/colcon-core/packages/rotor_tm_plcontrol)
+[1.941s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj' for CMake module files
+[1.942s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_traj' returned '0': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_traj build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_traj/install.log --single-version-externally-managed install_data
+[1.942s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj' for CMake config files
+[1.943s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib'
+[1.943s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/bin'
+[1.943s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/pkgconfig/rotor_tm_traj.pc'
+[1.944s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages'
+[1.944s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_traj', 'pythonpath')
+[1.944s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/pythonpath.ps1'
+[1.944s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/pythonpath.dsv'
+[1.945s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/hook/pythonpath.sh'
+[1.945s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/bin'
+[1.945s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_traj)
+[1.946s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.ps1'
+[1.946s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.dsv'
+[1.947s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.sh'
+[1.947s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.bash'
+[1.947s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/rotor_tm_traj/package.zsh'
+[1.947s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/share/colcon-core/packages/rotor_tm_traj)
+[1.948s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config' for CMake module files
+[1.949s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config' for CMake config files
+[1.949s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_config' returned '0': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_config/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_config build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_config/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_config/install.log --single-version-externally-managed install_data
+[1.950s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib'
+[1.950s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/bin'
+[1.950s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/pkgconfig/rotor_tm_config.pc'
+[1.950s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages'
+[1.950s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_config', 'pythonpath')
+[1.950s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/pythonpath.ps1'
+[1.950s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/pythonpath.dsv'
+[1.951s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/hook/pythonpath.sh'
+[1.951s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/bin'
+[1.951s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_config)
+[1.951s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.ps1'
+[1.952s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.dsv'
+[1.952s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.sh'
+[1.952s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.bash'
+[1.952s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/rotor_tm_config/package.zsh'
+[1.952s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/share/colcon-core/packages/rotor_tm_config)
+[1.953s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench' for CMake module files
+[1.954s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench' returned '0': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data
+[1.954s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench' for CMake config files
+[1.954s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib'
+[1.954s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/bin'
+[1.954s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/pkgconfig/rotor_tm_keyboard2wrench.pc'
+[1.955s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages'
+[1.955s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_keyboard2wrench', 'pythonpath')
+[1.955s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/pythonpath.ps1'
+[1.956s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/pythonpath.dsv'
+[1.956s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/hook/pythonpath.sh'
+[1.956s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/bin'
+[1.956s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_keyboard2wrench)
+[1.957s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.ps1'
+[1.957s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.dsv'
+[1.957s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.sh'
+[1.957s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.bash'
+[1.958s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench/package.zsh'
+[1.958s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/colcon-core/packages/rotor_tm_keyboard2wrench)
+[2.070s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/payload_control' for CMake module files
+[2.071s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/src/payload_control' returned '0': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/payload_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/payload_control build --build-base /home/swati/Quad_DR/RotorTM/build/payload_control/build install --record /home/swati/Quad_DR/RotorTM/build/payload_control/install.log --single-version-externally-managed install_data
+[2.071s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/payload_control' for CMake config files
+[2.072s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/payload_control/lib'
+[2.072s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/payload_control/bin'
+[2.072s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/payload_control/lib/pkgconfig/payload_control.pc'
+[2.072s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages'
+[2.072s] Level 1:colcon.colcon_core.shell:create_environment_hook('payload_control', 'pythonpath')
+[2.072s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/hook/pythonpath.ps1'
+[2.073s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/hook/pythonpath.dsv'
+[2.073s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/hook/pythonpath.sh'
+[2.074s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/payload_control/bin'
+[2.074s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(payload_control)
+[2.074s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/package.ps1'
+[2.075s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/package.dsv'
+[2.075s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/package.sh'
+[2.076s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/package.bash'
+[2.076s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control/package.zsh'
+[2.076s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/payload_control/share/colcon-core/packages/payload_control)
+[2.116s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils' for CMake module files
+[2.117s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_utils' returned '0': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_utils build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_utils/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_utils/install.log --single-version-externally-managed install_data
+[2.117s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils' for CMake config files
+[2.118s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib'
+[2.118s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/bin'
+[2.118s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/pkgconfig/rotor_tm_utils.pc'
+[2.118s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages'
+[2.119s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_utils', 'pythonpath')
+[2.119s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/pythonpath.ps1'
+[2.119s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/pythonpath.dsv'
+[2.120s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/hook/pythonpath.sh'
+[2.120s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/bin'
+[2.120s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_utils)
+[2.121s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.ps1'
+[2.121s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.dsv'
+[2.122s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.sh'
+[2.122s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.bash'
+[2.123s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/rotor_tm_utils/package.zsh'
+[2.123s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/share/colcon-core/packages/rotor_tm_utils)
+[2.123s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_control' with build type 'ament_python'
+[2.123s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_control', 'ament_prefix_path')
+[2.124s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/ament_prefix_path.ps1'
+[2.124s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/ament_prefix_path.dsv'
+[2.124s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/ament_prefix_path.sh'
+[2.125s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.125s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.127s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_sim' with build type 'ament_python'
+[2.127s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_sim', 'ament_prefix_path')
+[2.127s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/ament_prefix_path.ps1'
+[2.127s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/ament_prefix_path.dsv'
+[2.128s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/ament_prefix_path.sh'
+[2.128s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.128s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.308s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_control'
+[2.308s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.308s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.490s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_sim'
+[2.490s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.490s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.928s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_control': AMENT_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data
+[2.930s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_sim': AMENT_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_sim build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/install.log --single-version-externally-managed install_data
+[3.293s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control' for CMake module files
+[3.293s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_control' returned '0': AMENT_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_control build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/install.log --single-version-externally-managed install_data
+[3.294s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control' for CMake config files
+[3.294s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib'
+[3.294s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/bin'
+[3.294s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/pkgconfig/rotor_tm_control.pc'
+[3.294s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages'
+[3.294s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_control', 'pythonpath')
+[3.294s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/pythonpath.ps1'
+[3.295s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/pythonpath.dsv'
+[3.295s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/hook/pythonpath.sh'
+[3.295s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/bin'
+[3.295s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_control)
+[3.296s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.ps1'
+[3.296s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.dsv'
+[3.296s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.sh'
+[3.296s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.bash'
+[3.297s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control/package.zsh'
+[3.297s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/colcon-core/packages/rotor_tm_control)
+[3.300s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim' for CMake module files
+[3.300s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_sim' returned '0': AMENT_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench:/home/swati/Quad_DR/RotorTM/install/payload_control:/opt/ros/humble CMAKE_PREFIX_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol LD_LIBRARY_PATH=/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib:/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/home/swati/acados/lib PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_sim build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/install.log --single-version-externally-managed install_data
+[3.301s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim' for CMake config files
+[3.301s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib'
+[3.301s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/bin'
+[3.301s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/pkgconfig/rotor_tm_sim.pc'
+[3.301s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages'
+[3.302s] Level 1:colcon.colcon_core.shell:create_environment_hook('rotor_tm_sim', 'pythonpath')
+[3.302s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/pythonpath.ps1'
+[3.302s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/pythonpath.dsv'
+[3.303s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/hook/pythonpath.sh'
+[3.303s] Level 1:colcon.colcon_core.environment:checking '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/bin'
+[3.303s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rotor_tm_sim)
+[3.303s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.ps1'
+[3.304s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.dsv'
+[3.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.sh'
+[3.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.bash'
+[3.304s] INFO:colcon.colcon_core.shell:Creating package script '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/package.zsh'
+[3.305s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/colcon-core/packages/rotor_tm_sim)
+[3.305s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.305s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.305s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.305s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.311s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.311s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.311s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.321s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.321s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/swati/Quad_DR/RotorTM/install/local_setup.ps1'
+[3.322s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/swati/Quad_DR/RotorTM/install/_local_setup_util_ps1.py'
+[3.322s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/swati/Quad_DR/RotorTM/install/setup.ps1'
+[3.323s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/swati/Quad_DR/RotorTM/install/local_setup.sh'
+[3.324s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/swati/Quad_DR/RotorTM/install/_local_setup_util_sh.py'
+[3.324s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/swati/Quad_DR/RotorTM/install/setup.sh'
+[3.325s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/swati/Quad_DR/RotorTM/install/local_setup.bash'
+[3.325s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/swati/Quad_DR/RotorTM/install/setup.bash'
+[3.326s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/swati/Quad_DR/RotorTM/install/local_setup.zsh'
+[3.327s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/swati/Quad_DR/RotorTM/install/setup.zsh'

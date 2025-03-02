@@ -1,0 +1,29 @@
+[1.352s] Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench': PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data
+[1.462s] /home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[1.462s]   warnings.warn(msg)
+[1.545s] running egg_info
+[1.555s] writing ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/PKG-INFO
+[1.555s] writing dependency_links to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/dependency_links.txt
+[1.555s] writing entry points to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/entry_points.txt
+[1.556s] writing requirements to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/requires.txt
+[1.556s] writing top-level names to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/top_level.txt
+[1.588s] reading manifest file '../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+[1.588s] adding license file 'LICENSE'
+[1.589s] writing manifest file '../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+[1.589s] running build
+[1.589s] running build_py
+[1.589s] copying rotor_tm_keyboard2wrench/ext_wrench_sub.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+[1.589s] copying rotor_tm_keyboard2wrench/__init__.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+[1.590s] copying rotor_tm_keyboard2wrench/keyboard2wrench.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+[1.590s] running install
+[1.593s] running install_lib
+[1.604s] running install_data
+[1.604s] copying resource/rotor_tm_keyboard2wrench -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/ament_index/resource_index/packages
+[1.604s] copying package.xml -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench
+[1.605s] running install_egg_info
+[1.617s] removing '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench-0.0.0-py3.10.egg-info' (and everything under it)
+[1.617s] Copying ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info to /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench-0.0.0-py3.10.egg-info
+[1.617s] running install_scripts
+[1.706s] Installing keyboard_input script to /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/rotor_tm_keyboard2wrench
+[1.706s] writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log'
+[1.730s] Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench' returned '0': PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data

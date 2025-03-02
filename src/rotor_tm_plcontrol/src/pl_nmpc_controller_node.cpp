@@ -203,7 +203,7 @@ void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand
       // reference_inputs.col(i) = force_moments_null_vec;
       
       //std::cout << "lin_acc" << lin_acc << '\n';
-      force = mass_matrix_ * lin_acc + hover_thrust_ * e3_vector;
+      force =  mass_matrix_ * lin_acc + hover_thrust_ * e3_vector;  //
       //std::cout << "ref_force " << force << '\n';
 
       // std::cout << "ref forces" << '\n';

@@ -1,0 +1,34 @@
+running egg_info
+writing ../../build/payload_control/payload_control.egg-info/PKG-INFO
+writing dependency_links to ../../build/payload_control/payload_control.egg-info/dependency_links.txt
+writing entry points to ../../build/payload_control/payload_control.egg-info/entry_points.txt
+writing requirements to ../../build/payload_control/payload_control.egg-info/requires.txt
+writing top-level names to ../../build/payload_control/payload_control.egg-info/top_level.txt
+reading manifest file '../../build/payload_control/payload_control.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/payload_control/payload_control.egg-info/SOURCES.txt'
+running build
+running build_py
+copying payload_control/ros_controller.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/cost_functions.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/test_numpy.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/payload_controller.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/constraints.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/plotFcn.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/utils.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/test_control.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/time2spatial.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/__init__.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/payload_model.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+copying payload_control/test_controller.py -> /home/swati/Quad_DR/RotorTM/build/payload_control/build/lib/payload_control
+running install
+running install_lib
+running install_data
+copying resource/payload_control -> /home/swati/Quad_DR/RotorTM/install/payload_control/share/ament_index/resource_index/packages
+copying package.xml -> /home/swati/Quad_DR/RotorTM/install/payload_control/share/payload_control
+running install_egg_info
+removing '/home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/payload_control/payload_control.egg-info to /home/swati/Quad_DR/RotorTM/install/payload_control/lib/python3.10/site-packages/payload_control-0.0.0-py3.10.egg-info
+running install_scripts
+Installing ros_pynmpc_node script to /home/swati/Quad_DR/RotorTM/install/payload_control/lib/payload_control
+writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/payload_control/install.log'

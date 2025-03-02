@@ -82,6 +82,10 @@ class controller:
         u_perpendicular = -m*l*np.cross(xi, params.Kxi @ e_xi + params.Kw @ e_w + (xi.T @ w_des) * xi_des_dot, axisa=0, axisb=0).T - m*np.cross(xi, np.cross(xi, qd[qn]["attach_accel"], axisa=0, axisb=0).T, axisa=0, axisb=0).T
         Force = u_parallel + u_perpendicular
         F = Force.T @ np.matmul(rot,e3)
+        print("mu", mu)
+        print("u_parallel", u_parallel)
+        print("u_perpendicular", u_perpendicular)
+        print("F", F)
 
         # Desired Attitude and Angular Velocity
         yaw_des = qd[qn]["yaw_des"]
@@ -106,7 +110,8 @@ class controller:
         # Quadrotor Attitude Control
         M = self.quadrotor_attitude_controller(qd[qn], params)
         # print(qn)
-        # print("quad forces: ", F, M)
+        
+        print("quad forces: ", F, M)
         # print("")
         return F, M, Rot_des
 
@@ -430,6 +435,7 @@ class controller:
         # print(lin_ang_accel)
 
         acceleration_des = ql["acc_des"] 
+        #print("acceleration_des", acceleration_des)
         # Cable tension distribution
         diag_rot = np.zeros((0,0), dtype=float)
         for i in range(1, nquad+1):
@@ -446,15 +452,34 @@ class controller:
         #print("   y: " + str(np.around(mu[5,0], 10)))
         #print("   z: " + str(np.around(mu[8,0], 10)))
         #print("---")
+        
         for i in range(1, nquad+1):
             if (0>mu[3*i-1]):
                 mu[3*i-1] = 0 
                 print("mu is less than zero")
+            
             #else:# Is this really necessary? 
                 #mu[3*i-1] = mu[3*i-1]
 
-        att_acc_c = acceleration_des + g*e3 + np.matmul(np.matmul(np.matmul(Rot, omega_asym), omega_asym), pl_params.rho_vec_list)
+        #print("rho_vec_list",pl_params.rho_vec_list)
 
+        Rho_mat = []
+        for j in range(nquad):
+            Rho_mat.append(self.skew_mat(pl_params.rho_vec_list[:, j]))   
+           
+        Rho_mat = LA.block_diag(*Rho_mat) #np.vstack(Rho_mat)
+        # print( "Rho_mat", Rho_mat)
+        # print("omega flat", omeega_dt.flatten(order='F'))
+
+        mat_mid = np.matmul(Rho_mat, omeega_dt.flatten(order='F'))
+        mat_mid = mat_mid.reshape((3,3),order='F')
+        
+
+        att_acc_c = acceleration_des + g*e3 + np.matmul(np.matmul(np.matmul(Rot, omega_asym), omega_asym), pl_params.rho_vec_list) # - np.matmul(Rot, mat_mid  )
+        
+        #print("shape", pl_params.rho_vec_list.shape)
+
+        print("att_acc_c", att_acc_c)
         # Quadrotor Attitude Controller
         qd_F = {}
         qd_M = {}
@@ -898,3 +923,8 @@ class controller:
         # print("")
         # print(M)
         return F, M
+
+    def skew_mat(self, v):
+        return np.array([[0, -v[2], v[1]],
+                     [v[2], 0, -v[0]],
+                     [-v[1], v[0], 0]])

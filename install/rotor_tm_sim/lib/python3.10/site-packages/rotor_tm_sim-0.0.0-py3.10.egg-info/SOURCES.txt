@@ -22,6 +22,8 @@ mesh/uav/race.stl
 mesh/uav/snapdragonflight.stl
 resource/rotor_tm_sim
 rotor_tm_sim/__init__.py
+rotor_tm_sim/data_saver_node.py
+rotor_tm_sim/plot_graphs.py
 rotor_tm_sim/runsim.py
 rotor_tm_sim/sim_utils.py
 rotor_tm_sim/simulation_base.py

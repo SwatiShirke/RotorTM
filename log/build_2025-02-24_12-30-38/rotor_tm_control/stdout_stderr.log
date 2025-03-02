@@ -1,0 +1,30 @@
+/home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+writing ../../build/rotor_tm_control/rotor_tm_control.egg-info/PKG-INFO
+writing dependency_links to ../../build/rotor_tm_control/rotor_tm_control.egg-info/dependency_links.txt
+writing entry points to ../../build/rotor_tm_control/rotor_tm_control.egg-info/entry_points.txt
+writing requirements to ../../build/rotor_tm_control/rotor_tm_control.egg-info/requires.txt
+writing top-level names to ../../build/rotor_tm_control/rotor_tm_control.egg-info/top_level.txt
+reading manifest file '../../build/rotor_tm_control/rotor_tm_control.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/rotor_tm_control/rotor_tm_control.egg-info/SOURCES.txt'
+running build
+running build_py
+copying rotor_tm_control/temp.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+copying rotor_tm_control/controller_node.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+copying rotor_tm_control/controller.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+copying rotor_tm_control/__init__.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control
+running install
+running install_lib
+copying /home/swati/Quad_DR/RotorTM/build/rotor_tm_control/build/lib/rotor_tm_control/controller_node.py -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control
+byte-compiling /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control/controller_node.py to controller_node.cpython-310.pyc
+running install_data
+copying resource/rotor_tm_control -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/ament_index/resource_index/packages
+copying package.xml -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/share/rotor_tm_control
+running install_egg_info
+removing '/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/rotor_tm_control/rotor_tm_control.egg-info to /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages/rotor_tm_control-0.0.0-py3.10.egg-info
+running install_scripts
+Installing controller_node script to /home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/rotor_tm_control
+writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/rotor_tm_control/install.log'

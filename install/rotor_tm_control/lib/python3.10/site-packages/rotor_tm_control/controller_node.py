@@ -32,6 +32,7 @@ def extract_number(uav_name):
 class controller_node(Node):
 
     def __init__(self, node_id, single_node, payload_params_path, uav_params_path, mechanism_params_path, payload_control_gain_path, uav_control_gain_path):
+        self.temp_count = 0 # must be removed, for debugging
         self.clock = Clock()
         self.node_id = node_id
         self.single_node = single_node
@@ -355,12 +356,20 @@ class controller_node(Node):
         Force=  np.array([fmn_msg.rlink_thrust.x, fmn_msg.rlink_thrust.y, fmn_msg.rlink_thrust.z])
         Moment = np.array([fmn_msg.moments.x, fmn_msg.moments.y, fmn_msg.moments.z])
         Null_space_vec = np.array([fmn_msg.null_space_vec.x, fmn_msg.null_space_vec.y, fmn_msg.null_space_vec.z])
-        print("Force", Force)
-        print("Moment", Moment)
-        # print("Force1 :", Force1)
-        # Force = np.array([-0.1,-0.1,Force1[2]])
-        # Moment = np.array([0.,0,0])
+        # print("Force", Force)
+        # print("Moment", Moment)
+        # print("Null_space_vec", Null_space_vec)
+        # # print("Force1 :", Force1)
+        # self.temp_count +=1
+        # if ( self.temp_count < 10):
+        #     Force = np.array([0.01,0.01,Force[2]])
+        #     lin_accel = self.pl["acc_des"] 
+        # else:
+        #     Force = np.array([0,0,Force[2]])
+        # lin_accel = np.array([0.,0,0])     
+        #Moment = np.array([0.,0,0])   
         mu, att_acc, F_list, M_list, quat_list, rot_list = self.controller.cooperative_suspended_payload_nmpc_controller(self.pl, self.qd, self.pl_params, self.quad_params, self.node_id, Force, Moment, Null_space_vec)
+        
         cen_pl_command = CenPLCommand()
         cen_pl_command.header.stamp = self.clock.now().to_msg()
         cen_pl_command.header.frame_id = "simulator" 

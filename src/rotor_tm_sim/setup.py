@@ -33,7 +33,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'sim_node = rotor_tm_sim.runsim:main'
+            'sim_node = rotor_tm_sim.runsim:main',
+            'data_saver_node = rotor_tm_sim.data_saver_node:main'
 
         ],
     },

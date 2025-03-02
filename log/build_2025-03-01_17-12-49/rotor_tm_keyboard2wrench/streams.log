@@ -1,0 +1,29 @@
+[1.336s] Invoking command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data
+[1.450s] /home/swati/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[1.450s]   warnings.warn(msg)
+[1.533s] running egg_info
+[1.543s] writing ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/PKG-INFO
+[1.544s] writing dependency_links to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/dependency_links.txt
+[1.544s] writing entry points to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/entry_points.txt
+[1.544s] writing requirements to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/requires.txt
+[1.544s] writing top-level names to ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/top_level.txt
+[1.576s] reading manifest file '../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+[1.577s] adding license file 'LICENSE'
+[1.577s] writing manifest file '../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info/SOURCES.txt'
+[1.578s] running build
+[1.578s] running build_py
+[1.578s] copying rotor_tm_keyboard2wrench/ext_wrench_sub.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+[1.578s] copying rotor_tm_keyboard2wrench/__init__.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+[1.578s] copying rotor_tm_keyboard2wrench/keyboard2wrench.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build/lib/rotor_tm_keyboard2wrench
+[1.578s] running install
+[1.581s] running install_lib
+[1.593s] running install_data
+[1.593s] copying resource/rotor_tm_keyboard2wrench -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/ament_index/resource_index/packages
+[1.594s] copying package.xml -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/share/rotor_tm_keyboard2wrench
+[1.594s] running install_egg_info
+[1.605s] removing '/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench-0.0.0-py3.10.egg-info' (and everything under it)
+[1.605s] Copying ../../build/rotor_tm_keyboard2wrench/rotor_tm_keyboard2wrench.egg-info to /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages/rotor_tm_keyboard2wrench-0.0.0-py3.10.egg-info
+[1.606s] running install_scripts
+[1.696s] Installing keyboard_input script to /home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/rotor_tm_keyboard2wrench
+[1.699s] writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log'
+[1.723s] Invoked command in '/home/swati/Quad_DR/RotorTM/src/rotor_tm_keyboard2wrench' returned '0': PS1=(mpcenv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rotor_tm_keyboard2wrench build --build-base /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/build install --record /home/swati/Quad_DR/RotorTM/build/rotor_tm_keyboard2wrench/install.log --single-version-externally-managed install_data

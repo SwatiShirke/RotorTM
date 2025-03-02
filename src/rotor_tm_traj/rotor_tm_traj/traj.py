@@ -13,8 +13,8 @@ from rotor_tm_msgs.msg import PositionCommand
 # from Optimization.entire_path.generate_polynomial_matrix import generate_polynomial_matrix
 # from Optimization.allocate_time import allocate_time
 
-Tf = 0.1
-N  = 10 
+Tf = 5
+N  = 15
 class traj:
 	def __init__(self,is_pl_nmpc = False):
 		# for circles
