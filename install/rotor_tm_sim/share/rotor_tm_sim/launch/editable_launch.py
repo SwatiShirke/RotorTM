@@ -9,8 +9,13 @@ from launch.conditions import IfCondition
 import os
 from launch_ros.actions import ComposableNodeContainer
 from launch_ros.descriptions import ComposableNode
+import yaml
 
-
+def read_config_yaml(file_path):
+    with open(file_path,"r") as file:
+        params = yaml.safe_load(file)
+        config = params["config_paths"]  
+        return config
 
 def generate_launch_description():
     controller_launches = []
@@ -20,39 +25,45 @@ def generate_launch_description():
     c_node = ComposableNode(package="rotor_tm_plcontrol",
                                      namespace=group_ns,
                                      name="nmpc_control_nodelet",
-                                     remappings=[
-                                       
+                                     remappings=[                                       
                                      ],
                                      plugin="nmpc_control_nodelet::NMPCControlNodelet",
                                      parameters=[])
+    
+    #read all config file's path from main_config.yaml
+    main_config_path = os.path.join(pkg_path , 'config', 'main_config.yaml')
+    config = read_config_yaml(main_config_path)
+    payload_params_path = config["payload_params_path"]
+    uav_params_path = config["uav_params_path"]
+    mechanism_params_path = config["mechanism_params_path"]
+    payload_control_gain_path = config["payload_control_gain_path"]
+    uav_control_gain_path = config["uav_control_gain_path"]
+    nmpc_filename = config["nmpc_filename"]
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            'payload_params_path',
-            #default_value=os.path.join(pkg_path , 'config', 'load_params/pointmass_payload.yaml'),
-            default_value=os.path.join(pkg_path , 'config', 'load_params/triangular_payload.yaml'),
+            'payload_params_path',            
+            default_value=os.path.join(pkg_path , 'config', payload_params_path),
             description='Path to the payload parameters file'
         ),
         DeclareLaunchArgument(
             'uav_params_path',
-            default_value=os.path.join(pkg_path , 'config', 'uav_params/'),
+            default_value=os.path.join(pkg_path , 'config', uav_params_path),
             description='Path to the UAV parameters file'
         ),
         DeclareLaunchArgument(
-            'mechanism_params_path',
-            #default_value=os.path.join(pkg_path , 'config', 'attach_mechanism/cable/1_robot_point_mass_0-5m.yaml'),
-            default_value=os.path.join(pkg_path , 'config', 'attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml'),
+            'mechanism_params_path',            
+            default_value=os.path.join(pkg_path , 'config', mechanism_params_path),
             description='Path to the mechanism parameters file'
         ),
         DeclareLaunchArgument(
-            'payload_control_gain_path',
-            #default_value=os.path.join(pkg_path , 'config', 'control_params/pointmass_cable_gains.yaml'), 
-            default_value=os.path.join(pkg_path , 'config', 'control_params/triangular_payload_cooperative_cable_gains.yaml'),
+            'payload_control_gain_path', 
+            default_value=os.path.join(pkg_path , 'config', payload_control_gain_path),
             description='Path to the payload control gains file'
         ),
         DeclareLaunchArgument(
             'uav_control_gain_path',
-            default_value=os.path.join(pkg_path , 'config', 'control_params/'),
+            default_value=os.path.join(pkg_path , 'config', uav_control_gain_path),
             description='Path to the UAV control gains file'
         ),
         DeclareLaunchArgument(

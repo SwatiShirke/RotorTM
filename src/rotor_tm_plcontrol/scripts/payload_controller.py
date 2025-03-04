@@ -8,6 +8,9 @@ import sys
 from cost_functions import cal_square_cost, calc_quat_cost
 import ipdb
 from constraints import get_constraints
+import sys
+from ament_index_python.packages import get_package_share_directory 
+import os
 def controller_setup(control_params,  payload_params):
     #read yaml files
     # pay_load_param_path = sys.argv[1]
@@ -131,15 +134,14 @@ def controller_setup(control_params,  payload_params):
 
  
 if __name__ == '__main__':
-    nmpc_filename = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/payload_nmpc_params.yaml"
-    #pl_filename = '/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/triangular_payload.yaml' 
-
-    #**Case 1
-    payload_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/triangular_payload.yaml"
-    uav_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/uav_params/"
-    mechanism_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml"
-    payload_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/triangular_payload_cooperative_cable_gains.yaml"
-    uav_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/"
+    ##therse parameters are getting passed from build.sh file in rotor_tm_nmpc package
+    config_path = get_package_share_directory("rotor_tm_config") 
+    payload_params_path =  os.path.join(config_path,'config', sys.argv[1])
+    uav_params_path = os.path.join(config_path, 'config', sys.argv[2])
+    mechanism_params_path = os.path.join(config_path, 'config', sys.argv[3])
+    payload_control_gain_path = os.path.join(config_path,'config',sys.argv[4])
+    uav_control_gain_path = os.path.join(config_path, 'config', sys.argv[5])
+    nmpc_filename = os.path.join(config_path,'config', sys.argv[6])
 
     read_params_funcs = read_params.read_params()
     payload_params, quad_params = read_params_funcs.system_setup(payload_params_path,uav_params_path,mechanism_params_path, payload_control_gain_path, uav_control_gain_path)

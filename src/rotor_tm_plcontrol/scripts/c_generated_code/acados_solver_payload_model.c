@@ -584,18 +584,18 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lbx = lubx;
     double* ubx = lubx + NBX;
     
-    lbx[0] = -5;
-    ubx[0] = 5;
-    lbx[1] = -5;
-    ubx[1] = 5;
-    lbx[2] = -5;
-    ubx[2] = 5;
-    lbx[3] = -5;
-    ubx[3] = 5;
-    lbx[4] = -5;
-    ubx[4] = 5;
-    lbx[5] = -5;
-    ubx[5] = 5;
+    lbx[0] = -10;
+    ubx[0] = 10;
+    lbx[1] = -10;
+    ubx[1] = 10;
+    lbx[2] = -10;
+    ubx[2] = 10;
+    lbx[3] = -10;
+    ubx[3] = 10;
+    lbx[4] = -10;
+    ubx[4] = 10;
+    lbx[5] = -10;
+    ubx[5] = 10;
 
     for (int i = 1; i < N; i++)
     {

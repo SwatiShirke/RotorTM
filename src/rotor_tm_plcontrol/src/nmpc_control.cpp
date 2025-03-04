@@ -35,7 +35,7 @@ void NMPCControl::run()
 
     if (solve_from_scratch_)
   {
-    std::cout << "Solving NMPC with hover as initial guess.\n";
+    // std::cout << "Solving NMPC with hover as initial guess.\n";
     wrapper_.prepare(current_state_);
     solve_from_scratch_ = false;
   }

@@ -53,7 +53,7 @@ namespace nmpc_control_nodelet
 
     clock_ = rclcpp::Clock();
     pre_odom_quat_ << 1.0, 0.0, 0.0, 0.0;
-    std::cout << "debug breakpont 2";
+    
     //set qos
     auto qos_profile_ = this->create_custom_qos();
     //punlsihers
@@ -169,21 +169,15 @@ void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand
   Eigen::Vector3d e3_vector = Eigen::Vector3d::Zero();
   e3_vector << 0.0,0,1;
   
-  //Q: where will we get force value from
-  //Q: why is force_moments = 4d vetor it should be 6d vector
-  // we have to make input vector 9d - F, M , V (null vector)
+  
   
   if (filt_reference_msg->points.size() > 1)
   {
     auto iterator(filt_reference_msg->points.begin());
     for (int i=0; i < kSamples; i++)
     { 
-      if (i==0)
-      {
-        std::cout<< " x " << iterator->position.x << " y " << iterator->position.y << " z " << iterator->position.z << '\n';
-      }
-      // std::cout << "inside pl controller"<< '\n';
-      // std::cout << iterator->position.x << iterator->position.y << iterator->position.z<< '\n';  
+      
+      
       reference_states.col(i) << iterator->position.x, iterator->position.y, iterator->position.z,
       iterator->velocity.x, iterator->velocity.y, iterator->velocity.z,
       iterator->quaternion.w, iterator->quaternion.x, iterator->quaternion.y, iterator->quaternion.z,
@@ -268,10 +262,7 @@ void NMPCControlNodelet::referenceCallback(const rotor_tm_msgs::msg::TrajCommand
 
 
   controller_.setReferenceStates(reference_states);
-  controller_.setReferenceInputs(reference_inputs);
-
-  // run controller at reference frequency
-  std::cout <<"running mpc controller now"<< '\n';
+  controller_.setReferenceInputs(reference_inputs);   
   controller_.run();
 
   // publish control and predicted path
@@ -395,7 +386,7 @@ void NMPCControlNodelet::publishPrediction()
 RCLCPP_COMPONENTS_REGISTER_NODE(nmpc_control_nodelet::NMPCControlNodelet)
 
 int main(int argc, char *argv[])
-{ std::cout<<"here..inside main"<<'\n';
+{ 
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<nmpc_control_nodelet::NMPCControlNodelet>(rclcpp::NodeOptions())); 
   rclcpp::shutdown();

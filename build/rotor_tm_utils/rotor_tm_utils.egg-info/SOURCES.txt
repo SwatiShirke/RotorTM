@@ -10,7 +10,6 @@ setup.py
 ../../build/rotor_tm_utils/rotor_tm_utils.egg-info/zip-safe
 resource/rotor_tm_utils
 rotor_tm_utils/CaQuatToRot .py
-rotor_tm_utils/Polytopes_utils.py
 rotor_tm_utils/QuatToRot.py
 rotor_tm_utils/QuatToYPR.py
 rotor_tm_utils/RPYtoRot_ZXY.py

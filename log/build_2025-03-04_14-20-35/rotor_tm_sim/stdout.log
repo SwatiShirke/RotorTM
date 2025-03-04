@@ -1,0 +1,36 @@
+running egg_info
+writing ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/PKG-INFO
+writing dependency_links to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/dependency_links.txt
+writing entry points to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/entry_points.txt
+writing requirements to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/requires.txt
+writing top-level names to ../../build/rotor_tm_sim/rotor_tm_sim.egg-info/top_level.txt
+reading manifest file '../../build/rotor_tm_sim/rotor_tm_sim.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/rotor_tm_sim/rotor_tm_sim.egg-info/SOURCES.txt'
+running build
+running build_py
+copying rotor_tm_sim/temp.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build/lib/rotor_tm_sim
+copying rotor_tm_sim/sim_utils.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build/lib/rotor_tm_sim
+copying rotor_tm_sim/plot_graphs.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build/lib/rotor_tm_sim
+copying rotor_tm_sim/simulation_base.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build/lib/rotor_tm_sim
+copying rotor_tm_sim/__init__.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build/lib/rotor_tm_sim
+copying rotor_tm_sim/runsim.py -> /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build/lib/rotor_tm_sim
+running install
+running install_lib
+copying /home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/build/lib/rotor_tm_sim/runsim.py -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages/rotor_tm_sim
+byte-compiling /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages/rotor_tm_sim/runsim.py to runsim.cpython-310.pyc
+running install_data
+copying resource/rotor_tm_sim -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/ament_index/resource_index/packages
+copying package.xml -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim
+copying launch/sim_launch.py -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+copying launch/rotortm_single_controller_node.py -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+copying launch/editable_launch.py -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+copying launch/rviz.py -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+copying launch/controller_launcher.py -> /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/share/rotor_tm_sim/launch
+running install_egg_info
+removing '/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages/rotor_tm_sim-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/rotor_tm_sim/rotor_tm_sim.egg-info to /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages/rotor_tm_sim-0.0.0-py3.10.egg-info
+running install_scripts
+Installing data_saver_node script to /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/rotor_tm_sim
+Installing sim_node script to /home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/rotor_tm_sim
+writing list of installed files to '/home/swati/Quad_DR/RotorTM/build/rotor_tm_sim/install.log'

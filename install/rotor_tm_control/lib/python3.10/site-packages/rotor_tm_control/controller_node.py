@@ -351,23 +351,9 @@ class controller_node(Node):
         #     print("acc ", acc)
 
     def desired_fmn_callback(self,fmn_msg):
-        
-        #print(fmn_msg.rlink_thrust)
         Force=  np.array([fmn_msg.rlink_thrust.x, fmn_msg.rlink_thrust.y, fmn_msg.rlink_thrust.z])
         Moment = np.array([fmn_msg.moments.x, fmn_msg.moments.y, fmn_msg.moments.z])
         Null_space_vec = np.array([fmn_msg.null_space_vec.x, fmn_msg.null_space_vec.y, fmn_msg.null_space_vec.z])
-        # print("Force", Force)
-        # print("Moment", Moment)
-        # print("Null_space_vec", Null_space_vec)
-        # # print("Force1 :", Force1)
-        # self.temp_count +=1
-        # if ( self.temp_count < 10):
-        #     Force = np.array([0.01,0.01,Force[2]])
-        #     lin_accel = self.pl["acc_des"] 
-        # else:
-        #     Force = np.array([0,0,Force[2]])
-        # lin_accel = np.array([0.,0,0])     
-        #Moment = np.array([0.,0,0])   
         mu, att_acc, F_list, M_list, quat_list, rot_list = self.controller.cooperative_suspended_payload_nmpc_controller(self.pl, self.qd, self.pl_params, self.quad_params, self.node_id, Force, Moment, Null_space_vec)
         
         cen_pl_command = CenPLCommand()
@@ -613,21 +599,6 @@ def main():
     uav_control_gain_path = sys.argv[7]
     single_node = sys.argv[2]    
     nr = sys.argv[1]
-    # print("$$$$$$$$$$$$$$$$$$$$$")
-    # print(nr)
-
-    # #**Case 1
-    # payload_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/pointmass_payload.yaml"
-    # uav_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/uav_params/"
-    # mechanism_params_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/attach_mechanism/cable/1_robot_point_mass_0-5m.yaml"
-    # payload_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/pointmass_cable_gains.yaml"
-    # uav_control_gain_path = "/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/control_params/"
-    # single_node = 0
-    # nr = 0
-
-    #node_name = 'controller_'+str(int(sys.argv[1])+1)
-    #node_name = 'controller_1'
-    #print(node_name)
     rclpy.init()
     
 

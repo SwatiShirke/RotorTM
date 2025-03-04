@@ -1,7 +1,6 @@
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/RPYtoRot_ZXY.py
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/QuatToYPR.py
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/rosutilslib.py
-/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/Polytopes_utils.py
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/vec2asym.py
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__init__.py
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/QuatToRot.py
@@ -13,7 +12,6 @@
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__pycache__/RPYtoRot_ZXY.cpython-310.pyc
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__pycache__/QuatToYPR.cpython-310.pyc
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__pycache__/rosutilslib.cpython-310.pyc
-/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__pycache__/Polytopes_utils.cpython-310.pyc
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__pycache__/vec2asym.cpython-310.pyc
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__pycache__/__init__.cpython-310.pyc
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages/rotor_tm_utils/__pycache__/QuatToRot.cpython-310.pyc

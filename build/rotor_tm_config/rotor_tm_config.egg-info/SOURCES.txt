@@ -9,6 +9,7 @@ setup.py
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/top_level.txt
 ../../build/rotor_tm_config/rotor_tm_config.egg-info/zip-safe
 config/1_robot_point_mass_0-5m.yaml
+config/main_config.yaml
 config/attach_mechanism/cable/1_robot_point_mass_0-5m.yaml
 config/attach_mechanism/cable/2_robots_long_bar_payload_0-5m.yaml
 config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml
