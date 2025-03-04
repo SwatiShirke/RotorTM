@@ -73,7 +73,7 @@ int payload_model_acados_sim_create(payload_model_sim_solver_capsule * capsule)
     const int np = PAYLOAD_MODEL_NP;
     bool tmp_bool;
 
-    double Tsim = 0.01;
+    double Tsim = 0.05;
 
     
     // explicit ode

@@ -1,0 +1,8 @@
+[ 14%] [32mBuilding CXX object CMakeFiles/pl_nmpc_shared_lib.dir/src/solver.cpp.o[0m
+[01m[K/home/swati/Quad_DR/RotorTM/src/rotor_tm_plcontrol/src/solver.cpp:22:10:[m[K [01;31m[Kfatal error: [m[Kcoin-or/IpStdCInterface.h: No such file or directory
+   22 | #include [01;31m[K<coin-or/IpStdCInterface.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/pl_nmpc_shared_lib.dir/build.make:118: CMakeFiles/pl_nmpc_shared_lib.dir/src/solver.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/pl_nmpc_shared_lib.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

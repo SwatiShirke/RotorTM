@@ -9,7 +9,6 @@ from scipy.interpolate import interp1d
 import ipdb
 from utils import read_yaml, QuatToRot
 from rotor_tm_utils import read_params
-
 import rclpy
 from rclpy.clock import Clock
 from rclpy.time import Time
@@ -36,19 +35,19 @@ if __name__ == '__main__':
     control_params = read_params_funcs.read_pl_nmpc_params(nmpc_filename)
     
     model, acados_solver, acados_integrator = controller_setup(control_params, payload_params) 
-
+    
     #read and track and interpolate
     track = 'tracks/trajectory.txt'
     [time_points, pos_ref, vel_ref, acc_ref, yaw_ref, yawr_ref, start_pose, last_pose ] = read_interpl(track)
     #visualize_traj(track)
-    Tf = 1    # time step
+    Tf = 0.1    # time step
     N = 10     # prediction horizon
-    T = 7  # maximum simulation time[s]
+    T = 10  # maximum simulation time[s]
     sref_N = 2  # reference for final reference progress
     Ts = Tf / N 
     Nsim = int(T /Ts)
 
-    err_theshold = 0.005
+    err_theshold = 1
     nx = model.x.rows()
     nu = model.u.rows()
     ny = nx + nu
@@ -56,9 +55,9 @@ if __name__ == '__main__':
     simX = np.zeros((Nsim+1, nx), dtype= float)
     simU = np.zeros((Nsim+1, nu), dtype= float)
     model.x0 = [start_pose[0],start_pose[1],start_pose[2], 0,0,0, 1,0,0,0, 0,0,0]
-    simX[0,:] = model.x0
+    simX[0,:] = model.x0 
     #mg = model.mass * model.g
-    mg = 0.250*9.81
+    mg = payload_params.mass * payload_params.grav
     u_ref = np.array([0,0,mg, 0,0,0, 0,0,0]) 
     
     #simulation loop 
@@ -138,7 +137,7 @@ if __name__ == '__main__':
     plot_followed_traj(tracked_traj[:,0], tracked_traj[:,1],tracked_traj[:,2], pos_ref[0](time_points), pos_ref[1](time_points), pos_ref[2](time_points))
     
     #plot_inputs(simU[:,0:3],simU[:,3:6],t)
-    # Print some statstime_points
+    # Print some statstime_points 
     #print("Average speed:{}m/s".format(np.average(simX[:, 3])))
     print("Lap time: {}s".format(T))
     # avoid plotting when running on Travis

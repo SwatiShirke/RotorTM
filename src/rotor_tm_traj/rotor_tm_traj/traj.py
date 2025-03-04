@@ -5,16 +5,19 @@ from numpy import cos
 from scipy.spatial.transform import Rotation as rot
 from rotor_tm_traj import Optimization 
 from rotor_tm_traj.Optimization.entire_path.generate_poly import generate_poly
+import os 
+from ament_index_python.packages import get_package_share_directory
 from rotor_tm_msgs.msg import PositionCommand
+from rotor_tm_utils import read_params
 
-# from Optimization.entire_path.generate_poly import generate_poly
-# from Optimization.entire_path.generate_poly_coeff import generate_poly_coeff
-# from Optimization.optimize_traj import optimize_traj
-# from Optimization.entire_path.generate_polynomial_matrix import generate_polynomial_matrix
-# from Optimization.allocate_time import allocate_time
 
-Tf = 5
-N  = 15
+pkg_path = get_package_share_directory("rotor_tm_config")
+payload_nmpc_params_path = os.path.join(pkg_path,"config","control_params/payload_nmpc_params.yaml")
+read_params_funcs = read_params.read_params()
+pl_nmpc_params = read_params_funcs.read_pl_nmpc_params(payload_nmpc_params_path)
+Tf = pl_nmpc_params.Tf
+N = pl_nmpc_params.N
+
 class traj:
 	def __init__(self,is_pl_nmpc = False):
 		# for circles

@@ -75,7 +75,7 @@ include_directories(
 link_directories(${acados_generated_code})
 add_library(pl_nmpc_shared_lib SHARED src/pl_nmpc_controller_node.cpp src/wrapper.cpp src/nmpc_control.cpp)
 set_target_properties(pl_nmpc_shared_lib PROPERTIES COMPILE_DEFINITIONS "COMPOSITION_BUILDING_DLL")
-ament_target_dependencies(pl_nmpc_shared_lib rclcpp rotor_tm_msgs ${dependencies})
+ament_target_dependencies(pl_nmpc_shared_lib ${dependencies})
 
 #include .so files
 install( FILES scripts/c_generated_code/libacados_ocp_solver_payload_model.so 
@@ -89,13 +89,16 @@ target_link_libraries(pl_nmpc_shared_lib
   ${acados_lib}/libacados.so
 )  
 
-#rclcpp_components_register_nodes(pl_nmpc_shared_lib "nmpc_control_nodelet::NMPCControlNodelet")
+rclcpp_components_register_nodes(pl_nmpc_shared_lib "nmpc_control_nodelet::NMPCControlNodelet")
 ament_export_libraries(pl_nmpc_shared_lib)
 ament_export_dependencies(${dependencies})
 
 
 add_executable(pl_nmpc_node src/pl_nmpc_controller_node.cpp)
 ament_target_dependencies(pl_nmpc_node ${dependencies})
+
+
+
 
 target_link_libraries(pl_nmpc_node pl_nmpc_shared_lib)
 

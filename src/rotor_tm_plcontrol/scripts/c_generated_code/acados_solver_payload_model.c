@@ -426,12 +426,19 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
         payload_model_acados_update_time_steps(capsule, N, new_time_steps);
     }
     else
-    {double time_step = 0.01;
-        for (int i = 0; i < N; i++)
-        {
-            ocp_nlp_in_set(nlp_config, nlp_dims, nlp_in, i, "Ts", &time_step);
-            ocp_nlp_cost_model_set(nlp_config, nlp_dims, nlp_in, i, "scaling", &time_step);
-        }
+    {double* time_steps = malloc(N*sizeof(double));
+        time_steps[0] = 0.05;
+        time_steps[1] = 0.05;
+        time_steps[2] = 0.05;
+        time_steps[3] = 0.05;
+        time_steps[4] = 0.05;
+        time_steps[5] = 0.05;
+        time_steps[6] = 0.1;
+        time_steps[7] = 0.2;
+        time_steps[8] = 0.2;
+        time_steps[9] = 0.2;
+        payload_model_acados_update_time_steps(capsule, N, time_steps);
+        free(time_steps);
     }
 
     /**** Dynamics ****/

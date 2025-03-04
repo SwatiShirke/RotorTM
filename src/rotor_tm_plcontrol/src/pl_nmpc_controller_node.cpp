@@ -392,7 +392,7 @@ void NMPCControlNodelet::publishPrediction()
 
 }// namespace nodelet ends here
 
-//RCLCPP_COMPONENTS_REGISTER_NODE(nmpc_control_nodelet::NMPCControlNodelet)
+RCLCPP_COMPONENTS_REGISTER_NODE(nmpc_control_nodelet::NMPCControlNodelet)
 
 int main(int argc, char *argv[])
 { std::cout<<"here..inside main"<<'\n';

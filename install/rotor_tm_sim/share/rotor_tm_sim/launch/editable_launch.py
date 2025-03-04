@@ -97,15 +97,15 @@ def generate_launch_description():
                 'nr': LaunchConfiguration('number_of_robots')
             }.items()
         ),             
-        # ComposableNodeContainer(name='container_1',
-        #                         namespace=group_ns,
-        #                         package='rclcpp_components',
-        #                         executable='component_container',
-        #                         composable_node_descriptions=[
-        #                           c_node
-        #                         ],
-        #                         output='screen',
-        #                         emulate_tty=True),
+        ComposableNodeContainer(name='container_1',
+                                namespace=group_ns,
+                                package='rclcpp_components',
+                                executable='component_container',
+                                composable_node_descriptions=[
+                                  c_node
+                                ],
+                                output='screen',
+                                emulate_tty=True),
            
         # Include RViz launch file
         IncludeLaunchDescription(

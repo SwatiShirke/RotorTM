@@ -9,8 +9,10 @@ setup.py
 ../../build/payload_control/payload_control.egg-info/requires.txt
 ../../build/payload_control/payload_control.egg-info/top_level.txt
 ../../build/payload_control/payload_control.egg-info/zip-safe
+payload_control/CBF_payload_constraints.py
 payload_control/__init__.py
 payload_control/constraints.py
+payload_control/constraints_utils.py
 payload_control/cost_functions.py
 payload_control/payload_controller.py
 payload_control/payload_model.py

@@ -14,7 +14,10 @@ def controller_setup(control_params,  payload_params):
     # nmpc_control_path = sys.argv[2]    
     #MPC Key parameters
     N = control_params.N
-    Tf = control_params.Tf 
+    print("N")
+    print("tf", control_params.Tf)
+    Tf = 1 #control_params.Tf 
+    time_steps = np.array([0.05,0.05,0.05,0.05,0.05,0.05,0.1,0.2,0.2,0.2])
 
     #constaints limits
     pl_max_vel = control_params.pl_max_vel
@@ -41,7 +44,7 @@ def controller_setup(control_params,  payload_params):
     #using new state vector for cost calculations
     Q_mat =  ca.vertcat(10, 10, 10, 10, 10, 10, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1e-4)
     R_mat =  ca.vertcat(100, 100, 100, 100, 100,100, 1e-2, 1e-2, 1e-2)
-    Q_emat = ca.vertcat(10, 10, 10, 10, 10, 10, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4)
+    Q_emat = ca.vertcat(100, 100, 100, 100, 100, 100, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4)
 
     #ipdb.set_trace()
     #path cost
@@ -109,6 +112,7 @@ def controller_setup(control_params,  payload_params):
     ##controller settings
     ocp.solver_options.N_horizon = N
     ocp.solver_options.tf = Tf
+    ocp.solver_options.time_steps = time_steps
     ocp.solver_options.qp_solver = 'PARTIAL_CONDENSING_HPIPM' # FULL_CONDENSING_QPOASES
     ocp.solver_options.nlp_solver_type = 'SQP_RTI'
     ocp.solver_options.hessian_approx = "EXACT"

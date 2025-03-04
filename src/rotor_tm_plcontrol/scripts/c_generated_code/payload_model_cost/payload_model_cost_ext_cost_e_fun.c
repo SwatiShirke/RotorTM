@@ -61,7 +61,7 @@ static const casadi_int casadi_s3[5] = {1, 1, 0, 1, 0};
 /* payload_model_cost_ext_cost_e_fun:(i0[13],i1[],i2[],i3[22])->(o0) */
 static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem) {
   casadi_real a0, a1, a10, a11, a12, a13, a14, a2, a3, a4, a5, a6, a7, a8, a9;
-  a0=10.;
+  a0=100.;
   a1=arg[3]? arg[3][0] : 0;
   a2=arg[0]? arg[0][0] : 0;
   a1=(a1-a2);

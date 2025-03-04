@@ -73,7 +73,7 @@ class read_params:
         key: (data[key] if (val.default == val.empty)&(key in data) else data.get(key, val.default))
         for key, val in inspect.signature(clss_name).parameters.items()
         }
-    )
+    ) 
 
   def system_setup(self, payload_params_path = None,quad_params_path = None,mechanism_params_path = None,payload_control_params_path = None,uav_controller_params_path=None): 
     payload_control_gains = self.read_payload_control_gains(payload_control_params_path)
@@ -274,8 +274,10 @@ class read_params:
 
 
   def read_pl_nmpc_params(self, path):
+    print(path)
     params_dict = self.yaml_to_dict(path)
     params = self.dict_to_class(pl_nmpc_controller_class, pl_nmpc_controller_class, params_dict)
+    print("read param", params.Tf)
     return params
 
 

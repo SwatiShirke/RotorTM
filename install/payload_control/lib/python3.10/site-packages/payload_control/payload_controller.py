@@ -1,4 +1,4 @@
-#from acados_template import AcadosOcp, AcadosOcpSolver, AcadosSimSolver
+from acados_template import AcadosOcp, AcadosOcpSolver, AcadosSimSolver
 import casadi as ca
 import numpy as np
 from payload_control.payload_model import payload_model
@@ -8,7 +8,7 @@ import sys
 from cost_functions import cal_square_cost, calc_quat_cost
 import ipdb
 from constraints import get_constraints
-
+from CBF_payload_constraints import Obs, TriangleObs, get_pl_obs_constraints
 import sys
 import os
 
@@ -21,13 +21,9 @@ sys.path.append('/home/swati/acados/python')
 sys.path.append("/home/swati/acados" )
 #acados_source_dir = os.getenv('ACADOS_SOURCE_DIR', '/home/swati/acados')
 
-# Now you can import the Acados Python bindings
-from acados_template import AcadosOcp, AcadosOcpSolver, AcadosSimSolver
 
 def controller_setup(control_params,  payload_params):
-    #read yaml files
-    # pay_load_param_path = sys.argv[1]
-    # nmpc_control_path = sys.argv[2]    
+    #read yaml file   
     #MPC Key parameters
     N = control_params.N
     Tf = control_params.Tf 
@@ -55,20 +51,21 @@ def controller_setup(control_params,  payload_params):
     #system states = pos, quaternions, linear vel, angular vel (13 x 1)
     #to handle mimatch between refence and model state, we convert quaternions to ypr and formulating new state vector
     #using new state vector for cost calculations
-    Q_mat =  ca.vertcat(1000,1000,1000, 1000, 1000, 1000, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
+    Q_mat =  ca.vertcat(10,10,10, 10, 10, 10, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
     R_mat =  ca.vertcat(10, 10, 10, 10, 10, 10, 1e-2, 1e-2, 1e-2)
-    Q_emat = ca.vertcat(90000,90000,90000, 1000,1000,1000, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1)
+    Q_emat = ca.vertcat(100,100,100, 100, 100, 100, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
 
-    #ipdb.set_trace()
+    
     #path cost
-    # x_val = model.x
-    # quat = x_val[3:7]  
-    # y,p,r = QuatToYPR.QuatToYPR(quat)
-    # x_array = ca.vertcat(x_val[0:3],r,p,y, x_val[7:10], x_val[10:13] )
+    x_val = model.x
+    quat = x_val[3:7]  
+    init_flag = ca.SX.sym("init_flag")
+    hx0 = ca.SX.sym("hx0")
+
     x_array = model.x
     u_aaray = model.u
     ref_array = model.p
-    #print(ref_array)
+    
 
     #calculate square cost    
     ocp.cost.cost_type = 'EXTERNAL'  
@@ -89,7 +86,6 @@ def controller_setup(control_params,  payload_params):
     
     ##constraints
     #input constraints
-    mg = 0.250*9.81
     ocp.constraints.lbu = np.array([-10,-10,0, -10,-10,-10])
     ocp.constraints.ubu = np.array([20,20,20,10,10,10])
     ocp.constraints.idxbu = np.array([0,1,2,3,4,5])
@@ -101,27 +97,31 @@ def controller_setup(control_params,  payload_params):
     ocp.constraints.lbx = np.array([pl_min_vel, pl_min_omega]).flatten()
     ocp.constraints.ubx = np.array([pl_max_vel, pl_max_omega]).flatten()
     ocp.constraints.idxbx = np.array([ 3,4,5, 10,11,12])
-
+    
     # ##inequlity constraints
     # u = model.u
     # h_list = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
     # ocp.model.con_h_expr =h_list
     # ocp.dims.nh = h_list.shape[0]
     # ocp.constraints.lh = np.zeros((h_list.size1(), 1))          # lower bound
-    # ocp.constraints.uh = 1 * np.ones((h_list.size1(), 1))            # Upper bound 
+    # ocp.constraints.uh = 100 * np.ones((h_list.size1(), 1))            # Upper bound 
     # ocp.model.lh = np.zeros((h_list.size1(), 1))          # lower bound
-    # ocp.model.uh = 1 * np.ones((h_list.size1(), 1))  
-    
-    # print(ocp.constraints.lbu.shape)
-    # print(ocp.constraints.lbx.shape)
-    # print(ocp.constraints.lg.shape)
-    # print(ocp.constraints.lh.shape)
-    # print(ocp.constraints.lphi.shape)
-    # print(ocp.constraints.ubu.shape)
-    # print(ocp.constraints.ubx.shape)
-    # print(ocp.constraints.ug.shape)
-    # print(ocp.constraints.uh.shape)
-    # ipdb.set_trace() 
+    # ocp.model.uh = 100 * np.ones((h_list.size1(), 1)) 
+
+    # #payload obstacle constraints
+    # obs1 = Obs(1,1,1, 0.5,0.5,0.5)
+    # payload = TriangleObs()
+    # A_pl, B_pl = payload.get_convex_rep()
+    # A_obs, B_obs = obs1.get_convex_rep() 
+    # h_list = get_pl_obs_constraints(A_obs, B_obs, A_pl, B_pl)     
+    # ocp.model.con_h_expr =h_list
+    # ocp.dims.nh = h_list.shape[0]
+    # ocp.constraints.lh = np.zeros((h_list.shape[0], 1))          # lower bound
+    # ocp.constraints.uh = 1 * np.ones((h_list.shape[0], 1))            # Upper bound 
+    # ocp.model.lh = np.zeros((h_list.shape[0], 1))          # lower bound
+    # ocp.model.uh = 1 * np.ones((h_list.shape[0], 1)) 
+
+
 
     ##controller settings
     ocp.solver_options.N_horizon = N

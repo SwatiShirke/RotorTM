@@ -19,6 +19,7 @@
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/local_setup.dsv
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/package.dsv
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/packages/rotor_tm_plcontrol
+/home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/ament_index/resource_index/rclcpp_components/rotor_tm_plcontrol
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/ament_cmake_export_libraries-extras.cmake
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/ament_cmake_export_dependencies-extras.cmake
 /home/swati/Quad_DR/RotorTM/install/rotor_tm_plcontrol/share/rotor_tm_plcontrol/cmake/rotor_tm_plcontrolConfig.cmake

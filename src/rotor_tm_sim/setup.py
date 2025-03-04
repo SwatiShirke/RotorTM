@@ -1,7 +1,6 @@
 from setuptools import find_packages, setup
 import os
 from glob import glob
-
 package_name = 'rotor_tm_sim'
 
 def package_data_files(source, destination):
