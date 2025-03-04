@@ -1,0 +1,9 @@
+config_paths:
+  payload_params_path : "load_params/triangular_payload.yaml" #"load_params/pointmass_payload.yaml"
+  uav_params_path : "uav_params/"
+  mechanism_params_path : "attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml" #attach_mechanism/cable/1_robot_point_mass_0-5m.yaml
+  payload_control_gain_path : "control_params/triangular_payload_cooperative_cable_gains.yaml" #control_params/pointmass_cable_gains.yaml
+  uav_control_gain_path: control_params/ 
+  nmpc_filename : "control_params/payload_nmpc_params.yaml"
+
+

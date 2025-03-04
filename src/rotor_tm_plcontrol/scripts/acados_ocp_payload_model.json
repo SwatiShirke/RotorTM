@@ -495,8 +495,7 @@
             1,
             1
         ],
-        "store_iterates": false,
-        "tf": 1,
+        "tf": 1.0,
         "time_steps": [
             0.05,
             0.05,

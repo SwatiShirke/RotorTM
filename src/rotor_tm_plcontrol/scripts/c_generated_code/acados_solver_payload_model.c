@@ -625,6 +625,7 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lubx = calloc(2*NBX, sizeof(double));
     double* lbx = lubx;
     double* ubx = lubx + NBX;
+    
     lbx[0] = -10;
     ubx[0] = 10;
     lbx[1] = -10;
