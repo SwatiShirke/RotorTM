@@ -45,7 +45,7 @@ def payload_model(params):
 
     #payload params
     m = params.mass
-    g = 9.81
+    g = params.grav
     I_load = params.I                           #intertia
     M_load = m * np.eye((3))                    #mass distribution
 
@@ -175,7 +175,7 @@ def payload_model(params):
    
 
 if __name__ == "__main__":
-    filename = '/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/triangular_payload.yaml'
+    filename = '/home/dhruv/RotorTM/src/rotor_tm_config/config/load_params/triangular_payload.yaml'
     read_params_funcs = read_params.read_params()
     control_params = read_params_funcs.read_payload_params(filename)
     f_expl = payload_model(control_params)

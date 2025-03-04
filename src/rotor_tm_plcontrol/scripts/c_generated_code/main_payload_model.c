@@ -40,12 +40,13 @@
 #include "acados_solver_payload_model.h"
 
 // blasfeo
-#include "blasfeo/include/blasfeo_d_aux_ext_dep.h"
+#include "blasfeo_d_aux_ext_dep.h"
 
 #define NX     PAYLOAD_MODEL_NX
 #define NP     PAYLOAD_MODEL_NP
 #define NU     PAYLOAD_MODEL_NU
 #define NBX0   PAYLOAD_MODEL_NBX0
+#define NP_GLOBAL   PAYLOAD_MODEL_NP_GLOBAL
 
 
 int main()
@@ -143,8 +144,6 @@ int main()
     double utraj[NU * N];
 
     // solve ocp in loop
-    int rti_phase = 0;
-
     for (int ii = 0; ii < NTIMINGS; ii++)
     {
         // initialize solution
@@ -154,9 +153,8 @@ int main()
             ocp_nlp_out_set(nlp_config, nlp_dims, nlp_out, i, "u", u0);
         }
         ocp_nlp_out_set(nlp_config, nlp_dims, nlp_out, N, "x", x_init);
-        ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "rti_phase", &rti_phase);
         status = payload_model_acados_solve(acados_ocp_capsule);
-        ocp_nlp_get(nlp_config, nlp_solver, "time_tot", &elapsed_time);
+        ocp_nlp_get(nlp_solver, "time_tot", &elapsed_time);
         min_time = MIN(elapsed_time, min_time);
     }
 
@@ -185,13 +183,15 @@ int main()
 
     // get solution
     ocp_nlp_out_get(nlp_config, nlp_dims, nlp_out, 0, "kkt_norm_inf", &kkt_norm_inf);
-    ocp_nlp_get(nlp_config, nlp_solver, "sqp_iter", &sqp_iter);
+    ocp_nlp_get(nlp_solver, "sqp_iter", &sqp_iter);
 
     payload_model_acados_print_stats(acados_ocp_capsule);
 
     printf("\nSolver info:\n");
     printf(" SQP iterations %2d\n minimum time for %d solve %f [ms]\n KKT %e\n",
            sqp_iter, NTIMINGS, min_time*1000, kkt_norm_inf);
+
+
 
     // free solver
     status = payload_model_acados_free(acados_ocp_capsule);

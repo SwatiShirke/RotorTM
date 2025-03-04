@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/srv/detail/step_pose__struct.hpp"
 #include "rotor_tm_msgs/srv/detail/step_pose__builder.hpp"
 #include "rotor_tm_msgs/srv/detail/step_pose__traits.hpp"
+#include "rotor_tm_msgs/srv/detail/step_pose__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__SRV__STEP_POSE_HPP_

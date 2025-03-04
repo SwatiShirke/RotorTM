@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/msg/detail/position_command__struct.hpp"
 #include "rotor_tm_msgs/msg/detail/position_command__builder.hpp"
 #include "rotor_tm_msgs/msg/detail/position_command__traits.hpp"
+#include "rotor_tm_msgs/msg/detail/position_command__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__MSG__POSITION_COMMAND_HPP_

@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/srv/detail/vec4__struct.hpp"
 #include "rotor_tm_msgs/srv/detail/vec4__builder.hpp"
 #include "rotor_tm_msgs/srv/detail/vec4__traits.hpp"
+#include "rotor_tm_msgs/srv/detail/vec4__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__SRV__VEC4_HPP_

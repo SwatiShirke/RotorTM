@@ -1,4 +1,4 @@
 import sys
 if sys.prefix == '/usr':
     sys.real_prefix = sys.prefix
-    sys.prefix = sys.exec_prefix = '/home/swati/Quad_DR/RotorTM/install/payload_control'
+    sys.prefix = sys.exec_prefix = '/home/dhruv/RotorTM/install/payload_control'

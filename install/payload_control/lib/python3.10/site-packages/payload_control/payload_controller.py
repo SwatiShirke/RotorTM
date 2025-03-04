@@ -14,11 +14,25 @@ import os
 
 # Add Acados library path to the system path for Python imports
 #acados_lib_path = os.getenv('LD_LIBRARY_PATH', '')
-os.environ['LD_LIBRARY_PATH'] = "/home/swati/acados/lib" 
-LD_LIBRARY_PATH="/home/swati/acados/lib"
-sys.path.append("/home/swati/acados/lib" )
-sys.path.append('/home/swati/acados/python')
-sys.path.append("/home/swati/acados" )
+# acados_dir = os.getenv('ACADOS_SOURCE_DIR', 'home/dhruv/acados')  # Default path can be adjusted if needed
+# acados_dir = os.getenv('ACADOS_SOURCE_DIR')
+# # Ensure the path exists, otherwise raise an error.
+# if not os.path.exists(acados_dir):
+#     raise ValueError(f"ACADOS directory not found: {acados_dir}")
+
+# # Set the library path and append to sys.path
+# os.environ['LD_LIBRARY_PATH'] = os.path.join(acados_dir, 'lib')
+# sys.path.append(os.path.join(acados_dir, 'lib'))
+# sys.path.append(os.path.join(acados_dir, 'python'))
+# sys.path.append(acados_dir)
+
+
+
+# os.environ['LD_LIBRARY_PATH'] = "/home/dhruv/acados/lib" 
+# LD_LIBRARY_PATH="/home/dhruv/acados/lib"
+# sys.path.append("/home/dhruv/acados/lib" )
+# sys.path.append('/home/dhruv/acados/python')
+# sys.path.append("/home/dhruv/acados" )
 #acados_source_dir = os.getenv('ACADOS_SOURCE_DIR', '/home/swati/acados')
 
 
@@ -142,5 +156,18 @@ def controller_setup(control_params,  payload_params):
     return model, acados_solver, acados_integrator
 
 
- 
+if __name__ == "__main__":
+    nmpc_filename = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/payload_nmpc_params.yaml"
+    #pl_filename = '/home/swati/Quad_DR/ros2_ws/src/rotor_tm_config/config/load_params/triangular_payload.yaml' 
+
+    #**Case 1
+    payload_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/load_params/triangular_payload.yaml"
+    uav_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/uav_params/"
+    mechanism_params_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/attach_mechanism/cable/3_robots_triangular_payload_0-5m.yaml"
+    payload_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/triangular_payload_cooperative_cable_gains.yaml"
+    uav_control_gain_path = "/home/dhruv/RotorTM/src/rotor_tm_config/config/control_params/"
+    read_params_funcs = read_params.read_params()
+    payload_params, quad_params = read_params_funcs.system_setup(payload_params_path,uav_params_path,mechanism_params_path, payload_control_gain_path, uav_control_gain_path)
+    control_params = read_params_funcs.read_pl_nmpc_params(nmpc_filename)
+    a,b,c = controller_setup(control_params,payload_params)
 

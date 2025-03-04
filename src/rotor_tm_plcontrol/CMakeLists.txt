@@ -36,8 +36,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fopenmp -O3")
 
 # Set the acados source path from bashrc
-#set(acados_path $ENV{ACADOS_SOURCE_DIR})
-set(acados_path "/home/swati/acados")
+set(acados_path $ENV{ACADOS_SOURCE_DIR})
 set(acados_lib ${acados_path}/lib) 
 
 

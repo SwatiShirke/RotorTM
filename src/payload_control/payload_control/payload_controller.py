@@ -14,11 +14,25 @@ import os
 
 # Add Acados library path to the system path for Python imports
 #acados_lib_path = os.getenv('LD_LIBRARY_PATH', '')
-os.environ['LD_LIBRARY_PATH'] = "/home/swati/acados/lib" 
-LD_LIBRARY_PATH="/home/swati/acados/lib"
-sys.path.append("/home/swati/acados/lib" )
-sys.path.append('/home/swati/acados/python')
-sys.path.append("/home/swati/acados" )
+# acados_dir = os.getenv('ACADOS_SOURCE_DIR', 'home/dhruv/acados')  # Default path can be adjusted if needed
+# acados_dir = os.getenv('ACADOS_SOURCE_DIR')
+# # Ensure the path exists, otherwise raise an error.
+# if not os.path.exists(acados_dir):
+#     raise ValueError(f"ACADOS directory not found: {acados_dir}")
+
+# # Set the library path and append to sys.path
+# os.environ['LD_LIBRARY_PATH'] = os.path.join(acados_dir, 'lib')
+# sys.path.append(os.path.join(acados_dir, 'lib'))
+# sys.path.append(os.path.join(acados_dir, 'python'))
+# sys.path.append(acados_dir)
+
+
+
+# os.environ['LD_LIBRARY_PATH'] = "/home/dhruv/acados/lib" 
+# LD_LIBRARY_PATH="/home/dhruv/acados/lib"
+# sys.path.append("/home/dhruv/acados/lib" )
+# sys.path.append('/home/dhruv/acados/python')
+# sys.path.append("/home/dhruv/acados" )
 #acados_source_dir = os.getenv('ACADOS_SOURCE_DIR', '/home/swati/acados')
 
 
@@ -140,7 +154,3 @@ def controller_setup(control_params,  payload_params):
     acados_integrator = AcadosSimSolver(ocp, json_file = solver_json)
 
     return model, acados_solver, acados_integrator
-
-
- 
-

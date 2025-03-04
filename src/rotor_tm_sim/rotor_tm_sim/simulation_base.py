@@ -1637,7 +1637,8 @@ class simulation_base(Node):
     ##################                  Call backs                  ####################
     
     def ext_wrench_callback(self, wrench_command):
-        self.get_logger().info(wrench_command.force.x)
+        # self.get_logger().info(wrench_command.force.x)
+        self.get_logger().info(f"Wrench force x: {wrench_command.force.x}")
         #print(wrench_command.force.x)
         self.ext_force = np.array([wrench_command.force.x, wrench_command.force.y, wrench_command.force.z])
         self.ext_torque= np.array([wrench_command.torque.x, wrench_command.torque.y, wrench_command.torque.z])

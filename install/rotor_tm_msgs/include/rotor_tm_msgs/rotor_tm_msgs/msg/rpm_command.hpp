@@ -7,5 +7,6 @@
 #include "rotor_tm_msgs/msg/detail/rpm_command__struct.hpp"
 #include "rotor_tm_msgs/msg/detail/rpm_command__builder.hpp"
 #include "rotor_tm_msgs/msg/detail/rpm_command__traits.hpp"
+#include "rotor_tm_msgs/msg/detail/rpm_command__type_support.hpp"
 
 #endif  // ROTOR_TM_MSGS__MSG__RPM_COMMAND_HPP_
