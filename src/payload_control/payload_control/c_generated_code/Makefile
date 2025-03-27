@@ -45,6 +45,9 @@ MODEL_OBJ := $(MODEL_SRC:.c=.o)
 OCP_SRC=
 
 
+OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt.c
+OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun_jac_uxt_zt_hess.c
+OCP_SRC+= payload_model_constraints/payload_model_constr_h_fun.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun_jac_hess.c
 OCP_SRC+= payload_model_cost/payload_model_cost_ext_cost_0_fun_jac.c
@@ -151,7 +154,7 @@ ocp_cython_o: ocp_cython_c
 	-I $(INCLUDE_PATH)/blasfeo/include/ \
 	-I $(INCLUDE_PATH)/hpipm/include/ \
 	-I $(INCLUDE_PATH) \
-	-I /home/dhruv/acados_env/lib/python3.10/site-packages/numpy/_core/include \
+	-I /home/dhruv/.local/lib/python3.10/site-packages/numpy/core/include \
 	-I /usr/include/python3.10 \
 	acados_ocp_solver_pyx.c \
 
@@ -179,7 +182,7 @@ sim_cython_o: sim_cython_c
 	-I $(INCLUDE_PATH)/blasfeo/include/ \
 	-I $(INCLUDE_PATH)/hpipm/include/ \
 	-I $(INCLUDE_PATH) \
-	-I /home/dhruv/acados_env/lib/python3.10/site-packages/numpy/_core/include \
+	-I /home/dhruv/.local/lib/python3.10/site-packages/numpy/core/include \
 	-I /usr/include/python3.10 \
 	acados_sim_solver_pyx.c \
 

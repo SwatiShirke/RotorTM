@@ -38,12 +38,12 @@
 
 #define PAYLOAD_MODEL_NX     13
 #define PAYLOAD_MODEL_NZ     0
-#define PAYLOAD_MODEL_NU     9
-#define PAYLOAD_MODEL_NP     22
+#define PAYLOAD_MODEL_NU     99
+#define PAYLOAD_MODEL_NP     30
 #define PAYLOAD_MODEL_NP_GLOBAL     0
 #define PAYLOAD_MODEL_NBX    6
 #define PAYLOAD_MODEL_NBX0   13
-#define PAYLOAD_MODEL_NBU    6
+#define PAYLOAD_MODEL_NBU    96
 #define PAYLOAD_MODEL_NSBX   0
 #define PAYLOAD_MODEL_NSBU   0
 #define PAYLOAD_MODEL_NSH    0
@@ -65,7 +65,7 @@
 #define PAYLOAD_MODEL_NY     0
 #define PAYLOAD_MODEL_NYN    0
 #define PAYLOAD_MODEL_N      10
-#define PAYLOAD_MODEL_NH     0
+#define PAYLOAD_MODEL_NH     125
 #define PAYLOAD_MODEL_NHN    0
 #define PAYLOAD_MODEL_NH0    0
 #define PAYLOAD_MODEL_NPHI0  0
@@ -130,6 +130,11 @@ typedef struct payload_model_solver_capsule
 
 
     // constraints
+    external_function_external_param_casadi *nl_constr_h_fun_jac;
+    external_function_external_param_casadi *nl_constr_h_fun;
+    external_function_external_param_casadi *nl_constr_h_fun_jac_hess;
+
+
 
 
 

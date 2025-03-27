@@ -36,8 +36,8 @@
 
 #define PAYLOAD_MODEL_NX     13
 #define PAYLOAD_MODEL_NZ     0
-#define PAYLOAD_MODEL_NU     9
-#define PAYLOAD_MODEL_NP     22
+#define PAYLOAD_MODEL_NU     99
+#define PAYLOAD_MODEL_NP     30
 
 #ifdef __cplusplus
 extern "C" {

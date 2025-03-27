@@ -57,12 +57,12 @@ casadi_real casadi_sq(casadi_real x) { return x*x;}
 
 static const casadi_int casadi_s0[17] = {13, 1, 0, 13, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 static const casadi_int casadi_s1[3] = {0, 0, 0};
-static const casadi_int casadi_s2[26] = {22, 1, 0, 22, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
+static const casadi_int casadi_s2[34] = {30, 1, 0, 30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29};
 static const casadi_int casadi_s3[5] = {1, 1, 0, 1, 0};
 static const casadi_int casadi_s4[38] = {13, 13, 0, 1, 2, 3, 4, 5, 6, 10, 14, 18, 22, 22, 22, 22, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 6, 7, 8, 9, 6, 7, 8, 9, 6, 7, 8, 9};
 static const casadi_int casadi_s5[16] = {0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-/* payload_model_cost_ext_cost_e_fun_jac_hess:(i0[13],i1[],i2[],i3[22])->(o0,o1[13],o2[13x13,22nz],o3[],o4[0x13]) */
+/* payload_model_cost_ext_cost_e_fun_jac_hess:(i0[13],i1[],i2[],i3[30])->(o0,o1[13],o2[13x13,22nz],o3[],o4[0x13]) */
 static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem) {
   casadi_real a0, a1, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a2, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a3, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a4, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a5, a50, a51, a52, a53, a54, a55, a56, a57, a58, a59, a6, a60, a61, a62, a63, a7, a8, a9;
   a0=100.;

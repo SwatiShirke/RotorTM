@@ -8,6 +8,7 @@ from rotor_tm_utils import read_params
 from rotor_tm_utils import utilslib
 import sys
 import os
+import ipdb
 
 
 # Now you can import the Acados Python bindings
@@ -45,7 +46,7 @@ def CaQuatToRot(q):
 
 
 
-def payload_model(params):
+def payload_model(params,cbf_params, obstacle_params):
     #model
     model_name = "payload_model"    
 
@@ -83,6 +84,35 @@ def payload_model(params):
     V = ca.vertcat(v1, v2, v3)              #null space vector 
 
     W = ca.vertcat(f1, f2, f3, m1, m2, m3, v1, v2, v3)
+
+    ##---------------Adding the optimization variables----------------##
+    # LambMuOmega = []
+    n_obs       = len(obstacle_params["obstacles"].keys())
+    len_lambda  = cbf_params["lambda"]
+    len_mu      = cbf_params["mu"]
+    len_quad    = params.nquad 
+    for i in range(n_obs):
+        lamb = ca.SX.sym(f"lamb_pl_obs_{i}",len_lambda,1)
+        mu   = ca.SX.sym(f"mu_pl_obs_{i}",len_mu,1)
+        omg  = ca.SX.sym(f"omega_pl_obs_{i}")
+        W = ca.vertcat(W, lamb,mu,omg)
+        
+    for i in range(n_obs):
+        for j in range(len_quad):
+            lamb = ca.SX.sym(f"lamb_quad_{j}_obs_{i}",len_lambda,1)
+            mu   = ca.SX.sym(f"mu_quad_{j}_obs_{i}",len_lambda,1)
+            omg  = ca.SX.sym(f"omega_quad_{j}_obs_{i}")
+            W = ca.vertcat(W, lamb,mu,omg)
+
+    for j in range(len_quad):
+        lamb = ca.SX.sym(f"lamd_quad_{j}_quad_{(j+1)%3}",len_lambda,1)
+        mu   = ca.SX.sym(f"mu_quad_{j}_quad_{(j+1)%3}",len_lambda,1)
+        omg  = ca.SX.sym(f"omega_quad_{j}_quad_{(j+1)%3}")
+        W = ca.vertcat(W, lamb,mu,omg)
+
+    # print(W)
+    # ipdb.set_trace()
+    ##-------------------------------##
     
     #state variables - pos, linear vel, quaternions and angular velocities
     #position 
@@ -173,9 +203,13 @@ def payload_model(params):
     model.u = W 
     #model.y = cc_forces
     nx = model.x.rows()
-    nu = model.u.rows()
+    nu = model.u[:9].rows()
     reference_param = ca.SX.sym('references', (nx + nu), 1)
-    model.p = reference_param    
+    cbf_param = ca.SX.sym("curr_cbf",n_obs + n_obs*len_quad + len_quad,1)
+    gamma = ca.SX.sym('gamma')
+    ref_params = ca.vertcat(reference_param,cbf_param,gamma)
+    # model.p = reference_param
+    model.p = ref_params    
     return model
 
    

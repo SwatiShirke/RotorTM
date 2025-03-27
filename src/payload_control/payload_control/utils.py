@@ -77,5 +77,46 @@ if __name__ == '__main__':
     yaw, pitch, roll = QuatToYPR(quaternion)
     print(f"Yaw: {yaw:.4f}, Pitch: {pitch:.4f}, Roll: {roll:.4f} (radians)")
 
-
+# Transfer a 3 dimensional vector to a matrix
+# For a numpy array the expexted shape is (3,) or (3,1)
+def vec2asym(vec):
+  if  (type(vec) is np.ndarray):
+    # If it is a 1d-array
+    if len(vec.shape) == 1:
+      # Store row size and column=0
+      row = vec.shape[0]
+      col = 0
+    # If it is a 2d-array
+    elif len(vec.shape) == 2:
+      # Store the row size and column size(shoud be 1 for a vector)
+      row = vec.shape[0]
+      col = vec.shape[1]
+  elif type(vec) is list:
+      # If it is a list
+      # Store the row size as length of the list adn column=0      
+      row = len(vec)
+      col = 0
+  # Input should be a numpy array or a list
+  else:
+    raise Exception("The vector type not list or numpy array")
+  if row == 3: 
+    # If 1-d array
+    if col == 0:
+      mat = np.array([[0,-vec[2],vec[1]],
+                      [vec[2],0,-vec[0]],
+                      [-vec[1],vec[0],0]])
+    # If 2-d array with col=1
+    elif col == 1:
+      mat = np.array([[0,-vec[2][0],vec[1][0]],
+                      [vec[2][0],0,-vec[0][0]],
+                      [-vec[1][0],vec[0][0],0]])
+    # Column size should be 1 or less
+    else:
+      raise Exception("Input is a matrix. Expected a vector")
+  # Row size should be 3
+  else:
+    raise Exception("The vector shape is not 3")
+  
+  # Return the skew symmetric matrix
+  return mat
 
