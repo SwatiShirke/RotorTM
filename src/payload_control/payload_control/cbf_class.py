@@ -4,18 +4,68 @@ import os
 import sys
 from utils import vec2asym
 from numpy import linalg as LA
-import matplotlib as mpl
+import matplotlib.pyplot as plt
 import time
 import yaml
 import casadi as ca
 import ipdb
 from rotor_tm_utils import read_params
 
+import plotly.graph_objects as go
+from scipy.spatial import HalfspaceIntersection, ConvexHull
+from scipy.optimize import linprog
+
 N =10
 
 @dataclass
 class Obstacles:
   obstacles:list
+
+
+def plot_polytope_3d(A, B):
+    # Ensure A and B are numpy arrays
+    A = np.asarray(A)
+    B = np.asarray(B).flatten()  # Ensure B is a 1D array
+
+    # Find a feasible point inside the polytope using linear programming
+    c = np.zeros(A.shape[1])  # Objective: Minimize 0 (just find a feasible point)
+    res = linprog(c, A_ub=A, b_ub=B, method="highs")  # Add small buffer
+
+    if res.status != 0:
+        raise ValueError("No feasible point found for the given constraints.")
+
+    feasible_point = res.x + 1e-3  # Slightly nudge inside
+
+    # Convert to half-space representation
+    hs = np.hstack((A, -B.reshape(-1, 1)))
+
+    # Compute intersections of half-spaces
+    hs_intersection = HalfspaceIntersection(hs, feasible_point)
+    vertices = hs_intersection.intersections
+
+    # Compute convex hull of intersection points
+    hull = ConvexHull(vertices)
+
+    # Create 3D plot
+    fig = go.Figure()
+
+    # Add convex hull faces
+    fig.add_trace(go.Mesh3d(
+        x=vertices[:, 0], y=vertices[:, 1], z=vertices[:, 2],
+        i=hull.simplices[:, 0], 
+        j=hull.simplices[:, 1], 
+        k=hull.simplices[:, 2],
+        color='cyan', opacity=0.5
+    ))
+
+    fig.update_layout(title="3D Polytope Visualization",
+                      scene=dict(xaxis_title='X', yaxis_title='Y', zaxis_title='Z'))
+    fig.show()
+
+
+
+
+
 
 
 #Create an Obstacle class
@@ -38,12 +88,12 @@ class Obs:
                       [0,-1,0]])   #Negative y
         # AX<=B
         # AX>=B or -AX<=-B
-        B = np.array([[self.origin_z + self.height/2], 
-                      [-self.origin_z + self.height/2],
-                      [self.origin_x + self.length/2],
-                      [-self.origin_x + self.length/2],
-                      [self.origin_y + self.breadth/2],
-                      [-self.origin_y + self.breadth/2]])
+        B = np.array([[self.origin_z + self.height], 
+                      [self.origin_z],
+                      [self.origin_x + self.length],
+                      [-self.origin_x],
+                      [self.origin_y + self.breadth],
+                      [-self.origin_y]])
         return (A,B)
 
 # Create a Triangulalr payload class
@@ -51,30 +101,50 @@ class TriangleObs:
     def __init__(self,rho_vect_list):
         # Assuming each row of the rho_vec_list is (x,y,z)
         self.rho_vec_list = rho_vect_list
+        # rho_vect_list = np.array([[-0.288, 0.5, 0.01812],
+        #                                 [ 0.577,    0. ,      0.01812],
+        #                                 [-0.288 ,  -0.5      ,0.01812]]).T
+        print("Rho Vector:", self.rho_vec_list)
         self.P1 = np.array(rho_vect_list[:,0]).reshape(3,1)
         self.P2 = np.array(rho_vect_list[:,1]).reshape(3,1)
         self.P3 = np.array(rho_vect_list[:,2]).reshape(3,1)
+
         z = rho_vect_list[2,0]
-        self.P1_hat = np.reshape(np.array(rho_vect_list[:,0])-np.array([0,0,z]),(3,1))
-        self.P2_hat = np.reshape(np.array(rho_vect_list[:,1])-np.array([0,0,z]),(3,1))
-        self.P3_hat = np.reshape(np.array(rho_vect_list[:,2])-np.array([0,0,z]),(3,1))
+        self.P1_hat = np.reshape(np.array(rho_vect_list[:,0])-np.array([0,0,-z]),(3,1))
+        self.P2_hat = np.reshape(np.array(rho_vect_list[:,1])-np.array([0,0,-z]),(3,1))
+        self.P3_hat = np.reshape(np.array(rho_vect_list[:,2])-np.array([0,0,-z]),(3,1))
+
     def get_convex_rep(self):
-        AI,BI = self.calculateAB(self.P1,self.P2,self.P3)
-        AII,BII = self.calculateAB(self.P1_hat,self.P3_hat,self.P2_hat)
-        AIII,BIII = self.calculateAB(self.P1,self.P2_hat,self.P2)
-        AIV,BIV = self.calculateAB(self.P2,self.P3_hat,self.P3)
-        AV,BV = self.calculateAB(self.P3,self.P1_hat,self.P1)
-        A = np.vstack([AI,AII,AIII,AIV,AV])
-        B = np.vstack([BI,BII,BIII,BIV,BV])
+        # AI,BI = self.calculateAB(self.P1,self.P2,self.P3)
+        # AII,BII = self.calculateAB(self.P1_hat,self.P3_hat,self.P2_hat)
+        # AIII,BIII = self.calculateAB(self.P1,self.P2_hat,self.P2)
+        # AIV,BIV = self.calculateAB(self.P2,self.P3_hat,self.P3)
+        # AV,BV = self.calculateAB(self.P3,self.P1_hat,self.P1)
+        # A = np.vstack([AI,AII,AIII,AIV,AV])
+        # B = np.vstack([BI,BII,BIII,BIV,BV])
+        # return A,B
+        A = np.array([[0,0,1],     #Positive z
+                      [0,0,-1],    #Negative z 
+                      [0.267,0.462,0],     #Positive x
+                      [0.267,-0.462,0],    #Negative x
+                      [-1,0,0]])   #Negative y
+        # AX<=B
+        # AX>=B or -AX<=-B
+        B = np.array([[0.01125], 
+                      [0.0],
+                      [0.267*0.3083],
+                      [0.267*0.3083],
+                      [0.154]])
         return A,B
-    @staticmethod
-    def calculateAB(P1,P2,P3):
-        # shape of A should be (1,3)
-        A = np.cross(P2.T-P1.T,P3.T-P1.T).reshape(1,3)
-        # B should be a scalar
-        #(1,3)x(3,1) = scalar
-        B = A@P1
-        return A,B.item()
+
+    # @staticmethod
+    # def calculateAB(P1,P2,P3):
+    #     # shape of A should be (1,3)
+    #     A = np.cross(P2.T-P1.T,P3.T-P1.T).reshape(1,3)
+    #     # B should be a scalar
+    #     #(1,3)x(3,1) = scalar
+    #     B = A@P1
+    #     return A,B.item()
 
 class CBFDualityOptimization:
     def __init__(self,payload_params,obstacle_params, model_p):
@@ -188,13 +258,18 @@ class CBFDualityOptimization:
         # Optimization variable
         # opti = ca.Opti()
 
+        # print("Obstacle A", obs_A)
+        # print("Obstacle B", obs_B)
+        # print("Robot A", robot_A)
+        # print("Robot B", robot_B)
+
         g = ca.vertcat(ca.mtimes(obs_A, point1) - obs_B,
                         ca.mtimes(robot_A, point2) - robot_B)
         nlp = {}
         nlp["f"] = cost
         nlp["g"] = g
         nlp["x"] = x
-        option = {"verbose": False, "ipopt.print_level": 0, "print_time": 0}
+        option = {"verbose": False, "ipopt.print_level": 5, "print_time": 0}
         solver = ca.nlpsol("solver","ipopt",nlp,option)
 
         sol = solver(lbg=-ca.inf,ubg=0)
@@ -202,6 +277,8 @@ class CBFDualityOptimization:
         opt_x = sol["x"]
         opt_dist = ca.sqrt(sol["f"])
         lamb_g = sol["lam_g"]
+        print("lam G", lamb_g)
+
         lamb = lamb_g[:obs_A.shape[0]]
         mu = lamb_g[obs_A.shape[0]:]
         # Add the constraint to the optimization problem
@@ -225,6 +302,10 @@ class CBFDualityOptimization:
             opt_dist=-1
             lamb = np.zeros(shape = (obs_A.shape[0],))
             mu   = np.zeros(shape = (robot_A.shape[0],))
+        
+        print("Min Dist: ", opt_dist)
+        print("Lambda" , lamb)
+        print("Mu" , mu)
 
         return opt_dist,lamb,mu
     
@@ -244,8 +325,28 @@ class CBFDualityOptimization:
         for i,obs in enumerate(self.obstacles):
             mat_A, vec_b     = obs.get_convex_rep()
             robot_G, robot_g = self.payload.get_convex_rep()
-            mat_A, vec_b     = obs.get_convex_rep()
-            robot_G, robot_g = self.payload.get_convex_rep()
+            
+            ################################################
+            # mat_A = mat_A/vec_b
+            # vec_b = vec_b/vec_b
+
+            # robot_G = robot_G/robot_g
+            # robot_g= robot_g/robot_g
+            ################################################
+            print("In the local frame")
+            print("Obstacle A", mat_A)
+            print("Obstacle B", vec_b)
+            print("Robot A", robot_G)
+            print("Robot B", robot_g)
+            print("In the word frame:")
+            print("Obstacle A", mat_A)
+            print("Obstacle B", vec_b)
+            print("Robot A", np.dot(robot_G, self.get_rotation_state(self.state,False,False).T))
+            print("Robot B", np.dot(np.dot(robot_G, self.get_rotation_state(self.state,False,False).T), self.transtion_state()) + robot_g)
+
+            # plot_polytope_3d(robot_G, robot_g)
+            # plot_polytope_3d(mat_A, vec_b)
+
             # get current value of cbf
             cbf_curr, lamb_curr, mu_curr = self.get_minimum_dist(
                 mat_A,
@@ -253,6 +354,7 @@ class CBFDualityOptimization:
                 np.dot(robot_G, self.get_rotation_state(self.state,False,False).T),
                 np.dot(np.dot(robot_G, self.get_rotation_state(self.state,False,False).T), self.transtion_state()) + robot_g,
             )
+
             cbf_p[i] = cbf_curr
             # Initialize lambda mu and omega input values
             model_u[(len_lambda + len_mu + 1)*i:(len_lambda + len_mu + 1)*i+len_lambda]                       = lamb_curr
@@ -297,6 +399,9 @@ class CBFDualityOptimization:
                 Tbox = np.array(self.state[0:3]).T + Rwb@(self.rho_vec_list[quad_no]).T + np.array(self.params.cable_length).T*np.array([x/2,y/2,z/2]).T
 
                 Tbox = Tbox.reshape(3,1)
+
+                print("RBox: ",Rbox)
+                print("TBox: ", Tbox)
                 cbf_curr, lamb_curr, mu_curr = self.get_minimum_dist(
                     mat_A,
                     vec_b,

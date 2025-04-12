@@ -78,92 +78,12 @@ if __name__ == '__main__':
     rclpy.init()
     
     clock = Clock()
-    dist = []
 
     # Get the current time
     start_time = clock.now()
-    for i in range(Nsim):
-          
-        cbf_p, model_lamb_mu_omg = cbf_constraints.get_all_minimum_dist(cbf_params)
-        dist.append(cbf_p[0])
-        for j in range(N):
-            t_j = t0 + (j) * Ts
-            x_ref_j = pos_ref[0](t_j)
-            y_ref_j = pos_ref[1](t_j)
-            z_ref_j = pos_ref[2](t_j)
+    
+    init_state = np.array([0,0,0, 0,0,0, 0,0,0,1, 0,0,0])
+    init_input = u_ref = np.array([0,0,mg, 0,0,0, 0,0,0]) 
 
-            vx_ref_j = vel_ref[0](t_j)
-            vy_ref_i = vel_ref[1](t_j)
-            vz_ref_j = vel_ref[2](t_j)
-            
-            yaw_ref_i = yaw_ref(t_j)
-            yawr_ref_i = yawr_ref(t_j)
-            yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_i, vz_ref_j,  0,0,0,0,  0,0,yawr_ref_i, *u_ref])
-            # print(yref)
-            # print(simX[i, :])
-
-            #ipdb.set_trace()
-            acados_solver.set(j, "p", np.append(np.concatenate((yref,cbf_p)), cbf_params["cbf_gamma"]**j))
-            u_init = acados_solver.get(j,"u")
-            acados_solver.set(j,"u",np.concatenate((u_init[:9],model_lamb_mu_omg)))
-
-                  
-        acados_solver.set(N, "p", np.append(np.concatenate((yref,cbf_p)), cbf_params["cbf_gamma"]**N)) 
-        acados_solver.set(0, "lbx", simX[i, :])
-        acados_solver.set(0, "ubx", simX[i, :])
-
-        #solve ocp
-        t = time.time()
-        status = acados_solver.solve()
-        if status != 0:
-            print("acados returned status {} in closed loop iteration {}.".format(status, i))
-        solve_elapsed = time.time() - t
-        
-        simU[i, : ] = acados_solver.get(0, "u") 
-        print("simU")
-        print(simU[i, : ])
-        print(simU[i, : ].shape)
-        cost = 0
-        # print(acados_solver.get(0,"p"))
-        # print("#############print Constraints###############################")
-        # print(acados_solver)
-        # for j in range(N):                        
-        #     h_val = acados_solver.get(j, "lam")
-        #     x_val = acados_solver.get(j, "x")
-        #     print(x_val) 
-        #     #print(model.con_h_expr(x_val))
-        #     print("lh: ", h_val)            
-        #     #print("uh", h_val[27:30])
-        #     #ipdb.set_trace()  
-        
-        #u = np.array([-0.5,-0.5,2.8, 0,0,0,0,0,0])
-        simX[i+1, : ] = acados_integrator.simulate(x = simX[i,:], u = simU[i, : ])
-        cbf_constraints.set_state(simX[i+1,:], simU[i,:])
-        print("simX")
-        print(simX[i+1, : ])
-        #sim_elapsed = time.time() - t
-        t0 = t0 + Ts      
-        
-        if terminate_sim(simX[i+1, :],last_pose, err_theshold):
-            print("breaking")
-            break
-    end_time = clock.now()
-    t_time = start_time - end_time
-    print(t_time.nanoseconds / 1e9)
-    #post processing - plotiing and print
-    tracked_traj = simX[0:i+1, :]
-    #ipdb.set_trace()
-    t = np.linspace(0.0, Nsim+1, Nsim+1)
-    #plotRes(simX, simU, t)
-    plot_followed_traj(tracked_traj[:,0], tracked_traj[:,1],tracked_traj[:,2], pos_ref[0](time_points), pos_ref[1](time_points), pos_ref[2](time_points))
-    plt.plot(dist)
-    # plot.show()
-    #plot_inputs(simU[:,0:3],simU[:,3:6],t)
-    # Print some statstime_points 
-    #print("Average speed:{}m/s".format(np.average(simX[:, 3])))
-    print("Lap time: {}s".format(T))
-    # avoid plotting when running on Travis
-    if os.environ.get("ACADOS_ON_CI") is None:
-        plt.show()
-
-
+    cbf_constraints.set_state(init_state,init_input)
+    cbf_constraints.get_all_minimum_dist(cbf_params)

@@ -143,16 +143,18 @@ def controller_setup(control_params,  payload_params, obstacle_params, cbf_param
     ocp.solver_options.N_horizon             = N
     ocp.solver_options.tf                    = Tf
     ocp.solver_options.qp_solver             = 'PARTIAL_CONDENSING_HPIPM' # FULL_CONDENSING_QPOASES
-    ocp.solver_options.nlp_solver_type       = 'SQP_RTI'
+    ocp.solver_options.nlp_solver_type       = 'SQP'                      #'SQP_RTI'
     ocp.solver_options.hessian_approx        = "EXACT"
     ocp.solver_options.integrator_type       = "ERK"
     ocp.solver_options.sim_method_num_stages = 4
     ocp.solver_options.regularize_method     = 'CONVEXIFY'
     ocp.solver_options.levenberg_marquardt   = 10.0
+
+    ocp.solver_options.print_level           = 2
     
     ##create solver, integrator
     solver_json       = 'acados_ocp_' + model.name + '.json'
-    acados_solver     = AcadosOcpSolver(ocp, json_file = solver_json)
-    acados_integrator = AcadosSimSolver(ocp, json_file = solver_json)
+    acados_solver     = AcadosOcpSolver(ocp, json_file = solver_json,build=True)
+    acados_integrator = AcadosSimSolver(ocp, json_file = solver_json, build=True)
 
     return model, acados_solver, acados_integrator, cbf_constraints
