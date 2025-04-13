@@ -150,7 +150,7 @@ void payload_model_acados_create_set_plan(ocp_nlp_plan_t* nlp_solver_plan, const
     *  plan
     ************************************************/
 
-    nlp_solver_plan->nlp_solver = SQP;
+    nlp_solver_plan->nlp_solver = SQP_RTI;
 
     nlp_solver_plan->ocp_qp_solver_plan.qp_solver = PARTIAL_CONDENSING_HPIPM;
 
@@ -547,6 +547,8 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* lbx0 = lubx0;
     double* ubx0 = lubx0 + NBX0;
     // change only the non-zero elements:
+    lbx0[6] = 1;
+    ubx0[6] = 1;
 
     ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, 0, "idxbx", idxbx0);
     ocp_nlp_constraints_model_set(nlp_config, nlp_dims, nlp_in, 0, "lbx", lbx0);
@@ -599,84 +601,6 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     idxbu[15] = 18;
     idxbu[16] = 19;
     idxbu[17] = 20;
-    idxbu[18] = 21;
-    idxbu[19] = 22;
-    idxbu[20] = 23;
-    idxbu[21] = 24;
-    idxbu[22] = 25;
-    idxbu[23] = 26;
-    idxbu[24] = 27;
-    idxbu[25] = 28;
-    idxbu[26] = 29;
-    idxbu[27] = 30;
-    idxbu[28] = 31;
-    idxbu[29] = 32;
-    idxbu[30] = 33;
-    idxbu[31] = 34;
-    idxbu[32] = 35;
-    idxbu[33] = 36;
-    idxbu[34] = 37;
-    idxbu[35] = 38;
-    idxbu[36] = 39;
-    idxbu[37] = 40;
-    idxbu[38] = 41;
-    idxbu[39] = 42;
-    idxbu[40] = 43;
-    idxbu[41] = 44;
-    idxbu[42] = 45;
-    idxbu[43] = 46;
-    idxbu[44] = 47;
-    idxbu[45] = 48;
-    idxbu[46] = 49;
-    idxbu[47] = 50;
-    idxbu[48] = 51;
-    idxbu[49] = 52;
-    idxbu[50] = 53;
-    idxbu[51] = 54;
-    idxbu[52] = 55;
-    idxbu[53] = 56;
-    idxbu[54] = 57;
-    idxbu[55] = 58;
-    idxbu[56] = 59;
-    idxbu[57] = 60;
-    idxbu[58] = 61;
-    idxbu[59] = 62;
-    idxbu[60] = 63;
-    idxbu[61] = 64;
-    idxbu[62] = 65;
-    idxbu[63] = 66;
-    idxbu[64] = 67;
-    idxbu[65] = 68;
-    idxbu[66] = 69;
-    idxbu[67] = 70;
-    idxbu[68] = 71;
-    idxbu[69] = 72;
-    idxbu[70] = 73;
-    idxbu[71] = 74;
-    idxbu[72] = 75;
-    idxbu[73] = 76;
-    idxbu[74] = 77;
-    idxbu[75] = 78;
-    idxbu[76] = 79;
-    idxbu[77] = 80;
-    idxbu[78] = 81;
-    idxbu[79] = 82;
-    idxbu[80] = 83;
-    idxbu[81] = 84;
-    idxbu[82] = 85;
-    idxbu[83] = 86;
-    idxbu[84] = 87;
-    idxbu[85] = 88;
-    idxbu[86] = 89;
-    idxbu[87] = 90;
-    idxbu[88] = 91;
-    idxbu[89] = 92;
-    idxbu[90] = 93;
-    idxbu[91] = 94;
-    idxbu[92] = 95;
-    idxbu[93] = 96;
-    idxbu[94] = 97;
-    idxbu[95] = 98;
     double* lubu = calloc(2*NBU, sizeof(double));
     double* lbu = lubu;
     double* ubu = lubu + NBU;
@@ -703,84 +627,6 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     ubu[15] = 10;
     ubu[16] = 10;
     ubu[17] = 10;
-    ubu[18] = 10;
-    ubu[19] = 10;
-    ubu[20] = 10;
-    ubu[21] = 10;
-    ubu[22] = 10;
-    ubu[23] = 10;
-    ubu[24] = 10;
-    ubu[25] = 10;
-    ubu[26] = 10;
-    ubu[27] = 10;
-    ubu[28] = 10;
-    ubu[29] = 10;
-    ubu[30] = 10;
-    ubu[31] = 10;
-    ubu[32] = 10;
-    ubu[33] = 10;
-    ubu[34] = 10;
-    ubu[35] = 10;
-    ubu[36] = 10;
-    ubu[37] = 10;
-    ubu[38] = 10;
-    ubu[39] = 10;
-    ubu[40] = 10;
-    ubu[41] = 10;
-    ubu[42] = 10;
-    ubu[43] = 10;
-    ubu[44] = 10;
-    ubu[45] = 10;
-    ubu[46] = 10;
-    ubu[47] = 10;
-    ubu[48] = 10;
-    ubu[49] = 10;
-    ubu[50] = 10;
-    ubu[51] = 10;
-    ubu[52] = 10;
-    ubu[53] = 10;
-    ubu[54] = 10;
-    ubu[55] = 10;
-    ubu[56] = 10;
-    ubu[57] = 10;
-    ubu[58] = 10;
-    ubu[59] = 10;
-    ubu[60] = 10;
-    ubu[61] = 10;
-    ubu[62] = 10;
-    ubu[63] = 10;
-    ubu[64] = 10;
-    ubu[65] = 10;
-    ubu[66] = 10;
-    ubu[67] = 10;
-    ubu[68] = 10;
-    ubu[69] = 10;
-    ubu[70] = 10;
-    ubu[71] = 10;
-    ubu[72] = 10;
-    ubu[73] = 10;
-    ubu[74] = 10;
-    ubu[75] = 10;
-    ubu[76] = 10;
-    ubu[77] = 10;
-    ubu[78] = 10;
-    ubu[79] = 10;
-    ubu[80] = 10;
-    ubu[81] = 10;
-    ubu[82] = 10;
-    ubu[83] = 10;
-    ubu[84] = 10;
-    ubu[85] = 10;
-    ubu[86] = 10;
-    ubu[87] = 10;
-    ubu[88] = 10;
-    ubu[89] = 10;
-    ubu[90] = 10;
-    ubu[91] = 10;
-    ubu[92] = 10;
-    ubu[93] = 10;
-    ubu[94] = 10;
-    ubu[95] = 10;
 
     for (int i = 0; i < N; i++)
     {
@@ -838,110 +684,20 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* luh = calloc(2*NH, sizeof(double));
     double* lh = luh;
     double* uh = luh + NH;
-    uh[0] = 10;
-    uh[1] = 10;
-    uh[2] = 10;
-    uh[3] = 10;
-    uh[4] = 10;
-    uh[5] = 10;
-    uh[6] = 10;
-    uh[7] = 10;
-    uh[8] = 10;
-    uh[9] = 10;
-    uh[10] = 10;
-    uh[11] = 100;
+    uh[0] = 1000;
+    uh[1] = 1000;
+    uh[2] = 1000;
+    uh[3] = 1000;
+    uh[4] = 1000;
+    uh[5] = 1000;
+    uh[6] = 1000;
+    uh[7] = 1000;
+    uh[8] = 1000;
+    uh[9] = 1000;
+    uh[10] = 1000;
+    uh[11] = 1000;
     uh[15] = 1;
     uh[16] = 10;
-    uh[17] = 10;
-    uh[18] = 10;
-    uh[19] = 10;
-    uh[20] = 10;
-    uh[21] = 10;
-    uh[22] = 10;
-    uh[23] = 10;
-    uh[24] = 10;
-    uh[25] = 10;
-    uh[26] = 10;
-    uh[27] = 10;
-    uh[28] = 10;
-    uh[29] = 100;
-    uh[33] = 1;
-    uh[34] = 10;
-    uh[35] = 10;
-    uh[36] = 10;
-    uh[37] = 10;
-    uh[38] = 10;
-    uh[39] = 10;
-    uh[40] = 10;
-    uh[41] = 10;
-    uh[42] = 10;
-    uh[43] = 10;
-    uh[44] = 10;
-    uh[45] = 10;
-    uh[46] = 10;
-    uh[47] = 100;
-    uh[51] = 1;
-    uh[52] = 10;
-    uh[53] = 10;
-    uh[54] = 10;
-    uh[55] = 10;
-    uh[56] = 10;
-    uh[57] = 10;
-    uh[58] = 10;
-    uh[59] = 10;
-    uh[60] = 10;
-    uh[61] = 10;
-    uh[62] = 10;
-    uh[63] = 10;
-    uh[64] = 10;
-    uh[65] = 100;
-    uh[69] = 1;
-    uh[70] = 10;
-    uh[71] = 10;
-    uh[72] = 10;
-    uh[73] = 10;
-    uh[74] = 10;
-    uh[75] = 10;
-    uh[76] = 10;
-    uh[77] = 10;
-    uh[78] = 10;
-    uh[79] = 10;
-    uh[80] = 10;
-    uh[81] = 10;
-    uh[82] = 10;
-    uh[83] = 100;
-    uh[87] = 1;
-    uh[88] = 10;
-    uh[89] = 10;
-    uh[90] = 10;
-    uh[91] = 10;
-    uh[92] = 10;
-    uh[93] = 10;
-    uh[94] = 10;
-    uh[95] = 10;
-    uh[96] = 10;
-    uh[97] = 10;
-    uh[98] = 10;
-    uh[99] = 10;
-    uh[100] = 10;
-    uh[101] = 100;
-    uh[105] = 1;
-    uh[106] = 10;
-    uh[107] = 10;
-    uh[108] = 10;
-    uh[109] = 10;
-    uh[110] = 10;
-    uh[111] = 10;
-    uh[112] = 10;
-    uh[113] = 10;
-    uh[114] = 10;
-    uh[115] = 10;
-    uh[116] = 10;
-    uh[117] = 10;
-    uh[118] = 10;
-    uh[119] = 100;
-    uh[123] = 1;
-    uh[124] = 10;
 
     for (int i = 1; i < N; i++)
     {
@@ -1065,48 +821,23 @@ static void payload_model_acados_create_set_opts(payload_model_solver_capsule* c
 
     bool store_iterates = false;
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "store_iterates", &store_iterates);
-    int log_primal_step_norm = false;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "log_primal_step_norm", &log_primal_step_norm);
-
-    double nlp_solver_tol_min_step_norm = 0;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "tol_min_step_norm", &nlp_solver_tol_min_step_norm);
     // set HPIPM mode: should be done before setting other QP solver options
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "qp_hpipm_mode", "BALANCE");
 
 
 
 
-    // set SQP specific options
-    double nlp_solver_tol_stat = 0.000001;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "tol_stat", &nlp_solver_tol_stat);
+    int as_rti_iter = 1;
+    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "as_rti_iter", &as_rti_iter);
 
-    double nlp_solver_tol_eq = 0.000001;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "tol_eq", &nlp_solver_tol_eq);
+    int as_rti_level = 4;
+    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "as_rti_level", &as_rti_level);
 
-    double nlp_solver_tol_ineq = 0.000001;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "tol_ineq", &nlp_solver_tol_ineq);
+    int rti_log_residuals = 0;
+    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "rti_log_residuals", &rti_log_residuals);
 
-    double nlp_solver_tol_comp = 0.000001;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "tol_comp", &nlp_solver_tol_comp);
-
-    int nlp_solver_max_iter = 100;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "max_iter", &nlp_solver_max_iter);
-
-    // set options for adaptive Levenberg-Marquardt Update
-    bool with_adaptive_levenberg_marquardt = false;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "with_adaptive_levenberg_marquardt", &with_adaptive_levenberg_marquardt);
-
-    double adaptive_levenberg_marquardt_lam = 5;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "adaptive_levenberg_marquardt_lam", &adaptive_levenberg_marquardt_lam);
-
-    double adaptive_levenberg_marquardt_mu_min = 0.0000000000000001;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "adaptive_levenberg_marquardt_mu_min", &adaptive_levenberg_marquardt_mu_min);
-
-    double adaptive_levenberg_marquardt_mu0 = 0.001;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "adaptive_levenberg_marquardt_mu0", &adaptive_levenberg_marquardt_mu0);
-
-    bool eval_residual_at_max_iter = false;
-    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "eval_residual_at_max_iter", &eval_residual_at_max_iter);
+    int rti_log_only_available_residuals = 0;
+    ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "rti_log_only_available_residuals", &rti_log_only_available_residuals);
 
     int qp_solver_iter_max = 50;
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "qp_iter_max", &qp_solver_iter_max);
@@ -1146,6 +877,7 @@ void payload_model_acados_set_nlp_out(payload_model_solver_capsule* capsule)
     double* x0 = xu0;
 
     // initialize with x0
+    x0[6] = 1;
 
 
     double* u0 = xu0 + NX;
@@ -1298,7 +1030,7 @@ int payload_model_acados_update_params(payload_model_solver_capsule* capsule, in
 {
     int solver_status = 0;
 
-    int casadi_np = 30;
+    int casadi_np = 24;
     if (casadi_np != np) {
         printf("acados_update_params: trying to set %i parameters for external functions."
             " External function has %i parameters. Exiting.\n", np, casadi_np);
@@ -1502,23 +1234,13 @@ void payload_model_acados_print_stats(payload_model_solver_capsule* capsule)
     int nrow = nlp_iter+1 < stat_m ? nlp_iter+1 : stat_m;
 
 
-    printf("iter\tres_stat\tres_eq\t\tres_ineq\tres_comp\tqp_stat\tqp_iter\talpha");
-    if (stat_n > 8)
-        printf("\t\tqp_res_stat\tqp_res_eq\tqp_res_ineq\tqp_res_comp");
-    printf("\n");
+    printf("iter\tqp_stat\tqp_iter\n");
     for (int i = 0; i < nrow; i++)
     {
         for (int j = 0; j < stat_n + 1; j++)
         {
-            if (j == 0 || j == 5 || j == 6)
-            {
-                tmp_int = (int) stat[i + j * nrow];
-                printf("%d\t", tmp_int);
-            }
-            else
-            {
-                printf("%e\t", stat[i + j * nrow]);
-            }
+            tmp_int = (int) stat[i + j * nrow];
+            printf("%d\t", tmp_int);
         }
         printf("\n");
     }

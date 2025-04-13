@@ -1,7 +1,8 @@
 from acados_template import AcadosOcp, AcadosOcpSolver, AcadosSimSolver
 import casadi as ca
 import numpy as np
-from payload_control.payload_model import payload_model
+# from payload_control.payload_model import payload_model
+from payload_control.testing_pl_payload_model import payload_model
 from rotor_tm_utils import QuatToYPR
 from rotor_tm_utils import read_params
 import sys
@@ -10,32 +11,8 @@ import ipdb
 from constraints import get_constraints
 from CBF_payload_constraints import Obs, TriangleObs, get_pl_obs_constraints
 import sys
-from cbf_class import CBFDualityOptimization
+from testing_pl_cbf_class import CBFDualityOptimization
 import os
-
-# Add Acados library path to the system path for Python imports
-#acados_lib_path = os.getenv('LD_LIBRARY_PATH', '')
-# acados_dir = os.getenv('ACADOS_SOURCE_DIR', 'home/dhruv/acados')  # Default path can be adjusted if needed
-# acados_dir = os.getenv('ACADOS_SOURCE_DIR')
-# # Ensure the path exists, otherwise raise an error.
-# if not os.path.exists(acados_dir):
-#     raise ValueError(f"ACADOS directory not found: {acados_dir}")
-
-# # Set the library path and append to sys.path
-# os.environ['LD_LIBRARY_PATH'] = os.path.join(acados_dir, 'lib')
-# sys.path.append(os.path.join(acados_dir, 'lib'))
-# sys.path.append(os.path.join(acados_dir, 'python'))
-# sys.path.append(acados_dir)
-
-
-
-# os.environ['LD_LIBRARY_PATH'] = "/home/dhruv/acados/lib" 
-# LD_LIBRARY_PATH="/home/dhruv/acados/lib"
-# sys.path.append("/home/dhruv/acados/lib" )
-# sys.path.append('/home/dhruv/acados/python')
-# sys.path.append("/home/dhruv/acados" )
-#acados_source_dir = os.getenv('ACADOS_SOURCE_DIR', '/home/swati/acados')
-
 
 def controller_setup(control_params,  payload_params, obstacle_params, cbf_params, init_state, init_input):
     #read yaml file   
@@ -63,8 +40,8 @@ def controller_setup(control_params,  payload_params, obstacle_params, cbf_param
     #to handle mimatch between refence and model state, we convert quaternions to ypr and formulating new state vector
     #using new state vector for cost calculations
     Q_mat =  ca.vertcat(10,10,10, 10, 10, 10, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
-    R_mat =  ca.vertcat(10, 10, 10, 10, 10, 10, 1e-2, 1e-2, 1e-2)
-    Q_emat = ca.vertcat(100,100,100, 100, 100, 100, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
+    R_mat =  ca.vertcat(1e-3, 1e-3, 1e-3, 10, 10, 10, 1e-2, 1e-2, 1e-2)
+    Q_emat = ca.vertcat(10,10,10, 10, 10, 10, 1e-4, 1e-4, 1e-4, 1e-4,  1e-4, 1e-4, 1)
     
     x_array = model.x
     u_aaray = model.u
@@ -77,7 +54,7 @@ def controller_setup(control_params,  payload_params, obstacle_params, cbf_param
     len_lambda  = cbf_params["lambda"]
     len_mu      = cbf_params["mu"]
     n_quad      = payload_params.nquad
-    total_param = n_obs*(len_lambda + len_mu + 1) + n_obs*n_quad*(len_lambda + len_lambda + 1) + n_quad*(len_lambda + len_lambda + 1)
+    total_param = n_obs*(len_lambda + len_mu + 1) # + n_obs*n_quad*(len_lambda + len_lambda + 1) + n_quad*(len_lambda + len_lambda + 1)
     zeros_param = np.zeros(total_param)
     ones_param  = 10*np.ones(total_param)
     idxs_param  = np.arange(9, total_param + 9)
@@ -115,14 +92,14 @@ def controller_setup(control_params,  payload_params, obstacle_params, cbf_param
     ocp.constraints.idxbx = np.array([ 3,4,5, 10,11,12])
     
     # ##inequlity constraints
-    # u = model.u
-    # h_list = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
+    ## u = model.u
+    ## h_list = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
     ocp.model.con_h_expr = hlist
     ocp.dims.nh          = hlist.shape[0]
     ocp.constraints.lh   = hlist_lb          # lower bound
     ocp.constraints.uh   = hlist_ub            # Upper bound 
     ocp.model.lh         = np.zeros((hlist.shape[0], 1))          # lower bound
-    ocp.model.uh         = 100 * np.ones((hlist.shape[0], 1)) 
+    ocp.model.uh         = 5000 * np.ones((hlist.shape[0], 1)) 
 
     # #payload obstacle constraints
     # obs1 = Obs(1,1,1, 0.5,0.5,0.5)
@@ -143,7 +120,7 @@ def controller_setup(control_params,  payload_params, obstacle_params, cbf_param
     ocp.solver_options.N_horizon             = N
     ocp.solver_options.tf                    = Tf
     ocp.solver_options.qp_solver             = 'PARTIAL_CONDENSING_HPIPM' # FULL_CONDENSING_QPOASES
-    ocp.solver_options.nlp_solver_type       = 'SQP'                      #'SQP_RTI'
+    ocp.solver_options.nlp_solver_type       = 'SQP_RTI'                      #'SQP_RTI'
     ocp.solver_options.hessian_approx        = "EXACT"
     ocp.solver_options.integrator_type       = "ERK"
     ocp.solver_options.sim_method_num_stages = 4
