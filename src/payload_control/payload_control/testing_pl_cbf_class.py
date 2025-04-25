@@ -88,12 +88,18 @@ class Obs:
                       [0,-1,0]])   #Negative y
         # AX<=B
         # AX>=B or -AX<=-B
-        B = np.array([[self.origin_z + self.height], 
-                      [self.origin_z],
-                      [self.origin_x + self.length],
-                      [-self.origin_x],
-                      [self.origin_y + self.breadth],
-                      [-self.origin_y]])
+        # B = np.array([[self.origin_z + self.height], 
+        #               [-self.origin_z],
+        #               [self.origin_x + self.length],
+        #               [-self.origin_x],
+        #               [self.origin_y + self.breadth],
+        #               [-self.origin_y]])
+        B = np.array([[self.origin_z + self.height/2], 
+                      [-self.origin_z+ self.height/2],
+                      [self.origin_x + self.length/2],
+                      [-self.origin_x+ self.length/2],
+                      [self.origin_y + self.breadth/2],
+                      [-self.origin_y+ self.breadth/2]])
         return (A,B)
 
 # Create a Triangulalr payload class
@@ -213,7 +219,11 @@ class CBFDualityOptimization:
         return X_next
     
     #optimization to find minimum distance between 3D polytopes
-    def get_minimum_dist(self,obs_A,obs_B,robot_A,robot_B):    
+    def get_minimum_dist(self,obs_A,obs_B,robot_A,robot_B):  
+        print("MATRIX AAAAA: ", obs_A)
+        print("MATRIX bbbbb: ", obs_B)
+        print("MATRIX GGGGG: ", robot_A)
+        print("MATRIX ggggg: ", robot_B)  
         # Create two variables point1 and point2
         point1 = ca.SX.sym("point1",obs_A.shape[-1],1)
         point2 = ca.SX.sym("point2",robot_A.shape[-1],1)
@@ -243,17 +253,19 @@ class CBFDualityOptimization:
 
         lamb = lamb_g[:obs_A.shape[0]]
         mu = lamb_g[obs_A.shape[0]:]
+
+        print("OPT DIST: ", opt_dist)
         # Check if the distance is positive
         if opt_dist>0:
-            lamb = lamb #/2*opt_dist
-            mu   = mu   #/2*opt_dist
+            #change this
+            lamb = lamb/(2*opt_dist)
+            mu   = mu/(2*opt_dist)
             
         else:
             opt_dist=-1
             lamb = np.zeros(shape = (obs_A.shape[0],))
             mu   = np.zeros(shape = (robot_A.shape[0],))
         
-        print("Min Dist: ", opt_dist)
         print("Lambda" , lamb)
         print("Mu" , mu)
 
@@ -264,11 +276,13 @@ class CBFDualityOptimization:
         len_lambda    = cbf_params["lambda"]
         len_mu        = cbf_params["mu"]
         obs_pl_len    = (len_lambda + len_mu + 1)*self.n_obs
-        # obs_quad_len  = (len_lambda + len_lambda + 1)*self.n_obs*self.robot_num
-        # quad_quad_len = (len_lambda + len_lambda + 1)*self.robot_num
-        model_u       = np.zeros((obs_pl_len,1)) 
+        obs_quad_len  = (len_lambda + len_lambda + 1)*self.n_obs*self.robot_num
+        quad_quad_len = (len_lambda + len_lambda + 1)*self.robot_num
+        #change here
+        model_u       = np.zeros((obs_pl_len + obs_quad_len,1)) # + quad_quad_len
         omega_curr    = 0.1
-        length_cbf_p  = self.n_obs                                 # + (self.n_obs*self.robot_num) + self.robot_num
+        #change here
+        length_cbf_p  = self.n_obs + self.n_obs*self.robot_num #+ self.robot_num
         cbf_p         = [None]*length_cbf_p
         
         ##### Payload Obstacle #####
@@ -276,26 +290,11 @@ class CBFDualityOptimization:
             mat_A, vec_b     = obs.get_convex_rep()
             robot_G, robot_g = self.payload.get_convex_rep()
             
-            ################################################
-            # mat_A = mat_A/vec_b
-            # vec_b = vec_b/vec_b
-
-            # robot_G = robot_G/robot_g
-            # robot_g= robot_g/robot_g
-            ################################################
-            print("In the local frame")
-            print("Obstacle A", mat_A)
-            print("Obstacle B", vec_b)
-            print("Robot A", robot_G)
-            print("Robot B", robot_g)
-            print("In the word frame:")
+            print("Payload in the word frame:")
             print("Obstacle A", mat_A)
             print("Obstacle B", vec_b)
             print("Robot A", np.dot(robot_G, self.get_rotation_state(self.state,False,False).T))
             print("Robot B", np.dot(np.dot(robot_G, self.get_rotation_state(self.state,False,False).T), self.transtion_state()) + robot_g)
-
-            # plot_polytope_3d(robot_G, robot_g)
-            # plot_polytope_3d(mat_A, vec_b)
 
             # get current value of cbf
             cbf_curr, lamb_curr, mu_curr = self.get_minimum_dist(
@@ -306,65 +305,88 @@ class CBFDualityOptimization:
             )
 
             cbf_p[i] = cbf_curr
+            print("CBF_P i : ", cbf_p[i])
             # Initialize lambda mu and omega input values
+            print("ST lamb curr: ", (len_lambda + len_mu + 1)*i)
+            print("END lamb curr: ", (len_lambda + len_mu + 1)*i+len_lambda)
+            print("ST mu curr: ", (len_lambda + len_mu + 1)*i+len_lambda)
+            print("END mu curr: ", (len_lambda + len_mu + 1)*i + len_lambda + len_mu)            
             model_u[(len_lambda + len_mu + 1)*i:(len_lambda + len_mu + 1)*i+len_lambda]                       = lamb_curr
             model_u[(len_lambda + len_mu + 1)*i+len_lambda:(len_lambda + len_mu + 1)*i + len_lambda + len_mu] = mu_curr
             model_u[(len_lambda + len_mu + 1)*(i+1)-1]                                                        = omega_curr
 
+        ######################################################################################################################
         ####
         # print("Current state value:" , self.state)
-        # poses = self.calculateCableDir(self.state,self.input,False)
+        poses = self.calculateCableDir(self.state,self.input,False)
         
         # ##### Quadrotor Obstacle #####
-        # st_val = (len_lambda + len_mu + 1)*self.n_obs + i*self.robot_num*(len_lambda + len_lambda + 1)
-        # for i,obs in enumerate(self.obstacles):
-        #     for quad_no in range(len(self.quad)):
-        #         mat_A, vec_b = obs.get_convex_rep()
-        #         robot_G, robot_g = self.quad[quad_no].get_convex_rep()
-        #         #print("A= ",robot_G,"B= ",robot_g)
-        #         Rwb = self.get_rotation_state(self.state,False,False)
-        #         # get current value of cbf
-        #         pose = poses[quad_no]
-        #         x,y,z = pose[0],pose[1],pose[2]
+        for i,obs in enumerate(self.obstacles):
+            st_val = (len_lambda + len_mu + 1)*self.n_obs + i*self.robot_num*(len_lambda + len_lambda + 1)
+            print("ST VAL: ",st_val)
+            for quad_no in range(len(self.quad)):
+                mat_A, vec_b = obs.get_convex_rep()
+                robot_G, robot_g = self.quad[quad_no].get_convex_rep()
+                #print("A= ",robot_G,"B= ",robot_g)
+                Rwb = self.get_rotation_state(self.state,False,False)
+                # get current value of cbf
+                pose = poses[quad_no]
+                x,y,z = pose[0],pose[1],pose[2]
 
-        #         print("x: ",x)
-        #         print("y", y)
-        #         print("z", z)
-        #         pos_mag = (x**2+y**2+z**2)**0.5
-        #         x/=pos_mag
-        #         y/=pos_mag
-        #         z/=pos_mag
+                print("x: ",x)
+                print("y", y)
+                print("z", z)
+                pos_mag = (x**2+y**2+z**2)**0.5
+                if pos_mag > 0:
+                    x/=pos_mag
+                    y/=pos_mag
+                    z/=pos_mag
 
-        #         print("x after: ", x)
-        #         print("y after: ", y)
-        #         print("z after: ", z)
+                print("x after: ", x)
+                print("y after: ", y)
+                print("z after: ", z)
 
-        #         offset = ca.SX(3,1)
-        #         offset[0] = x/2
-        #         offset[1] = y/2
-        #         offset[2] = z/2
+                offset = ca.SX(3,1)
+                offset[0] = x/2
+                offset[1] = y/2
+                offset[2] = z/2
                 
-        #         Rbox = self.get_Rotation_Of_StringBox(pose,False)
+                Rbox = self.get_Rotation_Of_StringBox(pose,False)
 
-        #         Tbox = np.array(self.state[0:3]).T + Rwb@(self.rho_vec_list[quad_no]).T + np.array(self.params.cable_length).T*np.array([x/2,y/2,z/2]).T
+                Tbox = np.array(self.state[0:3]).T + Rwb@(self.rho_vec_list[quad_no]).T + np.array(self.params.cable_length).T*np.array([x/2,y/2,z/2]).T
 
-        #         Tbox = Tbox.reshape(3,1)
-
-        #         print("RBox: ",Rbox)
-        #         print("TBox: ", Tbox)
-        #         cbf_curr, lamb_curr, mu_curr = self.get_minimum_dist(
-        #             mat_A,
-        #             vec_b,
-        #             np.dot(robot_G, Rbox.T),
-        #             np.dot(np.dot(robot_G, Rbox.T), Tbox) + robot_g,
-        #         )
-        #         cbf_p[self.n_obs + i*self.robot_num + quad_no] = cbf_curr
-        #         # Initialize lambda mu and omega input values
-        #         model_u[st_val + (len_lambda + len_lambda + 1)*quad_no:st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda]                           = lamb_curr.reshape((len_lambda,1))
-        #         model_u[st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda:st_val + (len_lambda + len_lambda + 1)*quad_no + len_lambda + len_lambda] = mu_curr.reshape((len_lambda,1))
-        #         model_u[st_val + (len_lambda + len_lambda + 1)*(quad_no+1)-1]                                                                               = omega_curr
+                Tbox = Tbox.reshape(3,1)
 
 
+                print("RBox: ",Rbox)
+                print("TBox: ", Tbox)
+                print("In the local frame")
+                print("Obstacle A", mat_A)
+                print("Obstacle B", vec_b)
+                print("Robot A", robot_G)
+                print("Robot B", robot_g)
+                print("Quadrotor in the word frame:")
+                print("Obstacle A", mat_A)
+                print("Obstacle B", vec_b)
+                print("Robot A", np.dot(robot_G, Rbox.T))
+                print("Robot B", np.dot(np.dot(robot_G, Rbox.T), Tbox) + robot_g)
+                cbf_curr, lamb_curr, mu_curr = self.get_minimum_dist(
+                    mat_A,
+                    vec_b,
+                    np.dot(robot_G, Rbox.T),
+                    np.dot(np.dot(robot_G, Rbox.T), Tbox) + robot_g,
+                )
+                cbf_p[self.n_obs + i*self.robot_num + quad_no] = cbf_curr
+                # Initialize lambda mu and omega input values
+                print("ST lamb curr: ", st_val + (len_lambda + len_lambda + 1)*quad_no)
+                print("END lamb curr: ", st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda)
+                print("ST mu curr: ", st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda)
+                print("END mu curr: ", st_val + (len_lambda + len_lambda + 1)*quad_no + len_lambda + len_lambda)
+                model_u[st_val + (len_lambda + len_lambda + 1)*quad_no:st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda]                           = lamb_curr
+                model_u[st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda:st_val + (len_lambda + len_lambda + 1)*quad_no + len_lambda + len_lambda] = mu_curr
+                model_u[st_val + (len_lambda + len_lambda + 1)*(quad_no+1)-1]                                                                               = omega_curr
+
+        # ##### Quadrotor-Quadrotor #####
         # quad_rep = []
         # st_val = (len_lambda + len_mu + 1)*self.n_obs + self.n_obs*self.robot_num*(len_lambda + len_lambda + 1)
         # for quad_no in range(len(self.quad)):
@@ -386,6 +408,7 @@ class CBFDualityOptimization:
 
         # print("CBF_params: ", cbf_p)
         # print("Lamda-Mu-Omg shape: ", model_u.shape)
+        ######################################################################################################################
 
         return np.array(cbf_p).squeeze(), model_u.squeeze()
     
@@ -433,9 +456,10 @@ class CBFDualityOptimization:
             Rbox = np.zeros((3,3))
         x,y,z = pose[0],pose[1],pose[2]
         pos_mag = (x**2+y**2+z**2)**0.5
-        x/=pos_mag
-        y/=pos_mag
-        z/=pos_mag
+        if pos_mag > 0:
+            x/=pos_mag
+            y/=pos_mag
+            z/=pos_mag
         #Calculate the rotation of box from the cable direction
         #the box z' direction is taken along the vector because it should be cable length
         #first choose x along 1,0,0 , find y' by -cross(z,x) and x' by cross(y,z)
@@ -465,7 +489,6 @@ class CBFDualityOptimization:
             Rwb = self.get_rotation_state(state,True,False)
 
         ################################################################## 
-
         force = input[0:3]
         moment = input[3:6]
         cable_dirs=[]
@@ -477,344 +500,109 @@ class CBFDualityOptimization:
         #NOTE: returns cable direction in world coordinate and not pose 
         return cable_dirs
 
-    # def calculateCableDir(self,params,state,is_symbolic=False):
-
-    #     rho_vec_list = np.vstack([np.array([params.rhos['rho'+str(k+1)]['x'],params.rhos['rho'+str(k+1)]['y'],params.rhos['rho'+str(k+1)]['z']]) for k in range(0,self.robot_num)])
-    #     # Set up the skew symmetrical matrix of the distance vector from the payload's center of mass to the attach points 
-    #     rho_vec_asym_mat = np.hstack([vec2asym(np.array([params.rhos['rho'+str(k+1)]['x'],params.rhos['rho'+str(k+1)]['y'],params.rhos['rho'+str(k+1)]['z']])) for k in range(0,self.robot_num)])
-
-    #     # Stacking identity matrix for preparing cable distribution matrix
-    #     identity_stack_mat = np.hstack([np.eye(3) for k in range(0,self.robot_num)])
-
-    #     # Set up the cable distribution matrix P
-    #     P = np.vstack((identity_stack_mat,rho_vec_asym_mat))
-
-    #     # Calculate the pseudo inverse of the P matrix
-    #     pseudo_inv_P = np.matmul(P.T, LA.inv(np.matmul(P, P.T)))
-    #     #print("The Pseudo inverse of P is ", pseudo_inv_P)
-    #     Rwb = None
-
-    #     if is_symbolic:
-    #         Rwb = self.get_rotation_state(state,True,True)
-    #     else:
-    #         Rwb = self.get_rotation_state(state,True,False)
-
-    #     ################################################################## 
-
-    #     force = state[13:16]
-    #     moment = state[16:19]
-    #     cable_dirs=[]
-        
-    #     for i in range(self.robot_num):
-    #         cable_dir = Rwb@(pseudo_inv_P[3*i:3*i+3,0:3] @ Rwb.T @ force + pseudo_inv_P[3*i:3*i+3,3:6] @ moment)
-    #         cable_dirs.append(cable_dir)
-        
-    #     #NOTE: returns cable direction in world coordinate and not pose 
-    #     return cable_dirs,np.array(rho_vec_list)
     
     def add_payload_to_obstacles_constraints(self, param, obs_geo, model_x, model_u, i, safe_dist=3):
-        mat_A, vec_b = obs_geo.get_convex_rep()
+        mat_A, vec_b     = obs_geo.get_convex_rep()
         robot_G, robot_g = self.payload.get_convex_rep()
-        # get current value of cbf
-        # cbf_curr, lamb_curr, mu_curr = self.get_minimum_dist(
-        #     mat_A,
-        #     vec_b,
-        #     np.dot(robot_G, self.get_rotation_state(self.state,False,False).T),
-        #     np.dot(np.dot(robot_G, self.get_rotation_state(self.state,False,False).T), self.transtion_state()) + robot_g,
-        # )
-
-        #if obstacle is far away no need to apply constriant
-        # if(cbf_curr>0.6):
-        #     return
         
-        # if(cbf_curr<0):
-        #     raise("payload collided")
-        
-        ########----------------- CASADI IMPLEMENTATION --------------------########
-        # lamb = self.opti.variable(mat_A.shape[0], N)
-        # mu = self.opti.variable(robot_G.shape[0], N)
-        # omega = self.opti.variable(N, 1)
-        # for i in range(N):
-        #     Rwb = self.get_rotation_state(self.variables["x"][:, i + 1],True,True)
-
-        #     robot_T = self.variables["x"][0:3, i + 1]
-        #     # Lagrange Multiplier Constraints
-        #     self.opti.subject_to(lamb[:, i] >= 0)
-        #     self.opti.subject_to(mu[:, i] >= 0)
-
-        #     # CBF constraints for payload
-        #     self.opti.subject_to(
-        #         -ca.mtimes(robot_g.T, mu[:, i]) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb[:, i])
-        #         >= omega[i] * param.gamma ** (i + 1) * (cbf_curr - param.margin_dist) + param.margin_dist
-        #     )
-        #     self.opti.subject_to(
-        #         ca.mtimes(robot_G.T, mu[:, i]) + ca.mtimes(ca.mtimes(Rwb.T, mat_A.T), lamb[:, i]) == 0
-        #     )
-        #     temp = ca.mtimes(mat_A.T, lamb[:, i])
-        #     self.opti.subject_to(ca.mtimes(temp.T, temp) <= 1)
-
-        #     # CBF parameter's constraints`1`
-        #     self.opti.subject_to(omega[i] >= 0)
-
-        #     # warm start
-        #     self.opti.set_initial(lamb[:, i], lamb_curr)
-        #     self.opti.set_initial(mu[:, i], mu_curr)
-        #     self.opti.set_initial(omega[i], 0.1)
-        ########--------------------------------------------------------########
-
-        # lamb = ca.SX.sym(f"lamb_pl_obs_{i}",mat_A.shape[0],1)
-        # mu = ca.SX.sym(f"mu_pl_obs_{i}",robot_G.shape[0],1)
-        # omega = ca.SX.sym(f"omega_pl_obs_{i}")
         len_lambda  = param["lambda"]
         len_mu      = param["mu"]
-        lamb  = model_u[(len_lambda + len_mu + 1)*i:(len_lambda + len_mu + 1)*i+len_lambda]
-        mu    = model_u[(len_lambda + len_mu + 1)*i+len_lambda:(len_lambda + len_mu + 1)*i + len_lambda + len_mu]
-        omega = model_u[(len_lambda + len_mu + 1)*(i+1)-1]
-        # ocp.add_variable()
-        Rwb = self.get_rotation_state(model_x,True,True)
+        lamb        = model_u[(len_lambda + len_mu + 1)*i:(len_lambda + len_mu + 1)*i+len_lambda]
+        mu          = model_u[(len_lambda + len_mu + 1)*i+len_lambda:(len_lambda + len_mu + 1)*i + len_lambda + len_mu]
+        omega       = model_u[(len_lambda + len_mu + 1)*(i+1)-1]
+
+        Rwb     = self.get_rotation_state(model_x,True,True)
         robot_T = model_x[:3]
         
         #############################################################################################################
-        # robot_x = self.state[:3]
-        # obs_pt = ca.vertcat(1.5,1.5,2)
-        # hx  = ca.sumsqr(robot_x - obs_pt)
-        # hx1 = ca.sumsqr(robot_T - obs_pt)
-        # self.hlist = ca.vertcat(self.hlist,hx1-param["margin"]**2-self.gamma*(hx - param["margin"]**2))
-        # self.hlist_lb = np.concatenate((self.hlist_lb, np.zeros(1)))
-        # self.hlist_ub = np.concatenate((self.hlist_ub, 100*np.ones(1)))
-        # # 1
-        # self.hlist.append(lamb)
-        # self.hlist_lb.append(ca.SX.zeros(mat_A.shape[0],1))
-        # self.hlist_ub.append(ca.SX(10)*ca.SX.ones(mat_A.shape[0],1))
-        self.hlist = ca.vertcat(self.hlist,lamb)
-        # self.hlist_lb = ca.vertcat(self.hlist_lb,ca.SX.zeros(mat_A.shape[0],1))
-        # self.hlist_ub = ca.vertcat(self.hlist_ub,ca.SX(10)*ca.SX.ones(mat_A.shape[0],1))      
+        # 1
+        self.hlist    = ca.vertcat(self.hlist,lamb)   
         self.hlist_lb = np.concatenate((self.hlist_lb, np.zeros(mat_A.shape[0])))
-        self.hlist_ub = np.concatenate((self.hlist_ub, 1000*np.ones(mat_A.shape[0])))
+        self.hlist_ub = np.concatenate((self.hlist_ub, 10000000*np.ones(mat_A.shape[0])))
 
         # 2
-        # self.hlist.append(mu)
-        # self.hlist_lb.append(ca.SX.zeros(robot_G.shape[0],1))
-        # self.hlist_ub.append(ca.SX(10)*ca.SX.ones(robot_G.shape[0],1))
-        self.hlist = ca.vertcat(self.hlist,mu)
-        # self.hlist_lb = ca.vertcat(self.hlist_lb,ca.SX.zeros(robot_G.shape[0],1))
-        # self.hlist_ub = ca.vertcat(self.hlist_ub,ca.SX(10)*ca.SX.ones(robot_G.shape[0],1))
+        self.hlist    = ca.vertcat(self.hlist,mu)
         self.hlist_lb = np.concatenate((self.hlist_lb, np.zeros(robot_G.shape[0])))
-        self.hlist_ub = np.concatenate((self.hlist_ub, 1000*np.ones(robot_G.shape[0])))
+        self.hlist_ub = np.concatenate((self.hlist_ub, 10000000*np.ones(robot_G.shape[0])))
         # 3
-        # self.hlist.append(-ca.mtimes(robot_g.T, mu) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb)
-        #         - omega * self.gamma * (cbf_curr - param["margin"]) - param["margin"])
-        # self.hlist_lb.append(0)
-        # self.hlist_ub.append(100)
-        # self.hlist = ca.vertcat(self.hlist,-ca.mtimes((robot_g-ca.mtimes(robot_G, robot_T)).T,mu) -ca.mtimes(vec_b.T,lamb)
-        #         - self.gamma * (self.cbf_p[i] - param["margin"]) - param["margin"]) #omega=0.1
-        self.hlist = ca.vertcat(self.hlist,-ca.mtimes(robot_g.T, mu) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb)
+        self.hlist    = ca.vertcat(self.hlist,-ca.mtimes(robot_g.T, mu) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb)
                 - self.gamma * (self.cbf_p[i] - param["margin"]) - param["margin"])
-        # self.hlist_lb = ca.vertcat(self.hlist_lb,0)      
-        # self.hlist_ub = ca.vertcat(self.hlist_ub,100)
         self.hlist_lb = np.append(self.hlist_lb, 0)
-        self.hlist_ub = np.append(self.hlist_ub, 1000)  
+        self.hlist_ub = np.append(self.hlist_ub, 10000000)  
         # 4
-        # self.hlist.append(ca.mtimes(robot_G.T, mu) + ca.mtimes(ca.mtimes(Rwb.T, mat_A.T), lamb))
-        # self.hlist_lb.append(0)
-        # self.hlist_ub.append(0)
-        self.hlist = ca.vertcat(self.hlist,ca.mtimes(robot_G.T, mu) + ca.mtimes(ca.mtimes(Rwb.T, mat_A.T), lamb))
-        # self.hlist_lb = ca.vertcat(self.hlist_lb,ca.SX.zeros(robot_G.shape[1]))      
-        # self.hlist_ub = ca.vertcat(self.hlist_ub,ca.SX.zeros(robot_G.shape[1]))
+        self.hlist    = ca.vertcat(self.hlist,ca.mtimes(robot_G.T, mu) + ca.mtimes(ca.mtimes(Rwb.T, mat_A.T), lamb))
         self.hlist_lb = np.concatenate((self.hlist_lb, np.zeros(robot_G.shape[1])))
         self.hlist_ub = np.concatenate((self.hlist_ub, np.zeros(robot_G.shape[1])))  
         # 5
-        temp = ca.mtimes(mat_A.T, lamb)
-        # self.hlist.append(ca.mtimes(temp.T, temp))
-        # self.hlist_lb.append(0)
-        # self.hlist_ub.append(1)
-        self.hlist = ca.vertcat(self.hlist,ca.mtimes(temp.T, temp))
-        # self.hlist_lb = ca.vertcat(self.hlist_lb,0)      
-        # self.hlist_ub = ca.vertcat(self.hlist_ub,1)
+        temp          = ca.mtimes(mat_A.T, lamb)
+        self.hlist    = ca.vertcat(self.hlist,ca.mtimes(temp.T, temp))
         self.hlist_lb = np.append(self.hlist_lb, 0)
         self.hlist_ub = np.append(self.hlist_ub, 1)  
         # 6
-        # self.hlist.append(omega)
-        # self.hlist_lb.append(0)
-        # self.hlist_ub.append(10)
-        self.hlist = ca.vertcat(self.hlist,omega)
-        # self.hlist_lb = ca.vertcat(self.hlist_lb,0)      
-        # self.hlist_ub = ca.vertcat(self.hlist_ub,10)
+        self.hlist    = ca.vertcat(self.hlist,omega)
         self.hlist_lb = np.append(self.hlist_lb, 0)
         self.hlist_ub = np.append(self.hlist_ub, 10)
-        #  
+        #############################################################################################################
 
-        # ocp.add_variable(f"lamb_pl_obs_{i}",lamb)
-        # ocp.add_variable(f"mu_pl_obs_{i}",mu)
-        # ocp.add_variable(f"omega_pl_obs_{i}",omega)
-
-        # self.warm_start[f"lamb_pl_obs_{i}"] = lamb_curr
-        # self.warm_start[f"mu_pl_obs_{i}"] = mu_curr
-        # self.warm_start[f"omega_pl_obs_{i}"] = 0.1
     
     def add_cablesNquadrotors_to_obstacles_constraints(self, param, obs_geo, model_x, model_u, model_x_i, model_u_FMV, i,safe_dist=3):
         #NOTE: returns cable direction in world coordinate and not pose 
-        # poses,rho_vec_list= self.calculateCableDir(MPC_param,self.state,False)
-        # poses = self.calculateCableDir(self.state,self.input,False)
         poses = self.calculateCableDir(model_x_i,model_u_FMV,True)
+        
         for quad_no in range(len(self.quad)):
-            mat_A, vec_b = obs_geo.get_convex_rep()
+            mat_A, vec_b     = obs_geo.get_convex_rep()
             robot_G, robot_g = self.quad[quad_no].get_convex_rep()
-            #print("A= ",robot_G,"B= ",robot_g)
-            # Rwb = self.get_rotation_state(self.state,False,False)
-            # get current value of cbf
-            pose = poses[quad_no]
-            x,y,z = pose[0],pose[1],pose[2]
+    
+            pose    = poses[quad_no]
+            x,y,z   = pose[0],pose[1],pose[2]
             pos_mag = (x**2+y**2+z**2)**0.5
             x/=pos_mag
             y/=pos_mag
             z/=pos_mag
 
-            offset = ca.SX(3,1)
+            offset    = ca.SX(3,1)
             offset[0] = x/2
             offset[1] = y/2
             offset[2] = z/2
-            
-            # Rbox = self.get_Rotation_Of_StringBox(pose,False)
-
-            # Tbox = np.array(self.state[0:3]).T + Rwb@(self.rho_vec_list[quad_no]).T + np.array(self.params.cable_length).T*np.array([x/2,y/2,z/2]).T
-
-            # Tbox = Tbox.reshape(3,1)
-            # cbf_curr, lamb_curr, mu_curr = self.get_minimum_dist(
-            #     mat_A,
-            #     vec_b,
-            #     np.dot(robot_G, Rbox.T),
-            #     np.dot(np.dot(robot_G, Rbox.T), Tbox) + robot_g,
-            # )
-           
-            # if(cbf_curr>0.6):
-            #     continue
-            
-            # if(cbf_curr<0):
-            #     print(f'cbf_curr = {cbf_curr}')
-            #     raise Exception("cables collided")
-            
-        ########----------------- CASADI IMPLEMENTATION --------------------########
-            # lamb = self.opti.variable(mat_A.shape[0], param.horizon_dcbf)
-            # mu = self.opti.variable(robot_G.shape[0], param.horizon_dcbf)
-            # omega = self.opti.variable(param.horizon, 1)
-            # for i in range(param.horizon_dcbf):
-            #     x,y,z = pose[0],pose[1],pose[2]
-            #     pos_mag = (x**2+y**2+z**2+1e-5)**0.5
-            #     x/=pos_mag
-            #     y/=pos_mag
-            #     z/=pos_mag
-
-                # Rbox = self.get_Rotation_Of_StringBox(pose,True)
-                # Rwb = self.get_rotation_state(self.variables["x"][:, i + 1],True,True)
-
-            
-                # offset = ca.MX(3,1)
-                # offset[0] = x/2
-                # offset[1] = y/2
-                # offset[2] = z/2
-
-                # robot_T = self.variables["x"][0:3, i + 1]
-                # robot_T =(self.variables["x"][0:3, i + 1]) + Rwb@(self.rho_vec_list[quad_no]).T + np.array(self.params.cable_length_list).T*offset
-                #print(robot_T.shape) 
-                # self.opti.subject_to(lamb[:, i] >= 0)
-                # self.opti.subject_to(mu[:, i] >= 0)
-                # self.opti.subject_to(
-                #     -ca.mtimes(robot_g.T, mu[:, i]) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb[:, i])
-                #     >= omega[i] * param.gamma ** (i + 1) * (cbf_curr - param.margin_dist) + param.margin_dist
-                # )
-                # self.opti.subject_to(
-                #     ca.mtimes(robot_G.T, mu[:, i]) + ca.mtimes(ca.mtimes(Rbox.T, mat_A.T), lamb[:, i]) == 0
-                # )
-                # temp = ca.mtimes(mat_A.T, lamb[:, i])
-                # self.opti.subject_to(ca.mtimes(temp.T, temp) <= 1)
-                # self.opti.subject_to(omega[i] >= 0)
-                
-                # self.opti.set_initial(lamb[:, i], lamb_curr)
-                # self.opti.set_initial(mu[:, i], mu_curr)
-                # self.opti.set_initial(omega[i], 0.1)
-        ########--------------------------------------------------------########
-            # duality-cbf constraints
-            # lamb = ca.SX.sym(f"lamb_cable_obs_{quad_no}{i}",mat_A.shape[0],1)
-            # mu = ca.SX.sym(f"mu_cable_obs_{quad_no}{i}",robot_G.shape[0],1)
-            # omega = ca.SX.sym(f"omega_cable_obs_{quad_no}{i}")
+        
             len_lambda  = param["lambda"]
             len_mu      = param["mu"]
-            st_val = (len_lambda + len_mu + 1)*self.n_obs + i*self.robot_num*(len_lambda + len_lambda + 1)
-            lamb   = model_u[st_val + (len_lambda + len_lambda + 1)*quad_no:st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda]
-            mu     = model_u[st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda:st_val + (len_lambda + len_lambda + 1)*quad_no + len_lambda + len_lambda]
-            omega  = model_u[st_val + (len_lambda + len_lambda + 1)*(quad_no+1)-1]
-            # ocp.add_variable()
-            # Rbox = self.get_Rotation_Of_StringBox(pose,True)
-            Rwb = self.get_rotation_state(model_x,True,True)
-
-            robot_T =model_x[:3] + Rwb@(self.rho_vec_list[quad_no]).T + np.array(self.params.cable_length).T*offset
+            st_val      = (len_lambda + len_mu + 1)*self.n_obs + i*self.robot_num*(len_lambda + len_lambda + 1)
+            lamb        = model_u[st_val + (len_lambda + len_lambda + 1)*quad_no:st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda]
+            mu          = model_u[st_val + (len_lambda + len_lambda + 1)*quad_no+len_lambda:st_val + (len_lambda + len_lambda + 1)*quad_no + len_lambda + len_lambda]
+            omega       = model_u[st_val + (len_lambda + len_lambda + 1)*(quad_no+1)-1]
+            
+            Rwb     = self.get_rotation_state(model_x,True,True)
+            robot_T = model_x[:3] + ca.mtimes(Rwb,self.rho_vec_list[quad_no,:].reshape(3,1)) + ca.mtimes(np.diagflat(np.array(self.params.cable_length)),offset)
+            #############################################################################################################
             # 1
-            # self.hlist.append(lamb)
-            # self.hlist_lb.append(ca.SX.zeros(mat_A.shape[0],1))
-            # self.hlist_ub.append(ca.SX(10)*ca.SX.ones(mat_A.shape[0],1))
-            self.hlist = ca.vertcat(self.hlist,lamb)
-            # self.hlist_lb = ca.vertcat(self.hlist_lb,ca.SX.zeros(mat_A.shape[0],1))      
-            # self.hlist_ub = ca.vertcat(self.hlist_ub,ca.SX(10)*ca.SX.ones(mat_A.shape[0],1))
+            self.hlist    = ca.vertcat(self.hlist,lamb)
             self.hlist_lb = np.concatenate((self.hlist_lb, np.zeros(mat_A.shape[0])))
-            self.hlist_ub = np.concatenate((self.hlist_ub, 10*np.ones(mat_A.shape[0])))
+            self.hlist_ub = np.concatenate((self.hlist_ub, 1000*np.ones(mat_A.shape[0])))
             # 2
-            # self.hlist.append(mu)
-            # self.hlist_lb.append(ca.SX.zeros(robot_G.shape[0],1))
-            # self.hlist_ub.append(ca.SX(10)*ca.SX.ones(robot_G.shape[0],1))
-            self.hlist = ca.vertcat(self.hlist,mu)
-            # self.hlist_lb = ca.vertcat(self.hlist_lb,ca.SX.zeros(robot_G.shape[0],1))      
-            # self.hlist_ub = ca.vertcat(self.hlist_ub,ca.SX(10)*ca.SX.ones(robot_G.shape[0],1))  
+            self.hlist    = ca.vertcat(self.hlist,mu)  
             self.hlist_lb = np.concatenate((self.hlist_lb, np.zeros(robot_G.shape[0])))
-            self.hlist_ub = np.concatenate((self.hlist_ub, 10*np.ones(robot_G.shape[0])))
+            self.hlist_ub = np.concatenate((self.hlist_ub, 1000*np.ones(robot_G.shape[0])))
             # 3
-            # self.hlist.append(-ca.mtimes(robot_g.T, mu) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb)
-            #         - omega * self.gamma * (cbf_curr - param["margin"]) - param["margin"])
-            # self.hlist_lb.append(0)
-            # self.hlist_ub.append(100)
-            self.hlist = ca.vertcat(self.hlist,-ca.mtimes(robot_g.T, mu) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb)
-                    - omega * self.gamma * (self.cbf_p[self.n_obs + i*self.robot_num + quad_no] - param["margin"]) - param["margin"])
-            # self.hlist_lb = ca.vertcat(self.hlist_lb,0)      
-            # self.hlist_ub = ca.vertcat(self.hlist_ub,100)
+            self.hlist    = ca.vertcat(self.hlist,-ca.mtimes(robot_g.T, mu) + ca.mtimes((ca.mtimes(mat_A, robot_T) - vec_b).T, lamb)
+                    - self.gamma * (self.cbf_p[self.n_obs + i*self.robot_num + quad_no] - param["margin"]) - param["margin"])
             self.hlist_lb = np.append(self.hlist_lb, 0)
-            self.hlist_ub = np.append(self.hlist_ub, 100) 
+            self.hlist_ub = np.append(self.hlist_ub, 1000)
             # 4
-            # self.hlist.append(ca.mtimes(robot_G.T, mu) + ca.mtimes(ca.mtimes(Rwb.T, mat_A.T), lamb))
-            # self.hlist_lb.append(ca.SX.zeros(robot_G.shape[1]))
-            # self.hlist_ub.append(ca.SX.zeros(robot_G.shape[1]))
-            self.hlist = ca.vertcat(self.hlist,ca.mtimes(robot_G.T, mu) + ca.mtimes(ca.mtimes(Rwb.T, mat_A.T), lamb))
-            # self.hlist_lb = ca.vertcat(self.hlist_lb,ca.SX.zeros(robot_G.shape[1]))      
-            # self.hlist_ub = ca.vertcat(self.hlist_ub,ca.SX.zeros(robot_G.shape[1]))
+            self.hlist    = ca.vertcat(self.hlist,ca.mtimes(robot_G.T, mu) + ca.mtimes(ca.mtimes(Rwb.T, mat_A.T), lamb))
             self.hlist_lb = np.concatenate((self.hlist_lb, np.zeros(robot_G.shape[1])))
             self.hlist_ub = np.concatenate((self.hlist_ub, np.zeros(robot_G.shape[1])))
             # 5
-            temp = ca.mtimes(mat_A.T, lamb)
-            # self.hlist.append(ca.mtimes(temp.T, temp))
-            # self.hlist_lb.append(0)
-            # self.hlist_ub.append(1)
-            self.hlist = ca.vertcat(self.hlist,ca.mtimes(temp.T, temp))
-            # self.hlist_lb = ca.vertcat(self.hlist_lb,0)      
-            # self.hlist_ub = ca.vertcat(self.hlist_ub,1)
+            temp          = ca.mtimes(mat_A.T, lamb)
+            self.hlist    = ca.vertcat(self.hlist,ca.mtimes(temp.T, temp))
             self.hlist_lb = np.append(self.hlist_lb, 0)
             self.hlist_ub = np.append(self.hlist_ub, 1) 
             # 6
-            # self.hlist.append(omega)
-            # self.hlist_lb.append(0)
-            # self.hlist_ub.append(10)
-            self.hlist = ca.vertcat(self.hlist,omega)
-            # self.hlist_lb = ca.vertcat(self.hlist_lb,0)      
-            # self.hlist_ub = ca.vertcat(self.hlist_ub,10)
+            self.hlist    = ca.vertcat(self.hlist,omega)
             self.hlist_lb = np.append(self.hlist_lb, 0)
-            self.hlist_ub = np.append(self.hlist_ub, 10) 
+            self.hlist_ub = np.append(self.hlist_ub, 10)
+        #############################################################################################################
 
-            # ocp.add_variable(f"lamb_cable_obs_{quad_no}{i}",lamb)
-            # ocp.add_variable(f"mu_cable_obs_{quad_no}{i}",mu)
-            # ocp.add_variable(f"omega_cable_obs_{quad_no}{i}",omega)
-
-            # self.warm_start[f"lamb_cable_obs_{quad_no}{i}"] = lamb_curr
-            # self.warm_start[f"mu_cable_obs_{quad_no}{i}"] = mu_curr
-            # self.warm_start[f"omega_cable_obs_{quad_no}{i}"] = 0.1
-        
     
     def getQuadRepresentation(self,poses,rho_vec_list,quad_no,is_symbolic):
         pose = poses[quad_no]
@@ -997,7 +785,7 @@ class CBFDualityOptimization:
         #add wall const
         for i,obs in enumerate(self.obstacles):
             self.add_payload_to_obstacles_constraints(cbf_param,obs, model_x_next, model_u[9:], i)
-            # self.add_cablesNquadrotors_to_obstacles_constraints(cbf_param, obs, model_x_next, model_u[9:], model_x, model_u[:9], i)
+            self.add_cablesNquadrotors_to_obstacles_constraints(cbf_param, obs, model_x_next, model_u[9:], model_x, model_u[:9], i)
        
         # self.add_quad_to_quad_const(cbf_param, model_u[9:], model_x, model_u[:9])
         return self.hlist, self.hlist_lb, self.hlist_ub

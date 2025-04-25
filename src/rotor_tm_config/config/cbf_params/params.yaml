@@ -1,8 +1,8 @@
 #the factor used in the planner
-cbf_gamma: 0.01
+cbf_gamma: 0.1
 
 #How close you want to clear the obstacle by
-margin: 0.5  
+margin: 0.4
 
 #lambda and mu lengths depending on number of faces of the polytope
 lambda: 6

@@ -90,20 +90,22 @@ def payload_model(params,cbf_params, obstacle_params):
     n_obs       = len(obstacle_params["obstacles"].keys())
     len_lambda  = cbf_params["lambda"]
     len_mu      = cbf_params["mu"]
-    # len_quad    = params.nquad 
+    len_quad    = params.nquad 
     for i in range(n_obs):
         lamb = ca.SX.sym(f"lamb_pl_obs_{i}",len_lambda,1)
         mu   = ca.SX.sym(f"mu_pl_obs_{i}",len_mu,1)
         omg  = ca.SX.sym(f"omega_pl_obs_{i}")
         W = ca.vertcat(W, lamb,mu,omg)
-        
-    # for i in range(n_obs):
-    #     for j in range(len_quad):
-    #         lamb = ca.SX.sym(f"lamb_quad_{j}_obs_{i}",len_lambda,1)
-    #         mu   = ca.SX.sym(f"mu_quad_{j}_obs_{i}",len_lambda,1)
-    #         omg  = ca.SX.sym(f"omega_quad_{j}_obs_{i}")
-    #         W = ca.vertcat(W, lamb,mu,omg)
 
+    #change here     
+    for i in range(n_obs):
+        for j in range(len_quad):#1
+            lamb = ca.SX.sym(f"lamb_quad_{j}_obs_{i}",len_lambda,1)
+            mu   = ca.SX.sym(f"mu_quad_{j}_obs_{i}",len_lambda,1)
+            omg  = ca.SX.sym(f"omega_quad_{j}_obs_{i}")
+            W = ca.vertcat(W, lamb,mu,omg)
+
+    #change here     
     # for j in range(len_quad):
     #     lamb = ca.SX.sym(f"lamd_quad_{j}_quad_{(j+1)%3}",len_lambda,1)
     #     mu   = ca.SX.sym(f"mu_quad_{j}_quad_{(j+1)%3}",len_lambda,1)
@@ -205,7 +207,8 @@ def payload_model(params,cbf_params, obstacle_params):
     nx = model.x.rows()
     nu = model.u[:9].rows()
     reference_param = ca.SX.sym('references', (nx + nu), 1)
-    cbf_param = ca.SX.sym("curr_cbf",n_obs,1)
+    #change here
+    cbf_param = ca.SX.sym("curr_cbf",n_obs + n_obs*len_quad,1) # + len_quad
     gamma = ca.SX.sym('gamma')
     ref_params = ca.vertcat(reference_param,cbf_param,gamma)
     # model.p = reference_param

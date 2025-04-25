@@ -601,6 +601,45 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     idxbu[15] = 18;
     idxbu[16] = 19;
     idxbu[17] = 20;
+    idxbu[18] = 21;
+    idxbu[19] = 22;
+    idxbu[20] = 23;
+    idxbu[21] = 24;
+    idxbu[22] = 25;
+    idxbu[23] = 26;
+    idxbu[24] = 27;
+    idxbu[25] = 28;
+    idxbu[26] = 29;
+    idxbu[27] = 30;
+    idxbu[28] = 31;
+    idxbu[29] = 32;
+    idxbu[30] = 33;
+    idxbu[31] = 34;
+    idxbu[32] = 35;
+    idxbu[33] = 36;
+    idxbu[34] = 37;
+    idxbu[35] = 38;
+    idxbu[36] = 39;
+    idxbu[37] = 40;
+    idxbu[38] = 41;
+    idxbu[39] = 42;
+    idxbu[40] = 43;
+    idxbu[41] = 44;
+    idxbu[42] = 45;
+    idxbu[43] = 46;
+    idxbu[44] = 47;
+    idxbu[45] = 48;
+    idxbu[46] = 49;
+    idxbu[47] = 50;
+    idxbu[48] = 51;
+    idxbu[49] = 52;
+    idxbu[50] = 53;
+    idxbu[51] = 54;
+    idxbu[52] = 55;
+    idxbu[53] = 56;
+    idxbu[54] = 57;
+    idxbu[55] = 58;
+    idxbu[56] = 59;
     double* lubu = calloc(2*NBU, sizeof(double));
     double* lbu = lubu;
     double* ubu = lubu + NBU;
@@ -627,6 +666,45 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     ubu[15] = 10;
     ubu[16] = 10;
     ubu[17] = 10;
+    ubu[18] = 10;
+    ubu[19] = 10;
+    ubu[20] = 10;
+    ubu[21] = 10;
+    ubu[22] = 10;
+    ubu[23] = 10;
+    ubu[24] = 10;
+    ubu[25] = 10;
+    ubu[26] = 10;
+    ubu[27] = 10;
+    ubu[28] = 10;
+    ubu[29] = 10;
+    ubu[30] = 10;
+    ubu[31] = 10;
+    ubu[32] = 10;
+    ubu[33] = 10;
+    ubu[34] = 10;
+    ubu[35] = 10;
+    ubu[36] = 10;
+    ubu[37] = 10;
+    ubu[38] = 10;
+    ubu[39] = 10;
+    ubu[40] = 10;
+    ubu[41] = 10;
+    ubu[42] = 10;
+    ubu[43] = 10;
+    ubu[44] = 10;
+    ubu[45] = 10;
+    ubu[46] = 10;
+    ubu[47] = 10;
+    ubu[48] = 10;
+    ubu[49] = 10;
+    ubu[50] = 10;
+    ubu[51] = 10;
+    ubu[52] = 10;
+    ubu[53] = 10;
+    ubu[54] = 10;
+    ubu[55] = 10;
+    ubu[56] = 10;
 
     for (int i = 0; i < N; i++)
     {
@@ -684,20 +762,65 @@ void payload_model_acados_setup_nlp_in(payload_model_solver_capsule* capsule, co
     double* luh = calloc(2*NH, sizeof(double));
     double* lh = luh;
     double* uh = luh + NH;
-    uh[0] = 1000;
-    uh[1] = 1000;
-    uh[2] = 1000;
-    uh[3] = 1000;
-    uh[4] = 1000;
-    uh[5] = 1000;
-    uh[6] = 1000;
-    uh[7] = 1000;
-    uh[8] = 1000;
-    uh[9] = 1000;
-    uh[10] = 1000;
-    uh[11] = 1000;
+    uh[0] = 10000000;
+    uh[1] = 10000000;
+    uh[2] = 10000000;
+    uh[3] = 10000000;
+    uh[4] = 10000000;
+    uh[5] = 10000000;
+    uh[6] = 10000000;
+    uh[7] = 10000000;
+    uh[8] = 10000000;
+    uh[9] = 10000000;
+    uh[10] = 10000000;
+    uh[11] = 10000000;
     uh[15] = 1;
     uh[16] = 10;
+    uh[17] = 1000;
+    uh[18] = 1000;
+    uh[19] = 1000;
+    uh[20] = 1000;
+    uh[21] = 1000;
+    uh[22] = 1000;
+    uh[23] = 1000;
+    uh[24] = 1000;
+    uh[25] = 1000;
+    uh[26] = 1000;
+    uh[27] = 1000;
+    uh[28] = 1000;
+    uh[29] = 1000;
+    uh[33] = 1;
+    uh[34] = 10;
+    uh[35] = 1000;
+    uh[36] = 1000;
+    uh[37] = 1000;
+    uh[38] = 1000;
+    uh[39] = 1000;
+    uh[40] = 1000;
+    uh[41] = 1000;
+    uh[42] = 1000;
+    uh[43] = 1000;
+    uh[44] = 1000;
+    uh[45] = 1000;
+    uh[46] = 1000;
+    uh[47] = 1000;
+    uh[51] = 1;
+    uh[52] = 10;
+    uh[53] = 1000;
+    uh[54] = 1000;
+    uh[55] = 1000;
+    uh[56] = 1000;
+    uh[57] = 1000;
+    uh[58] = 1000;
+    uh[59] = 1000;
+    uh[60] = 1000;
+    uh[61] = 1000;
+    uh[62] = 1000;
+    uh[63] = 1000;
+    uh[64] = 1000;
+    uh[65] = 1000;
+    uh[69] = 1;
+    uh[70] = 10;
 
     for (int i = 1; i < N; i++)
     {
@@ -806,7 +929,7 @@ static void payload_model_acados_create_set_opts(payload_model_solver_capsule* c
     for (int i = 0; i < N; i++)
         ocp_nlp_solver_opts_set_at_stage(nlp_config, nlp_opts, i, "dynamics_jac_reuse", &tmp_bool);
 
-    double levenberg_marquardt = 10;
+    double levenberg_marquardt = 20;
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "levenberg_marquardt", &levenberg_marquardt);
 
     /* options QP solver */
@@ -844,7 +967,7 @@ static void payload_model_acados_create_set_opts(payload_model_solver_capsule* c
 
 
 
-    int print_level = 2;
+    int print_level = 0;
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "print_level", &print_level);
     int qp_solver_cond_ric_alg = 1;
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "qp_cond_ric_alg", &qp_solver_cond_ric_alg);
@@ -1030,7 +1153,7 @@ int payload_model_acados_update_params(payload_model_solver_capsule* capsule, in
 {
     int solver_status = 0;
 
-    int casadi_np = 24;
+    int casadi_np = 27;
     if (casadi_np != np) {
         printf("acados_update_params: trying to set %i parameters for external functions."
             " External function has %i parameters. Exiting.\n", np, casadi_np);

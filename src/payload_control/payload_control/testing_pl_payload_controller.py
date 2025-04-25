@@ -50,15 +50,20 @@ def controller_setup(control_params,  payload_params, obstacle_params, cbf_param
     ##Some setup for the constraints
     cbf_constraints = CBFDualityOptimization(payload_params,obstacle_params["obstacles"], ref_array)
     hlist, hlist_lb, hlist_ub = cbf_constraints.setup(cbf_params,init_state, init_input, x_array, u_aaray)
+
+    h_fun = ca.Function('h_fun', [model.x, model.u, model.p], [hlist])
+
     n_obs       = len(obstacle_params["obstacles"].keys())
     len_lambda  = cbf_params["lambda"]
     len_mu      = cbf_params["mu"]
     n_quad      = payload_params.nquad
-    total_param = n_obs*(len_lambda + len_mu + 1) # + n_obs*n_quad*(len_lambda + len_lambda + 1) + n_quad*(len_lambda + len_lambda + 1)
+    #change here
+    total_param = n_obs*(len_lambda + len_mu + 1) + n_obs*n_quad*(len_lambda + len_lambda + 1) #+ n_quad*(len_lambda + len_lambda + 1)
     zeros_param = np.zeros(total_param)
     ones_param  = 10*np.ones(total_param)
     idxs_param  = np.arange(9, total_param + 9)
     
+    ocp.constraints.constr_type = 'BGH'
 
     #calculate square cost    
     ocp.cost.cost_type = 'EXTERNAL'  
@@ -92,46 +97,49 @@ def controller_setup(control_params,  payload_params, obstacle_params, cbf_param
     ocp.constraints.idxbx = np.array([ 3,4,5, 10,11,12])
     
     # ##inequlity constraints
-    ## u = model.u
-    ## h_list = get_constraints(u, quat, payload_params, control_params ,x_val[0:3] )
     ocp.model.con_h_expr = hlist
     ocp.dims.nh          = hlist.shape[0]
     ocp.constraints.lh   = hlist_lb          # lower bound
     ocp.constraints.uh   = hlist_ub            # Upper bound 
-    ocp.model.lh         = np.zeros((hlist.shape[0], 1))          # lower bound
-    ocp.model.uh         = 5000 * np.ones((hlist.shape[0], 1)) 
+    # ocp.model.lh         = np.zeros((hlist.shape[0], 1))          # lower bound
+    # ocp.model.uh         = 5000 * np.ones((hlist.shape[0], 1)) 
 
-    # #payload obstacle constraints
-    # obs1 = Obs(1,1,1, 0.5,0.5,0.5)
-    # payload = TriangleObs()
-    # A_pl, B_pl = payload.get_convex_rep()
-    # A_obs, B_obs = obs1.get_convex_rep() 
-    # h_list = get_pl_obs_constraints(A_obs, B_obs, A_pl, B_pl)     
-    # ocp.model.con_h_expr =h_list
-    # ocp.dims.nh = h_list.shape[0]
-    # ocp.constraints.lh = np.zeros((h_list.shape[0], 1))          # lower bound
-    # ocp.constraints.uh = 1 * np.ones((h_list.shape[0], 1))            # Upper bound 
-    # ocp.model.lh = np.zeros((h_list.shape[0], 1))          # lower bound
-    # ocp.model.uh = 1 * np.ones((h_list.shape[0], 1)) 
+
+    # # # ---- ADD SLACK FORMULATION ----
+    # nh_total = hlist.shape[0]
+
+    # # Mark all inequality constraints as soft
+    # ocp.constraints.idxsh = np.arange(nh_total)
+    # ocp.constraints.lsh   = np.zeros(nh_total)
+    # ocp.constraints.ush   = np.zeros(nh_total)
+
+    # # # Penalize all slacks
+    # ocp.cost.Zl    = 1000 * np.ones((nh_total, 1))#np.eye(nh_total)
+    # ocp.cost.Zu    = 1000 * np.ones((nh_total, 1))#np.eye(nh_total)
+    # ocp.cost.zl    = 1000 * np.ones((nh_total, 1))
+    # ocp.cost.zu    = 1000 * np.ones((nh_total, 1))
+    # # ocp.cost.idxsg = np.arange(nh_total)
+    # # --------------------------------
 
 
 
     ##controller settings
-    ocp.solver_options.N_horizon             = N
-    ocp.solver_options.tf                    = Tf
-    ocp.solver_options.qp_solver             = 'PARTIAL_CONDENSING_HPIPM' # FULL_CONDENSING_QPOASES
-    ocp.solver_options.nlp_solver_type       = 'SQP_RTI'                      #'SQP_RTI'
-    ocp.solver_options.hessian_approx        = "EXACT"
-    ocp.solver_options.integrator_type       = "ERK"
-    ocp.solver_options.sim_method_num_stages = 4
-    ocp.solver_options.regularize_method     = 'CONVEXIFY'
-    ocp.solver_options.levenberg_marquardt   = 10.0
-
-    ocp.solver_options.print_level           = 2
-    
+    ocp.solver_options.N_horizon               = N
+    ocp.solver_options.tf                      = Tf
+    ocp.solver_options.qp_solver               = 'PARTIAL_CONDENSING_HPIPM' # FULL_CONDENSING_QPOASES
+    #change here
+    ocp.solver_options.nlp_solver_type         = 'SQP_RTI'                      #'SQP_RTI'
+    ocp.solver_options.hessian_approx          = "EXACT"
+    ocp.solver_options.integrator_type         = "ERK"
+    ocp.solver_options.sim_method_num_stages   = 4
+    ocp.solver_options.regularize_method       = 'CONVEXIFY'
+    ocp.solver_options.levenberg_marquardt     = 20.0
+    #change here
+    ocp.solver_options.print_level             = 0                          #2
     ##create solver, integrator
+    #change here
     solver_json       = 'acados_ocp_' + model.name + '.json'
     acados_solver     = AcadosOcpSolver(ocp, json_file = solver_json,build=True)
     acados_integrator = AcadosSimSolver(ocp, json_file = solver_json, build=True)
 
-    return model, acados_solver, acados_integrator, cbf_constraints
+    return model, acados_solver, acados_integrator, cbf_constraints, h_fun

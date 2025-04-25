@@ -54,11 +54,11 @@ extern "C" {
 casadi_real casadi_sq(casadi_real x) { return x*x;}
 
 static const casadi_int casadi_s0[17] = {13, 1, 0, 13, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-static const casadi_int casadi_s1[25] = {21, 1, 0, 21, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
-static const casadi_int casadi_s2[28] = {24, 1, 0, 24, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
-static const casadi_int casadi_s3[38] = {34, 1, 0, 34, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33};
+static const casadi_int casadi_s1[64] = {60, 1, 0, 60, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59};
+static const casadi_int casadi_s2[31] = {27, 1, 0, 27, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26};
+static const casadi_int casadi_s3[77] = {73, 1, 0, 73, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72};
 
-/* payload_model_expl_vde_adj:(i0[13],i1[13],i2[21],i3[24])->(o0[34]) */
+/* payload_model_expl_vde_adj:(i0[13],i1[13],i2[60],i3[27])->(o0[73]) */
 static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem) {
   casadi_real a0, a1, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a2, a20, a21, a22, a3, a4, a5, a6, a7, a8, a9;
   a0=0.;
@@ -244,6 +244,45 @@ static int casadi_f0(const casadi_real** arg, casadi_real** res, casadi_int* iw,
   if (res[0]!=0) res[0][31]=a0;
   if (res[0]!=0) res[0][32]=a0;
   if (res[0]!=0) res[0][33]=a0;
+  if (res[0]!=0) res[0][34]=a0;
+  if (res[0]!=0) res[0][35]=a0;
+  if (res[0]!=0) res[0][36]=a0;
+  if (res[0]!=0) res[0][37]=a0;
+  if (res[0]!=0) res[0][38]=a0;
+  if (res[0]!=0) res[0][39]=a0;
+  if (res[0]!=0) res[0][40]=a0;
+  if (res[0]!=0) res[0][41]=a0;
+  if (res[0]!=0) res[0][42]=a0;
+  if (res[0]!=0) res[0][43]=a0;
+  if (res[0]!=0) res[0][44]=a0;
+  if (res[0]!=0) res[0][45]=a0;
+  if (res[0]!=0) res[0][46]=a0;
+  if (res[0]!=0) res[0][47]=a0;
+  if (res[0]!=0) res[0][48]=a0;
+  if (res[0]!=0) res[0][49]=a0;
+  if (res[0]!=0) res[0][50]=a0;
+  if (res[0]!=0) res[0][51]=a0;
+  if (res[0]!=0) res[0][52]=a0;
+  if (res[0]!=0) res[0][53]=a0;
+  if (res[0]!=0) res[0][54]=a0;
+  if (res[0]!=0) res[0][55]=a0;
+  if (res[0]!=0) res[0][56]=a0;
+  if (res[0]!=0) res[0][57]=a0;
+  if (res[0]!=0) res[0][58]=a0;
+  if (res[0]!=0) res[0][59]=a0;
+  if (res[0]!=0) res[0][60]=a0;
+  if (res[0]!=0) res[0][61]=a0;
+  if (res[0]!=0) res[0][62]=a0;
+  if (res[0]!=0) res[0][63]=a0;
+  if (res[0]!=0) res[0][64]=a0;
+  if (res[0]!=0) res[0][65]=a0;
+  if (res[0]!=0) res[0][66]=a0;
+  if (res[0]!=0) res[0][67]=a0;
+  if (res[0]!=0) res[0][68]=a0;
+  if (res[0]!=0) res[0][69]=a0;
+  if (res[0]!=0) res[0][70]=a0;
+  if (res[0]!=0) res[0][71]=a0;
+  if (res[0]!=0) res[0][72]=a0;
   return 0;
 }
 

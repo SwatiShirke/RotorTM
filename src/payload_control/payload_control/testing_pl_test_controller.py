@@ -44,6 +44,7 @@ if __name__ == '__main__':
     control_params = read_params_funcs.read_pl_nmpc_params(nmpc_filename)
      
     #read and track and interpolate
+    #change this
     track = 'tracks/trajectory.txt'
     [time_points, pos_ref, vel_ref, acc_ref, yaw_ref, yawr_ref, start_pose, last_pose ] = read_interpl(track)
     #visualize_traj(track)
@@ -62,7 +63,7 @@ if __name__ == '__main__':
 
     init_state = [start_pose[0],start_pose[1],start_pose[2], 0,0,0, 1,0,0,0, 0,0,0]
     sttttt_timeeee = time.time()
-    model, acados_solver, acados_integrator, cbf_constraints = controller_setup(control_params, payload_params, obstacle_params, cbf_params, np.array(init_state), u_ref) 
+    model, acados_solver, acados_integrator, cbf_constraints, h_fun = controller_setup(control_params, payload_params, obstacle_params, cbf_params, np.array(init_state), u_ref) 
     print(time.time()-sttttt_timeeee)
     # ipdb.set_trace()
     nx = model.x.rows()
@@ -82,19 +83,27 @@ if __name__ == '__main__':
     dist = []
     LAMB_list = []
     MU_list   = []
-    CBF_Constraint = []
+    CBF_Constraint_pl = []
+    CBF_Constraint_q_pl = []
+
+    ################    WARM START    ###############
+    u_warm = np.zeros((60,1))
+    u_warm[2] = mg
+    # Warm start the input values
+    for step in range(N):
+        acados_solver.set(step,'u',u_warm[:,0])
+    ################################################
 
     # Get the current time
     start_time = clock.now()
-    for i in range(Nsim):
-          
+    for i in range(Nsim): 
         cbf_p, model_lamb_mu_omg = cbf_constraints.get_all_minimum_dist(cbf_params)
         LAMB_list.append(np.array(model_lamb_mu_omg[:6]))
-        MU_list.append(np.array(model_lamb_mu_omg[6:]))
+        MU_list.append(np.array(model_lamb_mu_omg[6:11]))
         print("CBF P: ",cbf_p)
-        dist.append(cbf_p-cbf_params["margin"])
+        dist.append(cbf_p)#-cbf_params["margin"]
         lamb = model_lamb_mu_omg[:6]
-        mu   = model_lamb_mu_omg[6:-1]
+        mu   = model_lamb_mu_omg[6:11]
         mat_A, vec_b = cbf_constraints.obstacles[0].get_convex_rep()
         robot_G, robot_g = cbf_constraints.payload.get_convex_rep()
 
@@ -110,14 +119,18 @@ if __name__ == '__main__':
             
             yaw_ref_i = yaw_ref(t_j)
             yawr_ref_i = yawr_ref(t_j)
-            yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_i, vz_ref_j,  0,0,0,0,  0,0,yawr_ref_i, *u_ref])
-
-            acados_solver.set(j, "p", np.append(np.concatenate((yref,np.array(cbf_p).reshape(1,))), cbf_params["cbf_gamma"]**j))
-            u_init = acados_solver.get(j,"u")
+            yref = np.array([x_ref_j, y_ref_j, z_ref_j,  vx_ref_j, vy_ref_i, vz_ref_j,  1,0,0,0,  0,0,0, *u_ref])#yawr_ref_i
+            print("SHAPE YREF: ", yref.shape)
+            #change here 
+            print("SHAPE CBF P: ", np.array(cbf_p).shape)# cbf_p.reshape(1,).shape
+            #change here
+            acados_solver.set(j, "p", np.append(np.concatenate((yref,np.array(cbf_p))), cbf_params["cbf_gamma"]**(j+1))) # array(cbf_p).reshape(1,)
+            if j==0:
+                u_init = acados_solver.get(j,"u")
             acados_solver.set(j,"u",np.concatenate((u_init[:9],model_lamb_mu_omg)))
 
-                  
-        acados_solver.set(N, "p", np.append(np.concatenate((yref,np.array(cbf_p).reshape(1,))), cbf_params["cbf_gamma"]**N)) 
+        #change here          
+        acados_solver.set(N, "p", np.append(np.concatenate((yref,np.array(cbf_p))), cbf_params["cbf_gamma"]**(N+1))) # array(cbf_p).reshape(1,)
         acados_solver.set(0, "lbx", simX[i, :])
         acados_solver.set(0, "ubx", simX[i, :])
 
@@ -134,21 +147,25 @@ if __name__ == '__main__':
         print(simU[i, : ].shape)
         cost = 0
         
+        ###
+        #change here
+        h_val         = h_fun(simX[i,:],simU[i,:],np.append(np.concatenate((yref,np.array(cbf_p))), cbf_params["cbf_gamma"]))#np.array(cbf_p).reshape(1,)
+        print("CONSTRIANT VALS: ", h_val)
+        ###
         simX[i+1, : ] = acados_integrator.simulate(x = simX[i,:], u = simU[i, : ])
         robot_T = simX[i+1,:3].reshape(3,1)
         robot_X = simX[i,:3].reshape(3,1)
-        lamb    = simU[i,9:9+6].reshape(6,)
-        mu      = simU[i,9+6:-1].reshape(5,)
+        lamb_pl    = simU[i,9:9+6].reshape(6,)
+        mu_pl      = simU[i,9+6:9+6+5].reshape(5,)
         omega   = simU[i,-1]
         print("OMEGA",omega)
-        print("CBF CONSTRAINT",-np.dot(robot_g.T, mu) + np.dot((np.dot(mat_A, robot_T) - vec_b).T, lamb)
-                -cbf_params["cbf_gamma"] * (cbf_p - cbf_params["margin"]) - cbf_params["margin"])
         
-        CBF_Constraint.append(-np.dot(robot_g.T, mu) + np.dot((np.dot(mat_A, robot_T) - vec_b).T, lamb)
-                -cbf_params["cbf_gamma"] * (cbf_p - cbf_params["margin"]) - cbf_params["margin"])
-        # print("CBF CONSTRAINT", np.linalg.norm(robot_T-np.array([[1.5],[1.5],[2]])) ** 2  -cbf_params["cbf_gamma"] *np.linalg.norm(robot_X-np.array([[1.5],[1.5],[2]])) ** 2)
-        # CBF_Constraint.append(np.linalg.norm(robot_X-np.array([[1.5],[1.5],[2]])))
-        # CBF_Constraint.append(np.sum((simX[i,:3]-np.array([[1],[1],[1.5]]) )** 2) - 1**2)
+        #change here
+        print("CBF CONSTRAINT",-np.dot(robot_g.T, mu_pl) + np.dot((np.dot(mat_A, robot_T) - vec_b).T, lamb_pl)
+                -cbf_params["cbf_gamma"] * (cbf_p[0] - cbf_params["margin"]) - cbf_params["margin"])#cbf_p
+        #change here 
+        CBF_Constraint_pl.append(-np.dot(robot_g.T, mu_pl) + np.dot((np.dot(mat_A, robot_T) - vec_b).T, lamb_pl)
+                -cbf_params["cbf_gamma"] * (cbf_p[0] - cbf_params["margin"]) - cbf_params["margin"])#cbf_p
         cbf_constraints.set_state(simX[i+1,:], simU[i,:])
         print("simX")
         print(simX[i+1, : ])
@@ -181,9 +198,17 @@ if __name__ == '__main__':
     plt.xlabel("Index")
     plt.ylabel("dist")
     plt.gca().yaxis.set_major_locator(MaxNLocator(nbins=15))
-    plt.plot(CBF_Constraint,label="constraint")
+    plt.plot(CBF_Constraint_pl,label="constraint_pl")
+    # plt.plot(CBF_Constraint_q_pl,label="constraint_q_pl")
     plt.axhline(y=0, color='black', linestyle='--', linewidth=1)
     plt.legend()
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4)) 
+    axes[0].plot(LAMB_list,label="lambda")
+    axes[0].legend()
+    axes[1].plot(np.array(MU_list)[:,:-1],label="mu")
+    axes[1].legend()
+    plt.title("LAMBDA VALUES")
     # plot.show()
     #plot_inputs(simU[:,0:3],simU[:,3:6],t)
     # Print some statstime_points 

@@ -198,16 +198,16 @@ int payload_model_acados_sim_create(payload_model_sim_solver_capsule * capsule)
 
 
     // u
-    double u0[21];
-    for (int ii = 0; ii < 21; ii++)
+    double u0[60];
+    for (int ii = 0; ii < 60; ii++)
         u0[ii] = 0.0;
 
     sim_in_set(payload_model_sim_config, payload_model_sim_dims,
                payload_model_sim_in, "u", u0);
 
     // S_forw
-    double S_forw[442];
-    for (int ii = 0; ii < 442; ii++)
+    double S_forw[949];
+    for (int ii = 0; ii < 949; ii++)
         S_forw[ii] = 0.0;
     for (int ii = 0; ii < 13; ii++)
         S_forw[ii + ii * 13 ] = 1.0;
