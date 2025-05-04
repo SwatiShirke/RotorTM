@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from rotor_tm_msgs/srv/CoprStatusCmd.srv
+// generated code does not contain a copyright notice
+
+
+module rotor_tm_msgs {
+  module srv {
+    struct CoprStatusCmd_Request {
+      uint8 copr_status;
+    };
+    struct CoprStatusCmd_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

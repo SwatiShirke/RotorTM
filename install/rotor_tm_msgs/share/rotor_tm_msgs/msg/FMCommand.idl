@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from rotor_tm_msgs/msg/FMCommand.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Vector3.idl"
+#include "std_msgs/msg/Header.idl"
+
+module rotor_tm_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Import the necessary message types")
+    struct FMCommand {
+      std_msgs::msg::Header header;
+
+      double thrust;
+
+      geometry_msgs::msg::Vector3 rlink_thrust;
+
+      geometry_msgs::msg::Vector3 moments;
+    };
+  };
+};

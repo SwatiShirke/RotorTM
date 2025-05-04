@@ -1,0 +1,28 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages",
+        "/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg",
+        "/home/swati/carla_sim10/Carla-0.10.0-Linux-Shipping/PythonAPI/carla"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_sim/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_control/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_utils/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_traj/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_msgs/local/lib/python3.10/dist-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_keyboard2wrench/lib/python3.10/site-packages",
+        "/home/swati/Quad_DR/RotorTM/install/rotor_tm_config/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages",
+        "/PythonAPI/carla/dist/carla-0.9.14-py3.10-linux-x86_64.egg",
+        "/home/swati/carla_sim10/Carla-0.10.0-Linux-Shipping/PythonAPI/carla"
+    ]
+}
